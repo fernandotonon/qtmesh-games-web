@@ -23,17 +23,17 @@ Open the URL Vite prints (usually `http://localhost:5173/qtmesh-games-web/`).
 
 ## Base path
 
-Vite `base` defaults to `/qtmesh-games-web/` for the GitHub Pages project site:
+Vite `base` defaults to `/` for the custom domain:
 
-`https://fernandotonon.github.io/qtmesh-games-web/`
+`https://games.qtmesh.dev/`
 
-Override with an environment variable:
+Override with an environment variable (or the `VITE_BASE_PATH` GitHub Actions repo variable):
 
 ```bash
-# Local test as if on a custom domain root
-VITE_BASE_PATH=/ npm run build && VITE_BASE_PATH=/ npm run preview
+# Custom domain / local root (default)
+npm run build && npm run preview
 
-# Explicit project subpath
+# Project subpath (no custom domain)
 VITE_BASE_PATH=/qtmesh-games-web/ npm run build
 ```
 
@@ -50,17 +50,15 @@ Optional repository variable:
 
 | Variable | When |
 | --- | --- |
-| `VITE_BASE_PATH` | Set to `/` before attaching a custom domain such as `games.qtmesh.dev`. Leave unset (or `/qtmesh-games-web/`) for the default project site. |
+| `VITE_BASE_PATH` | Defaults to `/` (custom domain). Set to `/qtmesh-games-web/` only if you drop the custom domain and serve from the project subpath again. |
 
-### Custom domain later
+### Custom domain
 
-1. Set Pages custom domain to `games.qtmesh.dev` (DNS CNAME as GitHub documents).
-2. Set repository variable `VITE_BASE_PATH` to `/`.
-3. Redeploy so the built asset paths match the domain root.
-
-Hash routes look like:
+Pages is configured for `games.qtmesh.dev` with `VITE_BASE_PATH=/`. Hash routes look like:
 
 `https://games.qtmesh.dev/#/games/ironfang`
+
+Also update local `npm run dev` — Vite will serve from `/` by default.
 
 ## Adding a game
 

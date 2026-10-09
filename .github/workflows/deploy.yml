@@ -32,10 +32,9 @@ jobs:
 
       - name: Build
         env:
-          # Project site: https://<user>.github.io/qtmesh-games-web/
-          # For a custom domain (games.qtmesh.dev), set this repository variable
-          # VITE_BASE_PATH to "/" (or leave the Pages custom domain with base "/").
-          VITE_BASE_PATH: ${{ vars.VITE_BASE_PATH || '/qtmesh-games-web/' }}
+          # Default "/" for games.qtmesh.dev. Override with repo variable
+          # VITE_BASE_PATH=/qtmesh-games-web/ only if serving from the project subpath.
+          VITE_BASE_PATH: ${{ vars.VITE_BASE_PATH || '/' }}
         run: npm run build
 
       - name: Upload Pages artifact

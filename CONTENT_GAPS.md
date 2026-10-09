@@ -23,10 +23,8 @@ Maintainer checklist. Items marked in catalog `todos` fields are also noted in
 
 ## Hosting
 
-- Enable GitHub Pages with **GitHub Actions** as the source for this repository.
-- Confirm the site at `https://fernandotonon.github.io/qtmesh-games-web/`.
-- Before switching to `games.qtmesh.dev`, set repository variable `VITE_BASE_PATH` to `/` and
-  configure the custom domain in Pages settings.
+- Site is deployed via GitHub Actions to Pages at `https://games.qtmesh.dev/`.
+- Keep repository variable `VITE_BASE_PATH=/` while the custom domain is active.
 
 ## Embedding
 
