@@ -54,16 +54,8 @@ export function HomePage() {
             <h2 id="qtmesh-title">Made with QtMeshEditor</h2>
             <p>
               These games share a pipeline: concept art becomes playable 3D assets in
-              QtMeshEditor, then ships in{' '}
-              <a
-                href="https://github.com/MisterGC/clayground"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Clayground
-              </a>
-              , Godot, or Roblox. The editor and asset marketplace are part of the same indie
-              toolkit.
+              QtMeshEditor, then ships in Clayground, Godot, or Roblox. The editor and asset
+              marketplace are part of the same indie toolkit.
             </p>
           </div>
           <div className="qtmesh-actions">
