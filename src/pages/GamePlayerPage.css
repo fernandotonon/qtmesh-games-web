@@ -1,0 +1,121 @@
+.player-page {
+  display: grid;
+  gap: 1rem;
+}
+
+.player-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: end;
+}
+
+.player-header h1 {
+  margin: 0 0 0.35rem;
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+}
+
+.player-header p {
+  margin: 0;
+  color: var(--text-muted);
+  max-width: 36rem;
+}
+
+.player-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.player-notice,
+.player-controls-hint {
+  margin: 0;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: rgba(0, 0, 0, 0.18);
+  color: var(--text-muted);
+}
+
+.player-notice {
+  border-color: rgba(240, 160, 90, 0.45);
+  background: var(--warm-soft);
+  color: #ffd9b0;
+}
+
+.player-shell {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  min-height: 18rem;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #05080f;
+  box-shadow: var(--shadow);
+}
+
+.player-frame {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #000;
+}
+
+.player-poster {
+  height: 100%;
+  display: grid;
+  place-content: center;
+  gap: 1rem;
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--text-muted);
+  background:
+    radial-gradient(circle at 50% 30%, rgba(46, 196, 182, 0.16), transparent 50%),
+    #0a101c;
+}
+
+.player-poster p {
+  margin: 0;
+}
+
+.player-fallback {
+  display: grid;
+  gap: 0.65rem;
+  color: var(--text-dim);
+  font-size: 0.95rem;
+}
+
+.player-fallback p {
+  margin: 0;
+  max-width: 48rem;
+}
+
+.player-fallback-help {
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  background: var(--accent-soft);
+  border: 1px solid var(--border-strong);
+  color: var(--text);
+}
+
+.player-missing {
+  display: grid;
+  gap: 1rem;
+  justify-items: start;
+  padding: 2rem 0;
+}
+
+.player-shell:fullscreen {
+  aspect-ratio: auto;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+}
+
+@media (max-width: 700px) {
+  .player-shell {
+    aspect-ratio: 4 / 5;
+  }
+}

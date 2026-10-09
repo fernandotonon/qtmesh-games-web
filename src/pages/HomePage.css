@@ -1,0 +1,107 @@
+.game-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.15rem;
+}
+
+.game-grid > li {
+  animation: card-in 420ms ease both;
+}
+
+.game-grid > li:nth-child(2) {
+  animation-delay: 40ms;
+}
+.game-grid > li:nth-child(3) {
+  animation-delay: 80ms;
+}
+.game-grid > li:nth-child(4) {
+  animation-delay: 120ms;
+}
+.game-grid > li:nth-child(5) {
+  animation-delay: 160ms;
+}
+.game-grid > li:nth-child(6) {
+  animation-delay: 200ms;
+}
+.game-grid > li:nth-child(7) {
+  animation-delay: 240ms;
+}
+
+.empty-filter {
+  margin: 0;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  border: 1px dashed var(--border);
+  color: var(--text-muted);
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.qtmesh-panel {
+  display: grid;
+  grid-template-columns: 1.4fr auto;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.5rem 1.6rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background:
+    linear-gradient(120deg, rgba(46, 196, 182, 0.1), transparent 50%),
+    var(--bg-elevated);
+}
+
+.qtmesh-panel h2 {
+  margin: 0 0 0.45rem;
+}
+
+.qtmesh-panel p {
+  margin: 0;
+  color: var(--text-muted);
+  max-width: 42rem;
+}
+
+.qtmesh-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  justify-content: flex-end;
+}
+
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 960px) {
+  .game-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .qtmesh-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .qtmesh-actions {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .game-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .game-grid > li {
+    animation: none;
+  }
+}

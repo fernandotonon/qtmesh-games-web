@@ -1,0 +1,37 @@
+.platform-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.platform-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  border: 1px solid transparent;
+}
+
+.platform-browser {
+  background: var(--accent-soft);
+  color: #7eefe3;
+  border-color: rgba(46, 196, 182, 0.35);
+}
+
+.platform-roblox {
+  background: rgba(61, 139, 253, 0.16);
+  color: #9ec5ff;
+  border-color: rgba(61, 139, 253, 0.4);
+}
+
+.platform-download {
+  background: var(--warm-soft);
+  color: #ffd0a4;
+  border-color: rgba(240, 160, 90, 0.4);
+}

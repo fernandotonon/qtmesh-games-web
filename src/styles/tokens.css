@@ -1,0 +1,35 @@
+:root {
+  /* Deep navy / charcoal arcade floor */
+  --bg-deep: #0a101c;
+  --bg: #0f1726;
+  --bg-elevated: #162033;
+  --bg-panel: #1a2740;
+  --bg-panel-hover: #21314d;
+
+  /* Bright teal + warm highlight */
+  --accent: #2ec4b6;
+  --accent-strong: #1fa89c;
+  --accent-soft: rgba(46, 196, 182, 0.14);
+  --warm: #f0a05a;
+  --warm-soft: rgba(240, 160, 90, 0.16);
+
+  --text: #eef3fb;
+  --text-muted: #9aabc4;
+  --text-dim: #6f819c;
+  --border: rgba(154, 171, 196, 0.18);
+  --border-strong: rgba(46, 196, 182, 0.45);
+
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 22px;
+
+  --shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+  --focus: 0 0 0 3px var(--bg-deep), 0 0 0 6px var(--accent);
+
+  --font-display: 'Sora', 'Segoe UI', sans-serif;
+  --font-body: 'Figtree', 'Segoe UI', sans-serif;
+
+  --header-h: 4rem;
+  --content: 72rem;
+  --space-section: clamp(2.5rem, 5vw, 4.5rem);
+}
