@@ -14,12 +14,23 @@ export function primaryAction(game: Game): {
   label: string
   href?: string
   to?: string
+  /** External browser play opens a new tab (e.g. Clayground WASM). */
+  external?: boolean
 } {
   if (game.browser?.playUrl) {
+    // Embeddable builds use the in-site player; isolation-required builds open directly.
+    if (game.browser.embedUrl) {
+      return {
+        kind: 'browser',
+        label: 'Play in Browser',
+        to: `/play/${game.slug}`,
+      }
+    }
     return {
       kind: 'browser',
       label: 'Play in Browser',
-      to: `/play/${game.slug}`,
+      href: game.browser.playUrl,
+      external: true,
     }
   }
   if (game.robloxUrl) {
@@ -27,6 +38,7 @@ export function primaryAction(game: Game): {
       kind: 'roblox',
       label: 'Play on Roblox',
       href: game.robloxUrl,
+      external: true,
     }
   }
   if (game.downloads?.[0]) {
@@ -34,6 +46,7 @@ export function primaryAction(game: Game): {
       kind: 'download',
       label: game.downloads[0].label,
       href: game.downloads[0].url,
+      external: true,
     }
   }
   return { kind: 'none', label: 'Coming soon' }

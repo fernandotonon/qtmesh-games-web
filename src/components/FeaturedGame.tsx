@@ -19,12 +19,12 @@ export function FeaturedGame({ game }: { game: Game }) {
         <p className="featured-hook">{game.shortDescription}</p>
         <PlatformBadges platforms={game.platforms} engine={game.engine} />
         <div className="featured-actions">
-          {action.kind === 'browser' && action.to ? (
+          {action.to ? (
             <Link className="button button-primary" to={action.to}>
               {action.label}
             </Link>
           ) : null}
-          {(action.kind === 'roblox' || action.kind === 'download') && action.href ? (
+          {action.href ? (
             <a
               className="button button-primary"
               href={action.href}
