@@ -50,7 +50,7 @@ export function AboutPage() {
         <h2>Connected to QtMeshEditor</h2>
         <p>
           Many of these games use assets authored or processed with{' '}
-          <a href="https://qtmesh.dev" target="_blank" rel="noopener noreferrer">
+          <a href="https://editor.qtmesh.dev" target="_blank" rel="noopener noreferrer">
             QtMeshEditor
           </a>
           {' '}

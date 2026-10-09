@@ -14,8 +14,15 @@ export function Footer() {
           <Link to="/">Games</Link>
           <Link to="/about">About</Link>
           <a href={assetUrl('privacy.html')}>Privacy</a>
-          <a href="https://qtmesh.dev" rel="noopener noreferrer" target="_blank">
+          <a href="https://editor.qtmesh.dev" rel="noopener noreferrer" target="_blank">
             QtMeshEditor
+          </a>
+          <a
+            href="https://github.com/MisterGC/clayground"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Clayground
           </a>
           <a href="https://qtmesh.dev/marketplace" rel="noopener noreferrer" target="_blank">
             Marketplace
