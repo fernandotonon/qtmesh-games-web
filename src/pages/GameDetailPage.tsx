@@ -54,7 +54,7 @@ export function GameDetailPage() {
           <p className="detail-genre">{game.genre}</p>
           <h1>{game.title}</h1>
           <p className="detail-short">{game.shortDescription}</p>
-          <PlatformBadges platforms={game.platforms} />
+          <PlatformBadges platforms={game.platforms} engine={game.engine} />
           <GameActions game={game} />
         </div>
       </header>

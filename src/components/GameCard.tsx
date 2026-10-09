@@ -17,7 +17,7 @@ export function GameCard({ game }: { game: Game }) {
             <p className="game-card-genre">{game.genre}</p>
           </div>
           <p className="game-card-desc">{game.shortDescription}</p>
-          <PlatformBadges platforms={game.platforms} />
+          <PlatformBadges platforms={game.platforms} engine={game.engine} />
         </div>
       </Link>
     </article>

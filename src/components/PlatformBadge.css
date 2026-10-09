@@ -35,3 +35,15 @@
   color: #ffd0a4;
   border-color: rgba(240, 160, 90, 0.4);
 }
+
+.engine-clayground {
+  background: rgba(126, 92, 255, 0.16);
+  color: #c4b5ff;
+  border-color: rgba(126, 92, 255, 0.4);
+}
+
+.engine-godot {
+  background: rgba(71, 140, 200, 0.18);
+  color: #9ec9ef;
+  border-color: rgba(71, 140, 200, 0.45);
+}

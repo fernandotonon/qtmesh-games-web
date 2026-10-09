@@ -17,7 +17,7 @@ export function FeaturedGame({ game }: { game: Game }) {
         <p className="featured-label">Featured</p>
         <h1 id="featured-title">{game.title}</h1>
         <p className="featured-hook">{game.shortDescription}</p>
-        <PlatformBadges platforms={game.platforms} />
+        <PlatformBadges platforms={game.platforms} engine={game.engine} />
         <div className="featured-actions">
           {action.kind === 'browser' && action.to ? (
             <Link className="button button-primary" to={action.to}>
