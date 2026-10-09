@@ -40,7 +40,10 @@ export interface GameMedia {
 
 export interface BrowserPlay {
   playUrl: string
-  /** Optional embed URL. Omit when embedding is known unsupported. */
+  /**
+   * Optional iframe URL. Omit for Clayground / other builds that need
+   * SharedArrayBuffer (cross-origin isolation) — those must open in a new tab.
+   */
   embedUrl?: string
 }
 

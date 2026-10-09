@@ -43,6 +43,7 @@ export function GamePlayerPage() {
 
   const playUrl = game.browser.playUrl
   const embedUrl = game.browser.embedUrl
+  const canEmbed = Boolean(embedUrl)
   const keyboardRequired = Boolean(game.controls?.keyboardRequired)
 
   function handleFullscreen() {
@@ -55,6 +56,10 @@ export function GamePlayerPage() {
         /* fullscreen may be blocked; ignore */
       })
     }
+  }
+
+  function openInNewTab() {
+    window.open(playUrl, '_blank', 'noopener,noreferrer')
   }
 
   return (
@@ -70,44 +75,55 @@ export function GamePlayerPage() {
       <header className="player-header">
         <div>
           <h1>Play {game.title}</h1>
-          <p>The game loads only after you press Play. Only one game runs at a time.</p>
+          <p>
+            {canEmbed
+              ? 'The game loads only after you press Play. Only one game runs at a time.'
+              : 'This build needs a separate browser tab for WebAssembly threads to work.'}
+          </p>
         </div>
         <div className="player-toolbar">
-          {!started ? (
-            <button
-              type="button"
-              className="button button-primary"
-              onClick={() => {
-                setStarted(true)
-                setShowFallbackHelp(false)
-              }}
-              disabled={!embedUrl && !playUrl}
-            >
-              Play
-            </button>
+          {canEmbed ? (
+            !started ? (
+              <button
+                type="button"
+                className="button button-primary"
+                onClick={() => {
+                  setStarted(true)
+                  setShowFallbackHelp(false)
+                }}
+              >
+                Play
+              </button>
+            ) : (
+              <button
+                type="button"
+                className="button button-ghost"
+                onClick={() => {
+                  if (frameRef.current) frameRef.current.src = 'about:blank'
+                  setStarted(false)
+                  setShowFallbackHelp(false)
+                }}
+              >
+                Stop
+              </button>
+            )
           ) : (
+            <button type="button" className="button button-primary" onClick={openInNewTab}>
+              Play in new tab
+            </button>
+          )}
+          {canEmbed ? (
             <button
               type="button"
               className="button button-ghost"
-              onClick={() => {
-                if (frameRef.current) frameRef.current.src = 'about:blank'
-                setStarted(false)
-                setShowFallbackHelp(false)
-              }}
+              onClick={handleFullscreen}
+              disabled={!started}
             >
-              Stop
+              Fullscreen
             </button>
-          )}
-          <button
-            type="button"
-            className="button button-ghost"
-            onClick={handleFullscreen}
-            disabled={!started}
-          >
-            Fullscreen
-          </button>
+          ) : null}
           <a
-            className="button button-secondary"
+            className={canEmbed ? 'button button-secondary' : 'button button-ghost'}
             href={playUrl}
             target="_blank"
             rel="noopener noreferrer"
@@ -131,7 +147,18 @@ export function GamePlayerPage() {
       ) : null}
 
       <div className="player-shell" ref={shellRef}>
-        {!started ? (
+        {!canEmbed ? (
+          <div className="player-poster">
+            <p>
+              <strong>{game.title}</strong> uses multithreaded WebAssembly (
+              <code>SharedArrayBuffer</code>), which requires cross-origin isolation. That works on
+              the game&apos;s own page, but not inside an embed on this site.
+            </p>
+            <button type="button" className="button button-primary" onClick={openInNewTab}>
+              Play {game.title}
+            </button>
+          </div>
+        ) : !started ? (
           <div className="player-poster">
             <p>Ready when you are.</p>
             <button
@@ -142,35 +169,23 @@ export function GamePlayerPage() {
               Play {game.title}
             </button>
           </div>
-        ) : embedUrl ? (
+        ) : (
           <iframe
             ref={frameRef}
             title={`${game.title} player`}
             src={embedUrl}
             className="player-frame"
-            allow="fullscreen; gamepad; autoplay"
+            allow="cross-origin-isolated; fullscreen; gamepad; autoplay"
             referrerPolicy="no-referrer-when-downgrade"
           />
-        ) : (
-          <div className="player-poster">
-            <p>Embedding is not configured for this game.</p>
-            <a
-              className="button button-primary"
-              href={playUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Open game in new tab
-            </a>
-          </div>
         )}
       </div>
 
-      {started && embedUrl ? (
+      {started && canEmbed ? (
         <div className="player-fallback">
           <p>
-            Some hosted builds block embedding (especially WebAssembly games that need
-            cross-origin isolation). Browsers cannot always detect that reliably.
+            If the game does not appear or reports a browser capability error, open it in a new
+            tab instead. Embedding cannot always be detected reliably.
           </p>
           {!showFallbackHelp ? (
             <button
@@ -182,8 +197,7 @@ export function GamePlayerPage() {
             </button>
           ) : (
             <p className="player-fallback-help" role="status">
-              Use <strong>Open game in new tab</strong> for the full experience. That opens the
-              official hosted build directly.
+              Use <strong>Open game in new tab</strong> for the full hosted build.
             </p>
           )}
         </div>

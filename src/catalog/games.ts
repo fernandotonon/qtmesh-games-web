@@ -81,9 +81,8 @@ export const games: Game[] = [
     releaseStatus: 'vertical-slice',
     platforms: ['browser'],
     browser: {
+      // Clayground WASM needs SharedArrayBuffer / cross-origin isolation — open in a new tab, not iframe.
       playUrl: 'https://fernandotonon.github.io/Ironfang/',
-      // Clayground WASM builds often require cross-origin isolation; embedding may be blocked.
-      embedUrl: 'https://fernandotonon.github.io/Ironfang/',
     },
     controls: {
       summary: 'Mouse and keyboard on desktop; touch controls appear on phones and tablets.',
@@ -125,7 +124,6 @@ export const games: Game[] = [
     platforms: ['browser'],
     browser: {
       playUrl: 'https://fernandotonon.github.io/Bite-by-Bite/',
-      embedUrl: 'https://fernandotonon.github.io/Bite-by-Bite/',
     },
     controls: {
       summary: 'Keyboard or standard-layout gamepad on desktop; touch controls on phones and tablets in landscape.',
@@ -170,7 +168,6 @@ export const games: Game[] = [
     platforms: ['browser'],
     browser: {
       playUrl: 'https://fernandotonon.github.io/it-operation-td/',
-      embedUrl: 'https://fernandotonon.github.io/it-operation-td/',
     },
     controls: {
       summary: 'Mouse or touch to place and manage defenses on the board.',
@@ -209,8 +206,6 @@ export const games: Game[] = [
     platforms: ['browser'],
     browser: {
       playUrl:
-        'https://fernandotonon.github.io/Isabela-Pedro-A-Escola-Virou-Aventura/',
-      embedUrl:
         'https://fernandotonon.github.io/Isabela-Pedro-A-Escola-Virou-Aventura/',
     },
     controls: {

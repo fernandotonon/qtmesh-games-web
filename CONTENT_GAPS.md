@@ -28,9 +28,10 @@ Maintainer checklist. Items marked in catalog `todos` fields are also noted in
 
 ## Embedding
 
-- Clayground WASM titles often need cross-origin isolation; iframes may be blank.
-  The player UI always offers **Open game in new tab** — verify that path on each title.
-- Mall Chase (Godot web) is the most likely to embed cleanly; re-test after deploy.
+- Clayground titles omit `embedUrl` on purpose: multithreaded WASM needs
+  `SharedArrayBuffer` / `crossOriginIsolated`, which works on the game host (via its
+  service worker) but not inside an iframe on this site. Play opens a new tab instead.
+- Godot web builds (Scrapfall, Mall Chase) still embed when `embedUrl` is set.
 
 ## Out of scope for this release (intentional)
 
