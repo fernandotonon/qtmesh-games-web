@@ -3,13 +3,13 @@
 Maintainer checklist. Items marked in catalog `todos` fields are also noted in
 `src/catalog/games.ts` (never shown to visitors).
 
-## Downloads
+## Downloads / stores
 
-- **Scrapfall** has a public Android APK (`android-latest` release). Desktop launcher builds
-  still need a public Windows/macOS URL before listing those platforms.
-- Mall Chase: desktop builds exist for the QtMesh Games launcher; Google Play AAB pipeline
-  exists in the game repo — add store or direct URLs before enabling Download badges.
-- School Adventure: Android APK builds exist in-repo — publish a public URL before listing.
+- Do **not** list Android APK sideloads. Scrapfall and Mall Chase are headed to Google Play
+  (still in testing) — add official Play Store links when they ship.
+- Desktop: add public Windows/macOS download URLs when available (launcher builds exist).
+- School Adventure: Android/desktop public links still TBD; browser play only for now.
+- The **Download** filter stays empty until a desktop or store URL is configured.
 
 ## Artwork
 

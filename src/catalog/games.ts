@@ -29,18 +29,11 @@ export const games: Game[] = [
     },
     featured: true,
     releaseStatus: 'playable',
-    platforms: ['browser', 'download'],
+    platforms: ['browser'],
     browser: {
       playUrl: 'https://fernandotonon.github.io/scrapfall-web/',
       embedUrl: 'https://fernandotonon.github.io/scrapfall-web/',
     },
-    downloads: [
-      {
-        label: 'Download Android APK',
-        url: 'https://github.com/fernandotonon/Scrapfall/releases/download/android-latest/scrapfall.apk',
-        platform: 'android',
-      },
-    ],
     controls: {
       summary: 'Keyboard and mouse on desktop; gamepad and touch supported on web and mobile.',
       bindings: [
@@ -60,7 +53,9 @@ export const games: Game[] = [
     madeWithQtMeshEditor: true,
     relatedIds: ['mall-chase', 'ironfang', 'bite-by-bite'],
     todos: {
-      downloads: 'Desktop builds ship via the QtMesh Games launcher; add a public Windows/macOS URL when available.',
+      downloads:
+        'Add desktop download URLs when public. Google Play is in testing — add the official store link when released (do not list sideload APKs).',
+      storeLinks: 'Add Google Play URL when the listing leaves testing.',
     },
   },
   {
@@ -236,7 +231,8 @@ export const games: Game[] = [
     madeWithQtMeshEditor: true,
     relatedIds: ['mall-chase', 'bite-by-bite', 'ironfang'],
     todos: {
-      downloads: 'Android APK builds exist in the game repo; publish a public download URL before enabling Download.',
+      downloads:
+        'Add desktop or official store links when public. Prefer store listings over sideload APKs.',
     },
   },
   {
@@ -277,7 +273,8 @@ export const games: Game[] = [
     relatedIds: ['scrapfall', 'school-adventure', 'shoprise'],
     todos: {
       downloads:
-        'Desktop builds ship via the QtMesh Games launcher; Google Play AAB pipeline exists but needs a public store or direct download URL before enabling Download.',
+        'Add desktop download URLs when public. Google Play is in testing — add the official store link when released (do not list sideload APKs).',
+      storeLinks: 'Add Google Play URL when the listing leaves testing.',
       screenshots: 'Add gameplay screenshots under public/games/mall-chase/.',
     },
   },

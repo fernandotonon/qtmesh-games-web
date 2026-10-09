@@ -59,6 +59,7 @@ export interface ContentTodos {
   playUrl?: string
   robloxUrl?: string
   downloads?: string
+  storeLinks?: string
   cover?: string
   screenshots?: string
   controls?: string
