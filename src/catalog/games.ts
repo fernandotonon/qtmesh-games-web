@@ -201,7 +201,7 @@ export const games: Game[] = [
       hero: 'games/school-adventure/hero.jpg',
       screenshots: [
         'games/school-adventure/shot-1.png',
-        'games/school-adventure/shot-2.png',
+        'games/school-adventure/shot-2.jpg',
       ],
       accent: '#3f7fbf',
     },
