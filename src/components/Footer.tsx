@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { assetUrl } from '../lib/assetUrl'
 import './Footer.css'
 
 export function Footer() {
@@ -12,6 +13,7 @@ export function Footer() {
         <nav className="footer-nav" aria-label="Footer">
           <Link to="/">Games</Link>
           <Link to="/about">About</Link>
+          <a href={assetUrl('privacy.html')}>Privacy</a>
           <a href="https://qtmesh.dev" rel="noopener noreferrer" target="_blank">
             QtMeshEditor
           </a>

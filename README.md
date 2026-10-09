@@ -90,6 +90,14 @@ Drop files into `public/games/<id>/` and point `media.*` paths at them (no leadi
 Missing covers render a CSS placeholder with the game title and accent color — never invent
 gameplay imagery.
 
+## Privacy policy (Steam / stores)
+
+Canonical URL (static HTML, no JavaScript required):
+
+`https://games.qtmesh.dev/privacy.html`
+
+Use this in Steamworks (and Google Play) wherever a privacy policy link is requested.
+
 ## Social previews
 
 `index.html` and `useDocumentMeta` set a default OG/Twitter image (`og-image.jpg`).

@@ -71,6 +71,15 @@ export function AboutPage() {
           new tab if embedding is blocked). Roblox titles link straight to their experience pages.
         </p>
       </section>
+
+      <section className="about-section">
+        <h2>Privacy</h2>
+        <p>
+          QtMesh Games does not collect personal data for its own servers. Read the full{' '}
+          <a href="/privacy.html">Privacy Policy</a> — the same URL you can use for Steam and
+          other store listings.
+        </p>
+      </section>
     </article>
   )
 }
