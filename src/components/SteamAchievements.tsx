@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { getAllGames } from '../catalog'
 import type { Game } from '../catalog/types'
+import { assetUrl } from '../lib/assetUrl'
 import { QtMeshApiError, fetchSteamAchievements } from '../lib/qtmeshId'
 import type { SteamAchievement, SteamAchievementsResponse } from '../lib/qtmeshId'
 import './SteamAchievements.css'
@@ -52,18 +53,47 @@ function sortAchievements(list: SteamAchievement[]) {
   })
 }
 
+/**
+ * Icon sources in order: our own copy (public/achievements, same art as the
+ * Steam app ships), then Steam's CDN, which serves nothing until the app is
+ * released. Concealed hidden achievements get no icon so nothing is spoiled.
+ */
+function iconSources(a: SteamAchievement): string[] {
+  if (a.name === null) return []
+  const local = assetUrl(`achievements/${a.id}${a.achieved ? '' : '_locked'}.webp`)
+  const steam = a.achieved ? a.icon : a.iconLocked
+  return steam ? [local, steam] : [local]
+}
+
+function AchievementIcon({ a }: { a: SteamAchievement }) {
+  const sources = iconSources(a)
+  const [attempt, setAttempt] = useState(0)
+  const src = sources[attempt]
+  if (!src) {
+    return (
+      <span className="steam-ach-icon steam-ach-icon-hidden" aria-hidden="true">
+        {a.name === null ? '?' : '★'}
+      </span>
+    )
+  }
+  return (
+    <img
+      className="steam-ach-icon"
+      src={src}
+      alt=""
+      width={48}
+      height={48}
+      loading="lazy"
+      onError={() => setAttempt((n) => n + 1)}
+    />
+  )
+}
+
 function AchievementItem({ a }: { a: SteamAchievement }) {
-  const icon = a.achieved ? a.icon : a.iconLocked
   const concealed = a.name === null
   return (
     <li className={`steam-ach ${a.achieved ? 'steam-ach-unlocked' : 'steam-ach-locked'}`}>
-      {icon ? (
-        <img className="steam-ach-icon" src={icon} alt="" width={48} height={48} loading="lazy" />
-      ) : (
-        <span className="steam-ach-icon steam-ach-icon-hidden" aria-hidden="true">
-          ?
-        </span>
-      )}
+      <AchievementIcon a={a} />
       <div className="steam-ach-text">
         <strong>{concealed ? 'Hidden achievement' : a.name}</strong>
         <span className="steam-ach-desc">
