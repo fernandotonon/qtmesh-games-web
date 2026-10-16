@@ -1,0 +1,132 @@
+.steam-ach-empty {
+  display: grid;
+  justify-items: start;
+  gap: 0.75rem;
+}
+
+.steam-ach-empty .button {
+  padding: 0.55rem 1rem;
+}
+
+.steam-ach-total {
+  margin-bottom: 1rem;
+}
+
+.steam-ach-total p {
+  margin: 0 0 0.45rem;
+  color: var(--text-muted);
+}
+
+.steam-ach-total strong {
+  color: var(--text);
+}
+
+.steam-ach-bar {
+  height: 0.5rem;
+  border-radius: 999px;
+  background: var(--bg-panel);
+  overflow: hidden;
+}
+
+.steam-ach-bar span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--accent);
+}
+
+.steam-ach-group {
+  margin-bottom: 0.6rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+}
+
+.steam-ach-group summary {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.steam-ach-group-title {
+  flex: 1;
+  min-width: 0;
+}
+
+.steam-ach-group-title a {
+  color: inherit;
+}
+
+.steam-ach-group-count {
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.steam-ach-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 0.75rem 0.75rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 0.5rem;
+}
+
+.steam-ach {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  padding: 0.6rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+}
+
+.steam-ach-locked {
+  opacity: 0.6;
+}
+
+.steam-ach-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 6px;
+  flex-shrink: 0;
+  object-fit: cover;
+  background: var(--bg-panel);
+}
+
+.steam-ach-icon-hidden {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dim);
+  font-weight: 800;
+  font-size: 1.3rem;
+}
+
+.steam-ach-text {
+  display: grid;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
+.steam-ach-text strong {
+  font-size: 0.95rem;
+}
+
+.steam-ach-desc {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+.steam-ach-meta {
+  color: var(--text-dim);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 520px) {
+  .steam-ach-list {
+    grid-template-columns: 1fr;
+  }
+}

@@ -4,9 +4,11 @@ import { Link } from 'react-router-dom'
 import { useAuth } from '../auth/AuthContext'
 import { getGameById } from '../catalog'
 import { GameArtwork } from '../components/GameArtwork'
+import { SteamAchievements } from '../components/SteamAchievements'
 import { useDocumentMeta } from '../hooks/useDocumentMeta'
 import {
   QTMESH_ACCOUNT_URL,
+  QtMeshApiError,
   deleteGameSave,
   describeLoginError,
   fetchGameSaves,
@@ -52,20 +54,29 @@ function summaryEntries(summary: GameSaveSummary['summary']): Array<[string, str
     .map(([k, v]) => [humanizeKey(k), String(v)])
 }
 
-type AccountData =
-  | { saves: GameSaveSummary[]; identities: IdentitiesResponse; providers: ProviderInfo[] }
-  | { error: string }
+/** null = that part couldn't be loaded; each section copes on its own. */
+interface AccountData {
+  saves: GameSaveSummary[] | null
+  identities: IdentitiesResponse | null
+  providers: ProviderInfo[]
+}
 
 async function fetchAccountData(): Promise<AccountData> {
-  try {
-    const [saves, identities, providers] = await Promise.all([
-      fetchGameSaves(),
-      fetchIdentities(),
-      fetchProviders(),
-    ])
-    return { saves, identities, providers }
-  } catch (e) {
-    return { error: e instanceof Error ? e.message : 'Could not load your account.' }
+  const [saves, identities, providers] = await Promise.allSettled([
+    fetchGameSaves(),
+    fetchIdentities(),
+    fetchProviders(),
+  ])
+  return {
+    saves:
+      saves.status === 'fulfilled'
+        ? saves.value
+        : // An API without cloud saves yet answers 404: same as having none.
+          saves.reason instanceof QtMeshApiError && saves.reason.status === 404
+          ? []
+          : null,
+    identities: identities.status === 'fulfilled' ? identities.value : null,
+    providers: providers.status === 'fulfilled' ? providers.value : [],
   }
 }
 
@@ -81,7 +92,7 @@ export function AccountPage() {
   const [saves, setSaves] = useState<GameSaveSummary[] | null>(null)
   const [identities, setIdentities] = useState<IdentitiesResponse | null>(null)
   const [providers, setProviders] = useState<ProviderInfo[]>([])
-  const [loadError, setLoadError] = useState<string | null>(null)
+  const [loaded, setLoaded] = useState(false)
   const [notice, setNotice] = useState<string | null>(() =>
     redirect.linked ? `${humanizeKey(redirect.linked)} is now linked to your QtMesh ID.` : null,
   )
@@ -97,11 +108,7 @@ export function AccountPage() {
   })
 
   const applyLoad = useCallback((result: AccountData) => {
-    if ('error' in result) {
-      setLoadError(result.error)
-      return
-    }
-    setLoadError(null)
+    setLoaded(true)
     setSaves(result.saves)
     setIdentities(result.identities)
     setProviders(result.providers)
@@ -224,15 +231,6 @@ export function AccountPage() {
           {error}
         </p>
       ) : null}
-      {loadError ? (
-        <p className="account-alert account-alert-error" role="alert">
-          {loadError}{' '}
-          <button type="button" className="account-link-button" onClick={() => void load()}>
-            Try again
-          </button>
-        </p>
-      ) : null}
-
       {user.isGuest ? (
         <p className="account-alert account-alert-warm">
           You’re playing as a guest. Link a login below so you can get back to your progress on
@@ -242,9 +240,17 @@ export function AccountPage() {
 
       <section className="account-section" aria-labelledby="account-progress">
         <h2 id="account-progress">Your progress</h2>
-        {saves === null && !loadError ? <p className="account-muted">Loading…</p> : null}
+        {!loaded ? <p className="account-muted">Loading…</p> : null}
+        {loaded && saves === null ? (
+          <p className="account-empty">
+            Your progress isn’t showing up right now — it’s still safe.{' '}
+            <button type="button" className="account-link-button" onClick={() => void load()}>
+              Check again
+            </button>
+          </p>
+        ) : null}
         {saves && saves.length === 0 ? (
-          <p className="account-muted">
+          <p className="account-empty">
             No saved progress yet. Games that support QtMesh ID save here automatically — pick one
             from the <Link to="/">collection</Link> and play while signed in.
           </p>
@@ -295,6 +301,12 @@ export function AccountPage() {
         ) : null}
       </section>
 
+      <SteamAchievements
+        key={linked.has('steam') ? 'steam-linked' : 'steam-unlinked'}
+        steamLinkable={providers.some((p) => p.id === 'steam' && p.web)}
+        onLinkSteam={() => void run(() => startLink('steam'))}
+      />
+
       <section className="account-section" aria-labelledby="account-logins">
         <h2 id="account-logins">Sign-in methods</h2>
         <p className="account-muted">
@@ -327,6 +339,9 @@ export function AccountPage() {
               <li className="account-muted">No logins linked yet.</li>
             ) : null}
           </ul>
+        ) : null}
+        {loaded && !identities ? (
+          <p className="account-empty">Your linked logins can’t be shown right now.</p>
         ) : null}
         {linkable.length > 0 ? (
           <div className="account-link-actions">

@@ -237,3 +237,33 @@ export function describeLoginError(code: string, provider?: string): string {
   }
   return `${name || 'Sign-in'} sign-in failed. Please try again.`
 }
+
+export interface SteamAchievement {
+  /** Steamworks API name, e.g. IF_FIRST_WIN. */
+  id: string
+  /** Null for a hidden achievement the player hasn't unlocked yet. */
+  name: string | null
+  description: string | null
+  icon: string | null
+  iconLocked: string | null
+  hidden: boolean
+  achieved: boolean
+  unlockedAt: number | null
+  globalPercent: number | null
+}
+
+export type SteamAchievementsResponse =
+  | { configured: false; linked: false }
+  | { configured: true; linked: false }
+  | {
+      configured: true
+      linked: true
+      appId: string
+      hasStats: boolean
+      achievements: SteamAchievement[]
+    }
+
+/** Achievements from the QtMesh Games Steam app for the player's linked Steam account. */
+export function fetchSteamAchievements() {
+  return api<SteamAchievementsResponse>('GET', '/v1/players/me/achievements/steam')
+}

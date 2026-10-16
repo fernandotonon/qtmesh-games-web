@@ -9,6 +9,7 @@ import type { Game } from './types'
 export const games: Game[] = [
   {
     id: 'scrapfall',
+    steamAchievementPrefix: 'SCRAPFALL_',
     slug: 'scrapfall',
     title: 'Scrapfall',
     shortDescription:
@@ -60,6 +61,7 @@ export const games: Game[] = [
   },
   {
     id: 'ironfang',
+    steamAchievementPrefix: 'IF_',
     slug: 'ironfang',
     title: 'Ironfang: First Siege',
     shortDescription:
@@ -102,6 +104,7 @@ export const games: Game[] = [
   },
   {
     id: 'bite-by-bite',
+    steamAchievementPrefix: 'BB_',
     slug: 'bite-by-bite',
     title: 'Bite by Bite',
     shortDescription:
@@ -146,6 +149,7 @@ export const games: Game[] = [
   },
   {
     id: 'it-operation',
+    steamAchievementPrefix: 'OT_',
     slug: 'it-operation',
     title: 'IT Operation: Defend the Datacenter',
     shortDescription:
@@ -184,6 +188,7 @@ export const games: Game[] = [
   },
   {
     id: 'school-adventure',
+    steamAchievementPrefix: 'SA_',
     slug: 'school-adventure',
     title: 'Isabela & Pedro: A Escola Virou Aventura',
     shortDescription:
@@ -232,6 +237,7 @@ export const games: Game[] = [
   },
   {
     id: 'mall-chase',
+    steamAchievementPrefix: 'MC_',
     slug: 'mall-chase',
     title: 'Mall Chase',
     shortDescription:

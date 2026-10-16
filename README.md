@@ -121,6 +121,9 @@ PUT  /v1/players/me/games/ironfang            { "data": {...}, "summary": { "lev
 - `summary` (≤ 2 KB) is what `#/account` shows; `data` (≤ 64 KB) is opaque to the site.
 - Send the `version` you last read; a `409 version_conflict` returns the newer save
   so the game can merge or ask the player.
+- Steam achievements from the QtMesh Games Steam app appear on `#/account` for players who
+  linked Steam; each game's `steamAchievementPrefix` in the catalog (`IF_`, `SCRAPFALL_`, …)
+  groups them, and anything else counts as collection-wide (`QM_`).
 - Roblox servers use `/v1/games/roblox/players/:robloxUserId/games/:gameId` with
   `ROBLOX_GAME_SERVER_KEY`, for players who linked Roblox via a link code.
 

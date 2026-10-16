@@ -92,6 +92,11 @@ export interface Game {
   devices?: DeviceSupport[]
   playerMode?: PlayerMode
   madeWithQtMeshEditor?: boolean
+  /**
+   * Steamworks API-name prefix of this game's achievements in the QtMesh Games
+   * Steam app (e.g. "IF_" for Ironfang). Omit when the game has none on Steam.
+   */
+  steamAchievementPrefix?: string
   relatedIds?: string[]
   /** Maintainer notes — never shown in the public UI. */
   todos?: ContentTodos
