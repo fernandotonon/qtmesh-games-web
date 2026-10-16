@@ -1,0 +1,72 @@
+.account-signin {
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.account-signin:hover {
+  background: rgba(46, 196, 182, 0.22);
+  color: #7eefe3;
+}
+
+.account-button-placeholder {
+  display: inline-block;
+  width: 5.2rem;
+}
+
+.account-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 11rem;
+  padding: 0.25rem 0.75rem 0.25rem 0.25rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 650;
+}
+
+.account-chip:hover,
+.account-chip.active {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.account-avatar {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: var(--bg-panel);
+}
+
+.account-avatar-initial {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+
+.account-chip-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 520px) {
+  .account-chip {
+    padding-right: 0.25rem;
+  }
+
+  .account-chip-name {
+    display: none;
+  }
+}

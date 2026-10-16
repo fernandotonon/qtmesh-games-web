@@ -1,0 +1,280 @@
+.account-page {
+  max-width: 48rem;
+}
+
+.account-status {
+  color: var(--text-muted);
+}
+
+.account-hero {
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background:
+    linear-gradient(135deg, rgba(46, 196, 182, 0.12), transparent 55%),
+    var(--bg-elevated);
+}
+
+.account-hero h1 {
+  margin: 0 0 0.6rem;
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+}
+
+.account-lead {
+  margin: 0 0 1.25rem;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+.account-profile {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.account-profile h1 {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.account-profile .account-lead {
+  margin: 0.2rem 0 0;
+  font-size: 1rem;
+  overflow-wrap: anywhere;
+}
+
+.account-profile-text {
+  flex: 1;
+  min-width: 10rem;
+}
+
+.account-profile-avatar {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: var(--bg-panel);
+}
+
+.account-profile-initial {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.6rem;
+}
+
+.account-alert {
+  margin: 0 0 1.25rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.account-hero .account-alert {
+  margin-bottom: 1.25rem;
+}
+
+.account-alert-ok {
+  border-color: var(--border-strong);
+  background: var(--accent-soft);
+}
+
+.account-alert-error {
+  border-color: rgba(255, 110, 110, 0.45);
+  background: rgba(255, 110, 110, 0.12);
+}
+
+.account-alert-warm {
+  border-color: rgba(240, 160, 90, 0.45);
+  background: var(--warm-soft);
+}
+
+.account-section {
+  margin-bottom: 2rem;
+}
+
+.account-section h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.account-muted {
+  color: var(--text-muted);
+}
+
+.account-link-button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.account-link-button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.account-danger {
+  color: #ff9b9b;
+}
+
+.account-saves,
+.account-identities {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.account-save {
+  display: grid;
+  grid-template-columns: 6rem 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+}
+
+.account-save-art {
+  display: block;
+  width: 6rem;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.account-save-art-empty {
+  background: var(--bg-panel);
+}
+
+.account-save-body {
+  min-width: 0;
+}
+
+.account-save h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.05rem;
+}
+
+.account-save h3 a {
+  color: inherit;
+}
+
+.account-save-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  margin: 0 0 0.25rem;
+}
+
+.account-save-stats div {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.account-save-stats dt {
+  color: var(--text-dim);
+}
+
+.account-save-stats dd {
+  margin: 0;
+  font-weight: 700;
+}
+
+.account-save-meta {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.account-identity {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+}
+
+.account-provider {
+  min-width: 5rem;
+  font-weight: 750;
+}
+
+.account-identity-name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text-muted);
+}
+
+.account-link-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.85rem;
+}
+
+.account-link-actions .button,
+.account-code-form .button {
+  padding: 0.55rem 1rem;
+}
+
+.account-link-actions .button:disabled,
+.account-code-form .button:disabled {
+  opacity: 0.55;
+  cursor: default;
+  transform: none;
+}
+
+.account-code-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.account-code-input {
+  width: 10rem;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg-deep);
+  color: var(--text);
+  font: inherit;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0.08em;
+}
+
+.account-code-input:focus {
+  outline: none;
+  box-shadow: var(--focus);
+}
+
+@media (max-width: 520px) {
+  .account-save {
+    grid-template-columns: 4.5rem 1fr;
+  }
+
+  .account-save-art {
+    width: 4.5rem;
+  }
+
+  .account-save > .account-link-button {
+    grid-column: 2;
+    justify-self: start;
+  }
+}

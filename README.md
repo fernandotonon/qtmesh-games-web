@@ -90,6 +90,40 @@ Drop files into `public/games/<id>/` and point `media.*` paths at them (no leadi
 Missing covers render a CSS placeholder with the game title and accent color — never invent
 gameplay imagery.
 
+## QtMesh ID (sign-in + cross-platform saves)
+
+Players can sign in with a **QtMesh ID** — the shared account from QtMesh Cloud
+(Google, Discord, Steam, Roblox, GitHub, email or guest). The site sends them to the
+hosted page `https://api.qtmesh.dev/id/login?return_to=…&kind=player`, which returns
+with `?token=…`; [`src/lib/qtmeshId.ts`](src/lib/qtmeshId.ts) stores the session
+and strips it from the URL before analytics runs. `#/account` shows progress across
+games, linked logins and the Roblox link-code form.
+
+| Variable | Default | Purpose |
+| --- | --- | --- |
+| `VITE_QTMESH_API_URL` | `https://api.qtmesh.dev` | QtMesh Cloud API (use `http://localhost:8787` with `wrangler dev` in qtmesh-cloud) |
+
+The site origin must be in the API's `EXTRA_WEB_ORIGINS` (production already lists
+`https://games.qtmesh.dev`; dev lists `http://localhost:5173`).
+
+### Saving progress from a game
+
+Saves are one JSON document per player per game, keyed on the catalog `id`
+(full reference: `docs/API.md` → *Player game data* in qtmesh-cloud):
+
+```http
+GET  /v1/players/me/games/ironfang            Authorization: Bearer <session>
+PUT  /v1/players/me/games/ironfang            { "data": {...}, "summary": { "level": 4 }, "platform": "steam", "version": 3 }
+```
+
+- Players get a session from `/v1/auth/steam/ticket` (Steam), `/v1/auth/google/id-token`
+  (Android), `/v1/auth/guest` (play first, link later) or the hosted login (web).
+- `summary` (≤ 2 KB) is what `#/account` shows; `data` (≤ 64 KB) is opaque to the site.
+- Send the `version` you last read; a `409 version_conflict` returns the newer save
+  so the game can merge or ask the player.
+- Roblox servers use `/v1/games/roblox/players/:robloxUserId/games/:gameId` with
+  `ROBLOX_GAME_SERVER_KEY`, for players who linked Roblox via a link code.
+
 ## Privacy policy (Steam / stores)
 
 Canonical URL (static HTML, no JavaScript required):

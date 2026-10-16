@@ -14,6 +14,10 @@ export function getGameBySlug(slug: string): Game | undefined {
   return localGames.find((game) => game.slug === slug)
 }
 
+export function getGameById(id: string): Game | undefined {
+  return localGames.find((game) => game.id === id)
+}
+
 export function getFeaturedGame(): Game | undefined {
   return localGames.find((game) => game.featured) ?? localGames[0]
 }

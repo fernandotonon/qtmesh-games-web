@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import { assetUrl } from '../lib/assetUrl'
+import { AccountButton } from './AccountButton'
 import './Header.css'
 
 export function Header() {
@@ -19,12 +20,15 @@ export function Header() {
             <span className="brand-tagline">Small games. Big fun.</span>
           </span>
         </NavLink>
-        <nav className="site-nav" aria-label="Primary">
-          <NavLink to="/" end>
-            Games
-          </NavLink>
-          <NavLink to="/about">About</NavLink>
-        </nav>
+        <div className="site-header-end">
+          <nav className="site-nav" aria-label="Primary">
+            <NavLink to="/" end>
+              Games
+            </NavLink>
+            <NavLink to="/about">About</NavLink>
+          </nav>
+          <AccountButton />
+        </div>
       </div>
     </header>
   )
