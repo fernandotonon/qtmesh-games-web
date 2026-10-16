@@ -149,6 +149,11 @@ export function AccountPage() {
           <button type="button" className="button button-primary" onClick={signIn}>
             Sign in with QtMesh ID
           </button>
+          <p className="account-legal">
+            By signing in you agree to our{' '}
+            <a href={`${import.meta.env.BASE_URL}terms.html`}>terms of service</a> and{' '}
+            <a href={`${import.meta.env.BASE_URL}privacy.html`}>privacy policy</a>.
+          </p>
         </header>
       </article>
     )
@@ -394,7 +399,8 @@ export function AccountPage() {
           <a href={QTMESH_ACCOUNT_URL} target="_blank" rel="noopener noreferrer">
             your QtMesh account settings
           </a>
-          . See our <a href={`${import.meta.env.BASE_URL}privacy.html`}>privacy policy</a>.
+          . See our <a href={`${import.meta.env.BASE_URL}privacy.html`}>privacy policy</a> and{' '}
+          <a href={`${import.meta.env.BASE_URL}terms.html`}>terms of service</a>.
         </p>
       </section>
     </article>
