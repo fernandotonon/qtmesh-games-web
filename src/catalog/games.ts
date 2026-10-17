@@ -310,7 +310,7 @@ export const games: Game[] = [
     devices: ['desktop', 'mobile', 'tablet', 'gamepad'],
     playerMode: 'multiplayer',
     madeWithQtMeshEditor: true,
-    relatedIds: ['shoprise', 'it-operation', 'ironfang'],
+    relatedIds: ['mothership-raiders', 'shoprise', 'it-operation'],
     todos: {
       screenshots: 'Add in-experience screenshots under public/games/data-core-clash/.',
     },
@@ -340,6 +340,44 @@ export const games: Game[] = [
       controls: 'Document public control bindings from the published experience.',
       devices: 'Confirm supported devices for the published Roblox experience.',
       screenshots: 'Add in-experience screenshots under public/games/shoprise/.',
+    },
+  },
+  {
+    id: 'mothership-raiders',
+    slug: 'mothership-raiders',
+    title: 'Mothership Raiders',
+    shortDescription:
+      'Roblox team sci-fi PvP — dogfight across the void, then board the enemy mothership.',
+    description:
+      'Two motherships, one battlefield. Launch fighters from your hangar, break the enemy shield emitters, land inside their mothership and sabotage it from within — shields, engineering, cooling, then a reactor overload the defenders race to stabilize. Both teams attack and defend at once, with turrets, antennas and weapons control to fight over. AI crews fill both sides, so every match is playable solo and better with friends. Free to play, no paid power. Assets prepared with the QtMeshEditor → Roblox pipeline.',
+    genre: 'Team sci-fi PvP',
+    tags: ['multiplayer', 'sci-fi', 'dogfights', 'boarding'],
+    engine: 'roblox',
+    media: {
+      cover: 'games/mothership-raiders/cover.jpg',
+      accent: '#2f6fe0',
+    },
+    releaseStatus: 'playable',
+    platforms: ['roblox'],
+    robloxUrl: 'https://www.roblox.com/games/90569045808714',
+    controls: {
+      summary: 'Keyboard/mouse, gamepad, or touch on Roblox.',
+      bindings: [
+        { action: 'Board ship / use console', input: 'E (fly) · R (ride) · X / Y · tap prompt' },
+        { action: 'Aim / steer', input: 'Mouse, A/D · left stick · STEER pad' },
+        { action: 'Throttle / boost', input: 'W/S · Shift · right stick · RB · BOOST' },
+        { action: 'Fire / missile', input: 'Left click · right click or Q · RT · LT · FIRE / MSL' },
+        { action: 'Land / exit ship', input: 'Space · F · Y · B · LAND / EXIT' },
+        { action: 'Scoreboard', input: 'Tab · Select · SCORES' },
+      ],
+    },
+    devices: ['desktop', 'mobile', 'tablet', 'gamepad'],
+    playerMode: 'multiplayer',
+    madeWithQtMeshEditor: true,
+    relatedIds: ['data-core-clash', 'shoprise', 'scrapfall'],
+    todos: {
+      screenshots: 'Add in-experience screenshots under public/games/mothership-raiders/.',
+      other: ['Cover is the 768×432 Roblox store thumbnail; replace with a full-size original if available.'],
     },
   },
 ]
