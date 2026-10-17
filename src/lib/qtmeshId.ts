@@ -70,16 +70,21 @@ export interface LoginRedirectResult {
   error?: string
   /** Provider the error is about, when the API names one. */
   provider?: string
+  /** The login belongs to another QtMesh ID; this token offers to merge it in. */
+  merge?: string
 }
 
 export class QtMeshApiError extends Error {
   status: number
   code?: string
+  /** Full error body, for errors that carry more than a message (e.g. a merge token). */
+  body: Record<string, unknown> | null
 
-  constructor(status: number, message: string, code?: string) {
+  constructor(status: number, message: string, code?: string, body: Record<string, unknown> | null = null) {
     super(message)
     this.status = status
     this.code = code
+    this.body = body
   }
 }
 
@@ -111,14 +116,15 @@ export function consumeLoginRedirect(): LoginRedirectResult {
   const linked = url.searchParams.get('linked') ?? undefined
   const error = url.searchParams.get('oauth_error') ?? undefined
   const provider = url.searchParams.get('provider') ?? undefined
+  const merge = url.searchParams.get('merge') ?? undefined
   if (!token && !linked && !error) return {}
 
   if (token) setSessionToken(token)
-  for (const key of ['token', 'auth', 'linked', 'provider', 'oauth_error']) {
+  for (const key of ['token', 'auth', 'linked', 'provider', 'oauth_error', 'merge']) {
     url.searchParams.delete(key)
   }
   window.history.replaceState(window.history.state, '', url.toString())
-  return { linked, error, provider }
+  return { linked, error, provider, merge }
 }
 
 /** This page's URL, used as return_to so sign-in lands back where it started. */
@@ -151,7 +157,7 @@ async function api<T>(method: string, path: string, body?: unknown): Promise<T> 
   if (!res.ok) {
     if (res.status === 401) setSessionToken(null)
     const message = typeof json?.error === 'string' ? json.error : `Request failed (${res.status})`
-    throw new QtMeshApiError(res.status, message, typeof json?.code === 'string' ? json.code : undefined)
+    throw new QtMeshApiError(res.status, message, typeof json?.code === 'string' ? json.code : undefined, json)
   }
   return json as T
 }
@@ -266,4 +272,30 @@ export type SteamAchievementsResponse =
 /** Achievements from the QtMesh Games Steam app for the player's linked Steam account. */
 export function fetchSteamAchievements() {
   return api<SteamAchievementsResponse>('GET', '/v1/players/me/achievements/steam')
+}
+
+export interface MergePreview {
+  provider: string
+  providerName: string
+  source: {
+    name: string | null
+    avatarUrl: string | null
+    isGuest: boolean
+    accountKind: 'creator' | 'player'
+    createdAt: number
+  }
+  mergeable: boolean
+  reason: string | null
+  logins: Array<{ provider: string; providerName: string; displayName: string | null; kept: boolean }>
+  saves: Array<{ gameId: string; sourceUpdatedAt: number; targetUpdatedAt: number | null; kept: boolean }>
+  losesPassword: boolean
+}
+
+/** What merging the other QtMesh ID (behind a merge token) into this one would do. */
+export function fetchMergePreview(token: string) {
+  return api<MergePreview>('GET', `/v1/account/merge/${encodeURIComponent(token)}`)
+}
+
+export function confirmMerge(token: string) {
+  return api<{ ok: true; movedLogins: string[]; movedSaves: string[] }>('POST', '/v1/account/merge', { token })
 }

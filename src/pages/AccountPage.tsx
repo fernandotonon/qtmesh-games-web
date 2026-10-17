@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { useAuth } from '../auth/AuthContext'
 import { getGameById } from '../catalog'
 import { GameArtwork } from '../components/GameArtwork'
+import { MergeAccountPanel } from '../components/MergeAccountPanel'
 import { SteamAchievements } from '../components/SteamAchievements'
 import { useDocumentMeta } from '../hooks/useDocumentMeta'
 import {
@@ -96,8 +97,11 @@ export function AccountPage() {
   const [notice, setNotice] = useState<string | null>(() =>
     redirect.linked ? `${humanizeKey(redirect.linked)} is now linked to your QtMesh ID.` : null,
   )
+  // A login that belongs to another QtMesh ID comes back with a merge offer
+  // instead of a dead-end error.
+  const [mergeToken, setMergeToken] = useState<string | null>(redirect.merge ?? null)
   const [error, setError] = useState<string | null>(() =>
-    redirect.error ? describeLoginError(redirect.error, redirect.provider) : null,
+    redirect.error && !redirect.merge ? describeLoginError(redirect.error, redirect.provider) : null,
   )
   const [code, setCode] = useState('')
   const [busy, setBusy] = useState(false)
@@ -171,7 +175,9 @@ export function AccountPage() {
       await action()
       if (success) setNotice(success)
     } catch (e) {
-      setError(e instanceof Error ? redeemErrorMessage(e.message) : 'Something went wrong.')
+      const merge = e instanceof QtMeshApiError ? e.body?.merge : undefined
+      if (typeof merge === 'string') setMergeToken(merge)
+      else setError(e instanceof Error ? redeemErrorMessage(e.message) : 'Something went wrong.')
     } finally {
       setBusy(false)
     }
@@ -236,6 +242,19 @@ export function AccountPage() {
           {error}
         </p>
       ) : null}
+      {mergeToken ? (
+        <MergeAccountPanel
+          key={mergeToken}
+          token={mergeToken}
+          onCancel={() => setMergeToken(null)}
+          onDone={(message) => {
+            setMergeToken(null)
+            setNotice(message)
+            void Promise.all([load(), refresh()])
+          }}
+        />
+      ) : null}
+
       {user.isGuest ? (
         <p className="account-alert account-alert-warm">
           You’re playing as a guest. Link a login below so you can get back to your progress on
