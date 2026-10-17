@@ -97,7 +97,7 @@ Players can sign in with a **QtMesh ID** — the shared account from QtMesh Clou
 hosted page `https://api.qtmesh.dev/id/login?return_to=…&kind=player`, which returns
 with `?token=…`; [`src/lib/qtmeshId.ts`](src/lib/qtmeshId.ts) stores the session
 and strips it from the URL before analytics runs. `#/account` shows progress across
-games, linked logins and the Roblox link-code form.
+games and linked logins (Roblox is linked through its OAuth sign-in).
 
 | Variable | Default | Purpose |
 | --- | --- | --- |

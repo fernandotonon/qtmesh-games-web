@@ -204,11 +204,6 @@ export function unlinkIdentity(provider: IdentityProvider) {
   return api<{ ok: true }>('DELETE', `/v1/account/identities/${provider}`)
 }
 
-/** Redeem the 8-character code a Roblox experience shows the player. */
-export function redeemLinkCode(code: string) {
-  return api<{ linked: string }>('POST', '/v1/account/link-codes/redeem', { code })
-}
-
 export async function fetchGameSaves(): Promise<GameSaveSummary[]> {
   const res = await api<{ games: GameSaveSummary[] }>('GET', '/v1/players/me/games')
   return res.games

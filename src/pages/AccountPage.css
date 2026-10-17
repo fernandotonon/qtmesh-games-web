@@ -229,40 +229,18 @@
   margin-top: 0.85rem;
 }
 
-.account-link-actions .button,
-.account-code-form .button {
+.account-link-actions .button {
   padding: 0.55rem 1rem;
 }
 
-.account-link-actions .button:disabled,
-.account-code-form .button:disabled {
+.account-link-actions .button:disabled {
   opacity: 0.55;
   cursor: default;
   transform: none;
 }
 
-.account-code-form {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
 
-.account-code-input {
-  width: 10rem;
-  padding: 0.55rem 0.9rem;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: var(--bg-deep);
-  color: var(--text);
-  font: inherit;
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  letter-spacing: 0.08em;
-}
 
-.account-code-input:focus {
-  outline: none;
-  box-shadow: var(--focus);
-}
 
 @media (max-width: 520px) {
   .account-save {

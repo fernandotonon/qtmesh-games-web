@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useState } from 'react'
-import type { FormEvent } from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../auth/AuthContext'
 import { getGameById } from '../catalog'
@@ -15,7 +14,6 @@ import {
   fetchGameSaves,
   fetchIdentities,
   fetchProviders,
-  redeemLinkCode,
   startLink,
   unlinkIdentity,
 } from '../lib/qtmeshId'
@@ -81,13 +79,6 @@ async function fetchAccountData(): Promise<AccountData> {
   }
 }
 
-function redeemErrorMessage(message: string): string {
-  if (message === 'identity_in_use' || message === 'provider_already_linked') {
-    return describeLoginError(message, 'roblox')
-  }
-  return message
-}
-
 export function AccountPage() {
   const { user, loading, redirect, signIn, signOut, refresh } = useAuth()
   const [saves, setSaves] = useState<GameSaveSummary[] | null>(null)
@@ -103,7 +94,6 @@ export function AccountPage() {
   const [error, setError] = useState<string | null>(() =>
     redirect.error && !redirect.merge ? describeLoginError(redirect.error, redirect.provider) : null,
   )
-  const [code, setCode] = useState('')
   const [busy, setBusy] = useState(false)
 
   useDocumentMeta({
@@ -175,21 +165,10 @@ export function AccountPage() {
       await action()
       if (success) setNotice(success)
     } catch (e) {
-      const merge = e instanceof QtMeshApiError ? e.body?.merge : undefined
-      if (typeof merge === 'string') setMergeToken(merge)
-      else setError(e instanceof Error ? redeemErrorMessage(e.message) : 'Something went wrong.')
+      setError(e instanceof Error ? e.message : 'Something went wrong.')
     } finally {
       setBusy(false)
     }
-  }
-
-  function handleRedeem(event: FormEvent) {
-    event.preventDefault()
-    void run(async () => {
-      await redeemLinkCode(code)
-      setCode('')
-      await Promise.all([load(), refresh()])
-    }, 'Your Roblox account is now linked. Your progress will follow you in-game.')
   }
 
   function handleUnlink(provider: IdentityProvider, name: string) {
@@ -382,33 +361,6 @@ export function AccountPage() {
             ))}
           </div>
         ) : null}
-      </section>
-
-      <section className="account-section" aria-labelledby="account-roblox">
-        <h2 id="account-roblox">Link from a Roblox game</h2>
-        <p className="account-muted">
-          In one of our Roblox experiences, open the QtMesh ID menu to get an 8-character code,
-          then enter it here.
-        </p>
-        <form className="account-code-form" onSubmit={handleRedeem}>
-          <label className="visually-hidden" htmlFor="link-code">
-            Link code
-          </label>
-          <input
-            id="link-code"
-            className="account-code-input"
-            value={code}
-            onChange={(e) => setCode(e.target.value.toUpperCase())}
-            placeholder="ABCD-1234"
-            autoComplete="off"
-            spellCheck={false}
-            maxLength={9}
-            required
-          />
-          <button type="submit" className="button button-primary" disabled={busy || code.length < 8}>
-            Link
-          </button>
-        </form>
       </section>
 
       <section className="account-section" aria-labelledby="account-manage">
