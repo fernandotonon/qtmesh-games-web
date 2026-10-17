@@ -1,0 +1,101 @@
+.lb-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.85rem;
+}
+
+.lb-tab {
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  font-weight: 650;
+  font-size: 0.9rem;
+}
+
+.lb-tab:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+.lb-tab-active,
+.lb-tab-active:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg-deep);
+}
+
+.lb-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 36rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  overflow: hidden;
+}
+
+.lb-row {
+  display: grid;
+  grid-template-columns: 2rem 2.25rem 1fr auto;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.55rem 0.9rem;
+}
+
+.lb-row + .lb-row {
+  border-top: 1px solid var(--border);
+}
+
+.lb-rank {
+  text-align: center;
+  font-weight: 800;
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+.lb-top-1 .lb-rank {
+  color: #f5c75a;
+}
+
+.lb-top-2 .lb-rank {
+  color: #c9d3e3;
+}
+
+.lb-top-3 .lb-rank {
+  color: var(--warm);
+}
+
+.lb-avatar {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background: var(--bg-panel);
+  object-fit: cover;
+}
+
+.lb-name {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.lb-name strong,
+.lb-name span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lb-name span {
+  color: var(--text-dim);
+  font-size: 0.82rem;
+}
+
+.lb-value {
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}

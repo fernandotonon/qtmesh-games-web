@@ -294,3 +294,68 @@ export function fetchMergePreview(token: string) {
 export function confirmMerge(token: string) {
   return api<{ ok: true; movedLogins: string[]; movedSaves: string[] }>('POST', '/v1/account/merge', { token })
 }
+
+export interface LeaderboardEntry {
+  rank: number
+  robloxUserId: string
+  name: string
+  displayName: string
+  avatarUrl: string | null
+  value: number
+  /** Formatted like the in-game board, e.g. "Lv 7" or "$1.2M". */
+  display: string
+}
+
+export interface Leaderboard {
+  id: string
+  title: string
+  format: 'level' | 'cash' | 'number'
+  entries: LeaderboardEntry[]
+}
+
+export interface GameLeaderboardsResponse {
+  configured: boolean
+  gameId: string
+  boards: Leaderboard[]
+}
+
+/** All-time Roblox leaderboards for a game (public, no sign-in needed). */
+export function fetchGameLeaderboards(gameId: string) {
+  return api<GameLeaderboardsResponse>('GET', `/v1/games/${encodeURIComponent(gameId)}/leaderboards`)
+}
+
+export interface RobloxBadge {
+  id: string
+  name: string
+  description: string | null
+  iconUrl: string | null
+  awardedCount: number
+  /** null when the player's Roblox inventory is private. */
+  owned: boolean | null
+}
+
+export interface RobloxPlayerStat {
+  boardId: string
+  title: string
+  value: number
+  display: string
+}
+
+export type RobloxOverview =
+  | { linked: false }
+  | {
+      linked: true
+      inventoryVisible: boolean | null
+      leaderboardsConfigured: boolean
+      games: Array<{
+        gameId: string
+        title: string
+        badges: RobloxBadge[] | null
+        stats: RobloxPlayerStat[] | null
+      }>
+    }
+
+/** Badges and leaderboard stats for the Roblox account linked to this QtMesh ID. */
+export function fetchRobloxOverview() {
+  return api<RobloxOverview>('GET', '/v1/players/me/roblox')
+}

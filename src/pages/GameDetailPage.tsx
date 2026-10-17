@@ -3,6 +3,7 @@ import { getGameBySlug, getRelatedGames } from '../catalog'
 import { GameActions } from '../components/GameActions'
 import { GameArtwork } from '../components/GameArtwork'
 import { GameCard } from '../components/GameCard'
+import { GameLeaderboards } from '../components/GameLeaderboards'
 import { PlatformBadges } from '../components/PlatformBadge'
 import { useDocumentMeta } from '../hooks/useDocumentMeta'
 import { assetUrl } from '../lib/assetUrl'
@@ -135,6 +136,8 @@ export function GameDetailPage() {
           </ul>
         </section>
       ) : null}
+
+      {game.platforms.includes('roblox') ? <GameLeaderboards key={game.id} gameId={game.id} /> : null}
 
       {related.length > 0 ? (
         <section className="detail-section" aria-labelledby="related-title">

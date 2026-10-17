@@ -1,0 +1,42 @@
+.rbx-badge-icon {
+  border-radius: 50%;
+}
+
+.rbx-badge-locked {
+  filter: grayscale(1);
+}
+
+.rbx-private {
+  margin-bottom: 0.75rem;
+}
+
+.rbx-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0 0.75rem 0.75rem;
+}
+
+.rbx-stats div {
+  display: flex;
+  gap: 0.4rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  background: var(--bg);
+  font-size: 0.88rem;
+}
+
+.rbx-stats dt {
+  color: var(--text-muted);
+}
+
+.rbx-stats dd {
+  margin: 0;
+  font-weight: 800;
+}
+
+.rbx-unavailable {
+  margin: 0;
+  padding: 0 1rem 0.85rem;
+}

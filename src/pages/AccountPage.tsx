@@ -4,6 +4,7 @@ import { useAuth } from '../auth/AuthContext'
 import { getGameById } from '../catalog'
 import { GameArtwork } from '../components/GameArtwork'
 import { MergeAccountPanel } from '../components/MergeAccountPanel'
+import { RobloxBadges } from '../components/RobloxBadges'
 import { SteamAchievements } from '../components/SteamAchievements'
 import { useDocumentMeta } from '../hooks/useDocumentMeta'
 import {
@@ -308,6 +309,12 @@ export function AccountPage() {
         key={linked.has('steam') ? 'steam-linked' : 'steam-unlinked'}
         steamLinkable={providers.some((p) => p.id === 'steam' && p.web)}
         onLinkSteam={() => void run(() => startLink('steam'))}
+      />
+
+      <RobloxBadges
+        key={linked.has('roblox') ? 'roblox-linked' : 'roblox-unlinked'}
+        robloxLinkable={providers.some((p) => p.id === 'roblox' && p.web)}
+        onLinkRoblox={() => void run(() => startLink('roblox'))}
       />
 
       <section className="account-section" aria-labelledby="account-logins">
