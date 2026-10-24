@@ -13,9 +13,9 @@ Rectangle {
     property bool shadows: false
     property string playerName: "Player" + Math.floor(Math.random() * 900 + 100)
 
-    RoomDirectory { id: directory; url: Config.directoryUrl }
+    RoomDirectory { id: roomDirectory; url: Config.directoryUrl }
     NetSession {
-        id: session
+        id: netSession
         onClosed: (reason) => { if (root.screen === "game") root.screen = "lobby" }
     }
     focus: screen === "menu"
@@ -31,8 +31,8 @@ Rectangle {
     LobbyScreen {
         anchors.fill: parent
         visible: root.screen === "lobby"
-        directory: directory
-        session: session
+        directory: roomDirectory
+        session: netSession
         playerName: root.playerName
         onPlayerNameChanged: root.playerName = playerName
         onBack: root.screen = "menu"
@@ -50,8 +50,8 @@ Rectangle {
         active: root.screen === "game"       // world only exists while playing
         sourceComponent: GameManager {
             shadows: root.shadows
-            session: session.active ? session : null
-            onExitToMenu: { session.leave(""); root.screen = "menu" }
+            session: netSession.active ? netSession : null
+            onExitToMenu: { netSession.leave(""); root.screen = "menu" }
         }
     }
 }

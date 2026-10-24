@@ -69,3 +69,15 @@ function admit(roster, fromId, msg, maxPlayers) {
     roster[fromId] = msg.name
     return { ok: true }
 }
+
+// Stable per-player look: the same id hashes to the same palette entry on every peer.
+var SHIRTS = ["#f07b28", "#d94f6a", "#8e5cd6", "#2f9e6f", "#e0b82c", "#2f7fd6", "#c5503a", "#37a9b8"]
+function hashId(id) {
+    var h = 5381; id = String(id)
+    for (var i = 0; i < id.length; i++) h = ((h * 33) ^ id.charCodeAt(i)) >>> 0
+    return h
+}
+function shirtFor(id) { return SHIRTS[hashId(id) % SHIRTS.length] }
+
+// Position of `id` among the sorted roster ids (spawn slot); -1 when absent.
+function slotOf(roster, id) { return Object.keys(roster).sort().indexOf(id) }

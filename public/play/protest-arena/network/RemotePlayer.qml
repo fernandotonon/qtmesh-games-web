@@ -3,11 +3,13 @@ import QtQuick
 import QtQuick3D
 import Clayground.Network
 import "../entities"
+import "protocol.js" as Proto
 
 Player {
     id: root
     property string nodeId: ""
     property string displayName: ""
+    shirt: Proto.shirtFor(nodeId)
     function push(s) { sync.push(s) }
 
     StateInterpolator {

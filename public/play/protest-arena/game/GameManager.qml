@@ -9,6 +9,7 @@ import "../maps"
 import "../ui"
 import "../network"
 import "movement.js" as Move
+import "../network/protocol.js" as Proto
 
 Item {
     id: root
@@ -39,8 +40,25 @@ Item {
     }
     Component.onCompleted: { spawn(); forceActiveFocus() }
 
+    // Online: everyone starts on a different spawn point (slot = position in the sorted roster), once, before moving.
+    property bool slotted: false
+    function claimSpawnSlot() {
+        if (slotted || !session || !session.active) return
+        var i = Proto.slotOf(session.roster, session.localId)
+        if (i < 0) return
+        slotted = true
+        var p = map.spawnPoints[i % map.spawnPoints.length]
+        if (localState.speed === 0) localState = Move.newState(p.x, p.z, 180)
+    }
+    Connections {
+        target: root.session
+        ignoreUnknownSignals: true
+        function onRosterUpdated() { root.claimSpawnSlot() }
+    }
+
     // ---- remote players (created on first state, removed when the peer leaves) ----
     property var avatars: ({})
+    property int avatarRev: 0           // bumped when avatars come/go so bindings on the dictionary re-evaluate
     Component { id: avatarComp; RemotePlayer {} }
     Connections {
         target: root.session
@@ -49,12 +67,12 @@ Item {
             var a = root.avatars[id]
             if (!a) {
                 a = avatarComp.createObject(remoteRoot, { nodeId: id, x: st.x, z: st.z, heading: st.heading })
-                root.avatars[id] = a
+                root.avatars[id] = a; root.avatarRev++
             }
             a.push(st)
         }
         function onRemoteLeft(id) {
-            if (root.avatars[id]) { root.avatars[id].destroy(); delete root.avatars[id] }
+            if (root.avatars[id]) { root.avatars[id].destroy(); delete root.avatars[id]; root.avatarRev++ }
         }
     }
     Binding { target: root.session; property: "localState"; value: root.localState; when: root.session !== null }
@@ -86,6 +104,7 @@ Item {
         Player {
             id: player
             x: root.localState.x; z: root.localState.z
+            shirt: root.session && root.session.active ? Proto.shirtFor(root.session.localId) : "#f07b28"
             heading: root.localState.heading
             speed: root.localState.speed
         }
@@ -149,6 +168,24 @@ Item {
             lx = m.x; ly = m.y
         }
         onWheel: (w) => root.camDist = Math.max(3, Math.min(20, root.camDist - w.angleDelta.y * 0.005))
+    }
+
+    // name tags over remote players (2D overlay projected from the 3D scene)
+    Repeater {
+        model: root.session && root.session.active ? Object.keys(root.session.roster) : []
+        delegate: Text {
+            id: tag
+            required property string modelData
+            readonly property var av: (root.avatarRev, root.avatars[modelData])
+            visible: !!av && modelData !== root.session.localId
+            text: root.session.roster[modelData] || ""
+            color: "white"; style: Text.Outline; styleColor: "#cc101820"; font.pixelSize: 14; font.bold: true
+            FrameAnimation { running: tag.visible; onTriggered: {
+                var p = view.mapFrom3DScene(Qt.vector3d(tag.av.x, 2.05, tag.av.z))
+                tag.x = p.x - tag.width / 2; tag.y = p.y - tag.height
+                tag.visible = p.z > 0
+            } }
+        }
     }
 
     GameHUD {

@@ -10,6 +10,7 @@ Item {
     property var rooms: []
     property string state: "idle"            // idle | loading | ok | error
     property string error: ""
+    property string hostError: ""            // last failure advertising the hosted room ("" = fine)
     property var iceServers: []              // [] = Network's built-in defaults
     // set while hosting: {code, name, host, players, maxPlayers, map, mode, protocol}
     property var hosting: null
@@ -66,6 +67,9 @@ Item {
             if (kind === "list") {
                 root.rooms = (d && d.rooms) ? d.rooms : []
                 root.error = ""; root.state = "ok"
+            } else if (kind === "advertise") {
+                root.hostError = (code >= 200 && code < 300) ? "" : ("HTTP " + code + " " + text.substring(0, 80))
+                if (root.hostError) console.warn("RoomDirectory: advertise rejected: " + root.hostError)
             } else if (kind === "ice" && d && d.iceServers) {
                 root.iceServers = d.iceServers
             }
@@ -74,6 +78,7 @@ Item {
             var kind = root._pending[id]; if (!kind) return
             delete root._pending[id]
             if (kind === "list") { root.state = "error"; root.error = "Directory unreachable (" + code + ")" }
+            else if (kind === "advertise") { root.hostError = "HTTP " + code + " " + text.substring(0, 80); console.warn("RoomDirectory: advertise failed: " + root.hostError) }
         }
     }
 }
