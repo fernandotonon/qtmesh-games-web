@@ -1,0 +1,5 @@
+MenuButton 1.0 MenuButton.qml
+MainMenu 1.0 MainMenu.qml
+SettingsPanel 1.0 SettingsPanel.qml
+GameHUD 1.0 GameHUD.qml
+LobbyScreen 1.0 LobbyScreen.qml

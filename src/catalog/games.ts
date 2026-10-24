@@ -380,4 +380,49 @@ export const games: Game[] = [
       other: ['Cover is the 768×432 Roblox store thumbnail; replace with a full-size original if available.'],
     },
   },
+  {
+    id: 'protest-arena',
+    slug: 'protest-arena',
+    title: 'Protest Arena',
+    shortDescription:
+      'Beta: a humorous, caricature-styled multiplayer plaza — explore and meet friends online.',
+    description:
+      'A cartoon-style, satirical multiplayer game set in a stylised Italian piazza. This early beta lets you explore the plaza solo or host and join a room with up to eight players over peer-to-peer WebRTC (rooms are listed through a small Cloudflare Worker). Matches, character customisation and combat are still to come. Built with Clayground; characters and props are generated and prepared in QtMeshEditor.',
+    genre: 'Multiplayer party',
+    tags: ['multiplayer', 'satire', 'beta', '3D'],
+    engine: 'clayground',
+    media: {
+      cover: 'games/protest-arena/cover.jpg',
+      screenshots: ['games/protest-arena/shot-1.jpg'],
+      accent: '#f07b28',
+    },
+    releaseStatus: 'wip',
+    platforms: ['browser'],
+    browser: {
+      // Clayground needs cross-origin isolation, so no embedUrl: it opens in its own tab.
+      playUrl: 'https://games.qtmesh.dev/play/protest-arena/',
+    },
+    controls: {
+      summary: 'Keyboard and mouse on desktop (no touch controls yet).',
+      keyboardRequired: true,
+      bindings: [
+        { action: 'Move', input: 'WASD / arrows (relative to camera)' },
+        { action: 'Run', input: 'Shift' },
+        { action: 'Orbit camera', input: 'Drag mouse · Q / E' },
+        { action: 'Zoom', input: 'Mouse wheel' },
+        { action: 'Hide HUD', input: 'H' },
+        { action: 'Back to menu', input: 'Esc' },
+      ],
+      notes: 'The first load reloads once (it enables cross-origin isolation). To play together, one player picks Multiplayer → Host, others join from the room list or with the room code.',
+    },
+    devices: ['desktop'],
+    playerMode: 'multiplayer',
+    madeWithQtMeshEditor: true,
+    inDevelopment: true,
+    relatedIds: ['ironfang', 'mall-chase'],
+    todos: {
+      screenshots: 'Cover/shot are a placeholder frame of the plaza with the placeholder character; replace once the generated character kit is wired in.',
+      other: ['Build lives in public/play/protest-arena (source: github.com/fernandotonon/Protest-Arena, tools/build_web.sh with DIRECTORY_URL=https://rooms.qtmesh.dev).'],
+    },
+  },
 ]
