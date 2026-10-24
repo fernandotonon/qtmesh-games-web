@@ -5,12 +5,14 @@ import { FeaturedGame } from '../components/FeaturedGame'
 import { GameCard } from '../components/GameCard'
 import { PlatformFilter } from '../components/PlatformFilter'
 import { useDocumentMeta } from '../hooks/useDocumentMeta'
+import { useBetaTester } from '../lib/betaTester'
 import { filterGames } from '../lib/platforms'
 import './HomePage.css'
 
 export function HomePage() {
-  const featured = getFeaturedGame()
-  const allGames = getAllGames()
+  const beta = useBetaTester()
+  const featured = getFeaturedGame(beta)
+  const allGames = useMemo(() => getAllGames(beta), [beta])
   const [filter, setFilter] = useState<Filter>('all')
   const visible = useMemo(() => filterGames(allGames, filter), [allGames, filter])
 

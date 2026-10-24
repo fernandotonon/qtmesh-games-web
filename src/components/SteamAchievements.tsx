@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { getAllGames } from '../catalog'
 import type { Game } from '../catalog/types'
 import { assetUrl } from '../lib/assetUrl'
+import { isBetaTester } from '../lib/betaTester'
 import { QtMeshApiError, fetchSteamAchievements } from '../lib/qtmeshId'
 import type { SteamAchievement, SteamAchievementsResponse } from '../lib/qtmeshId'
 import './SteamAchievements.css'
@@ -18,7 +19,7 @@ interface Group {
 
 /** Split achievements by the game whose prefix they carry; the rest (QM_) are collection-wide. */
 function groupByGame(achievements: SteamAchievement[]): Group[] {
-  const games = getAllGames().filter((g) => g.steamAchievementPrefix)
+  const games = getAllGames(isBetaTester()).filter((g) => g.steamAchievementPrefix)
   const collection: Group = { key: 'collection', title: 'QtMesh Games collection', achievements: [] }
   const byGame = new Map<string, Group>()
   for (const a of achievements) {

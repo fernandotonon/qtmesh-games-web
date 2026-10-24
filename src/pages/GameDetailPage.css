@@ -176,3 +176,7 @@
     gap: 0.25rem;
   }
 }
+
+.detail-genre .dev-badge {
+  margin: 0 0 0 0.6rem;
+}

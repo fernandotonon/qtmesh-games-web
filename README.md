@@ -67,6 +67,11 @@ Also update local `npm run dev` — Vite will serve from `/` by default.
 3. Set only **verified** play/download/Roblox URLs. Use the `todos` field for gaps —
    those never appear in the UI.
 4. Prefer `featured: true` on at most one game for the homepage spotlight.
+5. For a game still in development, set `inDevelopment: true`. Only beta testers
+   (who tick **Beta testing** on the account page) see it in the collection or can
+   open its pages; it shows an "In development" badge. Remove the flag to launch it.
+   The entry still ships in the public bundle, so this hides the game, it doesn't
+   keep it secret.
 
 No page components need editing for a normal catalog update.
 
@@ -78,7 +83,7 @@ No page components need editing for a normal catalog update.
 | Tech | `engine` (separate from platforms), `platforms` |
 | Media | `media.cover`, `hero`, `screenshots`, `accent` |
 | Play | `browser.playUrl` / `embedUrl`, `robloxUrl`, `downloads[]` |
-| Meta | `controls`, `devices`, `playerMode`, `relatedIds`, `featured` |
+| Meta | `controls`, `devices`, `playerMode`, `relatedIds`, `featured`, `inDevelopment` |
 | Maintainer | `todos` (hidden from visitors) |
 
 Access goes through [`src/catalog/index.ts`](src/catalog/index.ts) so a future

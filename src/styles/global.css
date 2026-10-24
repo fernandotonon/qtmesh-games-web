@@ -234,3 +234,18 @@ button,
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Marks games only beta testers can see. */
+.dev-badge {
+  display: inline-block;
+  margin-top: 0.35rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  border: 1px dashed rgba(240, 160, 90, 0.55);
+  background: var(--warm-soft);
+  color: #ffd0a4;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  vertical-align: middle;
+}

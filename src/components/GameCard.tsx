@@ -14,6 +14,7 @@ export function GameCard({ game }: { game: Game }) {
         <div className="game-card-body">
           <div className="game-card-meta">
             <h3>{game.title}</h3>
+            {game.inDevelopment ? <span className="dev-badge">In development</span> : null}
             <p className="game-card-genre">{game.genre}</p>
           </div>
           <p className="game-card-desc">{game.shortDescription}</p>

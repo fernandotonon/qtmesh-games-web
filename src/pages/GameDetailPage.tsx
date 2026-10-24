@@ -7,6 +7,7 @@ import { GameLeaderboards } from '../components/GameLeaderboards'
 import { PlatformBadges } from '../components/PlatformBadge'
 import { useDocumentMeta } from '../hooks/useDocumentMeta'
 import { assetUrl } from '../lib/assetUrl'
+import { useBetaTester } from '../lib/betaTester'
 import { NotFoundPage } from './NotFoundPage'
 import './GameDetailPage.css'
 
@@ -26,7 +27,8 @@ const PLAYER_MODE_LABELS = {
 
 export function GameDetailPage() {
   const { slug = '' } = useParams()
-  const game = getGameBySlug(slug)
+  const beta = useBetaTester()
+  const game = getGameBySlug(slug, beta)
 
   useDocumentMeta({
     title: game?.title,
@@ -36,7 +38,7 @@ export function GameDetailPage() {
 
   if (!game) return <NotFoundPage />
 
-  const related = getRelatedGames(game)
+  const related = getRelatedGames(game, 3, beta)
   const screenshots = game.media.screenshots ?? []
 
   return (
@@ -52,7 +54,10 @@ export function GameDetailPage() {
           <GameArtwork game={game} variant="hero" priority sizes="(max-width: 900px) 100vw, 50vw" />
         </div>
         <div className="detail-intro">
-          <p className="detail-genre">{game.genre}</p>
+          <p className="detail-genre">
+            {game.genre}
+            {game.inDevelopment ? <span className="dev-badge">In development</span> : null}
+          </p>
           <h1>{game.title}</h1>
           <p className="detail-short">{game.shortDescription}</p>
           <PlatformBadges platforms={game.platforms} engine={game.engine} />

@@ -98,6 +98,11 @@ export interface Game {
    */
   steamAchievementPrefix?: string
   relatedIds?: string[]
+  /**
+   * Still in development: only beta testers (opted in on the account page)
+   * see it in the collection or can open its pages.
+   */
+  inDevelopment?: boolean
   /** Maintainer notes — never shown in the public UI. */
   todos?: ContentTodos
 }

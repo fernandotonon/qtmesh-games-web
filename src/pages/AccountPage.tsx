@@ -7,6 +7,7 @@ import { MergeAccountPanel } from '../components/MergeAccountPanel'
 import { RobloxBadges } from '../components/RobloxBadges'
 import { SteamAchievements } from '../components/SteamAchievements'
 import { useDocumentMeta } from '../hooks/useDocumentMeta'
+import { setBetaTester, useBetaTester } from '../lib/betaTester'
 import {
   QTMESH_ACCOUNT_URL,
   QtMeshApiError,
@@ -96,6 +97,7 @@ export function AccountPage() {
     redirect.error && !redirect.merge ? describeLoginError(redirect.error, redirect.provider) : null,
   )
   const [busy, setBusy] = useState(false)
+  const betaTester = useBetaTester()
 
   useDocumentMeta({
     title: 'Your QtMesh ID',
@@ -368,6 +370,24 @@ export function AccountPage() {
             ))}
           </div>
         ) : null}
+      </section>
+
+      <section className="account-section" aria-labelledby="account-beta">
+        <h2 id="account-beta">Beta testing</h2>
+        <label className="account-checkbox">
+          <input
+            type="checkbox"
+            checked={betaTester}
+            onChange={(e) => setBetaTester(e.target.checked)}
+          />
+          <span>
+            Show games that are still in development
+            <span className="account-muted account-checkbox-hint">
+              Try new games before they launch. Expect bugs and unfinished parts. This setting is
+              saved in this browser.
+            </span>
+          </span>
+        </label>
       </section>
 
       <section className="account-section" aria-labelledby="account-manage">

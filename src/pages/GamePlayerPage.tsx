@@ -2,12 +2,13 @@ import { useEffect, useRef, useState } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { getGameBySlug } from '../catalog'
 import { useDocumentMeta } from '../hooks/useDocumentMeta'
+import { useBetaTester } from '../lib/betaTester'
 import { NotFoundPage } from './NotFoundPage'
 import './GamePlayerPage.css'
 
 export function GamePlayerPage() {
   const { slug = '' } = useParams()
-  const game = getGameBySlug(slug)
+  const game = getGameBySlug(slug, useBetaTester())
   const [started, setStarted] = useState(false)
   const [showFallbackHelp, setShowFallbackHelp] = useState(false)
   const frameRef = useRef<HTMLIFrameElement | null>(null)
