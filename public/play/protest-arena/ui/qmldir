@@ -3,3 +3,8 @@ MainMenu 1.0 MainMenu.qml
 SettingsPanel 1.0 SettingsPanel.qml
 GameHUD 1.0 GameHUD.qml
 LobbyScreen 1.0 LobbyScreen.qml
+SmallButton 1.0 SmallButton.qml
+ProgressBar 1.0 ProgressBar.qml
+MissionsScreen 1.0 MissionsScreen.qml
+ProgressHud 1.0 ProgressHud.qml
+MatchSummary 1.0 MatchSummary.qml

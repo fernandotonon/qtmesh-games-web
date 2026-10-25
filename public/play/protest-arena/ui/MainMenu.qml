@@ -5,6 +5,7 @@ Rectangle {
     signal playOffline()
     signal openLobby()
     signal openSettings()
+    signal openMissions()
     color: "#171b2e"
     gradient: Gradient {
         GradientStop { position: 0; color: "#232a52" }
@@ -20,6 +21,7 @@ Rectangle {
                text: "A chaotic, cartoon-style plaza for everyone"; color: "#c3c9e6"; font.pixelSize: 16 }
         MenuButton { anchors.horizontalCenter: parent.horizontalCenter; label: "Play Offline"; onClicked: root.playOffline() }
         MenuButton { anchors.horizontalCenter: parent.horizontalCenter; label: "Multiplayer (Host / Join)"; onClicked: root.openLobby() }
+        MenuButton { anchors.horizontalCenter: parent.horizontalCenter; label: "Missions and Achievements"; onClicked: root.openMissions() }
         MenuButton { anchors.horizontalCenter: parent.horizontalCenter; label: "Character Customization"; available: false; note: "Milestone 4" }
         MenuButton { anchors.horizontalCenter: parent.horizontalCenter; label: "Controls and Settings"; onClicked: root.openSettings() }
     }

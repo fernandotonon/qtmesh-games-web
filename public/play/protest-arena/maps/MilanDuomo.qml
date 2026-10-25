@@ -20,6 +20,7 @@ Node {
         { id: "stage",    x: -30, z: 12, radius: 7, title: "Main Stage" },
         { id: "plaza",    x: 0,   z: 6,  radius: 8, title: "Central Plaza" },
         { id: "monument", x: 28,  z: 14, radius: 7, title: "Monument" } ]
+    property string activeZone: ""          // id of the zone the current shared mission points at (highlighted)
     readonly property var arena: ({ x: 38, z: -16, size: 14 })
 
     // ---- palette (shared with the asset kit art direction) ----
@@ -187,7 +188,7 @@ Node {
     // ---------------- capture zones ----------------
     Repeater3D {
         model: root.zones
-        CaptureZone { x: modelData.x; z: modelData.z; radius: modelData.radius; title: modelData.title }
+        CaptureZone { x: modelData.x; z: modelData.z; radius: modelData.radius; title: modelData.title; highlight: root.activeZone === modelData.id }
     }
 
     // ---------------- street furniture ----------------

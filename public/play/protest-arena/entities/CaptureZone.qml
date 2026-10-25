@@ -8,8 +8,9 @@ Node {
     property real radius: 7
     property int owner: 0
     property real progress: 0
+    property bool highlight: false          // current shared mission target
     property string title: ""
-    readonly property color ownerColor: owner === 1 ? "#ff8a2b" : (owner === 2 ? "#1f9fb3" : "#aebdcb")
+    readonly property color ownerColor: highlight ? "#ffd23f" : owner === 1 ? "#ff8a2b" : (owner === 2 ? "#1f9fb3" : "#aebdcb")
 
     // floor marker: three flat squares at 0/30/60 deg form a 12-pointed rosette
     // (Poly3D hangs the web runtime, so the zone disc is built from slabs)

@@ -8,6 +8,7 @@ import "../entities"
 import "../maps"
 import "../ui"
 import "../network"
+import "../progression"
 import "movement.js" as Move
 import "../network/protocol.js" as Proto
 
@@ -21,6 +22,11 @@ Item {
     property var localState: Move.newState(0, 24, 180)
     readonly property alias map: map
     property var session: null          // NetSession (null/inactive = offline)
+    property var progress: null         // ProgressionService (null = no progression, e.g. Sandbox without one)
+    property real ts: 1.0               // UI text scale
+    property bool reduceMotion: false
+    property var summaryData: null
+    readonly property string localId: session && session.active ? session.localId : "local"
 
     // ---- camera rig ----
     property real camYaw: 0       // degrees, orbit around the player
@@ -38,7 +44,21 @@ Item {
         localState = Move.newState(p.x, p.z, 180)
         camYaw = 0
     }
-    Component.onCompleted: { spawn(); forceActiveFocus() }
+    Component.onCompleted: { spawn(); forceActiveFocus(); beginRound() }
+    Component.onDestruction: if (progress) progress.abandonMatch()
+
+    // One timed round at a time; the host (or you, offline) runs the clock and is the only source of progression events.
+    function beginRound() {
+        if (!progress) return
+        progress.gameMap = map
+        progress.startMatch(map, localId, session && session.active ? session.roster : ({}))
+    }
+    Connections {
+        target: root.progress
+        ignoreUnknownSignals: true
+        function onMatchEnded(s) { root.summaryData = s }
+    }
+
 
     // Online: everyone starts on a different spawn point (slot = position in the sorted roster), once, before moving.
     property bool slotted: false
@@ -53,7 +73,7 @@ Item {
     Connections {
         target: root.session
         ignoreUnknownSignals: true
-        function onRosterUpdated() { root.claimSpawnSlot() }
+        function onRosterUpdated() { root.claimSpawnSlot(); if (root.progress) root.progress.syncRoster(root.localId, root.session.roster) }
     }
 
     // ---- remote players (created on first state, removed when the peer leaves) ----
@@ -70,6 +90,7 @@ Item {
                 root.avatars[id] = a; root.avatarRev++
             }
             a.push(st)
+            if (root.progress) root.progress.observe(id, st.x, st.z, st.speed)
         }
         function onRemoteLeft(id) {
             if (root.avatars[id]) { root.avatars[id].destroy(); delete root.avatars[id]; root.avatarRev++ }
@@ -98,7 +119,11 @@ Item {
             shadowBias: 0.2
         }
 
-        MilanDuomo { id: map }
+        MilanDuomo {
+            id: map
+            activeZone: root.progress && root.progress.snapshot && root.progress.snapshot.mission
+                        && root.progress.snapshot.mission.status === "active" ? root.progress.snapshot.mission.zone : ""
+        }
         Node { id: remoteRoot }
 
         Player {
@@ -140,12 +165,14 @@ Item {
             dir.run = root.down(Qt.Key_Shift)
             root.localState = Move.step(root.localState, dir, dt, Move.DEFAULTS,
                                         map.colliders, map.bounds)
+            if (root.progress) root.progress.observe(root.localId, root.localState.x, root.localState.z, root.localState.speed)
         }
     }
 
     Keys.onPressed: (e) => {
         if (e.isAutoRepeat) return
         if (e.key === Qt.Key_Escape) { root.exitToMenu(); e.accepted = true; return }
+        if (e.key === Qt.Key_P) progressHud.showPinned = !progressHud.showPinned
         if (e.key === Qt.Key_H) root.showHud = !root.showHud     // clean camera for screenshots
         var k = root.keys; k[e.key] = true; root.keys = k
         root.lastPress[e.key] = Date.now()
@@ -198,5 +225,22 @@ Item {
         roster: online ? root.session.roster : ({})
         localId: online ? root.session.localId : ""
         latency: online ? root.session.latency : -1
+        eligibility: root.progress ? root.progress.eligibilityLine(root.progress.mode) : ""
+    }
+    ProgressHud {
+        id: progressHud
+        anchors.fill: parent
+        visible: root.showHud && !!root.progress
+        svc: root.progress
+        ts: root.ts
+        reduceMotion: root.reduceMotion
+    }
+    MatchSummary {
+        anchors.fill: parent
+        svc: root.progress
+        result: root.summaryData
+        ts: root.ts
+        reduceMotion: root.reduceMotion
+        onDismissed: { root.summaryData = null; root.forceActiveFocus(); root.beginRound() }   // next round
     }
 }

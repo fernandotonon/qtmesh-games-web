@@ -418,6 +418,7 @@ export const games: Game[] = [
     devices: ['desktop'],
     playerMode: 'multiplayer',
     madeWithQtMeshEditor: true,
+    steamAchievementPrefix: 'PA_',
     inDevelopment: true,
     relatedIds: ['ironfang', 'mall-chase'],
     todos: {

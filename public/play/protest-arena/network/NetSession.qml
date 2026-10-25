@@ -28,7 +28,15 @@ Item {
     signal remoteState(string id, var state)
     signal remoteLeft(string id)
     signal rosterUpdated()
-    signal closed(string reason)            // session ended (rejected, timed out, left)
+    signal closed(string reason)
+    signal matchSnapshot(var snap)          // client: host's match/mission display state
+    signal progressEvents(var events)       // client: progression events the host observed for me (engine re-validates)
+    signal missionRequest(string from)      // host: someone asked to replace the shared mission
+
+    // host -> everyone / one peer / host (all no-ops when not applicable)
+    function sendMatch(snap) { if (active && net.isHost && net.connected) net.broadcast({ t: "match", s: snap }) }
+    function sendProgress(id, events) { if (active && net.isHost && net.connected && events.length) net.sendTo(id, { t: "pev", events: events }) }
+    function requestMissionReplace() { if (active && !net.isHost && net.connected) net.broadcast({ t: "mreq", a: "replace" }) }            // session ended (rejected, timed out, left)
 
     function startHost() {
         _begin()
@@ -96,10 +104,17 @@ Item {
         }
         onMessageReceived: (from, data) => {
             var m = Proto.parseMessage(data); if (!m) return
+            if (!Proto.fromAuthority(m.t, net.isHost, from, root._hostId)) return
             if (m.t === "hello" && net.isHost) {
                 var res = Proto.admit(root.roster, from, m, root.maxPlayers)
                 if (!res.ok) net.sendTo(from, Proto.reject(res.reason))
                 else root._publishRoster()
+            } else if (m.t === "mreq") {
+                root.missionRequest(from)
+            } else if (m.t === "match") {
+                root.matchSnapshot(m.s)
+            } else if (m.t === "pev") {
+                root.progressEvents(m.events)
             } else if (m.t === "roster" && !net.isHost && from === root._hostId) {
                 root.roster = m.roster; root.rosterUpdated()
             } else if (m.t === "reject" && !net.isHost && from === root._hostId) {

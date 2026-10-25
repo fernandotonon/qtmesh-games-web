@@ -10,6 +10,7 @@ Item {
     property var roster: ({})
     property string localId: ""
     property int latency: -1
+    property string eligibility: ""
     property int fps: 0
     property int _frames: 0
 
@@ -23,7 +24,7 @@ Item {
         Text {
             id: info; x: 10; y: 7; color: "white"; font.pixelSize: 13
             text: "Piazza del Duomo   " + root.fps + " fps\n(" + root.position.x.toFixed(1)
-                  + ", " + root.position.y.toFixed(1) + ")"
+                  + ", " + root.position.y.toFixed(1) + ")" + (root.eligibility !== "" ? "\n" + root.eligibility : "")
         }
     }
     Rectangle {      // online: room code + who is here
@@ -46,7 +47,7 @@ Item {
         width: hint.width + 24; height: hint.height + 14
         Text {
             id: hint; anchors.centerIn: parent; color: "#e8eef5"; font.pixelSize: 13
-            text: "WASD move  ·  Shift run  ·  drag mouse / Q E orbit  ·  wheel zoom  ·  H hide HUD  ·  Esc menu"
+            text: "WASD move  ·  Shift run  ·  drag mouse / Q E orbit  ·  wheel zoom  ·  H hide HUD  ·  P pinned goals  ·  Esc menu"
         }
     }
 }

@@ -6,6 +6,7 @@ Rectangle {
     id: root
     property var directory: null
     property var session: null
+    property var progress: null
     property string playerName: "Player"
     signal back()
     signal start()                      // session is connected: enter the game
@@ -106,6 +107,11 @@ Rectangle {
             color: root.session && root.session.phase === "error" ? "#ff8a80" : "#c3c9e6"
             text: root.busy ? "Connecting…"
                   : (root.session && root.session.error !== "" ? root.session.error : "")
+        }
+        Text {      // what this match will count toward, visible BEFORE playing
+            width: parent.width; wrapMode: Text.Wrap; font.pixelSize: 13; color: "#ffd98a"
+            visible: !!root.progress
+            text: root.progress ? root.progress.eligibilityLine("public") : ""
         }
         MenuButton { label: "Back"; onClicked: { if (root.session) root.session.leave(""); root.back() } }
     }

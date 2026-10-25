@@ -4,7 +4,10 @@
 //
 // Transport (Clayground.Network, star topology, the host relays):
 //   broadcastState(State)     ~15 Hz, lossy/unordered:  {x, z, h, s}       position (m), heading (deg), speed (m/s)
-//   broadcast / sendTo(Msg)   reliable, ordered:        {t:'hello'|'roster'|'reject', ...}
+//   broadcast / sendTo(Msg)   reliable, ordered:        {t:'hello'|'roster'|'reject'|'match'|'pev'|'mreq', ...}
+//     match  host -> all     ~2 Hz display snapshot of the match clock + shared mission (never trusted for rewards)
+//     pev    host -> one     progression events the HOST observed for that player; the engine re-validates them
+//     mreq   client -> host  "replace the shared mission" request (host decides)
 
 var VERSION = 1
 var STATE_HZ = 15
@@ -59,7 +62,37 @@ function parseMessage(d) {
         for (var id in d.roster) { if (++n > 16) break; r[String(id).substring(0, 64)] = sanitizeName(d.roster[id]) }
         return { t: "roster", roster: r }
     }
+    if (d.t === "match" && d.s && typeof d.s === "object") return { t: "match", s: cleanSnapshot(d.s) }
+    if (d.t === "pev" && isListLike(d.events)) return { t: "pev", events: Array.prototype.slice.call(d.events, 0, 40).map(cleanEvent).filter(function (e) { return e !== null }) }
+    if (d.t === "mreq" && d.a === "replace") return { t: "mreq", a: "replace" }
     return null
+}
+
+// Who may send which message. Host-only messages are ignored unless they come from the host's node id; a client can
+// never push progression data at anyone.
+function fromAuthority(t, isHost, from, hostId) {
+    if (t === "hello" || t === "mreq") return isHost
+    if (t === "roster" || t === "reject" || t === "match" || t === "pev") return !isHost && from === hostId
+    return false
+}
+
+// Lists that arrive through Qt's variant bridge are array-like objects, not real JS arrays.
+function isListLike(v) { return !!v && typeof v === "object" && typeof v.length === "number" && v.length >= 0 }
+function str(v, max) { return typeof v === "string" ? v.substring(0, max) : "" }
+function cleanSnapshot(s) {
+    var m = s.mission && typeof s.mission === "object" ? s.mission : null
+    return { id: str(s.id, 64), mode: str(s.mode, 12), left: num(s.left, 0, 36000, 0), closing: !!s.closing, over: !!s.over,
+             replacementsLeft: num(s.replacementsLeft, 0, 9, 0),
+             mission: m ? { tpl: str(m.tpl, 32), zone: str(m.zone, 32), status: str(m.status, 12), progress: num(m.progress, 0, 9999, 0),
+                            target: num(m.target, 0, 9999, 0), leftSec: num(m.leftSec, 0, 9999, 0) } : null }
+}
+function cleanEvent(e) {
+    if (!e || typeof e !== "object" || typeof e.id !== "string" || typeof e.type !== "string") return null
+    var meta = {}, src = e.meta && typeof e.meta === "object" ? e.meta : {}
+    ;["matchId", "zone", "mission", "map"].forEach(function (k) { if (typeof src[k] === "string") meta[k] = src[k].substring(0, 64) })
+    if (typeof src.closing === "boolean") meta.closing = src.closing
+    return { id: e.id.substring(0, 120), type: e.type.substring(0, 40), amount: Number(e.amount), ts: Number(e.ts),
+             mode: typeof e.mode === "string" ? e.mode.substring(0, 12) : undefined, meta: meta }
 }
 
 // Host-side: apply a validated hello to the roster; returns {ok, reason}.
