@@ -12,6 +12,8 @@
 var VERSION = 1
 var STATE_HZ = 15
 var MAX_NAME = 16
+var MAX_BOTS = 16
+var MAX_PLAYERS = 16
 var LIMITS = { coord: 400, speed: 12 }
 
 function num(v, lo, hi, fallback) {
@@ -30,8 +32,26 @@ function sanitizeName(n, fallback) {
 }
 
 // Local state -> packet (compact numbers keep the datagram small).
-function encodeState(st) {
-    return { x: round(st.x, 2), z: round(st.z, 2), h: Math.round(st.heading), s: round(st.speed, 1) }
+function encodeState(st, bots) {
+    var d = { x: round(st.x, 2), z: round(st.z, 2), h: Math.round(st.heading), s: round(st.speed, 1) }
+    if (bots && bots.length) d.b = bots.slice(0, MAX_BOTS).map(function (b) { return [b.n, round(b.x, 1), round(b.z, 1), Math.round(b.heading), round(b.speed, 1)] })
+    return d
+}
+
+// Host-only bot positions riding on the host's state packet: [[n, x, z, heading, speed], ...] -> clamped list (or []).
+// (Lists from Qt's variant bridge are array-like, hence index access.)
+function decodeBots(d) {
+    var out = []
+    if (!d || typeof d !== "object" || !isListLike(d.b)) return out
+    for (var i = 0; i < Math.min(d.b.length, MAX_BOTS); i++) {
+        var e = d.b[i]
+        if (!isListLike(e) || e.length < 5) continue
+        var n = Number(e[0]), x = Number(e[1]), z = Number(e[2])
+        if (!isFinite(n) || !isFinite(x) || !isFinite(z) || n < 0 || n > 999) continue
+        out.push({ n: Math.floor(n), x: num(x, -LIMITS.coord, LIMITS.coord, 0), z: num(z, -LIMITS.coord, LIMITS.coord, 0),
+                   heading: num(e[3], -3600, 3600, 0), speed: num(e[4], 0, LIMITS.speed, 0) })
+    }
+    return out
 }
 
 // Packet from a peer -> safe state, or null when it is not a state at all.

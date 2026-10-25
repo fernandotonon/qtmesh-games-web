@@ -10,6 +10,7 @@ import "../ui"
 import "../network"
 import "../progression"
 import "movement.js" as Move
+import "bots.js" as Bots
 import "../network/protocol.js" as Proto
 
 Item {
@@ -25,6 +26,7 @@ Item {
     property var progress: null         // ProgressionService (null = no progression, e.g. Sandbox without one)
     property real ts: 1.0               // UI text scale
     property bool reduceMotion: false
+    property bool touchMode: false      // force the on-screen controls (they also appear on the first touch)
     property var summaryData: null
     readonly property string localId: session && session.active ? session.localId : "local"
 
@@ -44,7 +46,49 @@ Item {
         localState = Move.newState(p.x, p.z, 180)
         camYaw = 0
     }
-    Component.onCompleted: { spawn(); forceActiveFocus(); beginRound() }
+    Component.onCompleted: { spawn(); forceActiveFocus(); startBots(); beginRound() }
+
+    // ---- bots: filler players so a room is lively with few humans ----
+    // The host (or you, offline) simulates them and the host ships their positions with its state packet; clients only render.
+    property var botSim: null
+    readonly property bool botHost: !session || !session.active || session.role === "host"
+    function humanCount() { return session && session.active ? Math.max(1, session.playerCount) : 1 }
+    function startBots() {
+        if (!botHost) return
+        var sp = []
+        for (var i = 0; i < map.spawnPoints.length; i++) sp.push({ x: map.spawnPoints[i].x, z: map.spawnPoints[i].z })
+        botSim = Bots.create(Move, { zones: map.zones, colliders: map.colliders, bounds: map.bounds, spawns: sp, seed: Date.now() })
+        resizeBots()
+    }
+    function resizeBots() {
+        if (!botHost || !botSim) return
+        botSim.setCount(Bots.fillCount(humanCount()))
+        pushBots()
+    }
+    function pushBots() {               // render locally and hand the list to the session (sent with the host state packet)
+        var l = botSim.states()
+        applyBots(l)
+        if (session && session.active) session.localBots = l
+    }
+    function applyBots(list) {          // create/update/remove bot avatars from [{n,x,z,heading,speed}]
+        var seen = {}
+        for (var i = 0; i < list.length; i++) {
+            var b = list[i], id = "bot:" + b.n
+            seen[id] = true
+            var a = root.avatars[id]
+            if (!a) { a = avatarComp.createObject(remoteRoot, { nodeId: id, x: b.x, z: b.z, heading: b.heading }); root.avatars[id] = a; root.avatarRev++ }
+            a.push({ x: b.x, z: b.z, heading: b.heading, speed: b.speed })
+        }
+        var changed = false
+        for (var k in root.avatars) if (k.indexOf("bot:") === 0 && !seen[k]) { root.avatars[k].destroy(); delete root.avatars[k]; changed = true }
+        if (changed) root.avatarRev++
+        if (progress) progress.botCount = list.length
+    }
+    Connections {
+        target: root.session
+        ignoreUnknownSignals: true
+        function onRemoteBots(list) { if (!root.botHost) root.applyBots(list) }
+    }
     Component.onDestruction: if (progress) progress.abandonMatch()
 
     // One timed round at a time; the host (or you, offline) runs the clock and is the only source of progression events.
@@ -73,7 +117,7 @@ Item {
     Connections {
         target: root.session
         ignoreUnknownSignals: true
-        function onRosterUpdated() { root.claimSpawnSlot(); if (root.progress) root.progress.syncRoster(root.localId, root.session.roster) }
+        function onRosterUpdated() { root.claimSpawnSlot(); root.resizeBots(); if (root.progress) root.progress.syncRoster(root.localId, root.session.roster) }
     }
 
     // ---- remote players (created on first state, removed when the peer leaves) ----
@@ -159,13 +203,15 @@ Item {
             var dt = Math.min(frameTime, 0.05)
             var fwd = (root.down(Qt.Key_W) || root.down(Qt.Key_Up) ? 1 : 0) - (root.down(Qt.Key_S) || root.down(Qt.Key_Down) ? 1 : 0)
             var rgt = (root.down(Qt.Key_D) || root.down(Qt.Key_Right) ? 1 : 0) - (root.down(Qt.Key_A) || root.down(Qt.Key_Left) ? 1 : 0)
+            fwd = Math.max(-1, Math.min(1, fwd + touch.moveY)); rgt = Math.max(-1, Math.min(1, rgt + touch.moveX))
             var turn = (root.down(Qt.Key_E) ? 1 : 0) - (root.down(Qt.Key_Q) ? 1 : 0)
             root.camYaw += turn * 90 * dt
             var dir = Move.cameraRelative(fwd, rgt, root.camYaw)
-            dir.run = root.down(Qt.Key_Shift)
+            dir.run = root.down(Qt.Key_Shift) || touch.run || Math.hypot(touch.moveX, touch.moveY) > 0.92
             root.localState = Move.step(root.localState, dir, dt, Move.DEFAULTS,
                                         map.colliders, map.bounds)
             if (root.progress) root.progress.observe(root.localId, root.localState.x, root.localState.z, root.localState.speed)
+            if (root.botSim) { root.botSim.step(dt); root.pushBots() }
         }
     }
 
@@ -197,15 +243,26 @@ Item {
         onWheel: (w) => root.camDist = Math.max(3, Math.min(20, root.camDist - w.angleDelta.y * 0.005))
     }
 
+    TouchControls {
+        id: touch
+        anchors.fill: parent
+        ts: root.ts
+        forced: root.touchMode
+        onOrbit: (dx, dy) => { root.camYaw -= dx * 0.35; root.camPitch = Math.max(5, Math.min(70, root.camPitch + dy * 0.25)) }
+        onZoom: (d) => root.camDist = Math.max(3, Math.min(20, root.camDist - d * 0.03))
+        onMenu: root.exitToMenu()
+        onTogglePinned: progressHud.showPinned = !progressHud.showPinned
+    }
+
     // name tags over remote players (2D overlay projected from the 3D scene)
     Repeater {
-        model: root.session && root.session.active ? Object.keys(root.session.roster) : []
+        model: (root.avatarRev, Object.keys(root.avatars))
         delegate: Text {
             id: tag
             required property string modelData
             readonly property var av: (root.avatarRev, root.avatars[modelData])
-            visible: !!av && modelData !== root.session.localId
-            text: root.session.roster[modelData] || ""
+            visible: !!av
+            text: modelData.indexOf("bot:") === 0 ? Bots.botName(parseInt(modelData.substring(4))) : ((root.session && root.session.roster[modelData]) || "")
             color: "white"; style: Text.Outline; styleColor: "#cc101820"; font.pixelSize: 14; font.bold: true
             FrameAnimation { running: tag.visible; onTriggered: {
                 var p = view.mapFrom3DScene(Qt.vector3d(tag.av.x, 2.05, tag.av.z))
@@ -223,6 +280,8 @@ Item {
         online: root.session !== null && root.session.active
         roomCode: online ? root.session.roomCode : ""
         roster: online ? root.session.roster : ({})
+        botCount: root.progress ? root.progress.botCount : 0
+        touch: touch.active
         localId: online ? root.session.localId : ""
         latency: online ? root.session.latency : -1
         eligibility: root.progress ? root.progress.eligibilityLine(root.progress.mode) : ""

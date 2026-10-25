@@ -34,7 +34,8 @@ Item {
     property var summary: null                     // set when a match ends: what changed
     property bool reduceMotion: false
     readonly property bool isHost: !session || !session.active || session.role === "host"
-    readonly property string mode: !session || !session.active ? "solo" : "public"
+    property int botCount: 0                       // simulated bots in the room (set by the game)
+    readonly property string mode: !session || !session.active ? "solo" : (botCount > 0 ? "bots" : "public")
     readonly property var eligibility: engine.eligibility(mode)
 
     signal toast(var item)

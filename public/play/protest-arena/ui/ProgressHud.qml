@@ -20,8 +20,8 @@ Item {
     // shared mission, next to the main objective UI
     Rectangle {
         visible: !!root.mission
-        anchors { horizontalCenter: parent.horizontalCenter; top: parent.top; topMargin: 12 }
-        width: 340 * root.ts; height: mcol.height + 16; radius: 10
+        anchors { horizontalCenter: parent.horizontalCenter; top: parent.top; topMargin: root.width < 700 ? 110 : 12 }   // phones: below the info box
+        width: Math.min(340 * root.ts, root.width - 24); height: mcol.height + 16; radius: 10
         color: root.snap && root.snap.closing ? "#cc5a1f2b" : "#cc101820"
         border.width: 1; border.color: root.mission && root.mission.status === "done" ? "#37c78a" : "#55608f"
         Column {

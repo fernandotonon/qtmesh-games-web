@@ -10,7 +10,7 @@ Rectangle {
     signal dismissed()
     visible: !!result
     color: "#dd0b0e1c"
-    focus: visible
+    focus: false                             // never grab focus while hidden (it used to steal it from the game: Esc stopped working)
     onVisibleChanged: if (visible) forceActiveFocus()
     Keys.onReturnPressed: dismissed()
     Keys.onEscapePressed: dismissed()
@@ -47,7 +47,7 @@ Rectangle {
                 Text { text: root.tr("ui.next_goal"); color: "#9aa3c7"; font.pixelSize: 12 * root.ts }
                 Text { text: root.result && root.result.next ? root.tr(root.result.next.nameKey) : ""; color: "white"; font.pixelSize: 14 * root.ts; font.bold: true }
                 ProgressBar { width: col.width; value: root.result && root.result.next ? root.result.next.p : 0; target: root.result && root.result.next ? root.result.next.target : 1; ts: root.ts; reduceMotion: root.reduceMotion } }
-            SmallButton { text: root.tr("ui.continue"); selected: true; ts: root.ts; reduceMotion: root.reduceMotion; onClicked: root.dismissed(); Component.onCompleted: forceActiveFocus() }
+            SmallButton { text: root.tr("ui.continue"); selected: true; ts: root.ts; reduceMotion: root.reduceMotion; onClicked: root.dismissed() }
         }
     }
 }

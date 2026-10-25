@@ -13,6 +13,7 @@ Rectangle {
     color: "#171b2e"
     focus: visible
     readonly property var v: svc ? svc.view : ({})
+    readonly property bool narrow: width < 640
     function tr(k, a) { return svc ? svc.tr(k, a) : k }
     Keys.onEscapePressed: back()
     Keys.onLeftPressed: tab = Math.max(0, tab - 1)
@@ -44,7 +45,8 @@ Rectangle {
                    text: root.tr("ui.level", { n: root.v.level || 1 }) + "   " + root.tr("ui.xp", { n: root.v.levelXp || 0 }) + " / " + (root.v.levelSize || 0)
                          + "   " + root.tr("ui.coins", { n: root.v.coins || 0 }) }
         }
-        Row {
+        Flow {
+            width: parent.width
             spacing: 8 * root.ts
             Repeater {
                 model: [ { k: "ui.daily" }, { k: "ui.weekly" }, { k: "ui.achievements" } ]
@@ -52,10 +54,10 @@ Rectangle {
                               text: root.tr(modelData.k); selected: root.tab === index; ts: root.ts; reduceMotion: root.reduceMotion
                               onClicked: root.tab = index }
             }
-            Text { anchors.verticalCenter: parent.verticalCenter; leftPadding: 12; color: "#c3c9e6"; font.pixelSize: 14 * root.ts
+            Text { topPadding: 8 * root.ts; leftPadding: 12; color: "#c3c9e6"; font.pixelSize: 14 * root.ts
                    visible: root.tab < 2
                    text: root.tr("ui.resets_in", { t: svc ? svc.duration(root.tab === 0 ? (root.v.resetIn ? root.v.resetIn.daily : 0) : (root.v.resetIn ? root.v.resetIn.weekly : 0)) : "" }) }
-            Text { anchors.verticalCenter: parent.verticalCenter; leftPadding: 12; color: "#c3c9e6"; font.pixelSize: 14 * root.ts
+            Text { topPadding: 8 * root.ts; leftPadding: 12; color: "#c3c9e6"; font.pixelSize: 14 * root.ts
                    visible: root.tab === 2; text: root.tr("ui.unlocked_count", { a: root.v.unlockedCount || 0, b: root.v.activeCount || 0 }) }
         }
         Row {                                                       // achievement filters
@@ -80,10 +82,10 @@ Rectangle {
                     delegate: Rectangle {
                         id: card
                         required property var modelData
-                        width: list.width; height: 86 * root.ts; radius: 10
+                        width: list.width; height: (root.narrow ? 150 : 86) * root.ts; radius: 10
                         color: modelData.done ? "#1f3a33" : "#232a52"; border.width: 1; border.color: modelData.done ? "#37c78a" : "#3a4170"
                         Column {
-                            anchors { left: parent.left; right: btns.left; verticalCenter: parent.verticalCenter; margins: 12 * root.ts }
+                            anchors { left: parent.left; right: root.narrow ? parent.right : btns.left; top: root.narrow ? parent.top : undefined; verticalCenter: root.narrow ? undefined : parent.verticalCenter; margins: 12 * root.ts }
                             spacing: 4 * root.ts
                             Row { spacing: 8
                                 Text { text: root.tr(card.modelData.nameKey); color: "white"; font.pixelSize: 17 * root.ts; font.bold: true }
@@ -93,7 +95,7 @@ Rectangle {
                         }
                         Column {
                             id: btns
-                            anchors { right: parent.right; verticalCenter: parent.verticalCenter; rightMargin: 12 * root.ts }
+                            anchors { right: parent.right; bottom: root.narrow ? parent.bottom : undefined; verticalCenter: root.narrow ? undefined : parent.verticalCenter; rightMargin: 12 * root.ts; bottomMargin: 8 * root.ts }
                             spacing: 6 * root.ts
                             Text { anchors.right: parent.right; color: card.modelData.done ? "#7be0b0" : "#ffd98a"; font.pixelSize: 12 * root.ts; font.bold: true
                                    text: card.modelData.done ? root.tr("ui.claimed") : (svc ? svc.rewardText(card.modelData.reward) : "") }
@@ -112,10 +114,10 @@ Rectangle {
                     delegate: Rectangle {
                         id: ach
                         required property var modelData
-                        width: list.width; height: 78 * root.ts; radius: 10
+                        width: list.width; height: (root.narrow ? 140 : 78) * root.ts; radius: 10
                         color: modelData.unlocked ? "#2d2a4f" : "#202540"; border.width: 1; border.color: modelData.complete ? "#ffd98a" : "#3a4170"
                         Column {
-                            anchors { left: parent.left; right: abtn.left; verticalCenter: parent.verticalCenter; margins: 12 * root.ts }
+                            anchors { left: parent.left; right: root.narrow ? parent.right : abtn.left; top: root.narrow ? parent.top : undefined; verticalCenter: root.narrow ? undefined : parent.verticalCenter; margins: 12 * root.ts }
                             spacing: 4 * root.ts
                             Row { spacing: 8
                                 Text { text: ach.modelData.hidden ? root.tr("ui.hidden") : root.tr(ach.modelData.nameKey); color: ach.modelData.unlocked ? "#ffd98a" : "white"; font.pixelSize: 16 * root.ts; font.bold: true }
@@ -126,7 +128,7 @@ Rectangle {
                         }
                         Column {
                             id: abtn
-                            anchors { right: parent.right; verticalCenter: parent.verticalCenter; rightMargin: 12 * root.ts }
+                            anchors { right: parent.right; bottom: root.narrow ? parent.bottom : undefined; verticalCenter: root.narrow ? undefined : parent.verticalCenter; rightMargin: 12 * root.ts; bottomMargin: 8 * root.ts }
                             spacing: 6 * root.ts
                             Text { anchors.right: parent.right; color: "#ffd98a"; font.pixelSize: 12 * root.ts; font.bold: true
                                    text: ach.modelData.complete ? root.tr("ui.done") : (svc ? svc.rewardText(ach.modelData.reward) : "") }

@@ -16,9 +16,9 @@ Rectangle {
         anchors.centerIn: parent
         spacing: 14
         Text { anchors.horizontalCenter: parent.horizontalCenter
-               text: "PROTEST ARENA"; color: "white"; font.pixelSize: 56; font.bold: true; font.letterSpacing: 4 }
+               text: "PROTEST ARENA"; color: "white"; font.pixelSize: Math.max(26, Math.min(56, root.width / 11)); font.bold: true; font.letterSpacing: 4 }
         Text { anchors.horizontalCenter: parent.horizontalCenter; bottomPadding: 18
-               text: "A chaotic, cartoon-style plaza for everyone"; color: "#c3c9e6"; font.pixelSize: 16 }
+               text: "A chaotic, cartoon-style plaza for everyone"; color: "#c3c9e6"; font.pixelSize: 16; width: Math.min(implicitWidth, root.width - 32); wrapMode: Text.WordWrap; horizontalAlignment: Text.AlignHCenter }
         MenuButton { anchors.horizontalCenter: parent.horizontalCenter; label: "Play Offline"; onClicked: root.playOffline() }
         MenuButton { anchors.horizontalCenter: parent.horizontalCenter; label: "Multiplayer (Host / Join)"; onClicked: root.openLobby() }
         MenuButton { anchors.horizontalCenter: parent.horizontalCenter; label: "Missions and Achievements"; onClicked: root.openMissions() }

@@ -9,10 +9,11 @@ Item {
     id: root
     property string playerName: "Player"
     property string roomName: "Open room"
-    property int maxPlayers: 8
+    property int maxPlayers: 16            // humans; bots top the room up on top of the host (see game/bots.js)
     property var directory: null            // optional RoomDirectory
     property bool lan: false                // desktop only: LAN signalling instead of the PeerJS cloud
     property var localState: ({ x: 0, z: 0, heading: 0, speed: 0 })
+    property var localBots: []              // host only: simulated bots, sent along with the host state packet
 
     readonly property string role: !active ? "offline" : (net.isHost ? "host" : "client")
     property bool active: false
@@ -27,6 +28,7 @@ Item {
 
     signal remoteState(string id, var state)
     signal remoteLeft(string id)
+    signal remoteBots(var bots)             // client: bot positions from the host
     signal rosterUpdated()
     signal closed(string reason)
     signal matchSnapshot(var snap)          // client: host's match/mission display state
@@ -59,7 +61,7 @@ Item {
     function _begin() {
         if (active) leave("")
         error = ""; roster = ({}); active = true
-        net.maxNodes = Math.max(2, Math.min(8, maxPlayers))
+        net.maxNodes = Math.max(2, Math.min(Proto.MAX_PLAYERS, maxPlayers))
         if (directory && directory.iceServers.length > 0) net.iceServers = directory.iceServers
     }
     function _fail(msg) { leave(msg); error = msg; phase = "error" }
@@ -78,7 +80,7 @@ Item {
         id: net
         topology: Network.Topology.Star
         autoRelay: true
-        maxNodes: 8
+        maxNodes: 16
         signalingMode: root.lan ? Network.SignalingMode.Local : Network.SignalingMode.Cloud
 
         onNetworkCreated: (code) => {
@@ -125,6 +127,7 @@ Item {
             if (from === net.nodeId) return
             var s = Proto.decodeState(data)
             if (s) root.remoteState(from, s)
+            if (!net.isHost && from === root._hostId) root.remoteBots(Proto.decodeBots(data))   // only the host may place bots
         }
         onErrorOccurred: (msg) => root._fail(msg)
         onConnectionTimedOut: root._fail("Connection timed out (" + net.connectionPhase + ")")
@@ -134,6 +137,6 @@ Item {
         interval: Math.round(1000 / Proto.STATE_HZ)
         repeat: true
         running: root.active && net.connected && root.phase === "connected"
-        onTriggered: net.broadcastState(Proto.encodeState(root.localState))
+        onTriggered: net.broadcastState(Proto.encodeState(root.localState, net.isHost ? root.localBots : null))
     }
 }

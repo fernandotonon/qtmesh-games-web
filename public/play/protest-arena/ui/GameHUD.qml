@@ -11,6 +11,8 @@ Item {
     property string localId: ""
     property int latency: -1
     property string eligibility: ""
+    property int botCount: 0
+    property bool touch: false
     property int fps: 0
     property int _frames: 0
 
@@ -22,7 +24,7 @@ Item {
         x: 12; y: 12; radius: 8; color: "#aa101820"
         width: info.width + 20; height: info.height + 14
         Text {
-            id: info; x: 10; y: 7; color: "white"; font.pixelSize: 13
+            id: info; x: 10; y: 7; color: "white"; font.pixelSize: 13; width: Math.min(implicitWidth, root.width * 0.55); wrapMode: Text.WordWrap
             text: "Piazza del Duomo   " + root.fps + " fps\n(" + root.position.x.toFixed(1)
                   + ", " + root.position.y.toFixed(1) + ")" + (root.eligibility !== "" ? "\n" + root.eligibility : "")
         }
@@ -37,16 +39,18 @@ Item {
             text: {
                 var t = "Room " + root.roomCode + (root.latency >= 0 ? "   " + root.latency + " ms" : "")
                 for (var id in root.roster) t += "\n" + (id === root.localId ? "\u25b6 " : "   ") + root.roster[id]
+                if (root.botCount > 0) t += "\n   + " + root.botCount + " bots"
                 return t
             }
         }
     }
     Rectangle {
+        visible: !root.touch
         anchors { horizontalCenter: parent.horizontalCenter; bottom: parent.bottom; bottomMargin: 12 }
         radius: 8; color: "#aa101820"
         width: hint.width + 24; height: hint.height + 14
         Text {
-            id: hint; anchors.centerIn: parent; color: "#e8eef5"; font.pixelSize: 13
+            id: hint; anchors.centerIn: parent; color: "#e8eef5"; font.pixelSize: 13; width: Math.min(implicitWidth, root.width - 48); wrapMode: Text.WordWrap; horizontalAlignment: Text.AlignHCenter
             text: "WASD move  ·  Shift run  ·  drag mouse / Q E orbit  ·  wheel zoom  ·  H hide HUD  ·  P pinned goals  ·  Esc menu"
         }
     }

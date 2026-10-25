@@ -49,26 +49,29 @@ Rectangle {
 
         Text { text: "Multiplayer"; color: "white"; font.pixelSize: 38; font.bold: true }
 
-        Row {
+        Flow {
+            width: parent.width
             spacing: 10
             Field { id: nameField; placeholder: "Your name"; text: root.playerName; maxLength: 16
                     onTextChanged: root.playerName = text }
-            Field { id: roomField; placeholder: "Room name (to host)"; text: root.playerName + "'s room"; maxLength: 32; width: 260 }
+            Field { id: roomField; placeholder: "Room name (to host)"; text: root.playerName + "'s room"; maxLength: 32; width: Math.min(260, root.width - 60) }
             Chip { label: "Host"; on: !root.busy; onClicked: {
                        root.session.playerName = nameField.text; root.session.roomName = roomField.text
                        root.session.directory = root.directory; root.session.startHost() } }
         }
-        Row {
+        Flow {
+            width: parent.width
             spacing: 10
-            Field { id: codeField; placeholder: "Room code"; width: 330; maxLength: 64 }
+            Field { id: codeField; placeholder: "Room code"; width: Math.min(330, root.width - 60); maxLength: 64 }
             Chip { label: "Join by code"; on: !root.busy && codeField.text.trim() !== ""; onClicked: {
                        root.session.playerName = nameField.text; root.session.directory = root.directory
                        root.session.join(codeField.text) } }
         }
-        Row {
+        Flow {
+            width: parent.width
             visible: root.directory && !root.directory.configured
             spacing: 10
-            Field { id: urlField; placeholder: "Directory URL (optional, e.g. https://…workers.dev)"; width: 450; maxLength: 200 }
+            Field { id: urlField; placeholder: "Directory URL (optional, e.g. https://…workers.dev)"; width: Math.min(450, root.width - 60); maxLength: 200 }
             Chip { label: "Use"; on: urlField.text.trim() !== ""; onClicked: { root.directory.url = urlField.text.trim(); root.directory.refresh() } }
         }
 
@@ -78,7 +81,7 @@ Rectangle {
             Chip { label: "Refresh"; on: root.directory && root.directory.configured; onClicked: root.directory.refresh() }
         }
         Rectangle {
-            width: parent.width; height: 230; radius: 10; color: "#aa101820"
+            width: parent.width; height: Math.max(120, Math.min(230, root.height - 520)); radius: 10; color: "#aa101820"
             ListView {
                 id: list; anchors { fill: parent; margins: 6 } clip: true; spacing: 4
                 model: root.directory ? root.directory.rooms : []
