@@ -1,7 +1,7 @@
 {
     "name": "clayground-web-runtime",
-    "version": "v2026.6",
-    "qt": "6.11.1",
+    "version": "v2026.9",
+    "qt": "6.10.1",
     "emscripten": "4.0.7",
     "sources": {
         "clayground": "https://github.com/MisterGC/clayground",

@@ -11,6 +11,8 @@ Item {
     property string roomName: "Open room"
     property int maxPlayers: 16            // humans; bots top the room up on top of the host (see game/bots.js)
     property var directory: null            // optional RoomDirectory
+    property string teamPref: "auto"        // my preferred team, sent in hello ("auto" | "activists" | "guardians")
+    property var prefs: ({})                // host only: nodeId -> team preference from their hello
     property bool lan: false                // desktop only: LAN signalling instead of the PeerJS cloud
     property var localState: ({ x: 0, z: 0, heading: 0, speed: 0 })
     property var localBots: []              // host only: simulated bots, sent along with the host state packet
@@ -60,7 +62,7 @@ Item {
 
     function _begin() {
         if (active) leave("")
-        error = ""; roster = ({}); active = true
+        error = ""; roster = ({}); prefs = ({}); active = true
         net.maxNodes = Math.max(2, Math.min(Proto.MAX_PLAYERS, maxPlayers))
         if (directory && directory.iceServers.length > 0) net.iceServers = directory.iceServers
     }
@@ -96,12 +98,12 @@ Item {
             root.phase = "connected"
             // a joiner's only direct peer at this point is the host: remember its node id (roster/reject must come from it)
             if (net.nodes.length > 0) root._hostId = net.nodes[0]
-            net.broadcast(Proto.hello(root.playerName))     // the host answers with a roster (or a reject)
+            net.broadcast(Proto.hello(root.playerName, root.teamPref))     // the host answers with a roster (or a reject)
         }
         onNodeJoined: (id) => { if (!net.isHost && root._hostId === "" && net.connected) root._hostId = id }
         onNodeLeft: (id) => {
             root.remoteLeft(id)
-            if (net.isHost && id in root.roster) { delete root.roster[id]; root._publishRoster() }
+            if (net.isHost && id in root.roster) { delete root.roster[id]; delete root.prefs[id]; root._publishRoster() }
             else if (!net.isHost && id === root._hostId) root.leave("The host left the game")
         }
         onMessageReceived: (from, data) => {
@@ -110,7 +112,7 @@ Item {
             if (m.t === "hello" && net.isHost) {
                 var res = Proto.admit(root.roster, from, m, root.maxPlayers)
                 if (!res.ok) net.sendTo(from, Proto.reject(res.reason))
-                else root._publishRoster()
+                else { root.prefs[from] = m.team; root._publishRoster() }
             } else if (m.t === "mreq") {
                 root.missionRequest(from)
             } else if (m.t === "match") {

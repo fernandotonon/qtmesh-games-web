@@ -34,5 +34,5 @@ Node {
     }
     // banner pole at the centre
     Block { width: 0.12; depth: 0.12; height: 4.2; color: "#5b4636" }
-    Block { gy: 3.0; x: 0.55; width: 1.0; depth: 0.05; height: 0.7; color: root.ownerColor }
+    Block { gy: 0.6 + 2.4 * root.progress; x: 0.55; width: 1.0; depth: 0.05; height: 0.7; color: root.ownerColor }   // the flag rises as the zone is captured
 }

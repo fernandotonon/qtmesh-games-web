@@ -15,9 +15,9 @@ var MECHANICS = {
     match_clock: true,               // timed rounds with an authoritative start/end
     zones: true,                     // objective zones; presence of a moving player is measured by the host
     mission_hold: true,              // Hold the Square / Final Push are built on zone presence
-    teams: false,                    // Activists vs Guardians sides
-    capture: false,                  // zone ownership / capture / recapture
-    contest: false,                  // opposing teams contesting a zone
+    teams: true,                     // Activists (1) vs Guardians (2); humans + bots are split evenly
+    capture: true,                   // zone ownership / capture / recapture (capture.js)
+    contest: true,                   // opposing teams on the same zone; defending an owned zone
     supplies: false, escort: false, assists: false, healing: false, damage: false,
     equipment: false, cosmetics: false, interrupts: false, comeback: false
 }
@@ -34,7 +34,11 @@ var MATCH = {
     contributionSec: 20,             // active seconds in one zone to count as an objective contribution
     closingSec: 90,                  // "closing phase" = last N seconds
     missionReplacements: 2,          // optional replacements per match
-    missionCooldownSec: 8            // pause between missions
+    missionCooldownSec: 8,           // pause between missions
+    captureContribSec: 8,            // active seconds in a zone to share in its capture
+    defendEpisodeSec: 12,            // a contested spell must last this long to count as a defense
+    defendContribSec: 8              // active defending seconds to be credited for it
+
 }
 
 // How match modes count. Visible in the lobby/HUD *before* a match (engine.eligibility()).
@@ -101,14 +105,16 @@ var COSMETICS = {
 // every player who contributed. Both sides get the same templates and numbers (no team-specific balance).
 var MISSIONS = [
     { id: "hold_the_square", version: 1, requires: ["zones", "mission_hold", "match_clock"],
-      windowSec: 120, targetSec: 60, perExtraPlayerSec: 15, maxTargetSec: 120, reward: "tiny", closingOnly: false },
+      kind: "hold", windowSec: 120, targetSec: 60, perExtraPlayerSec: 15, maxTargetSec: 120, reward: "tiny", closingOnly: false },
     { id: "final_push", version: 1, requires: ["zones", "mission_hold", "match_clock"],
-      windowSec: 80, targetSec: 40, perExtraPlayerSec: 10, maxTargetSec: 80, reward: "small", closingOnly: true },
+      kind: "hold", windowSec: 80, targetSec: 40, perExtraPlayerSec: 10, maxTargetSec: 80, reward: "small", closingOnly: true },
     // need mechanics that do not exist yet; never selected until MECHANICS flips
     { id: "supply_run",       version: 1, requires: ["supplies", "teams"],  windowSec: 120, targetSec: 0, reward: "small" },
     { id: "moving_together",  version: 1, requires: ["escort", "teams"],    windowSec: 120, targetSec: 0, reward: "small" },
-    { id: "take_it_back",     version: 1, requires: ["capture", "teams"],   windowSec: 120, targetSec: 0, reward: "small" },
-    { id: "hold_the_line",    version: 1, requires: ["contest", "teams"],   windowSec: 120, targetSec: 0, reward: "small" }
+    // Take It Back: the team captures a zone the other side holds (credited to everyone who shared in the capture).
+    { id: "take_it_back",     version: 1, requires: ["capture", "teams", "zones", "match_clock"], kind: "capture", windowSec: 120, reward: "small" },
+    // Hold the Line: defend an owned zone while the other side contests it (team-seconds of defenders present).
+    { id: "hold_the_line",    version: 1, requires: ["contest", "capture", "teams", "zones", "match_clock"], kind: "defend", windowSec: 120, targetSec: 25, reward: "small" }
 ]
 
 // ---- quests -------------------------------------------------------------------------------------------------------
@@ -137,7 +143,7 @@ var QUESTS = [
     { id: "w_contrib_20",    version: 1, cadence: "weekly", event: "objective_contribution",  target: 20,  reward: "large" },
     { id: "w_square_900",    version: 1, cadence: "weekly", event: "zone_time",               target: 900, reward: "large" },
     { id: "w_maps_3",        version: 1, cadence: "weekly", event: "match_completed",         target: 3,   distinct: "map", targetCap: "maps", reward: "large" },
-    { id: "w_capture_20",    version: 1, cadence: "weekly", event: "objective_captured",      target: 20,  reward: "large", requires: ["capture"] },
+    { id: "w_capture_20",    version: 1, cadence: "weekly", events: ["objective_captured", "objective_defended"], target: 20,  reward: "large", requires: ["capture", "contest"] },
     { id: "w_equip_cat_3",   version: 1, cadence: "weekly", event: "equipment_effective_use", target: 3,   distinct: "category", reward: "large", requires: ["equipment"] }
 ]
 
@@ -166,7 +172,7 @@ var ACHIEVEMENTS = [
     { id: "back_in_our_hands", api: "BACK_IN_OUR_HANDS",       category: "objectives", event: "objective_recaptured", requires: ["capture"], tiers: [{ target: 10, reward: "medium" }] },
     { id: "on_the_square",     api: "ON_THE_SQUARE",           category: "objectives", event: "zone_time", tiers: [{ target: 600, reward: "small" }, { target: 3000, reward: "medium" }, { target: 12000, reward: { xp: 250, coins: 90, unlock: "title.on_the_square" } }] },
     // variety
-    { id: "both_sides",        api: "BOTH_SIDES_OF_THE_BARRICADE", category: "variety", event: "match_completed", distinct: "team", requires: ["teams"], tiers: [{ target: 10, reward: "medium" }] },
+    { id: "both_sides",        api: "BOTH_SIDES_OF_THE_BARRICADE", category: "variety", event: "match_completed", perValue: ["activists", "guardians"], distinct: "team", requires: ["teams"], tiers: [{ target: 5, reward: "medium" }] },
     { id: "city_explorer",     api: "CITY_EXPLORER",           category: "variety", event: "match_completed", distinct: "map", targetFrom: "maps", tiers: [{ target: 1, reward: { xp: 60, coins: 20, unlock: "frame.city_explorer" } }] },
     { id: "tools_of_trade",    api: "TOOLS_OF_THE_TRADE",      category: "variety", event: "equipment_effective_use", distinct: "item", requires: ["equipment"], tiers: [{ target: 5, reward: "medium" }] },
     { id: "new_look",          api: "NEW_LOOK",                category: "variety", event: "cosmetic_equipped", requires: ["cosmetics"], tiers: [{ target: 1, reward: "small" }] },

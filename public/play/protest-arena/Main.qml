@@ -21,6 +21,7 @@ Rectangle {
     RoomDirectory { id: roomDirectory; url: Config.directoryUrl }
     NetSession {
         id: netSession
+        teamPref: progressSvc.teamPref
         onClosed: (reason) => { if (root.screen === "game") { progressSvc.abandonMatch(); root.screen = "lobby" } }
     }
     ProgressionService {
@@ -66,6 +67,8 @@ Rectangle {
         onShadowsChanged: root.shadows = shadows
         touchMode: root.touchMode
         onTouchModeChanged: root.touchMode = touchMode
+        teamPref: progressSvc.teamPref
+        onTeamPrefRequested: (p) => progressSvc.setTeamPref(p)
         language: progressSvc.lang
         onLanguageRequested: (l) => progressSvc.setLanguage(l)
         reduceMotion: root.reduceMotion

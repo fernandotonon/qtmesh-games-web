@@ -34,7 +34,7 @@ function sanitizeName(n, fallback) {
 // Local state -> packet (compact numbers keep the datagram small).
 function encodeState(st, bots) {
     var d = { x: round(st.x, 2), z: round(st.z, 2), h: Math.round(st.heading), s: round(st.speed, 1) }
-    if (bots && bots.length) d.b = bots.slice(0, MAX_BOTS).map(function (b) { return [b.n, round(b.x, 1), round(b.z, 1), Math.round(b.heading), round(b.speed, 1)] })
+    if (bots && bots.length) d.b = bots.slice(0, MAX_BOTS).map(function (b) { return [b.n, round(b.x, 1), round(b.z, 1), Math.round(b.heading), round(b.speed, 1), b.team === 2 ? 2 : 1] })
     return d
 }
 
@@ -49,7 +49,7 @@ function decodeBots(d) {
         var n = Number(e[0]), x = Number(e[1]), z = Number(e[2])
         if (!isFinite(n) || !isFinite(x) || !isFinite(z) || n < 0 || n > 999) continue
         out.push({ n: Math.floor(n), x: num(x, -LIMITS.coord, LIMITS.coord, 0), z: num(z, -LIMITS.coord, LIMITS.coord, 0),
-                   heading: num(e[3], -3600, 3600, 0), speed: num(e[4], 0, LIMITS.speed, 0) })
+                   heading: num(e[3], -3600, 3600, 0), speed: num(e[4], 0, LIMITS.speed, 0), team: Number(e[5]) === 2 ? 2 : 1 })
     }
     return out
 }
@@ -62,7 +62,9 @@ function decodeState(d) {
              heading: num(d.h, -3600, 3600, 0), speed: num(d.s, 0, LIMITS.speed, 0) }
 }
 
-function hello(name) { return { t: "hello", v: VERSION, name: sanitizeName(name) } }
+var TEAM_PREFS = ["auto", "activists", "guardians"]
+function cleanPref(v) { return TEAM_PREFS.indexOf(v) >= 0 ? v : "auto" }
+function hello(name, team) { return { t: "hello", v: VERSION, name: sanitizeName(name), team: cleanPref(team) } }
 function reject(reason) { return { t: "reject", reason: String(reason).substring(0, 64) } }
 
 // roster: { nodeId: displayName }  (built by the host, which is the only source of truth)
@@ -75,7 +77,7 @@ function rosterMessage(roster) {
 // Reliable message -> validated message or null.
 function parseMessage(d) {
     if (!d || typeof d !== "object") return null
-    if (d.t === "hello") return { t: "hello", v: num(d.v, 0, 1000, 0), name: sanitizeName(d.name) }
+    if (d.t === "hello") return { t: "hello", v: num(d.v, 0, 1000, 0), name: sanitizeName(d.name), team: cleanPref(d.team) }
     if (d.t === "reject") return { t: "reject", reason: typeof d.reason === "string" ? d.reason.substring(0, 64) : "rejected" }
     if (d.t === "roster" && d.roster && typeof d.roster === "object") {
         var r = {}, n = 0
@@ -99,17 +101,31 @@ function fromAuthority(t, isHost, from, hostId) {
 // Lists that arrive through Qt's variant bridge are array-like objects, not real JS arrays.
 function isListLike(v) { return !!v && typeof v === "object" && typeof v.length === "number" && v.length >= 0 }
 function str(v, max) { return typeof v === "string" ? v.substring(0, max) : "" }
+function cleanMission(m) {
+    if (!m || typeof m !== "object") return null
+    return { tpl: str(m.tpl, 32), kind: str(m.kind, 12), zone: str(m.zone, 32), status: str(m.status, 12), progress: num(m.progress, 0, 9999, 0),
+             target: num(m.target, 0, 9999, 0), leftSec: num(m.leftSec, 0, 9999, 0) }
+}
 function cleanSnapshot(s) {
-    var m = s.mission && typeof s.mission === "object" ? s.mission : null
+    var teams = {}, n = 0, zones = [], i
+    if (s.teams && typeof s.teams === "object") for (var id in s.teams) { if (++n > MAX_PLAYERS) break; teams[str(id, 64)] = Number(s.teams[id]) === 2 ? 2 : 1 }
+    if (isListLike(s.zones)) for (i = 0; i < Math.min(s.zones.length, 8); i++) {
+        var z = s.zones[i]; if (z && typeof z === "object") zones.push({ id: str(z.id, 32), owner: Number(z.owner) === 1 ? 1 : (Number(z.owner) === 2 ? 2 : 0), cap: num(z.cap, -1, 1, 0) })
+    }
+    var sc = s.score && typeof s.score === "object" ? s.score : {}, rl = s.replacementsLeft && typeof s.replacementsLeft === "object" ? s.replacementsLeft : {}
+    var ms = s.missions && typeof s.missions === "object" ? s.missions : {}
+    var r = s.result && typeof s.result === "object" ? s.result : null
     return { id: str(s.id, 64), mode: str(s.mode, 12), left: num(s.left, 0, 36000, 0), closing: !!s.closing, over: !!s.over,
-             replacementsLeft: num(s.replacementsLeft, 0, 9, 0),
-             mission: m ? { tpl: str(m.tpl, 32), zone: str(m.zone, 32), status: str(m.status, 12), progress: num(m.progress, 0, 9999, 0),
-                            target: num(m.target, 0, 9999, 0), leftSec: num(m.leftSec, 0, 9999, 0) } : null }
+             replacementsLeft: { 1: num(rl[1], 0, 9, 0), 2: num(rl[2], 0, 9, 0) }, teams: teams,
+             score: { 1: num(sc[1], 0, 1e6, 0), 2: num(sc[2], 0, 1e6, 0) }, target: num(s.target, 0, 1e6, 0), zones: zones,
+             missions: { 1: cleanMission(ms[1]), 2: cleanMission(ms[2]) },
+             result: r ? { winner: Number(r.winner) === 1 ? 1 : (Number(r.winner) === 2 ? 2 : 0),
+                           scores: { 1: num(r.scores && r.scores[1], 0, 1e6, 0), 2: num(r.scores && r.scores[2], 0, 1e6, 0) } } : null }
 }
 function cleanEvent(e) {
     if (!e || typeof e !== "object" || typeof e.id !== "string" || typeof e.type !== "string") return null
     var meta = {}, src = e.meta && typeof e.meta === "object" ? e.meta : {}
-    ;["matchId", "zone", "mission", "map"].forEach(function (k) { if (typeof src[k] === "string") meta[k] = src[k].substring(0, 64) })
+    ;["matchId", "zone", "mission", "map", "team"].forEach(function (k) { if (typeof src[k] === "string") meta[k] = src[k].substring(0, 64) })
     if (typeof src.closing === "boolean") meta.closing = src.closing
     return { id: e.id.substring(0, 120), type: e.type.substring(0, 40), amount: Number(e.amount), ts: Number(e.ts),
              mode: typeof e.mode === "string" ? e.mode.substring(0, 12) : undefined, meta: meta }
@@ -134,3 +150,18 @@ function shirtFor(id) { return SHIRTS[hashId(id) % SHIRTS.length] }
 
 // Position of `id` among the sorted roster ids (spawn slot); -1 when absent.
 function slotOf(roster, id) { return Object.keys(roster).sort().indexOf(id) }
+
+// Team looks: Activists wear warm colours, Guardians a navy/teal uniform; the id picks a variant so crowds are not clones.
+// (Cosmetic only: appearance never affects rules.)
+var TEAM_SHIRTS = { 1: ["#f07b28", "#e0b82c", "#d94f6a", "#c5503a"], 2: ["#2b4a8c", "#1f6f9e", "#27567a", "#3a5f9a"] }
+function teamShirt(team, id) { var l = TEAM_SHIRTS[team === 2 ? 2 : 1]; return l[hashId(id) % l.length] }
+
+// Which character model a player wears: Activists pick from the activist models, Guardians from the guardian ones, by id hash
+// (the same id gets the same model on every peer). Appearance only. Paths are literal so tools/build_web.sh ships each package folder.
+var ACTIVIST_MODELS = ["assets/characters/activist_hoodie_male/Character.qml", "assets/characters/activist_bearded_worker/Character.qml", "assets/characters/activist_dreadlocks/Character.qml",
+                       "assets/characters/activist_blue_hair_plus_size/Character.qml", "assets/characters/activist_hippie/Character.qml", "assets/characters/activist_anarchist/Character.qml",
+                       "assets/characters/activist_pride/Character.qml", "assets/characters/activist_palestine_supporter/Character.qml", "assets/characters/activist_yellow_vest/Character.qml",
+                       "assets/characters/activist_italian_student/Character.qml"]
+var GUARDIAN_MODELS = ["assets/characters/guardian_standard/Character.qml", "assets/characters/guardian_female/Character.qml", "assets/characters/guardian_veteran/Character.qml",
+                       "assets/characters/guardian_light/Character.qml", "assets/characters/guardian_heavy/Character.qml"]
+function modelFor(team, id) { var l = team === 2 ? GUARDIAN_MODELS : ACTIVIST_MODELS; return l[hashId(id) % l.length] }

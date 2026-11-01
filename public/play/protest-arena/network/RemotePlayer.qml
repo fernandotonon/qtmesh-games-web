@@ -9,7 +9,9 @@ Player {
     id: root
     property string nodeId: ""
     property string displayName: ""
-    shirt: Proto.shirtFor(nodeId)
+    property int team: 0                // 0 = unknown yet
+    shirt: team ? Proto.teamShirt(team, nodeId) : Proto.shirtFor(nodeId)      // box-body fallback colour
+    model: team ? Proto.modelFor(team, nodeId) : ""                            // GLB character once the team is known
     function push(s) { sync.push(s) }
 
     StateInterpolator {

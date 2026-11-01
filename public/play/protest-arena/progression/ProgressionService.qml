@@ -9,6 +9,7 @@ import QtQuick
 import Clayground.Storage
 import "catalog.js" as Catalog
 import "engine.js" as Engine
+import "capture.js" as Capture
 import "match.js" as Match
 import "i18n.js" as I18n
 
@@ -23,7 +24,7 @@ Item {
     property var tuning: ({})                      // MATCH overrides (tests shorten the round); set before first use
     readonly property var cat: Catalog.make({ match: tuning })
     readonly property var engine: Engine.create(cat)
-    readonly property var matcher: Match.create(cat)
+    readonly property var matcher: Match.create(cat, Capture)
 
     property var profile: Engine.newState()
     property var view: ({})                        // UI view-model (engine.view)
@@ -34,6 +35,15 @@ Item {
     property var summary: null                     // set when a match ends: what changed
     property bool reduceMotion: false
     readonly property bool isHost: !session || !session.active || session.role === "host"
+    property string teamPref: "auto"               // "auto" | "activists" | "guardians" (remembered)
+    readonly property string localId: session && session.active ? session.localId : "local"
+    readonly property int localTeam: snapshot && snapshot.teams && snapshot.teams[localId] ? snapshot.teams[localId] : 0   // 0 until the first snapshot
+    readonly property var myMission: snapshot && localTeam && snapshot.missions ? snapshot.missions[localTeam] : null
+    readonly property int botFillTo: 12
+    property var botUnits: []                      // host: simulated bots [{id, team, x, z}] (set by the game every frame)
+    function setBotUnits(list) { botUnits = list }
+    function humanTeams() { return matchState ? matcher.humans(matchState) : { 1: 1, 2: 0 } }
+    function setTeamPref(p) { teamPref = p; store.set("team", p) }
     property int botCount: 0                       // simulated bots in the room (set by the game)
     readonly property string mode: !session || !session.active ? "solo" : (botCount > 0 ? "bots" : "public")
     readonly property var eligibility: engine.eligibility(mode)
@@ -154,7 +164,7 @@ Item {
         var ids = {}; ids[localId] = true
         for (var id in roster) ids[id] = true
         var t = now()
-        for (var k in ids) matcher.addPlayer(matchState, k, t)
+        for (var k in ids) matcher.addPlayer(matchState, k, t, k === localId ? teamPref : ((session && session.prefs && session.prefs[k]) || "auto"))
         for (var p in matchState.players) if (!ids[p]) matcher.removePlayer(matchState, p)
     }
     // latest observed state of each player: { id: {x, z, speed, at} }
@@ -166,7 +176,7 @@ Item {
         onTriggered: {
             if (!root.matchState) { stop(); return }
             var t = root.now()
-            var r = root.matcher.tick(root.matchState, t, root.observed)
+            var r = root.matcher.tick(root.matchState, t, root.observed, root.botUnits)
             var local = root.session && root.session.active ? root.session.localId : "local"
             var remote = {}
             for (var i = 0; i < r.events.length; i++) {
@@ -203,7 +213,8 @@ Item {
         })
         var xp = 0, coins = 0, unlocks = []
         summary.notes.forEach(function (n) { if (n.kind === "reward") { xp += n.xp; coins += n.coins; if (n.unlock) unlocks.push(n.unlock) } })
-        var out = { quests: finished, achievements: unlocked, xp: xp, coins: coins, unlocks: unlocks,
+        var res = (matchState && matchState.result) || (snapshot && snapshot.result) || null
+        var out = { quests: finished, achievements: unlocked, xp: xp, coins: coins, unlocks: unlocks, result: res, team: localTeam,
                     next: engine.nextMilestone(profile, now()), mode: mode,
                     progress: after.daily.concat(after.weekly).filter(function (q) {
                         var b = before.daily.concat(before.weekly).filter(function (x) { return x.id === q.id })[0]
@@ -228,11 +239,14 @@ Item {
             if (root.isHost) return
             for (var i = 0; i < events.length; i++) root.ingest(events[i])    // engine validates; host id gate is in NetSession
         }
-        function onMissionRequest(from) { root.replaceMission() }
+        function onMissionRequest(from) { if (root.matchState) root.replaceMission(root.matcher.teamOf(root.matchState, from)) }
     }
-    function replaceMission() {
-        if (isHost && matchState) { matcher.replaceMission(matchState, now()); snapshot = matcher.snapshot(matchState, now()) }
-        else if (session && session.active) session.requestMissionReplace()
+    // Replace my team's shared mission (host decides; a client only asks).
+    function replaceMission(team) {
+        if (isHost && matchState) {
+            matcher.replaceMission(matchState, now(), team || matcher.teamOf(matchState, localId) || 1)
+            snapshot = matcher.snapshot(matchState, now())
+        } else if (session && session.active) session.requestMissionReplace()
     }
 
     // ---- day rollover while the app stays open ----
@@ -258,6 +272,7 @@ Item {
     }
 
     Component.onCompleted: {
+        var pref = store.get("team", "auto"); teamPref = (pref === "activists" || pref === "guardians") ? pref : "auto"
         var saved = store.get("lang", "en")
         I18n.setLocale(saved); lang = I18n.current()
         load()

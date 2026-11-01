@@ -1,4 +1,5 @@
-// In-match progression overlay: shared mission (top centre), pinned personal goals (compact, optional), toasts.
+// In-match overlay: team score + clock + zone owners (top centre), my team's shared mission under it, pinned personal goals
+// (compact, optional) and toasts.
 import QtQuick
 
 Item {
@@ -10,17 +11,47 @@ Item {
     property var toastItems: []
     function tr(k, a) { return svc ? svc.tr(k, a) : k }
     readonly property var snap: svc ? svc.snapshot : null
-    readonly property var mission: snap ? snap.mission : null
+    readonly property int myTeam: svc ? svc.localTeam : 0
+    readonly property var mission: svc ? svc.myMission : null
+    readonly property color orange: "#ff8a2b"
+    readonly property color teal: "#1f9fb3"
+    function teamName(t) { return tr(t === 2 ? "ui.team.guardians" : "ui.team.activists") }
     function zoneTitle(id) {
         var z = svc && svc.gameMap ? svc.gameMap.zones : []
         for (var i = 0; i < z.length; i++) if (z[i].id === id) return z[i].title
         return id
     }
 
-    // shared mission, next to the main objective UI
+    // score bar: Activists | clock + who holds which zone | Guardians
+    Rectangle {
+        id: bar
+        visible: !!root.snap && !!root.snap.score
+        anchors { horizontalCenter: parent.horizontalCenter; top: parent.top; topMargin: root.width < 700 ? 100 : 12 }   // phones: below the info box
+        width: Math.min(360 * root.ts, root.width - 24); height: 46 * root.ts; radius: 10; color: "#cc101820"
+        border.width: 2; border.color: root.myTeam === 2 ? root.teal : (root.myTeam === 1 ? root.orange : "#55608f")
+        Text { anchors { left: parent.left; leftMargin: 14; verticalCenter: parent.verticalCenter } color: root.orange; font.pixelSize: 24 * root.ts; font.bold: true
+               text: root.snap && root.snap.score ? root.snap.score[1] : 0 }
+        Text { anchors { right: parent.right; rightMargin: 14; verticalCenter: parent.verticalCenter } color: root.teal; font.pixelSize: 24 * root.ts; font.bold: true
+               text: root.snap && root.snap.score ? root.snap.score[2] : 0 }
+        Column {
+            anchors.centerIn: parent; spacing: 3
+            Text { anchors.horizontalCenter: parent.horizontalCenter; color: root.snap && root.snap.closing ? "#ffb4a8" : "white"; font.pixelSize: 14 * root.ts; font.bold: true
+                   text: root.snap ? svc.duration(root.snap.left * 1000) : "" }
+            Row { anchors.horizontalCenter: parent.horizontalCenter; spacing: 6
+                Repeater { model: root.snap && root.snap.zones ? root.snap.zones : []
+                           Rectangle { required property var modelData; width: 12 * root.ts; height: width; radius: width / 2
+                                       color: modelData.owner === 1 ? root.orange : (modelData.owner === 2 ? root.teal : "#6b7390")
+                                       border.width: 1; border.color: "#ccffffff" } } }
+        }
+        Text { anchors { top: parent.bottom; topMargin: 2; horizontalCenter: parent.horizontalCenter } visible: root.myTeam > 0
+               color: root.myTeam === 2 ? root.teal : root.orange; font.pixelSize: 11 * root.ts; font.bold: true; style: Text.Outline; styleColor: "#aa101820"
+               text: root.tr("ui.you_are", { team: root.teamName(root.myTeam) }) }
+    }
+
+    // my team's shared mission, under the score bar
     Rectangle {
         visible: !!root.mission
-        anchors { horizontalCenter: parent.horizontalCenter; top: parent.top; topMargin: root.width < 700 ? 110 : 12 }   // phones: below the info box
+        anchors { horizontalCenter: parent.horizontalCenter; top: bar.bottom; topMargin: 22 }
         width: Math.min(340 * root.ts, root.width - 24); height: mcol.height + 16; radius: 10
         color: root.snap && root.snap.closing ? "#cc5a1f2b" : "#cc101820"
         border.width: 1; border.color: root.mission && root.mission.status === "done" ? "#37c78a" : "#55608f"
@@ -30,16 +61,16 @@ Item {
                 Text { color: "#ffd98a"; font.pixelSize: 15 * root.ts; font.bold: true
                        text: root.mission ? root.tr("mission." + root.mission.tpl + ".name") : "" }
                 Text { color: "#c3c9e6"; font.pixelSize: 12 * root.ts; anchors.baseline: parent.children[0].baseline
-                       text: root.snap ? (root.snap.closing ? root.tr("ui.closing") + "  " : "") + root.tr("ui.time_left", { t: svc.duration(root.snap.left * 1000) }) : "" } }
+                       text: root.snap && root.snap.closing ? root.tr("ui.closing") : "" } }
             Text { color: "white"; font.pixelSize: 12 * root.ts; width: parent.width; wrapMode: Text.WordWrap
                    text: !root.mission ? "" : root.mission.status === "done" ? root.tr("ui.mission_done")
                          : root.mission.status === "failed" ? root.tr("ui.mission_failed")
                          : root.tr("mission." + root.mission.tpl + ".desc", { zone: root.zoneTitle(root.mission.zone), n: Math.round(root.mission.target) }) }
             ProgressBar { visible: !!root.mission && root.mission.status === "active"; width: parent.width; ts: root.ts; reduceMotion: root.reduceMotion
                           value: root.mission ? root.mission.progress : 0; target: root.mission ? Math.round(root.mission.target) : 1 }
-            SmallButton { visible: !!root.mission && root.mission.status === "active" && root.snap.replacementsLeft > 0
-                          text: root.tr("ui.replace", { n: root.snap ? root.snap.replacementsLeft : 0 }); ts: root.ts * 0.8; reduceMotion: root.reduceMotion
-                          onClicked: root.svc.replaceMission() }
+            SmallButton { visible: !!root.mission && root.mission.status === "active" && root.myTeam > 0 && (root.snap && root.snap.replacementsLeft ? root.snap.replacementsLeft[root.myTeam] : 0) > 0
+                          text: root.tr("ui.replace", { n: root.myTeam > 0 && root.snap && root.snap.replacementsLeft ? root.snap.replacementsLeft[root.myTeam] : 0 }); ts: root.ts * 0.8; reduceMotion: root.reduceMotion
+                          onClicked: root.svc.replaceMission(root.myTeam) }
         }
     }
 

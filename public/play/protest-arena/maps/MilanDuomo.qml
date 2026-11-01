@@ -20,6 +20,11 @@ Node {
         { id: "stage",    x: -30, z: 12, radius: 7, title: "Main Stage" },
         { id: "plaza",    x: 0,   z: 6,  radius: 8, title: "Central Plaza" },
         { id: "monument", x: 28,  z: 14, radius: 7, title: "Monument" } ]
+    // each side starts on its own flank of the plaza (Activists west, Guardians east), facing the middle
+    readonly property var teamSpawns: ({
+        1: [{ x: -14, z: 26 }, { x: -18, z: 24 }, { x: -10, z: 28 }, { x: -16, z: 30 }, { x: -22, z: 26 }, { x: -12, z: 22 }],
+        2: [{ x: 14, z: 26 }, { x: 18, z: 24 }, { x: 10, z: 28 }, { x: 16, z: 30 }, { x: 22, z: 26 }, { x: 12, z: 22 }] })
+    property var zoneStates: []             // [{id, owner, cap}] from the match snapshot (colours + capture progress)
     property string activeZone: ""          // id of the zone the current shared mission points at (highlighted)
     readonly property var arena: ({ x: 38, z: -16, size: 14 })
 
@@ -188,7 +193,12 @@ Node {
     // ---------------- capture zones ----------------
     Repeater3D {
         model: root.zones
-        CaptureZone { x: modelData.x; z: modelData.z; radius: modelData.radius; title: modelData.title; highlight: root.activeZone === modelData.id }
+        CaptureZone {
+            readonly property var zs: { for (var i = 0; i < root.zoneStates.length; i++) if (root.zoneStates[i].id === modelData.id) return root.zoneStates[i]; return null }
+            x: modelData.x; z: modelData.z; radius: modelData.radius; title: modelData.title; highlight: root.activeZone === modelData.id
+            owner: zs ? (zs.owner || (zs.cap > 0 ? 1 : (zs.cap < 0 ? 2 : 0))) : 0      // colour: who holds it, else who is pushing it
+            progress: zs ? Math.abs(zs.cap) : 0
+        }
     }
 
     // ---------------- street furniture ----------------

@@ -14,6 +14,9 @@ Node {
     property color skin: "#e0ac8c"
     property color hair: "#241c1a"
     property color shoes: "#a8a6a0"
+    property string model: ""                // GLB character (src/assets/characters); the box body below is the fallback while it loads
+    readonly property bool modelReady: charModel.ready
+    CharacterModel { id: charModel; asset: root.model; speed: root.speed }
 
     eulerRotation.y: heading
     property real phase: 0
@@ -26,6 +29,7 @@ Node {
 
     // body bob + idle breathing
     Node {
+        visible: !root.modelReady
         y: Math.abs(Math.sin(root.phase)) * 0.05 * Math.min(1, root.speed / 3.2)
 
         Node { x: -0.13; y: 0.85; eulerRotation.x: root.swing         // left leg

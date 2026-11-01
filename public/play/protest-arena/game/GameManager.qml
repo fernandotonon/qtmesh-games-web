@@ -11,6 +11,7 @@ import "../network"
 import "../progression"
 import "movement.js" as Move
 import "bots.js" as Bots
+import "../progression/capture.js" as Cap
 import "../network/protocol.js" as Proto
 
 Item {
@@ -46,7 +47,7 @@ Item {
         localState = Move.newState(p.x, p.z, 180)
         camYaw = 0
     }
-    Component.onCompleted: { spawn(); forceActiveFocus(); startBots(); beginRound() }
+    Component.onCompleted: { spawn(); forceActiveFocus(); beginRound(); startBots() }   // the match first (it knows the teams), then the bots that balance them
 
     // ---- bots: filler players so a room is lively with few humans ----
     // The host (or you, offline) simulates them and the host ships their positions with its state packet; clients only render.
@@ -57,18 +58,31 @@ Item {
         if (!botHost) return
         var sp = []
         for (var i = 0; i < map.spawnPoints.length; i++) sp.push({ x: map.spawnPoints[i].x, z: map.spawnPoints[i].z })
-        botSim = Bots.create(Move, { zones: map.zones, colliders: map.colliders, bounds: map.bounds, spawns: sp, seed: Date.now() })
+        botSim = Bots.create(Move, { zones: map.zones, colliders: map.colliders, bounds: map.bounds, spawns: sp, teamSpawns: map.teamSpawns, seed: Date.now() })
         resizeBots()
     }
     function resizeBots() {
         if (!botHost || !botSim) return
-        botSim.setCount(Bots.fillCount(humanCount()))
+        // humans + bots fill both sides evenly up to Bots.FILL_TO; existing bots keep their team
+        botSim.setQuota(Cap.botQuota(progress ? progress.humanTeams() : { 1: humanCount(), 2: 0 }, Bots.FILL_TO))
         pushBots()
     }
     function pushBots() {               // render locally and hand the list to the session (sent with the host state packet)
         var l = botSim.states()
         applyBots(l)
         if (session && session.active) session.localBots = l
+        if (progress) {
+            var units = [], i
+            for (i = 0; i < l.length; i++) units.push({ id: "bot:" + l[i].n, team: l[i].team, x: l[i].x, z: l[i].z })
+            progress.setBotUnits(units)              // bots push the capture bar like anyone else
+            var world = [], snapZ = progress.snapshot && progress.snapshot.zones ? progress.snapshot.zones : []
+            for (i = 0; i < map.zones.length; i++) {
+                var mz = map.zones[i], own = 0
+                for (var k = 0; k < snapZ.length; k++) if (snapZ[k].id === mz.id) own = snapZ[k].owner
+                world.push({ id: mz.id, x: mz.x, z: mz.z, radius: mz.radius, owner: own })
+            }
+            botSim.setWorld(world)
+        }
     }
     function applyBots(list) {          // create/update/remove bot avatars from [{n,x,z,heading,speed}]
         var seen = {}
@@ -76,7 +90,8 @@ Item {
             var b = list[i], id = "bot:" + b.n
             seen[id] = true
             var a = root.avatars[id]
-            if (!a) { a = avatarComp.createObject(remoteRoot, { nodeId: id, x: b.x, z: b.z, heading: b.heading }); root.avatars[id] = a; root.avatarRev++ }
+            if (!a) { a = avatarComp.createObject(remoteRoot, { nodeId: id, x: b.x, z: b.z, heading: b.heading, team: b.team || 1 }); root.avatars[id] = a; root.avatarRev++ }
+            a.team = b.team || 1
             a.push({ x: b.x, z: b.z, heading: b.heading, speed: b.speed })
         }
         var changed = false
@@ -101,9 +116,27 @@ Item {
         target: root.progress
         ignoreUnknownSignals: true
         function onMatchEnded(s) { root.summaryData = s }
+        function onSnapshotChanged() { root.refreshTeams(); root.placeAtTeamSpawn() }
     }
 
 
+    // teams: tint human avatars, and put me on my side of the plaza once, before I have moved
+    function refreshTeams() {
+        var teams = progress && progress.snapshot ? progress.snapshot.teams : null
+        if (!teams) return
+        for (var id in avatars) if (id.indexOf("bot:") !== 0) avatars[id].team = teams[id] || 0
+    }
+    property bool teamPlaced: false
+    function placeAtTeamSpawn() {
+        if (teamPlaced || !progress || !progress.localTeam) return
+        teamPlaced = true
+        if (localState.speed !== 0) return
+        var list = map.teamSpawns[progress.localTeam], mates = [], teams = progress.snapshot.teams
+        for (var id in teams) if (teams[id] === progress.localTeam) mates.push(id)
+        mates.sort()
+        var p = list[Math.max(0, mates.indexOf(localId)) % list.length]
+        localState = Move.newState(p.x, p.z, progress.localTeam === 1 ? 90 : 270)    // facing the middle
+    }
     // Online: everyone starts on a different spawn point (slot = position in the sorted roster), once, before moving.
     property bool slotted: false
     function claimSpawnSlot() {
@@ -117,7 +150,7 @@ Item {
     Connections {
         target: root.session
         ignoreUnknownSignals: true
-        function onRosterUpdated() { root.claimSpawnSlot(); root.resizeBots(); if (root.progress) root.progress.syncRoster(root.localId, root.session.roster) }
+        function onRosterUpdated() { root.claimSpawnSlot(); if (root.progress) root.progress.syncRoster(root.localId, root.session.roster); root.resizeBots() }
     }
 
     // ---- remote players (created on first state, removed when the peer leaves) ----
@@ -165,17 +198,19 @@ Item {
 
         MilanDuomo {
             id: map
-            activeZone: root.progress && root.progress.snapshot && root.progress.snapshot.mission
-                        && root.progress.snapshot.mission.status === "active" ? root.progress.snapshot.mission.zone : ""
+            activeZone: root.progress && root.progress.myMission && root.progress.myMission.status === "active" ? root.progress.myMission.zone : ""
+            zoneStates: root.progress && root.progress.snapshot ? root.progress.snapshot.zones : []
         }
         Node { id: remoteRoot }
 
         Player {
             id: player
             x: root.localState.x; z: root.localState.z
-            shirt: root.session && root.session.active ? Proto.shirtFor(root.session.localId) : "#f07b28"
+            shirt: root.progress && root.progress.localTeam ? Proto.teamShirt(root.progress.localTeam, root.localId)
+                   : (root.session && root.session.active ? Proto.shirtFor(root.session.localId) : "#f07b28")
             heading: root.localState.heading
             speed: root.localState.speed
+            model: root.progress && root.progress.localTeam ? Proto.modelFor(root.progress.localTeam, root.localId) : ""
         }
 
         // camera follows the player; yaw -> pitch -> distance

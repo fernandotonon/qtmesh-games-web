@@ -7,6 +7,8 @@ Rectangle {
     property real textScale: 1.0
     property string language: "en"
     property bool touchMode: false
+    property string teamPref: "auto"
+    signal teamPrefRequested(string pref)
     signal languageRequested(string lang)
     signal back()
     color: "#171b2e"
@@ -22,6 +24,7 @@ Rectangle {
         MenuButton { label: "Text size: " + Math.round(root.textScale * 100) + "%"; onClicked: root.textScale = root.textScale >= 1.4 ? 1.0 : root.textScale + 0.2 }
         MenuButton { label: "Language: " + (root.language === "pt" ? "Português (Brasil)" : "English"); onClicked: root.languageRequested(root.language === "pt" ? "en" : "pt") }
         MenuButton { label: "Touch controls: " + (root.touchMode ? "Always on" : "Auto"); onClicked: root.touchMode = !root.touchMode }
+        MenuButton { label: "Preferred team: " + (root.teamPref === "activists" ? "Activists" : (root.teamPref === "guardians" ? "Guardians" : "Auto")); onClicked: root.teamPrefRequested(root.teamPref === "auto" ? "activists" : (root.teamPref === "activists" ? "guardians" : "auto")) }
         MenuButton { label: "Back"; onClicked: root.back() }
     }
 }

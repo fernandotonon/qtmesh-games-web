@@ -25,6 +25,15 @@ Rectangle {
             id: col
             x: 20 * root.ts; y: 20 * root.ts; width: parent.width - 40 * root.ts; spacing: 8 * root.ts
             Text { text: root.tr("ui.summary"); color: "white"; font.pixelSize: 26 * root.ts; font.bold: true }
+            Text {                                                  // who won
+                visible: !!root.result && !!root.result.result
+                font.pixelSize: 22 * root.ts; font.bold: true
+                readonly property int w: root.result && root.result.result ? root.result.result.winner : 0
+                color: w === 0 ? "#c3c9e6" : (w === root.result.team ? "#7be0b0" : "#ff9a8a")
+                text: !root.result || !root.result.result ? "" :
+                      (w === 0 ? root.tr("ui.draw") : (w === root.result.team ? root.tr("ui.victory") : (root.result.team ? root.tr("ui.defeat") : root.tr("ui.team_wins", { team: root.tr(w === 2 ? "ui.team.guardians" : "ui.team.activists") }))))
+                      + "   " + root.result.result.scores[1] + " \u2013 " + root.result.result.scores[2]
+            }
             Text { visible: !!root.result; color: "#ffd98a"; font.pixelSize: 15 * root.ts; font.bold: true
                    text: root.result ? root.tr("ui.rewards_total", { xp: root.result.xp, coins: root.result.coins }) : "" }
             Text { color: "#9aa3c7"; font.pixelSize: 12 * root.ts

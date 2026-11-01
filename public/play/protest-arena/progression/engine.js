@@ -52,11 +52,17 @@ function create(cat) {
         if (def.active === false) return false
         var req = def.requires || []
         for (var i = 0; i < req.length; i++) if (!mechanicOk(req[i])) return false
-        var ev = eventDef(def.event)
-        if (!ev) return false
-        if (ev.needs && !mechanicOk(ev.needs)) return false
+        var evs = defEvents(def)
+        for (var j = 0; j < evs.length; j++) {
+            var ev = eventDef(evs[j])
+            if (!ev) return false
+            if (ev.needs && !mechanicOk(ev.needs)) return false
+        }
         return true
     }
+    // a definition listens to one event (`event`) or several (`events`)
+    function defEvents(def) { return def.events || [def.event] }
+    function listensTo(def, type) { return defEvents(def).indexOf(type) >= 0 }
     E.isActive = isActive
     function questDef(id) { for (var i = 0; i < cat.QUESTS.length; i++) if (cat.QUESTS[i].id === id) return cat.QUESTS[i]; return null }
     function achDef(id) { for (var i = 0; i < cat.ACHIEVEMENTS.length; i++) if (cat.ACHIEVEMENTS[i].id === id) return cat.ACHIEVEMENTS[i]; return null }
@@ -172,6 +178,15 @@ function create(cat) {
     // ---- progress on one definition ----
     // returns the new progress, or -1 when this event does not apply
     function advance(holder, def, ev, meta) {
+        if (def.perValue) {                                          // "N of each": progress = the smallest per-value count
+            var pv = distinctVal(meta, def.distinct)
+            if (pv === null || def.perValue.indexOf(pv) < 0) return -1
+            if (!holder.counts) holder.counts = {}
+            holder.counts[pv] = (holder.counts[pv] || 0) + ev.amount
+            var least = Infinity
+            for (var i = 0; i < def.perValue.length; i++) least = Math.min(least, holder.counts[def.perValue[i]] || 0)
+            return least
+        }
         if (def.distinct) {
             var v = distinctVal(meta, def.distinct); if (v === null) return -1
             var set = holder.set; if (set.indexOf(v) < 0 && set.length < 64) set.push(v)
@@ -199,7 +214,7 @@ function create(cat) {
             if (!set || periodOf(cad, ev.ts) !== set.period) continue           // event belongs to another period: no quest credit
             for (var i = 0; i < set.quests.length; i++) {
                 var q = set.quests[i], def = questDef(q.id)
-                if (q.done || !def || def.event !== ev.type || !metaMatches(def.where, ev.meta)) continue
+                if (q.done || !def || !listensTo(def, ev.type) || !metaMatches(def.where, ev.meta)) continue
                 if (def.modes && def.modes.indexOf(mode) < 0) continue
                 var p = advance(q, def, ev, ev.meta); if (p < 0) continue
                 q.p = Math.min(p, q.target)
@@ -213,9 +228,9 @@ function create(cat) {
         if (!rule || !rule.achievements) return
         for (var i = 0; i < cat.ACHIEVEMENTS.length; i++) {
             var def = cat.ACHIEVEMENTS[i]
-            if (def.event !== ev.type || !isActive(def) || !metaMatches(def.where, ev.meta)) continue
+            if (!listensTo(def, ev.type) || !isActive(def) || !metaMatches(def.where, ev.meta)) continue
             if (def.competitive && rule.competitive === false) continue
-            var a = state.ach[def.id] || (state.ach[def.id] = { p: 0, set: [], tier: 0, at: [] })
+            var a = state.ach[def.id] || (state.ach[def.id] = { p: 0, set: [], tier: 0, at: [], counts: {} })
             var p = advance(a, def, ev, ev.meta); if (p < 0) continue
             a.p = p
             while (a.tier < def.tiers.length && a.p >= tierTarget(def, def.tiers[a.tier])) {
@@ -364,6 +379,7 @@ function create(cat) {
             var x = m.ach[id], y = b.ach[id]
             if (!x) { m.ach[id] = clone(y); continue }
             x.p = Math.max(x.p, y.p); x.tier = Math.max(x.tier, y.tier)
+            if (y.counts) { x.counts = x.counts || {}; for (var ck in y.counts) x.counts[ck] = Math.max(x.counts[ck] || 0, y.counts[ck]) }
             y.set.forEach(function (s) { pushUnique(x.set, s) })
             for (var i = 0; i < Math.max(x.at.length, y.at.length); i++) {
                 var p = x.at[i], q = y.at[i]
@@ -399,7 +415,7 @@ function create(cat) {
             s.xp = Math.max(0, Number(raw.xp) || 0); s.coins = Math.max(0, Number(raw.coins) || 0)
             if (Array.isArray(raw.unlocks)) raw.unlocks.forEach(function (u) { if (typeof u === "string") pushUnique(s.unlocks, u) })
             if (raw.ach && typeof raw.ach === "object") for (var id in raw.ach) {
-                var n = Number(raw.ach[id]); if (isFinite(n) && n >= 0) s.ach[id] = { p: n, set: [], tier: 0, at: [] }
+                var n = Number(raw.ach[id]); if (isFinite(n) && n >= 0) s.ach[id] = { p: n, set: [], tier: 0, at: [], counts: {} }
             }
             return { state: s, status: "migrated" }
         }
@@ -412,7 +428,7 @@ function create(cat) {
         s.playerId = typeof raw.playerId === "string" ? raw.playerId : undefined
         if (raw.ach && typeof raw.ach === "object") for (var k in raw.ach) {
             var a = raw.ach[k]; if (!a || typeof a !== "object") continue
-            s.ach[k] = { p: Math.max(0, Number(a.p) || 0), set: Array.isArray(a.set) ? a.set.slice(0, 64) : [], tier: Math.max(0, Number(a.tier) || 0), at: Array.isArray(a.at) ? a.at : [] }
+            s.ach[k] = { p: Math.max(0, Number(a.p) || 0), set: Array.isArray(a.set) ? a.set.slice(0, 64) : [], tier: Math.max(0, Number(a.tier) || 0), at: Array.isArray(a.at) ? a.at : [], counts: (a.counts && typeof a.counts === 'object' && !Array.isArray(a.counts)) ? a.counts : {} }
         }
         ;["daily", "weekly"].forEach(function (c) {
             var q = raw[c]
