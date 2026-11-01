@@ -13,6 +13,8 @@ Item {
     property var directory: null            // optional RoomDirectory
     property string teamPref: "auto"        // my preferred team, sent in hello ("auto" | "activists" | "guardians")
     property var prefs: ({})                // host only: nodeId -> team preference from their hello
+    property var lookPref: [-1, -1]         // my chosen character looks [activist, guardian], -1 = random (sent in hello)
+    property var looks: ({})                // nodeId -> [activist, guardian] looks of everyone in the room (host is the source, sent with the roster)
     property bool lan: false                // desktop only: LAN signalling instead of the PeerJS cloud
     property var localState: ({ x: 0, z: 0, heading: 0, speed: 0 })
     property var localBots: []              // host only: simulated bots, sent along with the host state packet
@@ -62,7 +64,7 @@ Item {
 
     function _begin() {
         if (active) leave("")
-        error = ""; roster = ({}); prefs = ({}); active = true
+        error = ""; roster = ({}); prefs = ({}); looks = ({}); active = true
         net.maxNodes = Math.max(2, Math.min(Proto.MAX_PLAYERS, maxPlayers))
         if (directory && directory.iceServers.length > 0) net.iceServers = directory.iceServers
     }
@@ -71,9 +73,11 @@ Item {
     function _publishRoster() {
         var r = {}; for (var k in roster) r[k] = roster[k]
         roster = r
+        var l2 = {}; for (var lk2 in looks) l2[lk2] = looks[lk2]
+        looks = l2
         rosterUpdated()
         if (net.isHost) {
-            net.broadcast(Proto.rosterMessage(roster))
+            net.broadcast(Proto.rosterMessage(roster, looks))
             if (directory) directory.update({ players: Math.max(1, playerCount) })
         }
     }
@@ -88,6 +92,7 @@ Item {
         onNetworkCreated: (code) => {
             root.phase = "connected"
             var r = {}; r[net.nodeId] = Proto.sanitizeName(root.playerName); root.roster = r
+            var lk = {}; lk[net.nodeId] = Proto.cleanLooks(root.lookPref); root.looks = lk
             root.rosterUpdated()
             if (root.directory)
                 root.directory.advertise({ code: code, name: root.roomName, host: Proto.sanitizeName(root.playerName),
@@ -98,12 +103,12 @@ Item {
             root.phase = "connected"
             // a joiner's only direct peer at this point is the host: remember its node id (roster/reject must come from it)
             if (net.nodes.length > 0) root._hostId = net.nodes[0]
-            net.broadcast(Proto.hello(root.playerName, root.teamPref))     // the host answers with a roster (or a reject)
+            net.broadcast(Proto.hello(root.playerName, root.teamPref, root.lookPref))     // the host answers with a roster (or a reject)
         }
         onNodeJoined: (id) => { if (!net.isHost && root._hostId === "" && net.connected) root._hostId = id }
         onNodeLeft: (id) => {
             root.remoteLeft(id)
-            if (net.isHost && id in root.roster) { delete root.roster[id]; delete root.prefs[id]; root._publishRoster() }
+            if (net.isHost && id in root.roster) { delete root.roster[id]; delete root.prefs[id]; delete root.looks[id]; root._publishRoster() }
             else if (!net.isHost && id === root._hostId) root.leave("The host left the game")
         }
         onMessageReceived: (from, data) => {
@@ -112,7 +117,7 @@ Item {
             if (m.t === "hello" && net.isHost) {
                 var res = Proto.admit(root.roster, from, m, root.maxPlayers)
                 if (!res.ok) net.sendTo(from, Proto.reject(res.reason))
-                else { root.prefs[from] = m.team; root._publishRoster() }
+                else { root.prefs[from] = m.team; root.looks[from] = m.looks; root._publishRoster() }
             } else if (m.t === "mreq") {
                 root.missionRequest(from)
             } else if (m.t === "match") {
@@ -120,7 +125,7 @@ Item {
             } else if (m.t === "pev") {
                 root.progressEvents(m.events)
             } else if (m.t === "roster" && !net.isHost && from === root._hostId) {
-                root.roster = m.roster; root.rosterUpdated()
+                root.roster = m.roster; root.looks = m.looks || ({}); root.rosterUpdated()
             } else if (m.t === "reject" && !net.isHost && from === root._hostId) {
                 root._fail(m.reason)
             }

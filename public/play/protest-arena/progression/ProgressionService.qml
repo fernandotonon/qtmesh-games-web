@@ -44,6 +44,8 @@ Item {
     function setBotUnits(list) { botUnits = list }
     function humanTeams() { return matchState ? matcher.humans(matchState) : { 1: 1, 2: 0 } }
     function setTeamPref(p) { teamPref = p; store.set("team", p) }
+    property var looks: [-1, -1]                   // chosen character looks [activist, guardian], -1 = random (remembered; cosmetic only)
+    function setLook(teamIndex, i) { var l = [looks[0], looks[1]]; l[teamIndex] = i; looks = l; store.set("look", l[0] + "," + l[1]) }
     property int botCount: 0                       // simulated bots in the room (set by the game)
     readonly property string mode: !session || !session.active ? "solo" : (botCount > 0 ? "bots" : "public")
     readonly property var eligibility: engine.eligibility(mode)
@@ -273,6 +275,8 @@ Item {
 
     Component.onCompleted: {
         var pref = store.get("team", "auto"); teamPref = (pref === "activists" || pref === "guardians") ? pref : "auto"
+        var lk = String(store.get("look", "-1,-1")).split(",")
+        looks = [parseInt(lk[0]), parseInt(lk[1])].map(function (v) { return isNaN(v) ? -1 : v })      // range-checked where it is used (Proto.cleanLooks)
         var saved = store.get("lang", "en")
         I18n.setLocale(saved); lang = I18n.current()
         load()

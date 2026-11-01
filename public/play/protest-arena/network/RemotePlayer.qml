@@ -10,8 +10,9 @@ Player {
     property string nodeId: ""
     property string displayName: ""
     property int team: 0                // 0 = unknown yet
+    property var looks: ({})            // room looks {nodeId: [activist, guardian]} (the player's own character pick)
     shirt: team ? Proto.teamShirt(team, nodeId) : Proto.shirtFor(nodeId)      // box-body fallback colour
-    model: team ? Proto.modelFor(team, nodeId) : ""                            // GLB character once the team is known
+    model: team ? Proto.modelFor(team, nodeId, looks) : ""                            // GLB character once the team is known
     function push(s) { sync.push(s) }
 
     StateInterpolator {

@@ -64,25 +64,37 @@ function decodeState(d) {
 
 var TEAM_PREFS = ["auto", "activists", "guardians"]
 function cleanPref(v) { return TEAM_PREFS.indexOf(v) >= 0 ? v : "auto" }
-function hello(name, team) { return { t: "hello", v: VERSION, name: sanitizeName(name), team: cleanPref(team) } }
+// Look = which character model I wear: [activist index, guardian index] into ACTIVIST_MODELS / GUARDIAN_MODELS, -1 = random (by id hash).
+function cleanLooks(v) {
+    var a = -1, g = -1
+    if (isListLike(v)) {
+        var x = Math.floor(Number(v[0])), y = Math.floor(Number(v[1]))
+        if (isFinite(x) && x >= 0 && x < ACTIVIST_MODELS.length) a = x
+        if (isFinite(y) && y >= 0 && y < GUARDIAN_MODELS.length) g = y
+    }
+    return [a, g]
+}
+function hello(name, team, looks) { return { t: "hello", v: VERSION, name: sanitizeName(name), team: cleanPref(team), looks: cleanLooks(looks) } }
 function reject(reason) { return { t: "reject", reason: String(reason).substring(0, 64) } }
 
 // roster: { nodeId: displayName }  (built by the host, which is the only source of truth)
-function rosterMessage(roster) {
-    var out = {}
-    for (var id in roster) out[id] = sanitizeName(roster[id])
-    return { t: "roster", v: VERSION, roster: out }
+function rosterMessage(roster, looks) {
+    var out = {}, lk = {}
+    for (var id in roster) { out[id] = sanitizeName(roster[id]); if (looks && looks[id]) lk[id] = cleanLooks(looks[id]) }
+    return { t: "roster", v: VERSION, roster: out, looks: lk }
 }
 
 // Reliable message -> validated message or null.
 function parseMessage(d) {
     if (!d || typeof d !== "object") return null
-    if (d.t === "hello") return { t: "hello", v: num(d.v, 0, 1000, 0), name: sanitizeName(d.name), team: cleanPref(d.team) }
+    if (d.t === "hello") return { t: "hello", v: num(d.v, 0, 1000, 0), name: sanitizeName(d.name), team: cleanPref(d.team), looks: cleanLooks(d.looks) }
     if (d.t === "reject") return { t: "reject", reason: typeof d.reason === "string" ? d.reason.substring(0, 64) : "rejected" }
     if (d.t === "roster" && d.roster && typeof d.roster === "object") {
         var r = {}, n = 0
         for (var id in d.roster) { if (++n > 16) break; r[String(id).substring(0, 64)] = sanitizeName(d.roster[id]) }
-        return { t: "roster", roster: r }
+        var lk = {}, m = 0
+        if (d.looks && typeof d.looks === "object") for (var lid in d.looks) { if (++m > 16) break; lk[String(lid).substring(0, 64)] = cleanLooks(d.looks[lid]) }
+        return { t: "roster", roster: r, looks: lk }
     }
     if (d.t === "match" && d.s && typeof d.s === "object") return { t: "match", s: cleanSnapshot(d.s) }
     if (d.t === "pev" && isListLike(d.events)) return { t: "pev", events: Array.prototype.slice.call(d.events, 0, 40).map(cleanEvent).filter(function (e) { return e !== null }) }
@@ -164,4 +176,9 @@ var ACTIVIST_MODELS = ["assets/characters/activist_hoodie_male/Character.qml", "
                        "assets/characters/activist_italian_student/Character.qml"]
 var GUARDIAN_MODELS = ["assets/characters/guardian_standard/Character.qml", "assets/characters/guardian_female/Character.qml", "assets/characters/guardian_veteran/Character.qml",
                        "assets/characters/guardian_light/Character.qml", "assets/characters/guardian_heavy/Character.qml"]
-function modelFor(team, id) { var l = team === 2 ? GUARDIAN_MODELS : ACTIVIST_MODELS; return l[hashId(id) % l.length] }
+// `looks` ({id: [a, g]}, optional) holds the players' own picks; anyone without one gets the hash default.
+function modelFor(team, id, looks) {
+    var l = team === 2 ? GUARDIAN_MODELS : ACTIVIST_MODELS
+    var lk = looks && looks[id] ? cleanLooks(looks[id]) : null, i = lk ? lk[team === 2 ? 1 : 0] : -1
+    return i >= 0 ? l[i] : l[hashId(id) % l.length]
+}

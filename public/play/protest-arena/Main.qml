@@ -22,6 +22,7 @@ Rectangle {
     NetSession {
         id: netSession
         teamPref: progressSvc.teamPref
+        lookPref: progressSvc.looks
         onClosed: (reason) => { if (root.screen === "game") { progressSvc.abandonMatch(); root.screen = "lobby" } }
     }
     ProgressionService {
@@ -40,6 +41,16 @@ Rectangle {
         onOpenSettings: root.screen = "settings"
         onOpenLobby: root.screen = "lobby"
         onOpenMissions: root.screen = "missions"
+        onOpenCharacters: root.screen = "characters"
+    }
+    CharacterScreen {
+        anchors.fill: parent
+        visible: root.screen === "characters"
+        svc: progressSvc
+        ts: root.textScale
+        reduceMotion: root.reduceMotion
+        teamIndex: progressSvc.teamPref === "guardians" ? 1 : 0
+        onBack: root.screen = "menu"
     }
     LobbyScreen {
         anchors.fill: parent

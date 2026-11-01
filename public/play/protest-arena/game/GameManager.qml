@@ -120,6 +120,9 @@ Item {
     }
 
 
+    // character picks of the room (host sends them with the roster); my own comes from my settings
+    function refreshLooks() { if (session) for (var id in avatars) avatars[id].looks = session.looks }
+    readonly property var myLooks: { var m = ({}); if (session && session.active) for (var k in session.looks) m[k] = session.looks[k]; m[localId] = progress ? progress.looks : [-1, -1]; return m }
     // teams: tint human avatars, and put me on my side of the plaza once, before I have moved
     function refreshTeams() {
         var teams = progress && progress.snapshot ? progress.snapshot.teams : null
@@ -150,7 +153,7 @@ Item {
     Connections {
         target: root.session
         ignoreUnknownSignals: true
-        function onRosterUpdated() { root.claimSpawnSlot(); if (root.progress) root.progress.syncRoster(root.localId, root.session.roster); root.resizeBots() }
+        function onRosterUpdated() { root.claimSpawnSlot(); root.refreshLooks(); if (root.progress) root.progress.syncRoster(root.localId, root.session.roster); root.resizeBots() }
     }
 
     // ---- remote players (created on first state, removed when the peer leaves) ----
@@ -163,7 +166,7 @@ Item {
         function onRemoteState(id, st) {
             var a = root.avatars[id]
             if (!a) {
-                a = avatarComp.createObject(remoteRoot, { nodeId: id, x: st.x, z: st.z, heading: st.heading })
+                a = avatarComp.createObject(remoteRoot, { nodeId: id, x: st.x, z: st.z, heading: st.heading, looks: root.session ? root.session.looks : ({}) })
                 root.avatars[id] = a; root.avatarRev++
             }
             a.push(st)
@@ -210,7 +213,7 @@ Item {
                    : (root.session && root.session.active ? Proto.shirtFor(root.session.localId) : "#f07b28")
             heading: root.localState.heading
             speed: root.localState.speed
-            model: root.progress && root.progress.localTeam ? Proto.modelFor(root.progress.localTeam, root.localId) : ""
+            model: root.progress && root.progress.localTeam ? Proto.modelFor(root.progress.localTeam, root.localId, root.myLooks) : ""
         }
 
         // camera follows the player; yaw -> pitch -> distance

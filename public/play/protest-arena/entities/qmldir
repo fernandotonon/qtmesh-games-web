@@ -3,3 +3,4 @@ Player 1.0 Player.qml
 CaptureZone 1.0 CaptureZone.qml
 CharacterModel 1.0 CharacterModel.qml
 singleton LoadQueue 1.0 LoadQueue.qml
+Prop 1.0 Prop.qml

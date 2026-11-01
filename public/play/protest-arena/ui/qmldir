@@ -9,3 +9,4 @@ MissionsScreen 1.0 MissionsScreen.qml
 ProgressHud 1.0 ProgressHud.qml
 MatchSummary 1.0 MatchSummary.qml
 TouchControls 1.0 TouchControls.qml
+CharacterScreen 1.0 CharacterScreen.qml
