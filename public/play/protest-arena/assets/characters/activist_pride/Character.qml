@@ -31,25 +31,25 @@ Node {
             spine2,
             leftArm,
             leftForeArm,
+            rightArm,
+            rightForeArm,
             leftHand,
+            rightHand,
             joint_9,
+            joint_28,
+            leftUpLeg,
+            rightUpLeg,
             joint_10,
             joint_13,
             joint_16,
             joint_19,
             joint_22,
-            rightArm,
-            rightForeArm,
-            rightHand,
-            joint_28,
             joint_29,
             joint_32,
             joint_35,
             joint_38,
             joint_41,
-            leftUpLeg,
             leftLeg,
-            rightUpLeg,
             rightLeg,
             neck,
             joint_11,
@@ -85,25 +85,25 @@ Node {
             Qt.matrix4x4(1, 0, 0, -0.00405073, 0, 1, 0, -1.25828, 0, 0, 1, 0.0436021, 0, 0, 0, 1),
             Qt.matrix4x4(1, 0, 0, -0.0711309, 0, 1, 0, -1.37232, 0, 0, 1, 0.0570181, 0, 0, 0, 1),
             Qt.matrix4x4(1, 0, 0, -0.205291, 0, 1, 0, -1.31865, 0, 0, 1, 0.0570181, 0, 0, 0, 1),
+            Qt.matrix4x4(1, 0, 0, 0.0630294, 0, 1, 0, -1.37232, 0, 0, 1, 0.0570181, 0, 0, 0, 1),
+            Qt.matrix4x4(1, 0, 0, 0.19719, 0, 1, 0, -1.31865, 0, 0, 1, 0.0570181, 0, 0, 0, 1),
             Qt.matrix4x4(1, 0, 0, -0.426656, 0, 1, 0, -1.19791, 0, 0, 1, 0.0838502, 0, 0, 0, 1),
+            Qt.matrix4x4(1, 0, 0, 0.418554, 0, 1, 0, -1.19791, 0, 0, 1, 0.0838502, 0, 0, 0, 1),
             Qt.matrix4x4(1, 0, 0, -0.68156, 0, 1, 0, -1.12412, 0, 0, 1, 0.0301861, 0, 0, 0, 1),
+            Qt.matrix4x4(1, 0, 0, 0.673459, 0, 1, 0, -1.12412, 0, 0, 1, 0.0301861, 0, 0, 0, 1),
+            Qt.matrix4x4(1, 0, 0, -0.0912549, 0, 1, 0, -0.855799, 0, 0, 1, 0.010062, 0, 0, 0, 1),
+            Qt.matrix4x4(1, 0, 0, 0.0831535, 0, 1, 0, -0.855799, 0, 0, 1, 0.010062, 0, 0, 0, 1),
             Qt.matrix4x4(1, 0, 0, -0.694976, 0, 1, 0, -1.09729, 0, 0, 1, -0.00335401, 0, 0, 0, 1),
             Qt.matrix4x4(1, 0, 0, -0.775472, 0, 1, 0, -1.05033, 0, 0, 1, -0.0301861, 0, 0, 0, 1),
             Qt.matrix4x4(1, 0, 0, -0.78218, 0, 1, 0, -1.04362, 0, 0, 1, -0.00335401, 0, 0, 0, 1),
             Qt.matrix4x4(1, 0, 0, -0.788888, 0, 1, 0, -1.03692, 0, 0, 1, 0.0301861, 0, 0, 0, 1),
             Qt.matrix4x4(1, 0, 0, -0.78218, 0, 1, 0, -1.03692, 0, 0, 1, 0.0637261, 0, 0, 0, 1),
-            Qt.matrix4x4(1, 0, 0, 0.0630294, 0, 1, 0, -1.37232, 0, 0, 1, 0.0570181, 0, 0, 0, 1),
-            Qt.matrix4x4(1, 0, 0, 0.19719, 0, 1, 0, -1.31865, 0, 0, 1, 0.0570181, 0, 0, 0, 1),
-            Qt.matrix4x4(1, 0, 0, 0.418554, 0, 1, 0, -1.19791, 0, 0, 1, 0.0838502, 0, 0, 0, 1),
-            Qt.matrix4x4(1, 0, 0, 0.673459, 0, 1, 0, -1.12412, 0, 0, 1, 0.0301861, 0, 0, 0, 1),
             Qt.matrix4x4(1, 0, 0, 0.686875, 0, 1, 0, -1.09729, 0, 0, 1, -0.00335401, 0, 0, 0, 1),
             Qt.matrix4x4(1, 0, 0, 0.767371, 0, 1, 0, -1.05033, 0, 0, 1, -0.0301861, 0, 0, 0, 1),
             Qt.matrix4x4(1, 0, 0, 0.774079, 0, 1, 0, -1.04362, 0, 0, 1, -0.00335401, 0, 0, 0, 1),
             Qt.matrix4x4(1, 0, 0, 0.780787, 0, 1, 0, -1.03692, 0, 0, 1, 0.0301861, 0, 0, 0, 1),
             Qt.matrix4x4(1, 0, 0, 0.774079, 0, 1, 0, -1.03692, 0, 0, 1, 0.0637261, 0, 0, 0, 1),
-            Qt.matrix4x4(1, 0, 0, -0.0912549, 0, 1, 0, -0.855799, 0, 0, 1, 0.010062, 0, 0, 0, 1),
             Qt.matrix4x4(1, 0, 0, -0.124795, 0, 1, 0, -0.453318, 0, 0, 1, -0.00335401, 0, 0, 0, 1),
-            Qt.matrix4x4(1, 0, 0, 0.0831535, 0, 1, 0, -0.855799, 0, 0, 1, 0.010062, 0, 0, 0, 1),
             Qt.matrix4x4(1, 0, 0, 0.116694, 0, 1, 0, -0.453318, 0, 0, 1, 0.00335401, 0, 0, 0, 1),
             Qt.matrix4x4(1, 0, 0, -0.00405073, 0, 1, 0, -1.39915, 0, 0, 1, 0.0570181, 0, 0, 0, 1),
             Qt.matrix4x4(1, 0, 0, -0.708392, 0, 1, 0, -1.07716, 0, 0, 1, -0.0301861, 0, 0, 0, 1),
@@ -136,8 +136,8 @@ Node {
 
     // Nodes:
     Node {
-        id: node4_idle
-        objectName: "4_idle"
+        id: node5_merged
+        objectName: "5_merged"
         Node {
             id: node2_slim
             objectName: "2_slim"
@@ -403,8 +403,8 @@ Node {
             }
         }
         Model {
-            id: node4_idle_mesh
-            objectName: "4_idle_mesh"
+            id: node5_merged_mesh
+            objectName: "5_merged_mesh"
             source: "meshes/meshes_0__mesh.mesh"
             skin: skin
             materials: [
@@ -4046,6 +4046,1150 @@ Node {
             }
         }
         KeyframeGroup {
+            target: joint_19
+            property: "rotation"
+            Keyframe {
+                frame: 0
+                value: Qt.quaternion(0.99836, 0.0303425, 0.046156, 0.0150492)
+            }
+            Keyframe {
+                frame: 166.667
+                value: Qt.quaternion(0.99836, 0.0303424, 0.046156, 0.015049)
+            }
+            Keyframe {
+                frame: 233.333
+                value: Qt.quaternion(0.99836, 0.0303425, 0.046156, 0.0150493)
+            }
+            Keyframe {
+                frame: 300
+                value: Qt.quaternion(0.99836, 0.0303424, 0.046156, 0.0150491)
+            }
+            Keyframe {
+                frame: 433.333
+                value: Qt.quaternion(0.99836, 0.0303425, 0.046156, 0.0150493)
+            }
+            Keyframe {
+                frame: 500
+                value: Qt.quaternion(0.99836, 0.0303425, 0.046156, 0.0150491)
+            }
+            Keyframe {
+                frame: 900
+                value: Qt.quaternion(0.99836, 0.0303424, 0.046156, 0.0150489)
+            }
+            Keyframe {
+                frame: 933.333
+                value: Qt.quaternion(0.99836, 0.0303425, 0.046156, 0.0150493)
+            }
+            Keyframe {
+                frame: 966.667
+                value: Qt.quaternion(0.99836, 0.0303424, 0.0461559, 0.0150491)
+            }
+            Keyframe {
+                frame: 1366.67
+                value: Qt.quaternion(0.99836, 0.0303425, 0.046156, 0.0150493)
+            }
+            Keyframe {
+                frame: 1433.33
+                value: Qt.quaternion(0.99836, 0.0303425, 0.0461559, 0.0150491)
+            }
+            Keyframe {
+                frame: 1500
+                value: Qt.quaternion(0.99836, 0.0303425, 0.046156, 0.0150493)
+            }
+            Keyframe {
+                frame: 1633.33
+                value: Qt.quaternion(0.99836, 0.0303425, 0.0461559, 0.0150491)
+            }
+            Keyframe {
+                frame: 1900
+                value: Qt.quaternion(0.99836, 0.0303425, 0.046156, 0.0150493)
+            }
+            Keyframe {
+                frame: 2000
+                value: Qt.quaternion(0.99836, 0.0303425, 0.0461559, 0.0150491)
+            }
+            Keyframe {
+                frame: 2066.67
+                value: Qt.quaternion(0.99836, 0.0303425, 0.046156, 0.0150494)
+            }
+            Keyframe {
+                frame: 2133.33
+                value: Qt.quaternion(0.99836, 0.0303425, 0.0461561, 0.0150492)
+            }
+            Keyframe {
+                frame: 2266.67
+                value: Qt.quaternion(0.99836, 0.0303425, 0.0461561, 0.0150494)
+            }
+            Keyframe {
+                frame: 2333.33
+                value: Qt.quaternion(0.99836, 0.0303425, 0.0461561, 0.0150491)
+            }
+        }
+        KeyframeGroup {
+            target: joint_16
+            property: "rotation"
+            Keyframe {
+                frame: 0
+                value: Qt.quaternion(0.997089, 0.0250165, 0.0448054, -0.0563894)
+            }
+        }
+        KeyframeGroup {
+            target: joint_13
+            property: "rotation"
+            Keyframe {
+                frame: 0
+                value: Qt.quaternion(0.981372, 0.0931776, 0.165529, 0.0287527)
+            }
+            Keyframe {
+                frame: 66.6667
+                value: Qt.quaternion(0.981372, 0.0931775, 0.165529, 0.0287523)
+            }
+            Keyframe {
+                frame: 2300
+                value: Qt.quaternion(0.981372, 0.0931777, 0.165529, 0.0287526)
+            }
+        }
+        KeyframeGroup {
+            target: hips
+            property: "position"
+            Keyframe {
+                frame: 0
+                value: Qt.vector3d(0.00405073, 0.908574, -0.01677)
+            }
+            Keyframe {
+                frame: 66.6667
+                value: Qt.vector3d(0.00405073, 0.908436, -0.01677)
+            }
+            Keyframe {
+                frame: 100
+                value: Qt.vector3d(0.00405073, 0.908271, -0.01677)
+            }
+            Keyframe {
+                frame: 133.333
+                value: Qt.vector3d(0.00405073, 0.908143, -0.01677)
+            }
+            Keyframe {
+                frame: 166.667
+                value: Qt.vector3d(0.00405073, 0.908093, -0.01677)
+            }
+            Keyframe {
+                frame: 200
+                value: Qt.vector3d(0.00405073, 0.90808, -0.01677)
+            }
+            Keyframe {
+                frame: 233.333
+                value: Qt.vector3d(0.00405073, 0.908094, -0.01677)
+            }
+            Keyframe {
+                frame: 266.667
+                value: Qt.vector3d(0.00405073, 0.90815, -0.01677)
+            }
+            Keyframe {
+                frame: 300
+                value: Qt.vector3d(0.00405073, 0.908184, -0.01677)
+            }
+            Keyframe {
+                frame: 333.333
+                value: Qt.vector3d(0.00405073, 0.908161, -0.01677)
+            }
+            Keyframe {
+                frame: 366.667
+                value: Qt.vector3d(0.00405073, 0.90812, -0.01677)
+            }
+            Keyframe {
+                frame: 400
+                value: Qt.vector3d(0.00405073, 0.908059, -0.01677)
+            }
+            Keyframe {
+                frame: 433.333
+                value: Qt.vector3d(0.00405073, 0.907981, -0.01677)
+            }
+            Keyframe {
+                frame: 466.667
+                value: Qt.vector3d(0.00405073, 0.907919, -0.01677)
+            }
+            Keyframe {
+                frame: 500
+                value: Qt.vector3d(0.00405073, 0.907815, -0.01677)
+            }
+            Keyframe {
+                frame: 533.333
+                value: Qt.vector3d(0.00405073, 0.90774, -0.01677)
+            }
+            Keyframe {
+                frame: 566.667
+                value: Qt.vector3d(0.00405073, 0.90776, -0.01677)
+            }
+            Keyframe {
+                frame: 600
+                value: Qt.vector3d(0.00405073, 0.907802, -0.01677)
+            }
+            Keyframe {
+                frame: 633.333
+                value: Qt.vector3d(0.00405073, 0.907867, -0.01677)
+            }
+            Keyframe {
+                frame: 666.667
+                value: Qt.vector3d(0.00405073, 0.907958, -0.01677)
+            }
+            Keyframe {
+                frame: 700
+                value: Qt.vector3d(0.00405073, 0.908014, -0.01677)
+            }
+            Keyframe {
+                frame: 733.333
+                value: Qt.vector3d(0.00405073, 0.908027, -0.01677)
+            }
+            Keyframe {
+                frame: 766.667
+                value: Qt.vector3d(0.00405073, 0.90805, -0.01677)
+            }
+            Keyframe {
+                frame: 800
+                value: Qt.vector3d(0.00405073, 0.90807, -0.01677)
+            }
+            Keyframe {
+                frame: 833.333
+                value: Qt.vector3d(0.00405073, 0.908108, -0.01677)
+            }
+            Keyframe {
+                frame: 866.667
+                value: Qt.vector3d(0.00405073, 0.908156, -0.01677)
+            }
+            Keyframe {
+                frame: 1000
+                value: Qt.vector3d(0.00405073, 0.908141, -0.01677)
+            }
+            Keyframe {
+                frame: 1100
+                value: Qt.vector3d(0.00405073, 0.908151, -0.01677)
+            }
+            Keyframe {
+                frame: 1200
+                value: Qt.vector3d(0.00405073, 0.908127, -0.01677)
+            }
+            Keyframe {
+                frame: 1233.33
+                value: Qt.vector3d(0.00405073, 0.908062, -0.01677)
+            }
+            Keyframe {
+                frame: 1266.67
+                value: Qt.vector3d(0.00405073, 0.907985, -0.01677)
+            }
+            Keyframe {
+                frame: 1300
+                value: Qt.vector3d(0.00405073, 0.907968, -0.01677)
+            }
+            Keyframe {
+                frame: 1333.33
+                value: Qt.vector3d(0.00405073, 0.907946, -0.01677)
+            }
+            Keyframe {
+                frame: 1433.33
+                value: Qt.vector3d(0.00405073, 0.908008, -0.01677)
+            }
+            Keyframe {
+                frame: 1466.67
+                value: Qt.vector3d(0.00405073, 0.908101, -0.01677)
+            }
+            Keyframe {
+                frame: 1500
+                value: Qt.vector3d(0.00405073, 0.908145, -0.01677)
+            }
+            Keyframe {
+                frame: 1533.33
+                value: Qt.vector3d(0.00405073, 0.908193, -0.01677)
+            }
+            Keyframe {
+                frame: 1600
+                value: Qt.vector3d(0.00405073, 0.90818, -0.01677)
+            }
+            Keyframe {
+                frame: 1666.67
+                value: Qt.vector3d(0.00405073, 0.908144, -0.01677)
+            }
+            Keyframe {
+                frame: 1700
+                value: Qt.vector3d(0.00405073, 0.908085, -0.01677)
+            }
+            Keyframe {
+                frame: 1733.33
+                value: Qt.vector3d(0.00405073, 0.908, -0.01677)
+            }
+            Keyframe {
+                frame: 1766.67
+                value: Qt.vector3d(0.00405073, 0.907959, -0.01677)
+            }
+            Keyframe {
+                frame: 1833.33
+                value: Qt.vector3d(0.00405073, 0.90804, -0.01677)
+            }
+            Keyframe {
+                frame: 1866.67
+                value: Qt.vector3d(0.00405073, 0.908141, -0.01677)
+            }
+            Keyframe {
+                frame: 1900
+                value: Qt.vector3d(0.00405073, 0.908243, -0.01677)
+            }
+            Keyframe {
+                frame: 1933.33
+                value: Qt.vector3d(0.00405073, 0.908348, -0.01677)
+            }
+            Keyframe {
+                frame: 1966.67
+                value: Qt.vector3d(0.00405073, 0.9084, -0.01677)
+            }
+            Keyframe {
+                frame: 2033.33
+                value: Qt.vector3d(0.00405073, 0.908413, -0.01677)
+            }
+            Keyframe {
+                frame: 2066.67
+                value: Qt.vector3d(0.00405073, 0.908424, -0.01677)
+            }
+            Keyframe {
+                frame: 2100
+                value: Qt.vector3d(0.00405073, 0.908433, -0.01677)
+            }
+            Keyframe {
+                frame: 2133.33
+                value: Qt.vector3d(0.00405073, 0.908473, -0.01677)
+            }
+            Keyframe {
+                frame: 2200
+                value: Qt.vector3d(0.00405073, 0.908441, -0.01677)
+            }
+            Keyframe {
+                frame: 2233.33
+                value: Qt.vector3d(0.00405073, 0.908468, -0.01677)
+            }
+            Keyframe {
+                frame: 2266.67
+                value: Qt.vector3d(0.00405073, 0.908552, -0.01677)
+            }
+            Keyframe {
+                frame: 2300
+                value: Qt.vector3d(0.00405073, 0.908637, -0.01677)
+            }
+            Keyframe {
+                frame: 2333.33
+                value: Qt.vector3d(0.00405073, 0.908666, -0.01677)
+            }
+            Keyframe {
+                frame: 2400
+                value: Qt.vector3d(0.00405073, 0.908698, -0.01677)
+            }
+            Keyframe {
+                frame: 2433.33
+                value: Qt.vector3d(0.00405073, 0.908729, -0.01677)
+            }
+            Keyframe {
+                frame: 2466.67
+                value: Qt.vector3d(0.00405073, 0.908717, -0.01677)
+            }
+            Keyframe {
+                frame: 2500
+                value: Qt.vector3d(0.00405073, 0.908668, -0.01677)
+            }
+            Keyframe {
+                frame: 2533.33
+                value: Qt.vector3d(0.00405073, 0.90859, -0.01677)
+            }
+            Keyframe {
+                frame: 2566.67
+                value: Qt.vector3d(0.00405073, 0.908544, -0.01677)
+            }
+            Keyframe {
+                frame: 2633.33
+                value: Qt.vector3d(0.00405073, 0.908566, -0.01677)
+            }
+            Keyframe {
+                frame: 2666.67
+                value: Qt.vector3d(0.00405073, 0.90862, -0.01677)
+            }
+            Keyframe {
+                frame: 2700
+                value: Qt.vector3d(0.00405073, 0.908664, -0.01677)
+            }
+            Keyframe {
+                frame: 2733.33
+                value: Qt.vector3d(0.00405073, 0.908692, -0.01677)
+            }
+            Keyframe {
+                frame: 2800
+                value: Qt.vector3d(0.00405073, 0.908664, -0.01677)
+            }
+            Keyframe {
+                frame: 2833.33
+                value: Qt.vector3d(0.00405073, 0.908629, -0.01677)
+            }
+            Keyframe {
+                frame: 2866.67
+                value: Qt.vector3d(0.00405073, 0.9086, -0.01677)
+            }
+            Keyframe {
+                frame: 2900
+                value: Qt.vector3d(0.00405073, 0.908585, -0.01677)
+            }
+            Keyframe {
+                frame: 2966.67
+                value: Qt.vector3d(0.00405073, 0.908574, -0.01677)
+            }
+        }
+        KeyframeGroup {
+            target: hips
+            property: "rotation"
+            Keyframe {
+                frame: 0
+                value: Qt.quaternion(0.999857, 0.0168475, -0.000740615, 0.00106244)
+            }
+            Keyframe {
+                frame: 33.3333
+                value: Qt.quaternion(0.999856, 0.0169625, -0.000747484, 0.000712056)
+            }
+            Keyframe {
+                frame: 66.6667
+                value: Qt.quaternion(0.99985, 0.0173027, -0.00065506, 0.000584978)
+            }
+            Keyframe {
+                frame: 100
+                value: Qt.quaternion(0.999846, 0.0175384, -0.000910532, 0.000584341)
+            }
+            Keyframe {
+                frame: 133.333
+                value: Qt.quaternion(0.999845, 0.0175351, -0.00137299, 0.000597225)
+            }
+            Keyframe {
+                frame: 166.667
+                value: Qt.quaternion(0.999847, 0.0173673, -0.00180501, 0.0004986)
+            }
+            Keyframe {
+                frame: 200
+                value: Qt.quaternion(0.99985, 0.0171969, -0.00218168, 0.000401784)
+            }
+            Keyframe {
+                frame: 233.333
+                value: Qt.quaternion(0.999851, 0.0171211, -0.00228633, 0.000358698)
+            }
+            Keyframe {
+                frame: 266.667
+                value: Qt.quaternion(0.999852, 0.0170574, -0.00217676, 0.000349632)
+            }
+            Keyframe {
+                frame: 300
+                value: Qt.quaternion(0.999855, 0.0169238, -0.00196735, 0.00038369)
+            }
+            Keyframe {
+                frame: 333.333
+                value: Qt.quaternion(0.999859, 0.016701, -0.00169944, 0.000430372)
+            }
+            Keyframe {
+                frame: 366.667
+                value: Qt.quaternion(0.999864, 0.0164452, -0.00138603, 0.000501903)
+            }
+            Keyframe {
+                frame: 400
+                value: Qt.quaternion(0.999868, 0.0161798, -0.00104777, 0.000584927)
+            }
+            Keyframe {
+                frame: 433.333
+                value: Qt.quaternion(0.999872, 0.0159542, -0.000686629, 0.000661779)
+            }
+            Keyframe {
+                frame: 466.667
+                value: Qt.quaternion(0.999875, 0.0157935, -0.000354797, 0.000758879)
+            }
+            Keyframe {
+                frame: 500
+                value: Qt.quaternion(0.999878, 0.0156067, -7.39112e-05, 0.000830032)
+            }
+            Keyframe {
+                frame: 533.333
+                value: Qt.quaternion(0.999882, 0.0153485, 0.000136915, 0.000854959)
+            }
+            Keyframe {
+                frame: 566.667
+                value: Qt.quaternion(0.999886, 0.0150747, 0.000317543, 0.000832277)
+            }
+            Keyframe {
+                frame: 600
+                value: Qt.quaternion(0.999889, 0.0148876, 0.000419542, 0.000771883)
+            }
+            Keyframe {
+                frame: 633.333
+                value: Qt.quaternion(0.99989, 0.014838, 0.000546324, 0.000742037)
+            }
+            Keyframe {
+                frame: 666.667
+                value: Qt.quaternion(0.99989, 0.0147879, 0.000788903, 0.000799374)
+            }
+            Keyframe {
+                frame: 700
+                value: Qt.quaternion(0.999891, 0.0147317, 0.00108378, 0.000897317)
+            }
+            Keyframe {
+                frame: 733.333
+                value: Qt.quaternion(0.999891, 0.0146648, 0.00141958, 0.000992841)
+            }
+            Keyframe {
+                frame: 766.667
+                value: Qt.quaternion(0.999891, 0.0146013, 0.00175847, 0.00109147)
+            }
+            Keyframe {
+                frame: 800
+                value: Qt.quaternion(0.999891, 0.0145393, 0.00217452, 0.00119081)
+            }
+            Keyframe {
+                frame: 833.333
+                value: Qt.quaternion(0.999891, 0.0144589, 0.00269175, 0.0012355)
+            }
+            Keyframe {
+                frame: 866.667
+                value: Qt.quaternion(0.999892, 0.0142974, 0.00309833, 0.00121645)
+            }
+            Keyframe {
+                frame: 900
+                value: Qt.quaternion(0.999895, 0.0141058, 0.00316472, 0.00115166)
+            }
+            Keyframe {
+                frame: 933.333
+                value: Qt.quaternion(0.999897, 0.0139632, 0.00317054, 0.00112174)
+            }
+            Keyframe {
+                frame: 966.667
+                value: Qt.quaternion(0.999899, 0.013761, 0.00333957, 0.00106085)
+            }
+            Keyframe {
+                frame: 1000
+                value: Qt.quaternion(0.999901, 0.013555, 0.00357927, 0.00100286)
+            }
+            Keyframe {
+                frame: 1033.33
+                value: Qt.quaternion(0.999903, 0.0133634, 0.00380836, 0.000947004)
+            }
+            Keyframe {
+                frame: 1066.67
+                value: Qt.quaternion(0.999906, 0.0131496, 0.00389757, 0.000867791)
+            }
+            Keyframe {
+                frame: 1100
+                value: Qt.quaternion(0.999909, 0.0129145, 0.00385824, 0.000792333)
+            }
+            Keyframe {
+                frame: 1133.33
+                value: Qt.quaternion(0.999912, 0.0126489, 0.00384174, 0.000699566)
+            }
+            Keyframe {
+                frame: 1166.67
+                value: Qt.quaternion(0.999917, 0.0123181, 0.00360861, 0.00064005)
+            }
+            Keyframe {
+                frame: 1200
+                value: Qt.quaternion(0.999922, 0.0120203, 0.0032382, 0.000590415)
+            }
+            Keyframe {
+                frame: 1233.33
+                value: Qt.quaternion(0.999927, 0.011724, 0.00301313, 0.000558947)
+            }
+            Keyframe {
+                frame: 1266.67
+                value: Qt.quaternion(0.999931, 0.0113876, 0.0028895, 0.000518164)
+            }
+            Keyframe {
+                frame: 1300
+                value: Qt.quaternion(0.999935, 0.0110086, 0.00283874, 0.000435642)
+            }
+            Keyframe {
+                frame: 1333.33
+                value: Qt.quaternion(0.999939, 0.0106232, 0.00286623, 0.000342274)
+            }
+            Keyframe {
+                frame: 1366.67
+                value: Qt.quaternion(0.999944, 0.0101843, 0.00297087, 0.000268085)
+            }
+            Keyframe {
+                frame: 1400
+                value: Qt.quaternion(0.999948, 0.00972971, 0.0031417, 0.00019353)
+            }
+            Keyframe {
+                frame: 1433.33
+                value: Qt.quaternion(0.99995, 0.00937154, 0.00336112, 0.000133564)
+            }
+            Keyframe {
+                frame: 1466.67
+                value: Qt.quaternion(0.999952, 0.00911085, 0.00357951, 4.12952e-05)
+            }
+            Keyframe {
+                frame: 1500
+                value: Qt.quaternion(0.999952, 0.00897198, 0.00382341, -6.82296e-05)
+            }
+            Keyframe {
+                frame: 1533.33
+                value: Qt.quaternion(0.999953, 0.00885318, 0.00402798, -0.000140296)
+            }
+            Keyframe {
+                frame: 1566.67
+                value: Qt.quaternion(0.999953, 0.00872206, 0.00421541, -0.000226497)
+            }
+            Keyframe {
+                frame: 1600
+                value: Qt.quaternion(0.999953, 0.00865825, 0.00446991, -0.000262868)
+            }
+            Keyframe {
+                frame: 1633.33
+                value: Qt.quaternion(0.999951, 0.00862764, 0.00476466, -0.000236823)
+            }
+            Keyframe {
+                frame: 1666.67
+                value: Qt.quaternion(0.999951, 0.00856619, 0.0049816, -0.000267396)
+            }
+            Keyframe {
+                frame: 1700
+                value: Qt.quaternion(0.999952, 0.0084363, 0.00500498, -0.00030861)
+            }
+            Keyframe {
+                frame: 1733.33
+                value: Qt.quaternion(0.999952, 0.00829502, 0.00521658, -0.000342616)
+            }
+            Keyframe {
+                frame: 1766.67
+                value: Qt.quaternion(0.999951, 0.00812358, 0.0056149, -0.000385317)
+            }
+            Keyframe {
+                frame: 1800
+                value: Qt.quaternion(0.99995, 0.00798966, 0.00607262, -0.000467178)
+            }
+            Keyframe {
+                frame: 1833.33
+                value: Qt.quaternion(0.999947, 0.00786437, 0.00663123, -0.00056841)
+            }
+            Keyframe {
+                frame: 1866.67
+                value: Qt.quaternion(0.999944, 0.00776087, 0.00715069, -0.00065313)
+            }
+            Keyframe {
+                frame: 1900
+                value: Qt.quaternion(0.999942, 0.00768377, 0.0075831, -0.000712804)
+            }
+            Keyframe {
+                frame: 1933.33
+                value: Qt.quaternion(0.99994, 0.00755058, 0.00789796, -0.000787257)
+            }
+            Keyframe {
+                frame: 1966.67
+                value: Qt.quaternion(0.999939, 0.0073873, 0.00814657, -0.000860792)
+            }
+            Keyframe {
+                frame: 2000
+                value: Qt.quaternion(0.999939, 0.00726272, 0.00830713, -0.00091439)
+            }
+            Keyframe {
+                frame: 2033.33
+                value: Qt.quaternion(0.999938, 0.00711478, 0.00850698, -0.000966905)
+            }
+            Keyframe {
+                frame: 2066.67
+                value: Qt.quaternion(0.999938, 0.00699124, 0.0086557, -0.00104651)
+            }
+            Keyframe {
+                frame: 2100
+                value: Qt.quaternion(0.999937, 0.00692387, 0.00872962, -0.00111314)
+            }
+            Keyframe {
+                frame: 2133.33
+                value: Qt.quaternion(0.999937, 0.00691504, 0.00873974, -0.0011808)
+            }
+            Keyframe {
+                frame: 2166.67
+                value: Qt.quaternion(0.999939, 0.00691606, 0.0085742, -0.00122369)
+            }
+            Keyframe {
+                frame: 2200
+                value: Qt.quaternion(0.999942, 0.00698073, 0.00814369, -0.00120697)
+            }
+            Keyframe {
+                frame: 2233.33
+                value: Qt.quaternion(0.999945, 0.00711826, 0.00763051, -0.00112182)
+            }
+            Keyframe {
+                frame: 2266.67
+                value: Qt.quaternion(0.999947, 0.00733124, 0.00714256, -0.00105221)
+            }
+            Keyframe {
+                frame: 2300
+                value: Qt.quaternion(0.999948, 0.00769928, 0.00656587, -0.0010132)
+            }
+            Keyframe {
+                frame: 2333.33
+                value: Qt.quaternion(0.999948, 0.00821442, 0.00594572, -0.00101853)
+            }
+            Keyframe {
+                frame: 2366.67
+                value: Qt.quaternion(0.999947, 0.00882187, 0.00517486, -0.00101723)
+            }
+            Keyframe {
+                frame: 2400
+                value: Qt.quaternion(0.999946, 0.00944284, 0.00432441, -0.000952908)
+            }
+            Keyframe {
+                frame: 2433.33
+                value: Qt.quaternion(0.999942, 0.0101097, 0.00363068, -0.000911144)
+            }
+            Keyframe {
+                frame: 2466.67
+                value: Qt.quaternion(0.999936, 0.0108542, 0.00312039, -0.000848678)
+            }
+            Keyframe {
+                frame: 2500
+                value: Qt.quaternion(0.999928, 0.0116548, 0.00261903, -0.000792103)
+            }
+            Keyframe {
+                frame: 2533.33
+                value: Qt.quaternion(0.99992, 0.0124239, 0.00214323, -0.000670285)
+            }
+            Keyframe {
+                frame: 2566.67
+                value: Qt.quaternion(0.999913, 0.0130818, 0.00172094, -0.000515522)
+            }
+            Keyframe {
+                frame: 2600
+                value: Qt.quaternion(0.999906, 0.0136424, 0.00140001, -0.000335539)
+            }
+            Keyframe {
+                frame: 2633.33
+                value: Qt.quaternion(0.999899, 0.0141812, 0.00119501, -0.000144877)
+            }
+            Keyframe {
+                frame: 2666.67
+                value: Qt.quaternion(0.999892, 0.014679, 0.00103209, 4.84332e-05)
+            }
+            Keyframe {
+                frame: 2700
+                value: Qt.quaternion(0.999886, 0.0150987, 0.000802971, 0.000224854)
+            }
+            Keyframe {
+                frame: 2733.33
+                value: Qt.quaternion(0.99988, 0.0154507, 0.000575548, 0.000381645)
+            }
+            Keyframe {
+                frame: 2766.67
+                value: Qt.quaternion(0.999876, 0.0157512, 0.00035613, 0.000522202)
+            }
+            Keyframe {
+                frame: 2800
+                value: Qt.quaternion(0.999871, 0.0160225, 0.000131612, 0.000663289)
+            }
+            Keyframe {
+                frame: 2833.33
+                value: Qt.quaternion(0.999867, 0.0162735, -0.000110581, 0.000799028)
+            }
+            Keyframe {
+                frame: 2866.67
+                value: Qt.quaternion(0.999863, 0.016501, -0.000346449, 0.000908882)
+            }
+            Keyframe {
+                frame: 2900
+                value: Qt.quaternion(0.99986, 0.0166887, -0.000549707, 0.000991734)
+            }
+            Keyframe {
+                frame: 2933.33
+                value: Qt.quaternion(0.999858, 0.0168078, -0.000689821, 0.00104449)
+            }
+            Keyframe {
+                frame: 2966.67
+                value: Qt.quaternion(0.999857, 0.0168475, -0.000740615, 0.00106244)
+            }
+        }
+        KeyframeGroup {
+            target: joint_10
+            property: "rotation"
+            Keyframe {
+                frame: 0
+                value: Qt.quaternion(0.915267, 0.155012, 0.354403, -0.112498)
+            }
+        }
+        KeyframeGroup {
+            target: joint_11
+            property: "rotation"
+            Keyframe {
+                frame: 0
+                value: Qt.quaternion(0.922468, 0.0485965, 0.283011, 0.25806)
+            }
+        }
+        KeyframeGroup {
+            target: rightUpLeg
+            property: "rotation"
+            Keyframe {
+                frame: 0
+                value: Qt.quaternion(0.993652, -0.0842645, -0.0707952, -0.0233195)
+            }
+            Keyframe {
+                frame: 33.3333
+                value: Qt.quaternion(0.993776, -0.0831957, -0.0705272, -0.0226522)
+            }
+            Keyframe {
+                frame: 66.6667
+                value: Qt.quaternion(0.993756, -0.083573, -0.0704058, -0.022549)
+            }
+            Keyframe {
+                frame: 100
+                value: Qt.quaternion(0.993708, -0.0844117, -0.070019, -0.022706)
+            }
+            Keyframe {
+                frame: 133.333
+                value: Qt.quaternion(0.993708, -0.0847673, -0.0695461, -0.0228598)
+            }
+            Keyframe {
+                frame: 166.667
+                value: Qt.quaternion(0.993775, -0.0844699, -0.0689418, -0.0228709)
+            }
+            Keyframe {
+                frame: 200
+                value: Qt.quaternion(0.993845, -0.0840582, -0.0684449, -0.0228637)
+            }
+            Keyframe {
+                frame: 233.333
+                value: Qt.quaternion(0.993897, -0.0836302, -0.0681828, -0.0229409)
+            }
+            Keyframe {
+                frame: 266.667
+                value: Qt.quaternion(0.993966, -0.0829345, -0.0679658, -0.0230956)
+            }
+            Keyframe {
+                frame: 300
+                value: Qt.quaternion(0.99403, -0.0823105, -0.067725, -0.0232994)
+            }
+            Keyframe {
+                frame: 333.333
+                value: Qt.quaternion(0.99406, -0.0820123, -0.0675645, -0.0235159)
+            }
+            Keyframe {
+                frame: 366.667
+                value: Qt.quaternion(0.994066, -0.0819344, -0.0674922, -0.0237747)
+            }
+            Keyframe {
+                frame: 400
+                value: Qt.quaternion(0.994047, -0.0820132, -0.0675828, -0.0240391)
+            }
+            Keyframe {
+                frame: 433.333
+                value: Qt.quaternion(0.994014, -0.0822435, -0.0677047, -0.0242449)
+            }
+            Keyframe {
+                frame: 466.667
+                value: Qt.quaternion(0.99398, -0.0824725, -0.0678758, -0.0243971)
+            }
+            Keyframe {
+                frame: 500
+                value: Qt.quaternion(0.993933, -0.0828618, -0.0680557, -0.0245067)
+            }
+            Keyframe {
+                frame: 533.333
+                value: Qt.quaternion(0.99391, -0.0829753, -0.0682341, -0.0245413)
+            }
+            Keyframe {
+                frame: 566.667
+                value: Qt.quaternion(0.993925, -0.0826328, -0.0684501, -0.0244715)
+            }
+            Keyframe {
+                frame: 600
+                value: Qt.quaternion(0.993964, -0.0823081, -0.068326, -0.0243609)
+            }
+            Keyframe {
+                frame: 633.333
+                value: Qt.quaternion(0.99401, -0.0820566, -0.0679691, -0.0242926)
+            }
+            Keyframe {
+                frame: 666.667
+                value: Qt.quaternion(0.994067, -0.0816897, -0.0675729, -0.0243309)
+            }
+            Keyframe {
+                frame: 700
+                value: Qt.quaternion(0.994094, -0.0815388, -0.0673277, -0.0243988)
+            }
+            Keyframe {
+                frame: 733.333
+                value: Qt.quaternion(0.994099, -0.0815969, -0.0671637, -0.0244544)
+            }
+            Keyframe {
+                frame: 766.667
+                value: Qt.quaternion(0.994091, -0.0816572, -0.0671852, -0.0245251)
+            }
+            Keyframe {
+                frame: 800
+                value: Qt.quaternion(0.994071, -0.0816984, -0.0673886, -0.024624)
+            }
+            Keyframe {
+                frame: 833.333
+                value: Qt.quaternion(0.994076, -0.0814518, -0.0675914, -0.0246927)
+            }
+            Keyframe {
+                frame: 866.667
+                value: Qt.quaternion(0.994102, -0.0809898, -0.0677728, -0.0246609)
+            }
+            Keyframe {
+                frame: 900
+                value: Qt.quaternion(0.99411, -0.0807869, -0.0679482, -0.0245472)
+            }
+            Keyframe {
+                frame: 933.333
+                value: Qt.quaternion(0.994105, -0.0807287, -0.068135, -0.0244173)
+            }
+            Keyframe {
+                frame: 966.667
+                value: Qt.quaternion(0.994108, -0.0806297, -0.0682673, -0.0242584)
+            }
+            Keyframe {
+                frame: 1000
+                value: Qt.quaternion(0.99409, -0.080692, -0.0685154, -0.0240747)
+            }
+            Keyframe {
+                frame: 1033.33
+                value: Qt.quaternion(0.994075, -0.080737, -0.0687511, -0.023857)
+            }
+            Keyframe {
+                frame: 1066.67
+                value: Qt.quaternion(0.994079, -0.0806629, -0.0688878, -0.0235766)
+            }
+            Keyframe {
+                frame: 1100
+                value: Qt.quaternion(0.994095, -0.0806172, -0.0687968, -0.0232883)
+            }
+            Keyframe {
+                frame: 1133.33
+                value: Qt.quaternion(0.994099, -0.0805551, -0.0689109, -0.0229903)
+            }
+            Keyframe {
+                frame: 1166.67
+                value: Qt.quaternion(0.99411, -0.0803759, -0.0690573, -0.0227003)
+            }
+            Keyframe {
+                frame: 1200
+                value: Qt.quaternion(0.994101, -0.0804225, -0.0692344, -0.0224009)
+            }
+            Keyframe {
+                frame: 1233.33
+                value: Qt.quaternion(0.994066, -0.0807475, -0.0694365, -0.0221552)
+            }
+            Keyframe {
+                frame: 1266.67
+                value: Qt.quaternion(0.994056, -0.0810271, -0.0693451, -0.0218985)
+            }
+            Keyframe {
+                frame: 1300
+                value: Qt.quaternion(0.994119, -0.0805987, -0.0692424, -0.0208912)
+            }
+            Keyframe {
+                frame: 1333.33
+                value: Qt.quaternion(0.994118, -0.0805028, -0.0694555, -0.0206074)
+            }
+            Keyframe {
+                frame: 1366.67
+                value: Qt.quaternion(0.994122, -0.0802283, -0.0697887, -0.0203487)
+            }
+            Keyframe {
+                frame: 1400
+                value: Qt.quaternion(0.994141, -0.0798772, -0.0699915, -0.0201248)
+            }
+            Keyframe {
+                frame: 1433.33
+                value: Qt.quaternion(0.994179, -0.0793349, -0.0701262, -0.019891)
+            }
+            Keyframe {
+                frame: 1466.67
+                value: Qt.quaternion(0.99424, -0.0786861, -0.0700901, -0.0195645)
+            }
+            Keyframe {
+                frame: 1500
+                value: Qt.quaternion(0.994265, -0.0784406, -0.0700963, -0.0192407)
+            }
+            Keyframe {
+                frame: 1533.33
+                value: Qt.quaternion(0.994266, -0.078305, -0.0702962, -0.0190149)
+            }
+            Keyframe {
+                frame: 1566.67
+                value: Qt.quaternion(0.994251, -0.0783952, -0.0704725, -0.0187845)
+            }
+            Keyframe {
+                frame: 1600
+                value: Qt.quaternion(0.994235, -0.0786222, -0.0704837, -0.0186281)
+            }
+            Keyframe {
+                frame: 1633.33
+                value: Qt.quaternion(0.994223, -0.0787918, -0.0704784, -0.0185767)
+            }
+            Keyframe {
+                frame: 1666.67
+                value: Qt.quaternion(0.994223, -0.0790094, -0.0702625, -0.0184949)
+            }
+            Keyframe {
+                frame: 1700
+                value: Qt.quaternion(0.994224, -0.0792682, -0.0699763, -0.0183985)
+            }
+            Keyframe {
+                frame: 1733.33
+                value: Qt.quaternion(0.994207, -0.0795937, -0.0698752, -0.0183091)
+            }
+            Keyframe {
+                frame: 1766.67
+                value: Qt.quaternion(0.994193, -0.0796287, -0.0700495, -0.018222)
+            }
+            Keyframe {
+                frame: 1800
+                value: Qt.quaternion(0.99419, -0.0794446, -0.0703342, -0.0181284)
+            }
+            Keyframe {
+                frame: 1833.33
+                value: Qt.quaternion(0.994213, -0.0789098, -0.070625, -0.0180263)
+            }
+            Keyframe {
+                frame: 1866.67
+                value: Qt.quaternion(0.994267, -0.0782337, -0.0706446, -0.0179488)
+            }
+            Keyframe {
+                frame: 1900
+                value: Qt.quaternion(0.994328, -0.0775783, -0.0705234, -0.0179016)
+            }
+            Keyframe {
+                frame: 1933.33
+                value: Qt.quaternion(0.994393, -0.0767518, -0.0705262, -0.0178447)
+            }
+            Keyframe {
+                frame: 1966.67
+                value: Qt.quaternion(0.994433, -0.0761171, -0.0706526, -0.0178231)
+            }
+            Keyframe {
+                frame: 2000
+                value: Qt.quaternion(0.994437, -0.0759023, -0.0708303, -0.017827)
+            }
+            Keyframe {
+                frame: 2033.33
+                value: Qt.quaternion(0.994438, -0.0756032, -0.0711295, -0.0178452)
+            }
+            Keyframe {
+                frame: 2066.67
+                value: Qt.quaternion(0.994425, -0.0753557, -0.0715701, -0.0178525)
+            }
+            Keyframe {
+                frame: 2100
+                value: Qt.quaternion(0.994417, -0.0751885, -0.0718674, -0.0178209)
+            }
+            Keyframe {
+                frame: 2133.33
+                value: Qt.quaternion(0.994436, -0.0749815, -0.0718381, -0.0177387)
+            }
+            Keyframe {
+                frame: 2166.67
+                value: Qt.quaternion(0.994439, -0.0751045, -0.0716795, -0.0176708)
+            }
+            Keyframe {
+                frame: 2200
+                value: Qt.quaternion(0.994416, -0.0756325, -0.0714545, -0.017633)
+            }
+            Keyframe {
+                frame: 2233.33
+                value: Qt.quaternion(0.994398, -0.0759965, -0.0713055, -0.0176597)
+            }
+            Keyframe {
+                frame: 2266.67
+                value: Qt.quaternion(0.994383, -0.0760884, -0.0714208, -0.0176828)
+            }
+            Keyframe {
+                frame: 2300
+                value: Qt.quaternion(0.994315, -0.0769747, -0.0714371, -0.0176132)
+            }
+            Keyframe {
+                frame: 2333.33
+                value: Qt.quaternion(0.994255, -0.0776756, -0.0714947, -0.0176564)
+            }
+            Keyframe {
+                frame: 2366.67
+                value: Qt.quaternion(0.994194, -0.0785739, -0.0713528, -0.0177176)
+            }
+            Keyframe {
+                frame: 2400
+                value: Qt.quaternion(0.994164, -0.0791295, -0.0711187, -0.0178369)
+            }
+            Keyframe {
+                frame: 2433.33
+                value: Qt.quaternion(0.994163, -0.0795831, -0.0705868, -0.0179848)
+            }
+            Keyframe {
+                frame: 2466.67
+                value: Qt.quaternion(0.994144, -0.0802963, -0.0699786, -0.0182501)
+            }
+            Keyframe {
+                frame: 2500
+                value: Qt.quaternion(0.994094, -0.0813098, -0.0694311, -0.0185597)
+            }
+            Keyframe {
+                frame: 2533.33
+                value: Qt.quaternion(0.99401, -0.082487, -0.0691337, -0.0189645)
+            }
+            Keyframe {
+                frame: 2566.67
+                value: Qt.quaternion(0.993938, -0.0833562, -0.0690113, -0.0193775)
+            }
+            Keyframe {
+                frame: 2600
+                value: Qt.quaternion(0.993883, -0.0838716, -0.0690665, -0.0198037)
+            }
+            Keyframe {
+                frame: 2633.33
+                value: Qt.quaternion(0.993845, -0.0841013, -0.0692031, -0.020232)
+            }
+            Keyframe {
+                frame: 2666.67
+                value: Qt.quaternion(0.993827, -0.084079, -0.0693659, -0.0206681)
+            }
+            Keyframe {
+                frame: 2700
+                value: Qt.quaternion(0.993817, -0.0839574, -0.0695205, -0.0211031)
+            }
+            Keyframe {
+                frame: 2733.33
+                value: Qt.quaternion(0.993806, -0.0838086, -0.069725, -0.0215337)
+            }
+            Keyframe {
+                frame: 2766.67
+                value: Qt.quaternion(0.993785, -0.0837633, -0.0699539, -0.0219408)
+            }
+            Keyframe {
+                frame: 2800
+                value: Qt.quaternion(0.993757, -0.0838167, -0.0701619, -0.0223246)
+            }
+            Keyframe {
+                frame: 2833.33
+                value: Qt.quaternion(0.993724, -0.0839685, -0.0703476, -0.0226663)
+            }
+            Keyframe {
+                frame: 2866.67
+                value: Qt.quaternion(0.993693, -0.0841139, -0.0705247, -0.0229343)
+            }
+            Keyframe {
+                frame: 2900
+                value: Qt.quaternion(0.99367, -0.0842071, -0.0706717, -0.0231349)
+            }
+            Keyframe {
+                frame: 2933.33
+                value: Qt.quaternion(0.993656, -0.0842504, -0.0707665, -0.0232693)
+            }
+            Keyframe {
+                frame: 2966.67
+                value: Qt.quaternion(0.993652, -0.0842645, -0.0707952, -0.0233195)
+            }
+        }
+        KeyframeGroup {
+            target: joint_29
+            property: "rotation"
+            Keyframe {
+                frame: 0
+                value: Qt.quaternion(0.929801, 0.0992911, -0.343686, 0.0865576)
+            }
+        }
+        KeyframeGroup {
             target: leftUpLeg
             property: "rotation"
             Keyframe {
@@ -4407,14 +5551,6 @@ Node {
             Keyframe {
                 frame: 2966.67
                 value: Qt.quaternion(0.994736, -0.0593448, 0.08339, 0.00496425)
-            }
-        }
-        KeyframeGroup {
-            target: joint_29
-            property: "rotation"
-            Keyframe {
-                frame: 0
-                value: Qt.quaternion(0.929801, 0.0992911, -0.343686, 0.0865576)
             }
         }
         KeyframeGroup {
@@ -5146,370 +6282,6 @@ Node {
             }
         }
         KeyframeGroup {
-            target: rightArm
-            property: "rotation"
-            Keyframe {
-                frame: 0
-                value: Qt.quaternion(0.817959, 0.201367, 0.367715, 0.39393)
-            }
-            Keyframe {
-                frame: 33.3333
-                value: Qt.quaternion(0.819658, 0.198883, 0.364233, 0.394895)
-            }
-            Keyframe {
-                frame: 66.6667
-                value: Qt.quaternion(0.82103, 0.19625, 0.361243, 0.396104)
-            }
-            Keyframe {
-                frame: 100
-                value: Qt.quaternion(0.821279, 0.195242, 0.36075, 0.396536)
-            }
-            Keyframe {
-                frame: 133.333
-                value: Qt.quaternion(0.82067, 0.195697, 0.362019, 0.396416)
-            }
-            Keyframe {
-                frame: 166.667
-                value: Qt.quaternion(0.81964, 0.196889, 0.364289, 0.395878)
-            }
-            Keyframe {
-                frame: 200
-                value: Qt.quaternion(0.818437, 0.198208, 0.366986, 0.395216)
-            }
-            Keyframe {
-                frame: 233.333
-                value: Qt.quaternion(0.817292, 0.19923, 0.369572, 0.39466)
-            }
-            Keyframe {
-                frame: 266.667
-                value: Qt.quaternion(0.8161, 0.200227, 0.372258, 0.394099)
-            }
-            Keyframe {
-                frame: 300
-                value: Qt.quaternion(0.814881, 0.201382, 0.375032, 0.393403)
-            }
-            Keyframe {
-                frame: 333.333
-                value: Qt.quaternion(0.81354, 0.202904, 0.378077, 0.39248)
-            }
-            Keyframe {
-                frame: 366.667
-                value: Qt.quaternion(0.812224, 0.204465, 0.381087, 0.391483)
-            }
-            Keyframe {
-                frame: 400
-                value: Qt.quaternion(0.810967, 0.206068, 0.384012, 0.390389)
-            }
-            Keyframe {
-                frame: 433.333
-                value: Qt.quaternion(0.809794, 0.207449, 0.386638, 0.389498)
-            }
-            Keyframe {
-                frame: 466.667
-                value: Qt.quaternion(0.80888, 0.208384, 0.388535, 0.389012)
-            }
-            Keyframe {
-                frame: 500
-                value: Qt.quaternion(0.808063, 0.209407, 0.390195, 0.388499)
-            }
-            Keyframe {
-                frame: 533.333
-                value: Qt.quaternion(0.807306, 0.210562, 0.391582, 0.388051)
-            }
-            Keyframe {
-                frame: 566.667
-                value: Qt.quaternion(0.806688, 0.211676, 0.392546, 0.387757)
-            }
-            Keyframe {
-                frame: 600
-                value: Qt.quaternion(0.806189, 0.212481, 0.393194, 0.387699)
-            }
-            Keyframe {
-                frame: 633.333
-                value: Qt.quaternion(0.805869, 0.212864, 0.393474, 0.38787)
-            }
-            Keyframe {
-                frame: 666.667
-                value: Qt.quaternion(0.805682, 0.212954, 0.393358, 0.388325)
-            }
-            Keyframe {
-                frame: 700
-                value: Qt.quaternion(0.805683, 0.212729, 0.392909, 0.388901)
-            }
-            Keyframe {
-                frame: 733.333
-                value: Qt.quaternion(0.805652, 0.212507, 0.392648, 0.389349)
-            }
-            Keyframe {
-                frame: 766.667
-                value: Qt.quaternion(0.805598, 0.212227, 0.392549, 0.389714)
-            }
-            Keyframe {
-                frame: 800
-                value: Qt.quaternion(0.805615, 0.211934, 0.392362, 0.390027)
-            }
-            Keyframe {
-                frame: 833.333
-                value: Qt.quaternion(0.805597, 0.211924, 0.392183, 0.390248)
-            }
-            Keyframe {
-                frame: 866.667
-                value: Qt.quaternion(0.805533, 0.212131, 0.392126, 0.390325)
-            }
-            Keyframe {
-                frame: 900
-                value: Qt.quaternion(0.805263, 0.212683, 0.392558, 0.390147)
-            }
-            Keyframe {
-                frame: 933.333
-                value: Qt.quaternion(0.805085, 0.212999, 0.392855, 0.390044)
-            }
-            Keyframe {
-                frame: 966.667
-                value: Qt.quaternion(0.804763, 0.213537, 0.393331, 0.389936)
-            }
-            Keyframe {
-                frame: 1000
-                value: Qt.quaternion(0.804224, 0.214434, 0.394158, 0.389719)
-            }
-            Keyframe {
-                frame: 1033.33
-                value: Qt.quaternion(0.803736, 0.215251, 0.394896, 0.389529)
-            }
-            Keyframe {
-                frame: 1066.67
-                value: Qt.quaternion(0.803459, 0.215771, 0.395329, 0.389374)
-            }
-            Keyframe {
-                frame: 1100
-                value: Qt.quaternion(0.803432, 0.215858, 0.395405, 0.389302)
-            }
-            Keyframe {
-                frame: 1133.33
-                value: Qt.quaternion(0.803591, 0.215649, 0.395196, 0.389303)
-            }
-            Keyframe {
-                frame: 1166.67
-                value: Qt.quaternion(0.803704, 0.215525, 0.395189, 0.389147)
-            }
-            Keyframe {
-                frame: 1200
-                value: Qt.quaternion(0.803488, 0.215901, 0.395793, 0.38877)
-            }
-            Keyframe {
-                frame: 1233.33
-                value: Qt.quaternion(0.803031, 0.216685, 0.396832, 0.388218)
-            }
-            Keyframe {
-                frame: 1266.67
-                value: Qt.quaternion(0.802612, 0.217339, 0.397766, 0.387763)
-            }
-            Keyframe {
-                frame: 1300
-                value: Qt.quaternion(0.802275, 0.217769, 0.398505, 0.387461)
-            }
-            Keyframe {
-                frame: 1333.33
-                value: Qt.quaternion(0.802033, 0.218064, 0.399075, 0.387208)
-            }
-            Keyframe {
-                frame: 1366.67
-                value: Qt.quaternion(0.80167, 0.218511, 0.399926, 0.38683)
-            }
-            Keyframe {
-                frame: 1400
-                value: Qt.quaternion(0.801208, 0.219084, 0.400893, 0.38646)
-            }
-            Keyframe {
-                frame: 1433.33
-                value: Qt.quaternion(0.800843, 0.219479, 0.401498, 0.386366)
-            }
-            Keyframe {
-                frame: 1466.67
-                value: Qt.quaternion(0.800429, 0.219926, 0.402101, 0.386344)
-            }
-            Keyframe {
-                frame: 1500
-                value: Qt.quaternion(0.800064, 0.220353, 0.402638, 0.386296)
-            }
-            Keyframe {
-                frame: 1533.33
-                value: Qt.quaternion(0.799722, 0.220815, 0.403175, 0.38618)
-            }
-            Keyframe {
-                frame: 1566.67
-                value: Qt.quaternion(0.799309, 0.221316, 0.403944, 0.385945)
-            }
-            Keyframe {
-                frame: 1600
-                value: Qt.quaternion(0.799046, 0.221631, 0.404459, 0.38577)
-            }
-            Keyframe {
-                frame: 1633.33
-                value: Qt.quaternion(0.79891, 0.221846, 0.404712, 0.385662)
-            }
-            Keyframe {
-                frame: 1666.67
-                value: Qt.quaternion(0.798829, 0.222135, 0.404921, 0.385444)
-            }
-            Keyframe {
-                frame: 1700
-                value: Qt.quaternion(0.79877, 0.222495, 0.405162, 0.385105)
-            }
-            Keyframe {
-                frame: 1733.33
-                value: Qt.quaternion(0.798653, 0.222808, 0.405406, 0.38491)
-            }
-            Keyframe {
-                frame: 1766.67
-                value: Qt.quaternion(0.798652, 0.222872, 0.405488, 0.38479)
-            }
-            Keyframe {
-                frame: 1800
-                value: Qt.quaternion(0.798627, 0.222948, 0.405553, 0.384728)
-            }
-            Keyframe {
-                frame: 1833.33
-                value: Qt.quaternion(0.798865, 0.222468, 0.405017, 0.385076)
-            }
-            Keyframe {
-                frame: 1866.67
-                value: Qt.quaternion(0.799306, 0.221581, 0.404146, 0.385588)
-            }
-            Keyframe {
-                frame: 1900
-                value: Qt.quaternion(0.799863, 0.220547, 0.403193, 0.386022)
-            }
-            Keyframe {
-                frame: 1933.33
-                value: Qt.quaternion(0.800379, 0.219712, 0.40229, 0.38637)
-            }
-            Keyframe {
-                frame: 1966.67
-                value: Qt.quaternion(0.80081, 0.218985, 0.40151, 0.386702)
-            }
-            Keyframe {
-                frame: 2000
-                value: Qt.quaternion(0.80116, 0.218464, 0.400807, 0.387001)
-            }
-            Keyframe {
-                frame: 2033.33
-                value: Qt.quaternion(0.801477, 0.218094, 0.400184, 0.387198)
-            }
-            Keyframe {
-                frame: 2066.67
-                value: Qt.quaternion(0.801659, 0.21776, 0.399857, 0.387347)
-            }
-            Keyframe {
-                frame: 2100
-                value: Qt.quaternion(0.80171, 0.217506, 0.399737, 0.387508)
-            }
-            Keyframe {
-                frame: 2133.33
-                value: Qt.quaternion(0.801737, 0.217326, 0.399604, 0.387691)
-            }
-            Keyframe {
-                frame: 2166.67
-                value: Qt.quaternion(0.801608, 0.217403, 0.399723, 0.387791)
-            }
-            Keyframe {
-                frame: 2200
-                value: Qt.quaternion(0.801052, 0.21819, 0.400636, 0.387555)
-            }
-            Keyframe {
-                frame: 2233.33
-                value: Qt.quaternion(0.800212, 0.219339, 0.401945, 0.387288)
-            }
-            Keyframe {
-                frame: 2266.67
-                value: Qt.quaternion(0.79953, 0.220126, 0.402906, 0.387251)
-            }
-            Keyframe {
-                frame: 2300
-                value: Qt.quaternion(0.799303, 0.220188, 0.403068, 0.387516)
-            }
-            Keyframe {
-                frame: 2333.33
-                value: Qt.quaternion(0.799406, 0.219796, 0.402745, 0.387861)
-            }
-            Keyframe {
-                frame: 2366.67
-                value: Qt.quaternion(0.799767, 0.219149, 0.402053, 0.388202)
-            }
-            Keyframe {
-                frame: 2400
-                value: Qt.quaternion(0.800493, 0.218199, 0.400714, 0.388624)
-            }
-            Keyframe {
-                frame: 2433.33
-                value: Qt.quaternion(0.80143, 0.217123, 0.399002, 0.389058)
-            }
-            Keyframe {
-                frame: 2466.67
-                value: Qt.quaternion(0.802461, 0.216162, 0.397139, 0.389374)
-            }
-            Keyframe {
-                frame: 2500
-                value: Qt.quaternion(0.803506, 0.215334, 0.395288, 0.38956)
-            }
-            Keyframe {
-                frame: 2533.33
-                value: Qt.quaternion(0.804614, 0.21446, 0.393313, 0.389755)
-            }
-            Keyframe {
-                frame: 2566.67
-                value: Qt.quaternion(0.805852, 0.213354, 0.391041, 0.390089)
-            }
-            Keyframe {
-                frame: 2600
-                value: Qt.quaternion(0.807223, 0.212036, 0.388469, 0.390542)
-            }
-            Keyframe {
-                frame: 2633.33
-                value: Qt.quaternion(0.808637, 0.2107, 0.385774, 0.391011)
-            }
-            Keyframe {
-                frame: 2666.67
-                value: Qt.quaternion(0.809962, 0.20947, 0.383224, 0.391437)
-            }
-            Keyframe {
-                frame: 2700
-                value: Qt.quaternion(0.811155, 0.208429, 0.380942, 0.39175)
-            }
-            Keyframe {
-                frame: 2733.33
-                value: Qt.quaternion(0.812334, 0.207355, 0.378709, 0.392042)
-            }
-            Keyframe {
-                frame: 2766.67
-                value: Qt.quaternion(0.813537, 0.206159, 0.376438, 0.392365)
-            }
-            Keyframe {
-                frame: 2800
-                value: Qt.quaternion(0.814699, 0.20493, 0.374236, 0.392705)
-            }
-            Keyframe {
-                frame: 2833.33
-                value: Qt.quaternion(0.815749, 0.203798, 0.372198, 0.39305)
-            }
-            Keyframe {
-                frame: 2866.67
-                value: Qt.quaternion(0.81664, 0.202833, 0.370428, 0.39337)
-            }
-            Keyframe {
-                frame: 2900
-                value: Qt.quaternion(0.817344, 0.202055, 0.368998, 0.393652)
-            }
-            Keyframe {
-                frame: 2933.33
-                value: Qt.quaternion(0.817802, 0.201541, 0.368049, 0.393855)
-            }
-            Keyframe {
-                frame: 2966.67
-                value: Qt.quaternion(0.817959, 0.201367, 0.367715, 0.39393)
-            }
-        }
-        KeyframeGroup {
             target: joint_22
             property: "rotation"
             Keyframe {
@@ -5518,1123 +6290,367 @@ Node {
             }
         }
         KeyframeGroup {
-            target: joint_19
+            target: rightArm
             property: "rotation"
             Keyframe {
                 frame: 0
-                value: Qt.quaternion(0.99836, 0.0303425, 0.046156, 0.0150492)
-            }
-            Keyframe {
-                frame: 166.667
-                value: Qt.quaternion(0.99836, 0.0303424, 0.046156, 0.015049)
-            }
-            Keyframe {
-                frame: 233.333
-                value: Qt.quaternion(0.99836, 0.0303425, 0.046156, 0.0150493)
-            }
-            Keyframe {
-                frame: 300
-                value: Qt.quaternion(0.99836, 0.0303424, 0.046156, 0.0150491)
-            }
-            Keyframe {
-                frame: 433.333
-                value: Qt.quaternion(0.99836, 0.0303425, 0.046156, 0.0150493)
-            }
-            Keyframe {
-                frame: 500
-                value: Qt.quaternion(0.99836, 0.0303425, 0.046156, 0.0150491)
-            }
-            Keyframe {
-                frame: 900
-                value: Qt.quaternion(0.99836, 0.0303424, 0.046156, 0.0150489)
-            }
-            Keyframe {
-                frame: 933.333
-                value: Qt.quaternion(0.99836, 0.0303425, 0.046156, 0.0150493)
-            }
-            Keyframe {
-                frame: 966.667
-                value: Qt.quaternion(0.99836, 0.0303424, 0.0461559, 0.0150491)
-            }
-            Keyframe {
-                frame: 1366.67
-                value: Qt.quaternion(0.99836, 0.0303425, 0.046156, 0.0150493)
-            }
-            Keyframe {
-                frame: 1433.33
-                value: Qt.quaternion(0.99836, 0.0303425, 0.0461559, 0.0150491)
-            }
-            Keyframe {
-                frame: 1500
-                value: Qt.quaternion(0.99836, 0.0303425, 0.046156, 0.0150493)
-            }
-            Keyframe {
-                frame: 1633.33
-                value: Qt.quaternion(0.99836, 0.0303425, 0.0461559, 0.0150491)
-            }
-            Keyframe {
-                frame: 1900
-                value: Qt.quaternion(0.99836, 0.0303425, 0.046156, 0.0150493)
-            }
-            Keyframe {
-                frame: 2000
-                value: Qt.quaternion(0.99836, 0.0303425, 0.0461559, 0.0150491)
-            }
-            Keyframe {
-                frame: 2066.67
-                value: Qt.quaternion(0.99836, 0.0303425, 0.046156, 0.0150494)
-            }
-            Keyframe {
-                frame: 2133.33
-                value: Qt.quaternion(0.99836, 0.0303425, 0.0461561, 0.0150492)
-            }
-            Keyframe {
-                frame: 2266.67
-                value: Qt.quaternion(0.99836, 0.0303425, 0.0461561, 0.0150494)
-            }
-            Keyframe {
-                frame: 2333.33
-                value: Qt.quaternion(0.99836, 0.0303425, 0.0461561, 0.0150491)
-            }
-        }
-        KeyframeGroup {
-            target: joint_16
-            property: "rotation"
-            Keyframe {
-                frame: 0
-                value: Qt.quaternion(0.997089, 0.0250165, 0.0448054, -0.0563894)
-            }
-        }
-        KeyframeGroup {
-            target: joint_11
-            property: "rotation"
-            Keyframe {
-                frame: 0
-                value: Qt.quaternion(0.922468, 0.0485965, 0.283011, 0.25806)
-            }
-        }
-        KeyframeGroup {
-            target: rightUpLeg
-            property: "rotation"
-            Keyframe {
-                frame: 0
-                value: Qt.quaternion(0.993652, -0.0842645, -0.0707952, -0.0233195)
+                value: Qt.quaternion(0.856033, 0.237169, 0.34154, 0.307099)
             }
             Keyframe {
                 frame: 33.3333
-                value: Qt.quaternion(0.993776, -0.0831957, -0.0705272, -0.0226522)
+                value: Qt.quaternion(0.857809, 0.234331, 0.33833, 0.307871)
             }
             Keyframe {
                 frame: 66.6667
-                value: Qt.quaternion(0.993756, -0.083573, -0.0704058, -0.022549)
+                value: Qt.quaternion(0.85929, 0.231396, 0.335627, 0.30892)
             }
             Keyframe {
                 frame: 100
-                value: Qt.quaternion(0.993708, -0.0844117, -0.070019, -0.022706)
+                value: Qt.quaternion(0.85958, 0.23034, 0.335241, 0.309321)
             }
             Keyframe {
                 frame: 133.333
-                value: Qt.quaternion(0.993708, -0.0847673, -0.0695461, -0.0228598)
+                value: Qt.quaternion(0.858967, 0.230926, 0.336457, 0.309267)
             }
             Keyframe {
                 frame: 166.667
-                value: Qt.quaternion(0.993775, -0.0844699, -0.0689418, -0.0228709)
+                value: Qt.quaternion(0.857895, 0.23235, 0.338594, 0.308843)
             }
             Keyframe {
                 frame: 200
-                value: Qt.quaternion(0.993845, -0.0840582, -0.0684449, -0.0228637)
+                value: Qt.quaternion(0.85664, 0.233946, 0.341143, 0.308316)
             }
             Keyframe {
                 frame: 233.333
-                value: Qt.quaternion(0.993897, -0.0836302, -0.0681828, -0.0229409)
+                value: Qt.quaternion(0.855453, 0.235236, 0.343613, 0.307887)
             }
             Keyframe {
                 frame: 266.667
-                value: Qt.quaternion(0.993966, -0.0829345, -0.0679658, -0.0230956)
+                value: Qt.quaternion(0.854219, 0.236509, 0.346185, 0.307457)
             }
             Keyframe {
                 frame: 300
-                value: Qt.quaternion(0.99403, -0.0823105, -0.067725, -0.0232994)
+                value: Qt.quaternion(0.852945, 0.23795, 0.348827, 0.306896)
             }
             Keyframe {
                 frame: 333.333
-                value: Qt.quaternion(0.99406, -0.0820123, -0.0675645, -0.0235159)
+                value: Qt.quaternion(0.851526, 0.239786, 0.351701, 0.306125)
             }
             Keyframe {
                 frame: 366.667
-                value: Qt.quaternion(0.994066, -0.0819344, -0.0674922, -0.0237747)
+                value: Qt.quaternion(0.850124, 0.241657, 0.354538, 0.305276)
             }
             Keyframe {
                 frame: 400
-                value: Qt.quaternion(0.994047, -0.0820132, -0.0675828, -0.0240391)
+                value: Qt.quaternion(0.848772, 0.24356, 0.357283, 0.304325)
             }
             Keyframe {
                 frame: 433.333
-                value: Qt.quaternion(0.994014, -0.0822435, -0.0677047, -0.0242449)
+                value: Qt.quaternion(0.847522, 0.245211, 0.359756, 0.303568)
             }
             Keyframe {
                 frame: 466.667
-                value: Qt.quaternion(0.99398, -0.0824725, -0.0678758, -0.0243971)
+                value: Qt.quaternion(0.846569, 0.246342, 0.361548, 0.303183)
             }
             Keyframe {
                 frame: 500
-                value: Qt.quaternion(0.993933, -0.0828618, -0.0680557, -0.0245067)
+                value: Qt.quaternion(0.845709, 0.247534, 0.363095, 0.302762)
             }
             Keyframe {
                 frame: 533.333
-                value: Qt.quaternion(0.99391, -0.0829753, -0.0682341, -0.0245413)
+                value: Qt.quaternion(0.844916, 0.24883, 0.364357, 0.3024)
             }
             Keyframe {
                 frame: 566.667
-                value: Qt.quaternion(0.993925, -0.0826328, -0.0684501, -0.0244715)
+                value: Qt.quaternion(0.844274, 0.250039, 0.365201, 0.302177)
             }
             Keyframe {
                 frame: 600
-                value: Qt.quaternion(0.993964, -0.0823081, -0.068326, -0.0243609)
+                value: Qt.quaternion(0.843773, 0.250908, 0.365763, 0.302174)
             }
             Keyframe {
                 frame: 633.333
-                value: Qt.quaternion(0.99401, -0.0820566, -0.0679691, -0.0242926)
+                value: Qt.quaternion(0.843474, 0.251317, 0.366003, 0.302379)
             }
             Keyframe {
                 frame: 666.667
-                value: Qt.quaternion(0.994067, -0.0816897, -0.0675729, -0.0243309)
+                value: Qt.quaternion(0.843336, 0.251392, 0.365879, 0.302851)
             }
             Keyframe {
                 frame: 700
-                value: Qt.quaternion(0.994094, -0.0815388, -0.0673277, -0.0243988)
+                value: Qt.quaternion(0.843395, 0.25112, 0.365456, 0.303423)
             }
             Keyframe {
                 frame: 733.333
-                value: Qt.quaternion(0.994099, -0.0815969, -0.0671637, -0.0244544)
+                value: Qt.quaternion(0.84341, 0.250871, 0.36522, 0.303871)
             }
             Keyframe {
                 frame: 766.667
-                value: Qt.quaternion(0.994091, -0.0816572, -0.0671852, -0.0245251)
+                value: Qt.quaternion(0.843394, 0.25058, 0.365151, 0.304239)
             }
             Keyframe {
                 frame: 800
-                value: Qt.quaternion(0.994071, -0.0816984, -0.0673886, -0.024624)
+                value: Qt.quaternion(0.843443, 0.250268, 0.364995, 0.304547)
             }
             Keyframe {
                 frame: 833.333
-                value: Qt.quaternion(0.994076, -0.0814518, -0.0675914, -0.0246927)
+                value: Qt.quaternion(0.843448, 0.250238, 0.364819, 0.304768)
             }
             Keyframe {
                 frame: 866.667
-                value: Qt.quaternion(0.994102, -0.0809898, -0.0677728, -0.0246609)
+                value: Qt.quaternion(0.843392, 0.250439, 0.36474, 0.304852)
             }
             Keyframe {
                 frame: 900
-                value: Qt.quaternion(0.99411, -0.0807869, -0.0679482, -0.0245472)
+                value: Qt.quaternion(0.843106, 0.251033, 0.365114, 0.304706)
             }
             Keyframe {
                 frame: 933.333
-                value: Qt.quaternion(0.994105, -0.0807287, -0.068135, -0.0244173)
+                value: Qt.quaternion(0.84292, 0.251378, 0.365376, 0.304624)
             }
             Keyframe {
                 frame: 966.667
-                value: Qt.quaternion(0.994108, -0.0806297, -0.0682673, -0.0242584)
+                value: Qt.quaternion(0.842589, 0.251964, 0.365795, 0.304551)
             }
             Keyframe {
                 frame: 1000
-                value: Qt.quaternion(0.99409, -0.080692, -0.0685154, -0.0240747)
+                value: Qt.quaternion(0.842034, 0.252944, 0.366526, 0.304396)
             }
             Keyframe {
                 frame: 1033.33
-                value: Qt.quaternion(0.994075, -0.080737, -0.0687511, -0.023857)
+                value: Qt.quaternion(0.841532, 0.253833, 0.367176, 0.304261)
             }
             Keyframe {
                 frame: 1066.67
-                value: Qt.quaternion(0.994079, -0.0806629, -0.0688878, -0.0235766)
+                value: Qt.quaternion(0.841241, 0.254396, 0.367554, 0.304137)
             }
             Keyframe {
                 frame: 1100
-                value: Qt.quaternion(0.994095, -0.0806172, -0.0687968, -0.0232883)
+                value: Qt.quaternion(0.841208, 0.254491, 0.367621, 0.304069)
             }
             Keyframe {
                 frame: 1133.33
-                value: Qt.quaternion(0.994099, -0.0805551, -0.0689109, -0.0229903)
+                value: Qt.quaternion(0.841365, 0.254261, 0.367434, 0.304053)
             }
             Keyframe {
                 frame: 1166.67
-                value: Qt.quaternion(0.99411, -0.0803759, -0.0690573, -0.0227003)
+                value: Qt.quaternion(0.841461, 0.254138, 0.367439, 0.303885)
             }
             Keyframe {
                 frame: 1200
-                value: Qt.quaternion(0.994101, -0.0804225, -0.0692344, -0.0224009)
+                value: Qt.quaternion(0.841209, 0.254577, 0.368001, 0.303534)
             }
             Keyframe {
                 frame: 1233.33
-                value: Qt.quaternion(0.994066, -0.0807475, -0.0694365, -0.0221552)
+                value: Qt.quaternion(0.840701, 0.255467, 0.368955, 0.303036)
             }
             Keyframe {
                 frame: 1266.67
-                value: Qt.quaternion(0.994056, -0.0810271, -0.0693451, -0.0218985)
+                value: Qt.quaternion(0.84024, 0.256217, 0.369817, 0.30263)
             }
             Keyframe {
                 frame: 1300
-                value: Qt.quaternion(0.994119, -0.0805987, -0.0692424, -0.0208912)
+                value: Qt.quaternion(0.839876, 0.256723, 0.370508, 0.302366)
             }
             Keyframe {
                 frame: 1333.33
-                value: Qt.quaternion(0.994118, -0.0805028, -0.0694555, -0.0206074)
+                value: Qt.quaternion(0.839612, 0.257077, 0.371045, 0.302141)
             }
             Keyframe {
                 frame: 1366.67
-                value: Qt.quaternion(0.994122, -0.0802283, -0.0697887, -0.0203487)
+                value: Qt.quaternion(0.839215, 0.257611, 0.371846, 0.301804)
             }
             Keyframe {
                 frame: 1400
-                value: Qt.quaternion(0.994141, -0.0798772, -0.0699915, -0.0201248)
+                value: Qt.quaternion(0.83872, 0.258284, 0.37275, 0.301488)
             }
             Keyframe {
                 frame: 1433.33
-                value: Qt.quaternion(0.994179, -0.0793349, -0.0701262, -0.019891)
+                value: Qt.quaternion(0.83835, 0.25874, 0.373312, 0.301434)
             }
             Keyframe {
                 frame: 1466.67
-                value: Qt.quaternion(0.99424, -0.0786861, -0.0700901, -0.0195645)
+                value: Qt.quaternion(0.837937, 0.259247, 0.373866, 0.301456)
             }
             Keyframe {
                 frame: 1500
-                value: Qt.quaternion(0.994265, -0.0784406, -0.0700963, -0.0192407)
+                value: Qt.quaternion(0.837572, 0.259729, 0.374357, 0.301449)
             }
             Keyframe {
                 frame: 1533.33
-                value: Qt.quaternion(0.994266, -0.078305, -0.0702962, -0.0190149)
+                value: Qt.quaternion(0.837222, 0.260245, 0.374845, 0.30137)
             }
             Keyframe {
                 frame: 1566.67
-                value: Qt.quaternion(0.994251, -0.0783952, -0.0704725, -0.0187845)
+                value: Qt.quaternion(0.836789, 0.260824, 0.375558, 0.301182)
             }
             Keyframe {
                 frame: 1600
-                value: Qt.quaternion(0.994235, -0.0786222, -0.0704837, -0.0186281)
+                value: Qt.quaternion(0.836512, 0.261192, 0.376038, 0.301036)
             }
             Keyframe {
                 frame: 1633.33
-                value: Qt.quaternion(0.994223, -0.0787918, -0.0704784, -0.0185767)
+                value: Qt.quaternion(0.836366, 0.261432, 0.376268, 0.300945)
             }
             Keyframe {
                 frame: 1666.67
-                value: Qt.quaternion(0.994223, -0.0790094, -0.0702625, -0.0184949)
+                value: Qt.quaternion(0.836263, 0.261743, 0.376446, 0.300737)
             }
             Keyframe {
                 frame: 1700
-                value: Qt.quaternion(0.994224, -0.0792682, -0.0699763, -0.0183985)
+                value: Qt.quaternion(0.83617, 0.262127, 0.376648, 0.300408)
             }
             Keyframe {
                 frame: 1733.33
-                value: Qt.quaternion(0.994207, -0.0795937, -0.0698752, -0.0183091)
+                value: Qt.quaternion(0.836034, 0.262465, 0.376859, 0.300227)
             }
             Keyframe {
                 frame: 1766.67
-                value: Qt.quaternion(0.994193, -0.0796287, -0.0700495, -0.018222)
+                value: Qt.quaternion(0.836021, 0.262537, 0.376933, 0.300108)
             }
             Keyframe {
                 frame: 1800
-                value: Qt.quaternion(0.99419, -0.0794446, -0.0703342, -0.0181284)
+                value: Qt.quaternion(0.83599, 0.26262, 0.37699, 0.300049)
             }
             Keyframe {
                 frame: 1833.33
-                value: Qt.quaternion(0.994213, -0.0789098, -0.070625, -0.0180263)
+                value: Qt.quaternion(0.836261, 0.262085, 0.376506, 0.300369)
             }
             Keyframe {
                 frame: 1866.67
-                value: Qt.quaternion(0.994267, -0.0782337, -0.0706446, -0.0179488)
+                value: Qt.quaternion(0.83675, 0.26111, 0.375731, 0.300828)
             }
             Keyframe {
                 frame: 1900
-                value: Qt.quaternion(0.994328, -0.0775783, -0.0705234, -0.0179016)
+                value: Qt.quaternion(0.837346, 0.259981, 0.37489, 0.301198)
             }
             Keyframe {
                 frame: 1933.33
-                value: Qt.quaternion(0.994393, -0.0767518, -0.0705262, -0.0178447)
+                value: Qt.quaternion(0.837892, 0.259055, 0.374077, 0.301487)
             }
             Keyframe {
                 frame: 1966.67
-                value: Qt.quaternion(0.994433, -0.0761171, -0.0706526, -0.0178231)
+                value: Qt.quaternion(0.838352, 0.258249, 0.373375, 0.301769)
             }
             Keyframe {
                 frame: 2000
-                value: Qt.quaternion(0.994437, -0.0759023, -0.0708303, -0.017827)
+                value: Qt.quaternion(0.838728, 0.257656, 0.372729, 0.302028)
             }
             Keyframe {
                 frame: 2033.33
-                value: Qt.quaternion(0.994438, -0.0756032, -0.0711295, -0.0178452)
+                value: Qt.quaternion(0.839062, 0.257222, 0.372147, 0.30219)
             }
             Keyframe {
                 frame: 2066.67
-                value: Qt.quaternion(0.994425, -0.0753557, -0.0715701, -0.0178525)
+                value: Qt.quaternion(0.839257, 0.256856, 0.371856, 0.302317)
             }
             Keyframe {
                 frame: 2100
-                value: Qt.quaternion(0.994417, -0.0751885, -0.0718674, -0.0178209)
+                value: Qt.quaternion(0.839324, 0.256589, 0.371763, 0.302471)
             }
             Keyframe {
                 frame: 2133.33
-                value: Qt.quaternion(0.994436, -0.0749815, -0.0718381, -0.0177387)
+                value: Qt.quaternion(0.839369, 0.256396, 0.37165, 0.302649)
             }
             Keyframe {
                 frame: 2166.67
-                value: Qt.quaternion(0.994439, -0.0751045, -0.0716795, -0.0176708)
+                value: Qt.quaternion(0.839253, 0.256484, 0.37176, 0.302763)
             }
             Keyframe {
                 frame: 2200
-                value: Qt.quaternion(0.994416, -0.0756325, -0.0714545, -0.017633)
+                value: Qt.quaternion(0.838679, 0.257363, 0.372589, 0.302589)
             }
             Keyframe {
                 frame: 2233.33
-                value: Qt.quaternion(0.994398, -0.0759965, -0.0713055, -0.0176597)
+                value: Qt.quaternion(0.83782, 0.258643, 0.373773, 0.302415)
             }
             Keyframe {
                 frame: 2266.67
-                value: Qt.quaternion(0.994383, -0.0760884, -0.0714208, -0.0176828)
+                value: Qt.quaternion(0.837142, 0.259527, 0.374649, 0.302453)
             }
             Keyframe {
                 frame: 2300
-                value: Qt.quaternion(0.994315, -0.0769747, -0.0714371, -0.0176132)
+                value: Qt.quaternion(0.836944, 0.259605, 0.374805, 0.30274)
             }
             Keyframe {
                 frame: 2333.33
-                value: Qt.quaternion(0.994255, -0.0776756, -0.0714947, -0.0176564)
+                value: Qt.quaternion(0.837081, 0.25918, 0.374524, 0.303071)
             }
             Keyframe {
                 frame: 2366.67
-                value: Qt.quaternion(0.994194, -0.0785739, -0.0713528, -0.0177176)
+                value: Qt.quaternion(0.837473, 0.258463, 0.373902, 0.30337)
             }
             Keyframe {
                 frame: 2400
-                value: Qt.quaternion(0.994164, -0.0791295, -0.0711187, -0.0178369)
+                value: Qt.quaternion(0.838234, 0.257376, 0.372667, 0.303711)
             }
             Keyframe {
                 frame: 2433.33
-                value: Qt.quaternion(0.994163, -0.0795831, -0.0705868, -0.0179848)
+                value: Qt.quaternion(0.839205, 0.256126, 0.371073, 0.30404)
             }
             Keyframe {
                 frame: 2466.67
-                value: Qt.quaternion(0.994144, -0.0802963, -0.0699786, -0.0182501)
+                value: Qt.quaternion(0.840256, 0.254974, 0.369316, 0.304243)
             }
             Keyframe {
                 frame: 2500
-                value: Qt.quaternion(0.994094, -0.0813098, -0.0694311, -0.0185597)
+                value: Qt.quaternion(0.841308, 0.253957, 0.367558, 0.304316)
             }
             Keyframe {
                 frame: 2533.33
-                value: Qt.quaternion(0.99401, -0.082487, -0.0691337, -0.0189645)
+                value: Qt.quaternion(0.842422, 0.252881, 0.365681, 0.304391)
             }
             Keyframe {
                 frame: 2566.67
-                value: Qt.quaternion(0.993938, -0.0833562, -0.0690113, -0.0193775)
+                value: Qt.quaternion(0.84368, 0.251542, 0.363533, 0.30459)
             }
             Keyframe {
                 frame: 2600
-                value: Qt.quaternion(0.993883, -0.0838716, -0.0690665, -0.0198037)
+                value: Qt.quaternion(0.845081, 0.249961, 0.361108, 0.304891)
             }
             Keyframe {
                 frame: 2633.33
-                value: Qt.quaternion(0.993845, -0.0841013, -0.0692031, -0.020232)
+                value: Qt.quaternion(0.846526, 0.248349, 0.358561, 0.305206)
             }
             Keyframe {
                 frame: 2666.67
-                value: Qt.quaternion(0.993827, -0.084079, -0.0693659, -0.0206681)
+                value: Qt.quaternion(0.847879, 0.246857, 0.356148, 0.305486)
             }
             Keyframe {
                 frame: 2700
-                value: Qt.quaternion(0.993817, -0.0839574, -0.0695205, -0.0211031)
+                value: Qt.quaternion(0.849089, 0.245583, 0.353983, 0.305669)
             }
             Keyframe {
                 frame: 2733.33
-                value: Qt.quaternion(0.993806, -0.0838086, -0.069725, -0.0215337)
+                value: Qt.quaternion(0.850284, 0.24428, 0.35187, 0.305831)
             }
             Keyframe {
                 frame: 2766.67
-                value: Qt.quaternion(0.993785, -0.0837633, -0.0699539, -0.0219408)
+                value: Qt.quaternion(0.851505, 0.242852, 0.349732, 0.306023)
             }
             Keyframe {
                 frame: 2800
-                value: Qt.quaternion(0.993757, -0.0838167, -0.0701619, -0.0223246)
+                value: Qt.quaternion(0.852687, 0.241398, 0.347665, 0.306235)
             }
             Keyframe {
                 frame: 2833.33
-                value: Qt.quaternion(0.993724, -0.0839685, -0.0703476, -0.0226663)
+                value: Qt.quaternion(0.85376, 0.240059, 0.345753, 0.306463)
             }
             Keyframe {
                 frame: 2866.67
-                value: Qt.quaternion(0.993693, -0.0841139, -0.0705247, -0.0229343)
+                value: Qt.quaternion(0.854673, 0.238913, 0.344091, 0.306685)
             }
             Keyframe {
                 frame: 2900
-                value: Qt.quaternion(0.99367, -0.0842071, -0.0706717, -0.0231349)
+                value: Qt.quaternion(0.855398, 0.237989, 0.342747, 0.306889)
             }
             Keyframe {
                 frame: 2933.33
-                value: Qt.quaternion(0.993656, -0.0842504, -0.0707665, -0.0232693)
+                value: Qt.quaternion(0.85587, 0.237377, 0.341855, 0.307041)
             }
             Keyframe {
                 frame: 2966.67
-                value: Qt.quaternion(0.993652, -0.0842645, -0.0707952, -0.0233195)
-            }
-        }
-        KeyframeGroup {
-            target: hips
-            property: "position"
-            Keyframe {
-                frame: 0
-                value: Qt.vector3d(0.00405073, 0.908574, -0.01677)
-            }
-            Keyframe {
-                frame: 66.6667
-                value: Qt.vector3d(0.00405073, 0.908436, -0.01677)
-            }
-            Keyframe {
-                frame: 100
-                value: Qt.vector3d(0.00405073, 0.908271, -0.01677)
-            }
-            Keyframe {
-                frame: 133.333
-                value: Qt.vector3d(0.00405073, 0.908143, -0.01677)
-            }
-            Keyframe {
-                frame: 166.667
-                value: Qt.vector3d(0.00405073, 0.908093, -0.01677)
-            }
-            Keyframe {
-                frame: 200
-                value: Qt.vector3d(0.00405073, 0.90808, -0.01677)
-            }
-            Keyframe {
-                frame: 233.333
-                value: Qt.vector3d(0.00405073, 0.908094, -0.01677)
-            }
-            Keyframe {
-                frame: 266.667
-                value: Qt.vector3d(0.00405073, 0.90815, -0.01677)
-            }
-            Keyframe {
-                frame: 300
-                value: Qt.vector3d(0.00405073, 0.908184, -0.01677)
-            }
-            Keyframe {
-                frame: 333.333
-                value: Qt.vector3d(0.00405073, 0.908161, -0.01677)
-            }
-            Keyframe {
-                frame: 366.667
-                value: Qt.vector3d(0.00405073, 0.90812, -0.01677)
-            }
-            Keyframe {
-                frame: 400
-                value: Qt.vector3d(0.00405073, 0.908059, -0.01677)
-            }
-            Keyframe {
-                frame: 433.333
-                value: Qt.vector3d(0.00405073, 0.907981, -0.01677)
-            }
-            Keyframe {
-                frame: 466.667
-                value: Qt.vector3d(0.00405073, 0.907919, -0.01677)
-            }
-            Keyframe {
-                frame: 500
-                value: Qt.vector3d(0.00405073, 0.907815, -0.01677)
-            }
-            Keyframe {
-                frame: 533.333
-                value: Qt.vector3d(0.00405073, 0.90774, -0.01677)
-            }
-            Keyframe {
-                frame: 566.667
-                value: Qt.vector3d(0.00405073, 0.90776, -0.01677)
-            }
-            Keyframe {
-                frame: 600
-                value: Qt.vector3d(0.00405073, 0.907802, -0.01677)
-            }
-            Keyframe {
-                frame: 633.333
-                value: Qt.vector3d(0.00405073, 0.907867, -0.01677)
-            }
-            Keyframe {
-                frame: 666.667
-                value: Qt.vector3d(0.00405073, 0.907958, -0.01677)
-            }
-            Keyframe {
-                frame: 700
-                value: Qt.vector3d(0.00405073, 0.908014, -0.01677)
-            }
-            Keyframe {
-                frame: 733.333
-                value: Qt.vector3d(0.00405073, 0.908027, -0.01677)
-            }
-            Keyframe {
-                frame: 766.667
-                value: Qt.vector3d(0.00405073, 0.90805, -0.01677)
-            }
-            Keyframe {
-                frame: 800
-                value: Qt.vector3d(0.00405073, 0.90807, -0.01677)
-            }
-            Keyframe {
-                frame: 833.333
-                value: Qt.vector3d(0.00405073, 0.908108, -0.01677)
-            }
-            Keyframe {
-                frame: 866.667
-                value: Qt.vector3d(0.00405073, 0.908156, -0.01677)
-            }
-            Keyframe {
-                frame: 1000
-                value: Qt.vector3d(0.00405073, 0.908141, -0.01677)
-            }
-            Keyframe {
-                frame: 1100
-                value: Qt.vector3d(0.00405073, 0.908151, -0.01677)
-            }
-            Keyframe {
-                frame: 1200
-                value: Qt.vector3d(0.00405073, 0.908127, -0.01677)
-            }
-            Keyframe {
-                frame: 1233.33
-                value: Qt.vector3d(0.00405073, 0.908062, -0.01677)
-            }
-            Keyframe {
-                frame: 1266.67
-                value: Qt.vector3d(0.00405073, 0.907985, -0.01677)
-            }
-            Keyframe {
-                frame: 1300
-                value: Qt.vector3d(0.00405073, 0.907968, -0.01677)
-            }
-            Keyframe {
-                frame: 1333.33
-                value: Qt.vector3d(0.00405073, 0.907946, -0.01677)
-            }
-            Keyframe {
-                frame: 1433.33
-                value: Qt.vector3d(0.00405073, 0.908008, -0.01677)
-            }
-            Keyframe {
-                frame: 1466.67
-                value: Qt.vector3d(0.00405073, 0.908101, -0.01677)
-            }
-            Keyframe {
-                frame: 1500
-                value: Qt.vector3d(0.00405073, 0.908145, -0.01677)
-            }
-            Keyframe {
-                frame: 1533.33
-                value: Qt.vector3d(0.00405073, 0.908193, -0.01677)
-            }
-            Keyframe {
-                frame: 1600
-                value: Qt.vector3d(0.00405073, 0.90818, -0.01677)
-            }
-            Keyframe {
-                frame: 1666.67
-                value: Qt.vector3d(0.00405073, 0.908144, -0.01677)
-            }
-            Keyframe {
-                frame: 1700
-                value: Qt.vector3d(0.00405073, 0.908085, -0.01677)
-            }
-            Keyframe {
-                frame: 1733.33
-                value: Qt.vector3d(0.00405073, 0.908, -0.01677)
-            }
-            Keyframe {
-                frame: 1766.67
-                value: Qt.vector3d(0.00405073, 0.907959, -0.01677)
-            }
-            Keyframe {
-                frame: 1833.33
-                value: Qt.vector3d(0.00405073, 0.90804, -0.01677)
-            }
-            Keyframe {
-                frame: 1866.67
-                value: Qt.vector3d(0.00405073, 0.908141, -0.01677)
-            }
-            Keyframe {
-                frame: 1900
-                value: Qt.vector3d(0.00405073, 0.908243, -0.01677)
-            }
-            Keyframe {
-                frame: 1933.33
-                value: Qt.vector3d(0.00405073, 0.908348, -0.01677)
-            }
-            Keyframe {
-                frame: 1966.67
-                value: Qt.vector3d(0.00405073, 0.9084, -0.01677)
-            }
-            Keyframe {
-                frame: 2033.33
-                value: Qt.vector3d(0.00405073, 0.908413, -0.01677)
-            }
-            Keyframe {
-                frame: 2066.67
-                value: Qt.vector3d(0.00405073, 0.908424, -0.01677)
-            }
-            Keyframe {
-                frame: 2100
-                value: Qt.vector3d(0.00405073, 0.908433, -0.01677)
-            }
-            Keyframe {
-                frame: 2133.33
-                value: Qt.vector3d(0.00405073, 0.908473, -0.01677)
-            }
-            Keyframe {
-                frame: 2200
-                value: Qt.vector3d(0.00405073, 0.908441, -0.01677)
-            }
-            Keyframe {
-                frame: 2233.33
-                value: Qt.vector3d(0.00405073, 0.908468, -0.01677)
-            }
-            Keyframe {
-                frame: 2266.67
-                value: Qt.vector3d(0.00405073, 0.908552, -0.01677)
-            }
-            Keyframe {
-                frame: 2300
-                value: Qt.vector3d(0.00405073, 0.908637, -0.01677)
-            }
-            Keyframe {
-                frame: 2333.33
-                value: Qt.vector3d(0.00405073, 0.908666, -0.01677)
-            }
-            Keyframe {
-                frame: 2400
-                value: Qt.vector3d(0.00405073, 0.908698, -0.01677)
-            }
-            Keyframe {
-                frame: 2433.33
-                value: Qt.vector3d(0.00405073, 0.908729, -0.01677)
-            }
-            Keyframe {
-                frame: 2466.67
-                value: Qt.vector3d(0.00405073, 0.908717, -0.01677)
-            }
-            Keyframe {
-                frame: 2500
-                value: Qt.vector3d(0.00405073, 0.908668, -0.01677)
-            }
-            Keyframe {
-                frame: 2533.33
-                value: Qt.vector3d(0.00405073, 0.90859, -0.01677)
-            }
-            Keyframe {
-                frame: 2566.67
-                value: Qt.vector3d(0.00405073, 0.908544, -0.01677)
-            }
-            Keyframe {
-                frame: 2633.33
-                value: Qt.vector3d(0.00405073, 0.908566, -0.01677)
-            }
-            Keyframe {
-                frame: 2666.67
-                value: Qt.vector3d(0.00405073, 0.90862, -0.01677)
-            }
-            Keyframe {
-                frame: 2700
-                value: Qt.vector3d(0.00405073, 0.908664, -0.01677)
-            }
-            Keyframe {
-                frame: 2733.33
-                value: Qt.vector3d(0.00405073, 0.908692, -0.01677)
-            }
-            Keyframe {
-                frame: 2800
-                value: Qt.vector3d(0.00405073, 0.908664, -0.01677)
-            }
-            Keyframe {
-                frame: 2833.33
-                value: Qt.vector3d(0.00405073, 0.908629, -0.01677)
-            }
-            Keyframe {
-                frame: 2866.67
-                value: Qt.vector3d(0.00405073, 0.9086, -0.01677)
-            }
-            Keyframe {
-                frame: 2900
-                value: Qt.vector3d(0.00405073, 0.908585, -0.01677)
-            }
-            Keyframe {
-                frame: 2966.67
-                value: Qt.vector3d(0.00405073, 0.908574, -0.01677)
-            }
-        }
-        KeyframeGroup {
-            target: hips
-            property: "rotation"
-            Keyframe {
-                frame: 0
-                value: Qt.quaternion(0.999857, 0.0168475, -0.000740615, 0.00106244)
-            }
-            Keyframe {
-                frame: 33.3333
-                value: Qt.quaternion(0.999856, 0.0169625, -0.000747484, 0.000712056)
-            }
-            Keyframe {
-                frame: 66.6667
-                value: Qt.quaternion(0.99985, 0.0173027, -0.00065506, 0.000584978)
-            }
-            Keyframe {
-                frame: 100
-                value: Qt.quaternion(0.999846, 0.0175384, -0.000910532, 0.000584341)
-            }
-            Keyframe {
-                frame: 133.333
-                value: Qt.quaternion(0.999845, 0.0175351, -0.00137299, 0.000597225)
-            }
-            Keyframe {
-                frame: 166.667
-                value: Qt.quaternion(0.999847, 0.0173673, -0.00180501, 0.0004986)
-            }
-            Keyframe {
-                frame: 200
-                value: Qt.quaternion(0.99985, 0.0171969, -0.00218168, 0.000401784)
-            }
-            Keyframe {
-                frame: 233.333
-                value: Qt.quaternion(0.999851, 0.0171211, -0.00228633, 0.000358698)
-            }
-            Keyframe {
-                frame: 266.667
-                value: Qt.quaternion(0.999852, 0.0170574, -0.00217676, 0.000349632)
-            }
-            Keyframe {
-                frame: 300
-                value: Qt.quaternion(0.999855, 0.0169238, -0.00196735, 0.00038369)
-            }
-            Keyframe {
-                frame: 333.333
-                value: Qt.quaternion(0.999859, 0.016701, -0.00169944, 0.000430372)
-            }
-            Keyframe {
-                frame: 366.667
-                value: Qt.quaternion(0.999864, 0.0164452, -0.00138603, 0.000501903)
-            }
-            Keyframe {
-                frame: 400
-                value: Qt.quaternion(0.999868, 0.0161798, -0.00104777, 0.000584927)
-            }
-            Keyframe {
-                frame: 433.333
-                value: Qt.quaternion(0.999872, 0.0159542, -0.000686629, 0.000661779)
-            }
-            Keyframe {
-                frame: 466.667
-                value: Qt.quaternion(0.999875, 0.0157935, -0.000354797, 0.000758879)
-            }
-            Keyframe {
-                frame: 500
-                value: Qt.quaternion(0.999878, 0.0156067, -7.39112e-05, 0.000830032)
-            }
-            Keyframe {
-                frame: 533.333
-                value: Qt.quaternion(0.999882, 0.0153485, 0.000136915, 0.000854959)
-            }
-            Keyframe {
-                frame: 566.667
-                value: Qt.quaternion(0.999886, 0.0150747, 0.000317543, 0.000832277)
-            }
-            Keyframe {
-                frame: 600
-                value: Qt.quaternion(0.999889, 0.0148876, 0.000419542, 0.000771883)
-            }
-            Keyframe {
-                frame: 633.333
-                value: Qt.quaternion(0.99989, 0.014838, 0.000546324, 0.000742037)
-            }
-            Keyframe {
-                frame: 666.667
-                value: Qt.quaternion(0.99989, 0.0147879, 0.000788903, 0.000799374)
-            }
-            Keyframe {
-                frame: 700
-                value: Qt.quaternion(0.999891, 0.0147317, 0.00108378, 0.000897317)
-            }
-            Keyframe {
-                frame: 733.333
-                value: Qt.quaternion(0.999891, 0.0146648, 0.00141958, 0.000992841)
-            }
-            Keyframe {
-                frame: 766.667
-                value: Qt.quaternion(0.999891, 0.0146013, 0.00175847, 0.00109147)
-            }
-            Keyframe {
-                frame: 800
-                value: Qt.quaternion(0.999891, 0.0145393, 0.00217452, 0.00119081)
-            }
-            Keyframe {
-                frame: 833.333
-                value: Qt.quaternion(0.999891, 0.0144589, 0.00269175, 0.0012355)
-            }
-            Keyframe {
-                frame: 866.667
-                value: Qt.quaternion(0.999892, 0.0142974, 0.00309833, 0.00121645)
-            }
-            Keyframe {
-                frame: 900
-                value: Qt.quaternion(0.999895, 0.0141058, 0.00316472, 0.00115166)
-            }
-            Keyframe {
-                frame: 933.333
-                value: Qt.quaternion(0.999897, 0.0139632, 0.00317054, 0.00112174)
-            }
-            Keyframe {
-                frame: 966.667
-                value: Qt.quaternion(0.999899, 0.013761, 0.00333957, 0.00106085)
-            }
-            Keyframe {
-                frame: 1000
-                value: Qt.quaternion(0.999901, 0.013555, 0.00357927, 0.00100286)
-            }
-            Keyframe {
-                frame: 1033.33
-                value: Qt.quaternion(0.999903, 0.0133634, 0.00380836, 0.000947004)
-            }
-            Keyframe {
-                frame: 1066.67
-                value: Qt.quaternion(0.999906, 0.0131496, 0.00389757, 0.000867791)
-            }
-            Keyframe {
-                frame: 1100
-                value: Qt.quaternion(0.999909, 0.0129145, 0.00385824, 0.000792333)
-            }
-            Keyframe {
-                frame: 1133.33
-                value: Qt.quaternion(0.999912, 0.0126489, 0.00384174, 0.000699566)
-            }
-            Keyframe {
-                frame: 1166.67
-                value: Qt.quaternion(0.999917, 0.0123181, 0.00360861, 0.00064005)
-            }
-            Keyframe {
-                frame: 1200
-                value: Qt.quaternion(0.999922, 0.0120203, 0.0032382, 0.000590415)
-            }
-            Keyframe {
-                frame: 1233.33
-                value: Qt.quaternion(0.999927, 0.011724, 0.00301313, 0.000558947)
-            }
-            Keyframe {
-                frame: 1266.67
-                value: Qt.quaternion(0.999931, 0.0113876, 0.0028895, 0.000518164)
-            }
-            Keyframe {
-                frame: 1300
-                value: Qt.quaternion(0.999935, 0.0110086, 0.00283874, 0.000435642)
-            }
-            Keyframe {
-                frame: 1333.33
-                value: Qt.quaternion(0.999939, 0.0106232, 0.00286623, 0.000342274)
-            }
-            Keyframe {
-                frame: 1366.67
-                value: Qt.quaternion(0.999944, 0.0101843, 0.00297087, 0.000268085)
-            }
-            Keyframe {
-                frame: 1400
-                value: Qt.quaternion(0.999948, 0.00972971, 0.0031417, 0.00019353)
-            }
-            Keyframe {
-                frame: 1433.33
-                value: Qt.quaternion(0.99995, 0.00937154, 0.00336112, 0.000133564)
-            }
-            Keyframe {
-                frame: 1466.67
-                value: Qt.quaternion(0.999952, 0.00911085, 0.00357951, 4.12952e-05)
-            }
-            Keyframe {
-                frame: 1500
-                value: Qt.quaternion(0.999952, 0.00897198, 0.00382341, -6.82296e-05)
-            }
-            Keyframe {
-                frame: 1533.33
-                value: Qt.quaternion(0.999953, 0.00885318, 0.00402798, -0.000140296)
-            }
-            Keyframe {
-                frame: 1566.67
-                value: Qt.quaternion(0.999953, 0.00872206, 0.00421541, -0.000226497)
-            }
-            Keyframe {
-                frame: 1600
-                value: Qt.quaternion(0.999953, 0.00865825, 0.00446991, -0.000262868)
-            }
-            Keyframe {
-                frame: 1633.33
-                value: Qt.quaternion(0.999951, 0.00862764, 0.00476466, -0.000236823)
-            }
-            Keyframe {
-                frame: 1666.67
-                value: Qt.quaternion(0.999951, 0.00856619, 0.0049816, -0.000267396)
-            }
-            Keyframe {
-                frame: 1700
-                value: Qt.quaternion(0.999952, 0.0084363, 0.00500498, -0.00030861)
-            }
-            Keyframe {
-                frame: 1733.33
-                value: Qt.quaternion(0.999952, 0.00829502, 0.00521658, -0.000342616)
-            }
-            Keyframe {
-                frame: 1766.67
-                value: Qt.quaternion(0.999951, 0.00812358, 0.0056149, -0.000385317)
-            }
-            Keyframe {
-                frame: 1800
-                value: Qt.quaternion(0.99995, 0.00798966, 0.00607262, -0.000467178)
-            }
-            Keyframe {
-                frame: 1833.33
-                value: Qt.quaternion(0.999947, 0.00786437, 0.00663123, -0.00056841)
-            }
-            Keyframe {
-                frame: 1866.67
-                value: Qt.quaternion(0.999944, 0.00776087, 0.00715069, -0.00065313)
-            }
-            Keyframe {
-                frame: 1900
-                value: Qt.quaternion(0.999942, 0.00768377, 0.0075831, -0.000712804)
-            }
-            Keyframe {
-                frame: 1933.33
-                value: Qt.quaternion(0.99994, 0.00755058, 0.00789796, -0.000787257)
-            }
-            Keyframe {
-                frame: 1966.67
-                value: Qt.quaternion(0.999939, 0.0073873, 0.00814657, -0.000860792)
-            }
-            Keyframe {
-                frame: 2000
-                value: Qt.quaternion(0.999939, 0.00726272, 0.00830713, -0.00091439)
-            }
-            Keyframe {
-                frame: 2033.33
-                value: Qt.quaternion(0.999938, 0.00711478, 0.00850698, -0.000966905)
-            }
-            Keyframe {
-                frame: 2066.67
-                value: Qt.quaternion(0.999938, 0.00699124, 0.0086557, -0.00104651)
-            }
-            Keyframe {
-                frame: 2100
-                value: Qt.quaternion(0.999937, 0.00692387, 0.00872962, -0.00111314)
-            }
-            Keyframe {
-                frame: 2133.33
-                value: Qt.quaternion(0.999937, 0.00691504, 0.00873974, -0.0011808)
-            }
-            Keyframe {
-                frame: 2166.67
-                value: Qt.quaternion(0.999939, 0.00691606, 0.0085742, -0.00122369)
-            }
-            Keyframe {
-                frame: 2200
-                value: Qt.quaternion(0.999942, 0.00698073, 0.00814369, -0.00120697)
-            }
-            Keyframe {
-                frame: 2233.33
-                value: Qt.quaternion(0.999945, 0.00711826, 0.00763051, -0.00112182)
-            }
-            Keyframe {
-                frame: 2266.67
-                value: Qt.quaternion(0.999947, 0.00733124, 0.00714256, -0.00105221)
-            }
-            Keyframe {
-                frame: 2300
-                value: Qt.quaternion(0.999948, 0.00769928, 0.00656587, -0.0010132)
-            }
-            Keyframe {
-                frame: 2333.33
-                value: Qt.quaternion(0.999948, 0.00821442, 0.00594572, -0.00101853)
-            }
-            Keyframe {
-                frame: 2366.67
-                value: Qt.quaternion(0.999947, 0.00882187, 0.00517486, -0.00101723)
-            }
-            Keyframe {
-                frame: 2400
-                value: Qt.quaternion(0.999946, 0.00944284, 0.00432441, -0.000952908)
-            }
-            Keyframe {
-                frame: 2433.33
-                value: Qt.quaternion(0.999942, 0.0101097, 0.00363068, -0.000911144)
-            }
-            Keyframe {
-                frame: 2466.67
-                value: Qt.quaternion(0.999936, 0.0108542, 0.00312039, -0.000848678)
-            }
-            Keyframe {
-                frame: 2500
-                value: Qt.quaternion(0.999928, 0.0116548, 0.00261903, -0.000792103)
-            }
-            Keyframe {
-                frame: 2533.33
-                value: Qt.quaternion(0.99992, 0.0124239, 0.00214323, -0.000670285)
-            }
-            Keyframe {
-                frame: 2566.67
-                value: Qt.quaternion(0.999913, 0.0130818, 0.00172094, -0.000515522)
-            }
-            Keyframe {
-                frame: 2600
-                value: Qt.quaternion(0.999906, 0.0136424, 0.00140001, -0.000335539)
-            }
-            Keyframe {
-                frame: 2633.33
-                value: Qt.quaternion(0.999899, 0.0141812, 0.00119501, -0.000144877)
-            }
-            Keyframe {
-                frame: 2666.67
-                value: Qt.quaternion(0.999892, 0.014679, 0.00103209, 4.84332e-05)
-            }
-            Keyframe {
-                frame: 2700
-                value: Qt.quaternion(0.999886, 0.0150987, 0.000802971, 0.000224854)
-            }
-            Keyframe {
-                frame: 2733.33
-                value: Qt.quaternion(0.99988, 0.0154507, 0.000575548, 0.000381645)
-            }
-            Keyframe {
-                frame: 2766.67
-                value: Qt.quaternion(0.999876, 0.0157512, 0.00035613, 0.000522202)
-            }
-            Keyframe {
-                frame: 2800
-                value: Qt.quaternion(0.999871, 0.0160225, 0.000131612, 0.000663289)
-            }
-            Keyframe {
-                frame: 2833.33
-                value: Qt.quaternion(0.999867, 0.0162735, -0.000110581, 0.000799028)
-            }
-            Keyframe {
-                frame: 2866.67
-                value: Qt.quaternion(0.999863, 0.016501, -0.000346449, 0.000908882)
-            }
-            Keyframe {
-                frame: 2900
-                value: Qt.quaternion(0.99986, 0.0166887, -0.000549707, 0.000991734)
-            }
-            Keyframe {
-                frame: 2933.33
-                value: Qt.quaternion(0.999858, 0.0168078, -0.000689821, 0.00104449)
-            }
-            Keyframe {
-                frame: 2966.67
-                value: Qt.quaternion(0.999857, 0.0168475, -0.000740615, 0.00106244)
-            }
-        }
-        KeyframeGroup {
-            target: joint_10
-            property: "rotation"
-            Keyframe {
-                frame: 0
-                value: Qt.quaternion(0.915267, 0.155012, 0.354403, -0.112498)
+                value: Qt.quaternion(0.856033, 0.237169, 0.34154, 0.307099)
             }
         }
         KeyframeGroup {
@@ -7370,379 +7386,363 @@ Node {
             property: "rotation"
             Keyframe {
                 frame: 0
-                value: Qt.quaternion(0.861194, 0.169329, -0.171416, -0.447538)
+                value: Qt.quaternion(0.90388, 0.184597, -0.149497, -0.355774)
             }
             Keyframe {
                 frame: 33.3333
-                value: Qt.quaternion(0.860216, 0.169321, -0.171705, -0.449307)
+                value: Qt.quaternion(0.903094, 0.184612, -0.14979, -0.357636)
             }
             Keyframe {
                 frame: 66.6667
-                value: Qt.quaternion(0.859657, 0.169194, -0.171968, -0.450321)
+                value: Qt.quaternion(0.902645, 0.18451, -0.150067, -0.358703)
             }
             Keyframe {
                 frame: 100
-                value: Qt.quaternion(0.859132, 0.169459, -0.173142, -0.450775)
+                value: Qt.quaternion(0.902174, 0.184894, -0.151209, -0.35921)
             }
             Keyframe {
                 frame: 133.333
-                value: Qt.quaternion(0.858657, 0.170039, -0.174695, -0.450861)
+                value: Qt.quaternion(0.901718, 0.185633, -0.152695, -0.359347)
             }
             Keyframe {
                 frame: 166.667
-                value: Qt.quaternion(0.858349, 0.170467, -0.176129, -0.450728)
+                value: Qt.quaternion(0.901403, 0.186209, -0.154077, -0.359249)
             }
             Keyframe {
                 frame: 200
-                value: Qt.quaternion(0.858137, 0.170762, -0.177678, -0.450413)
+                value: Qt.quaternion(0.901165, 0.186665, -0.155588, -0.358958)
             }
             Keyframe {
                 frame: 233.333
-                value: Qt.quaternion(0.85803, 0.170958, -0.179407, -0.449858)
+                value: Qt.quaternion(0.901006, 0.187043, -0.157287, -0.358418)
             }
             Keyframe {
                 frame: 266.667
-                value: Qt.quaternion(0.858111, 0.170686, -0.180841, -0.44923)
+                value: Qt.quaternion(0.901028, 0.186925, -0.158742, -0.357784)
             }
             Keyframe {
                 frame: 300
-                value: Qt.quaternion(0.858371, 0.169986, -0.181737, -0.448637)
+                value: Qt.quaternion(0.901228, 0.186324, -0.159704, -0.357165)
             }
             Keyframe {
                 frame: 333.333
-                value: Qt.quaternion(0.858757, 0.169149, -0.182224, -0.448018)
+                value: Qt.quaternion(0.901548, 0.185545, -0.160275, -0.356506)
             }
             Keyframe {
                 frame: 366.667
-                value: Qt.quaternion(0.859077, 0.168536, -0.182926, -0.447348)
+                value: Qt.quaternion(0.9018, 0.185011, -0.161036, -0.355803)
             }
             Keyframe {
                 frame: 400
-                value: Qt.quaternion(0.859261, 0.16815, -0.183919, -0.446733)
+                value: Qt.quaternion(0.901922, 0.184734, -0.162063, -0.355171)
             }
             Keyframe {
                 frame: 433.333
-                value: Qt.quaternion(0.859448, 0.16775, -0.184768, -0.446172)
+                value: Qt.quaternion(0.902053, 0.184426, -0.162949, -0.354592)
             }
             Keyframe {
                 frame: 466.667
-                value: Qt.quaternion(0.859644, 0.167338, -0.185286, -0.445735)
+                value: Qt.quaternion(0.902203, 0.184073, -0.163506, -0.354136)
             }
             Keyframe {
                 frame: 500
-                value: Qt.quaternion(0.859875, 0.166796, -0.185281, -0.445495)
+                value: Qt.quaternion(0.902408, 0.183534, -0.163556, -0.353871)
             }
             Keyframe {
                 frame: 533.333
-                value: Qt.quaternion(0.859963, 0.166568, -0.185239, -0.445427)
+                value: Qt.quaternion(0.902489, 0.183303, -0.163539, -0.353793)
             }
             Keyframe {
                 frame: 566.667
-                value: Qt.quaternion(0.859957, 0.166536, -0.185131, -0.445496)
+                value: Qt.quaternion(0.902489, 0.18326, -0.163434, -0.353862)
             }
             Keyframe {
                 frame: 600
-                value: Qt.quaternion(0.859937, 0.166554, -0.184931, -0.445611)
+                value: Qt.quaternion(0.902481, 0.183256, -0.163234, -0.353978)
             }
             Keyframe {
                 frame: 633.333
-                value: Qt.quaternion(0.859892, 0.16661, -0.184827, -0.445719)
+                value: Qt.quaternion(0.902447, 0.183301, -0.163124, -0.354091)
             }
             Keyframe {
                 frame: 666.667
-                value: Qt.quaternion(0.859793, 0.166672, -0.185011, -0.445811)
+                value: Qt.quaternion(0.902359, 0.183381, -0.163301, -0.354193)
             }
             Keyframe {
                 frame: 700
-                value: Qt.quaternion(0.859695, 0.166621, -0.185418, -0.44585)
+                value: Qt.quaternion(0.902267, 0.183373, -0.163711, -0.354242)
             }
             Keyframe {
                 frame: 733.333
-                value: Qt.quaternion(0.859617, 0.166525, -0.185924, -0.445826)
+                value: Qt.quaternion(0.902189, 0.18333, -0.164226, -0.354226)
             }
             Keyframe {
                 frame: 766.667
-                value: Qt.quaternion(0.85964, 0.166145, -0.186061, -0.445865)
+                value: Qt.quaternion(0.902217, 0.182966, -0.164402, -0.35426)
             }
             Keyframe {
                 frame: 800
-                value: Qt.quaternion(0.859738, 0.16551, -0.185768, -0.446036)
+                value: Qt.quaternion(0.90233, 0.182304, -0.164176, -0.354418)
             }
             Keyframe {
                 frame: 833.333
-                value: Qt.quaternion(0.859805, 0.165058, -0.18538, -0.446234)
+                value: Qt.quaternion(0.902417, 0.181813, -0.163837, -0.354606)
             }
             Keyframe {
                 frame: 866.667
-                value: Qt.quaternion(0.859944, 0.164741, -0.184828, -0.446314)
+                value: Qt.quaternion(0.90256, 0.18144, -0.163321, -0.35467)
             }
             Keyframe {
                 frame: 900
-                value: Qt.quaternion(0.860062, 0.164807, -0.184385, -0.446245)
+                value: Qt.quaternion(0.902669, 0.181459, -0.162873, -0.354589)
             }
             Keyframe {
                 frame: 933.333
-                value: Qt.quaternion(0.860129, 0.165253, -0.18424, -0.446011)
+                value: Qt.quaternion(0.90271, 0.181889, -0.162681, -0.354351)
             }
             Keyframe {
                 frame: 966.667
-                value: Qt.quaternion(0.86008, 0.16607, -0.184577, -0.445662)
+                value: Qt.quaternion(0.902627, 0.182738, -0.162931, -0.354013)
             }
             Keyframe {
                 frame: 1000
-                value: Qt.quaternion(0.860008, 0.167048, -0.185073, -0.445229)
+                value: Qt.quaternion(0.902512, 0.183764, -0.163322, -0.353594)
             }
             Keyframe {
                 frame: 1033.33
-                value: Qt.quaternion(0.859868, 0.168239, -0.185965, -0.44468)
+                value: Qt.quaternion(0.902319, 0.185043, -0.164086, -0.353066)
             }
             Keyframe {
                 frame: 1066.67
-                value: Qt.quaternion(0.859613, 0.1696, -0.187284, -0.444101)
+                value: Qt.quaternion(0.90201, 0.186537, -0.165257, -0.352523)
             }
             Keyframe {
                 frame: 1100
-                value: Qt.quaternion(0.859241, 0.171183, -0.188909, -0.443525)
+                value: Qt.quaternion(0.901586, 0.188284, -0.166709, -0.351995)
             }
             Keyframe {
                 frame: 1133.33
-                value: Qt.quaternion(0.858889, 0.172496, -0.190184, -0.443154)
+                value: Qt.quaternion(0.901202, 0.189724, -0.167841, -0.351667)
             }
             Keyframe {
                 frame: 1166.67
-                value: Qt.quaternion(0.85863, 0.173336, -0.19102, -0.442969)
+                value: Qt.quaternion(0.900928, 0.190647, -0.168585, -0.351513)
             }
             Keyframe {
                 frame: 1200
-                value: Qt.quaternion(0.858495, 0.17385, -0.191404, -0.442862)
+                value: Qt.quaternion(0.900784, 0.191199, -0.168914, -0.351423)
             }
             Keyframe {
                 frame: 1233.33
-                value: Qt.quaternion(0.85844, 0.174432, -0.191506, -0.442696)
+                value: Qt.quaternion(0.900713, 0.191789, -0.168955, -0.351266)
             }
             Keyframe {
                 frame: 1266.67
-                value: Qt.quaternion(0.858283, 0.175199, -0.19184, -0.442554)
+                value: Qt.quaternion(0.900542, 0.192587, -0.169208, -0.351144)
             }
             Keyframe {
                 frame: 1300
-                value: Qt.quaternion(0.858124, 0.175808, -0.192209, -0.44246)
+                value: Qt.quaternion(0.900376, 0.193232, -0.169512, -0.35107)
             }
             Keyframe {
                 frame: 1333.33
-                value: Qt.quaternion(0.857923, 0.176416, -0.192918, -0.442299)
+                value: Qt.quaternion(0.900162, 0.193912, -0.170154, -0.350933)
             }
             Keyframe {
                 frame: 1366.67
-                value: Qt.quaternion(0.857753, 0.177, -0.193789, -0.442014)
+                value: Qt.quaternion(0.899967, 0.194584, -0.17096, -0.35067)
             }
             Keyframe {
                 frame: 1400
-                value: Qt.quaternion(0.857557, 0.177715, -0.194962, -0.441591)
+                value: Qt.quaternion(0.899733, 0.195419, -0.172053, -0.350272)
             }
             Keyframe {
                 frame: 1433.33
-                value: Qt.quaternion(0.857407, 0.17844, -0.196089, -0.441091)
+                value: Qt.quaternion(0.899535, 0.19626, -0.173098, -0.349794)
             }
             Keyframe {
                 frame: 1466.67
-                value: Qt.quaternion(0.857346, 0.17893, -0.197031, -0.440591)
+                value: Qt.quaternion(0.899426, 0.196848, -0.173984, -0.349304)
             }
             Keyframe {
                 frame: 1500
-                value: Qt.quaternion(0.857426, 0.178956, -0.197427, -0.440247)
+                value: Qt.quaternion(0.899471, 0.196916, -0.174375, -0.348953)
             }
             Keyframe {
                 frame: 1533.33
-                value: Qt.quaternion(0.857458, 0.178985, -0.197753, -0.440028)
+                value: Qt.quaternion(0.899481, 0.196979, -0.174696, -0.348733)
             }
             Keyframe {
                 frame: 1566.67
-                value: Qt.quaternion(0.857369, 0.179086, -0.198067, -0.440019)
+                value: Qt.quaternion(0.899393, 0.197113, -0.174999, -0.348733)
             }
             Keyframe {
                 frame: 1600
-                value: Qt.quaternion(0.857232, 0.179235, -0.198363, -0.440091)
+                value: Qt.quaternion(0.899265, 0.197292, -0.175277, -0.34882)
             }
             Keyframe {
                 frame: 1633.33
-                value: Qt.quaternion(0.857181, 0.179066, -0.198258, -0.440307)
+                value: Qt.quaternion(0.899237, 0.197113, -0.175191, -0.34904)
             }
             Keyframe {
                 frame: 1666.67
-                value: Qt.quaternion(0.857218, 0.178531, -0.197821, -0.440649)
+                value: Qt.quaternion(0.899307, 0.196533, -0.174812, -0.349374)
             }
             Keyframe {
                 frame: 1700
-                value: Qt.quaternion(0.857348, 0.177816, -0.197208, -0.44096)
+                value: Qt.quaternion(0.899467, 0.195757, -0.174277, -0.349666)
             }
             Keyframe {
                 frame: 1733.33
-                value: Qt.quaternion(0.857375, 0.177203, -0.196884, -0.441298)
+                value: Qt.quaternion(0.899528, 0.195112, -0.174018, -0.349998)
             }
             Keyframe {
                 frame: 1766.67
-                value: Qt.quaternion(0.857306, 0.176784, -0.196886, -0.4416)
+                value: Qt.quaternion(0.89949, 0.194695, -0.174065, -0.350303)
             }
             Keyframe {
                 frame: 1800
-                value: Qt.quaternion(0.857163, 0.176561, -0.197077, -0.441881)
+                value: Qt.quaternion(0.899378, 0.194492, -0.174278, -0.350597)
             }
             Keyframe {
                 frame: 1833.33
-                value: Qt.quaternion(0.857093, 0.176331, -0.197088, -0.442103)
+                value: Qt.quaternion(0.899333, 0.194263, -0.174313, -0.350824)
             }
             Keyframe {
                 frame: 1866.67
-                value: Qt.quaternion(0.85713, 0.175922, -0.196922, -0.442268)
+                value: Qt.quaternion(0.899386, 0.193838, -0.174191, -0.350983)
             }
             Keyframe {
                 frame: 1900
-                value: Qt.quaternion(0.857266, 0.175323, -0.196508, -0.442427)
+                value: Qt.quaternion(0.899536, 0.193198, -0.173841, -0.351124)
             }
             Keyframe {
                 frame: 1933.33
-                value: Qt.quaternion(0.857387, 0.17476, -0.196051, -0.442618)
+                value: Qt.quaternion(0.899675, 0.19259, -0.173445, -0.351299)
             }
             Keyframe {
                 frame: 1966.67
-                value: Qt.quaternion(0.857436, 0.174496, -0.195844, -0.44272)
+                value: Qt.quaternion(0.899733, 0.192306, -0.173266, -0.351395)
             }
             Keyframe {
                 frame: 2000
-                value: Qt.quaternion(0.857487, 0.174369, -0.195647, -0.442757)
+                value: Qt.quaternion(0.899787, 0.192159, -0.173084, -0.351426)
             }
             Keyframe {
                 frame: 2033.33
-                value: Qt.quaternion(0.857556, 0.174426, -0.195529, -0.442653)
+                value: Qt.quaternion(0.899844, 0.192204, -0.17296, -0.351316)
             }
             Keyframe {
                 frame: 2066.67
-                value: Qt.quaternion(0.85763, 0.174719, -0.195599, -0.442363)
+                value: Qt.quaternion(0.899888, 0.192503, -0.172999, -0.35102)
             }
             Keyframe {
                 frame: 2100
-                value: Qt.quaternion(0.857673, 0.175217, -0.195974, -0.441917)
+                value: Qt.quaternion(0.899885, 0.193039, -0.17332, -0.350575)
             }
             Keyframe {
                 frame: 2133.33
-                value: Qt.quaternion(0.857702, 0.17575, -0.196621, -0.44136)
+                value: Qt.quaternion(0.899859, 0.19364, -0.173908, -0.35002)
             }
             Keyframe {
                 frame: 2166.67
-                value: Qt.quaternion(0.857653, 0.176408, -0.197623, -0.440746)
+                value: Qt.quaternion(0.899749, 0.1944, -0.174835, -0.349417)
             }
             Keyframe {
                 frame: 2200
-                value: Qt.quaternion(0.857556, 0.177179, -0.198692, -0.440145)
+                value: Qt.quaternion(0.899594, 0.195281, -0.175818, -0.348832)
             }
             Keyframe {
                 frame: 2233.33
-                value: Qt.quaternion(0.857385, 0.178213, -0.199849, -0.439536)
+                value: Qt.quaternion(0.899365, 0.196432, -0.176862, -0.348248)
             }
             Keyframe {
                 frame: 2266.67
-                value: Qt.quaternion(0.857142, 0.179422, -0.201153, -0.438923)
+                value: Qt.quaternion(0.899064, 0.197774, -0.178033, -0.347668)
             }
             Keyframe {
                 frame: 2300
-                value: Qt.quaternion(0.856978, 0.180327, -0.201959, -0.438501)
+                value: Qt.quaternion(0.89886, 0.19876, -0.178741, -0.347269)
             }
             Keyframe {
                 frame: 2333.33
-                value: Qt.quaternion(0.856936, 0.180679, -0.201946, -0.438444)
+                value: Qt.quaternion(0.898813, 0.199108, -0.178692, -0.347219)
             }
             Keyframe {
                 frame: 2366.67
-                value: Qt.quaternion(0.857038, 0.180525, -0.201096, -0.438698)
+                value: Qt.quaternion(0.898938, 0.198866, -0.177862, -0.34746)
             }
             Keyframe {
                 frame: 2400
-                value: Qt.quaternion(0.857228, 0.18012, -0.199578, -0.439187)
+                value: Qt.quaternion(0.899172, 0.198302, -0.176394, -0.347924)
             }
             Keyframe {
                 frame: 2433.33
-                value: Qt.quaternion(0.857327, 0.179893, -0.198237, -0.439695)
+                value: Qt.quaternion(0.899318, 0.197934, -0.175084, -0.348419)
             }
             Keyframe {
                 frame: 2466.67
-                value: Qt.quaternion(0.857413, 0.179604, -0.196866, -0.440259)
+                value: Qt.quaternion(0.899458, 0.197502, -0.17375, -0.34897)
             }
             Keyframe {
                 frame: 2500
-                value: Qt.quaternion(0.857617, 0.179004, -0.195099, -0.440893)
+                value: Qt.quaternion(0.899719, 0.196718, -0.172054, -0.349577)
             }
             Keyframe {
                 frame: 2533.33
-                value: Qt.quaternion(0.857954, 0.178102, -0.19287, -0.441583)
+                value: Qt.quaternion(0.900118, 0.195585, -0.16993, -0.350224)
             }
             Keyframe {
                 frame: 2566.67
-                value: Qt.quaternion(0.858317, 0.177147, -0.190464, -0.442306)
+                value: Qt.quaternion(0.900546, 0.194382, -0.167635, -0.350901)
             }
             Keyframe {
                 frame: 2600
-                value: Qt.quaternion(0.858679, 0.176265, -0.18815, -0.442946)
+                value: Qt.quaternion(0.900963, 0.193261, -0.165425, -0.351496)
             }
             Keyframe {
                 frame: 2633.33
-                value: Qt.quaternion(0.858995, 0.175489, -0.18608, -0.443514)
+                value: Qt.quaternion(0.90133, 0.19227, -0.163446, -0.352026)
             }
             Keyframe {
                 frame: 2666.67
-                value: Qt.quaternion(0.859259, 0.174824, -0.184239, -0.444035)
+                value: Qt.quaternion(0.901639, 0.191415, -0.161684, -0.352514)
             }
             Keyframe {
                 frame: 2700
-                value: Qt.quaternion(0.859527, 0.174107, -0.182324, -0.444589)
+                value: Qt.quaternion(0.901956, 0.190499, -0.159853, -0.353033)
             }
             Keyframe {
                 frame: 2733.33
-                value: Qt.quaternion(0.859812, 0.173308, -0.180386, -0.445139)
+                value: Qt.quaternion(0.90229, 0.1895, -0.158009, -0.353548)
             }
             Keyframe {
                 frame: 2766.67
-                value: Qt.quaternion(0.8601, 0.172446, -0.178494, -0.44568)
+                value: Qt.quaternion(0.902625, 0.188444, -0.156215, -0.354053)
             }
             Keyframe {
                 frame: 2800
-                value: Qt.quaternion(0.860384, 0.171601, -0.176681, -0.44618)
+                value: Qt.quaternion(0.902953, 0.187412, -0.1545, -0.354517)
             }
             Keyframe {
                 frame: 2833.33
-                value: Qt.quaternion(0.860638, 0.170859, -0.175037, -0.446623)
+                value: Qt.quaternion(0.903246, 0.1865, -0.152942, -0.354928)
             }
             Keyframe {
                 frame: 2866.67
-                value: Qt.quaternion(0.860854, 0.170244, -0.173618, -0.446996)
+                value: Qt.quaternion(0.903494, 0.185739, -0.151594, -0.355274)
             }
             Keyframe {
                 frame: 2900
-                value: Qt.quaternion(0.861035, 0.169748, -0.172455, -0.447285)
+                value: Qt.quaternion(0.9037, 0.185123, -0.150488, -0.355541)
             }
             Keyframe {
                 frame: 2933.33
-                value: Qt.quaternion(0.861153, 0.169432, -0.171683, -0.447474)
+                value: Qt.quaternion(0.903834, 0.184727, -0.149753, -0.355715)
             }
             Keyframe {
                 frame: 2966.67
-                value: Qt.quaternion(0.861194, 0.169329, -0.171416, -0.447538)
-            }
-        }
-        KeyframeGroup {
-            target: joint_13
-            property: "rotation"
-            Keyframe {
-                frame: 0
-                value: Qt.quaternion(0.981372, 0.0931776, 0.165529, 0.0287527)
-            }
-            Keyframe {
-                frame: 66.6667
-                value: Qt.quaternion(0.981372, 0.0931775, 0.165529, 0.0287523)
-            }
-            Keyframe {
-                frame: 2300
-                value: Qt.quaternion(0.981372, 0.0931777, 0.165529, 0.0287526)
+                value: Qt.quaternion(0.90388, 0.184597, -0.149497, -0.355774)
             }
         }
         KeyframeGroup {
@@ -10938,806 +10938,6 @@ Node {
             }
         }
         KeyframeGroup {
-            target: leftUpLeg
-            property: "rotation"
-            Keyframe {
-                frame: 0
-                value: Qt.quaternion(0.907416, -0.386798, -0.0302496, -0.161461)
-            }
-            Keyframe {
-                frame: 33.3333
-                value: Qt.quaternion(0.917419, -0.346434, -0.0218049, -0.194552)
-            }
-            Keyframe {
-                frame: 66.6667
-                value: Qt.quaternion(0.944721, -0.260847, -0.0125088, -0.198253)
-            }
-            Keyframe {
-                frame: 100
-                value: Qt.quaternion(0.970392, -0.176522, -0.0127802, -0.164364)
-            }
-            Keyframe {
-                frame: 133.333
-                value: Qt.quaternion(0.990251, -0.0784251, -0.0202164, -0.113328)
-            }
-            Keyframe {
-                frame: 166.667
-                value: Qt.quaternion(0.998121, 0.0149772, -0.015591, -0.0573386)
-            }
-            Keyframe {
-                frame: 200
-                value: Qt.quaternion(0.996301, 0.0847693, 0.00599685, -0.0127627)
-            }
-            Keyframe {
-                frame: 233.333
-                value: Qt.quaternion(0.991143, 0.130716, 0.022328, 0.00704895)
-            }
-            Keyframe {
-                frame: 266.667
-                value: Qt.quaternion(0.987809, 0.154222, 0.021024, 0.00276831)
-            }
-            Keyframe {
-                frame: 300
-                value: Qt.quaternion(0.988504, 0.147703, 0.0296296, -0.0129034)
-            }
-            Keyframe {
-                frame: 333.333
-                value: Qt.quaternion(0.99097, 0.119689, 0.0596119, -0.00998791)
-            }
-            Keyframe {
-                frame: 366.667
-                value: Qt.quaternion(0.991968, 0.080527, 0.0965931, 0.0135934)
-            }
-            Keyframe {
-                frame: 400
-                value: Qt.quaternion(0.989832, 0.0336392, 0.128371, 0.0512121)
-            }
-            Keyframe {
-                frame: 433.333
-                value: Qt.quaternion(0.989989, -0.0351949, 0.116665, 0.0712271)
-            }
-            Keyframe {
-                frame: 466.667
-                value: Qt.quaternion(0.985836, -0.140891, 0.0645085, 0.0641558)
-            }
-            Keyframe {
-                frame: 500
-                value: Qt.quaternion(0.963904, -0.261832, 0.0216042, 0.0432008)
-            }
-            Keyframe {
-                frame: 533.333
-                value: Qt.quaternion(0.930681, -0.365514, 0.0071568, 0.0134649)
-            }
-            Keyframe {
-                frame: 566.667
-                value: Qt.quaternion(0.895915, -0.443385, 0.0137862, -0.0235734)
-            }
-            Keyframe {
-                frame: 600
-                value: Qt.quaternion(0.87156, -0.486067, 0.0237936, -0.059631)
-            }
-            Keyframe {
-                frame: 633.333
-                value: Qt.quaternion(0.868704, -0.487483, 0.0298581, -0.0825929)
-            }
-            Keyframe {
-                frame: 666.667
-                value: Qt.quaternion(0.887244, -0.451706, 0.0372669, -0.0858607)
-            }
-            Keyframe {
-                frame: 700
-                value: Qt.quaternion(0.912499, -0.399709, 0.0408601, -0.0768661)
-            }
-            Keyframe {
-                frame: 733.333
-                value: Qt.quaternion(0.929672, -0.356771, 0.0443782, -0.0803421)
-            }
-            Keyframe {
-                frame: 766.667
-                value: Qt.quaternion(0.933992, -0.33758, 0.0480621, -0.10672)
-            }
-            Keyframe {
-                frame: 800
-                value: Qt.quaternion(0.918424, -0.358161, 0.0222551, -0.166502)
-            }
-            Keyframe {
-                frame: 833.333
-                value: Qt.quaternion(0.920234, -0.333331, -0.00553215, -0.20501)
-            }
-            Keyframe {
-                frame: 866.667
-                value: Qt.quaternion(0.942794, -0.267712, -0.0149184, -0.198111)
-            }
-            Keyframe {
-                frame: 900
-                value: Qt.quaternion(0.967789, -0.181983, -0.0217881, -0.172602)
-            }
-            Keyframe {
-                frame: 933.333
-                value: Qt.quaternion(0.986701, -0.077658, -0.0296045, -0.139693)
-            }
-            Keyframe {
-                frame: 966.667
-                value: Qt.quaternion(0.994744, 0.026834, -0.0261054, -0.0953095)
-            }
-            Keyframe {
-                frame: 1000
-                value: Qt.quaternion(0.99327, 0.106022, 0.000925832, -0.0466096)
-            }
-            Keyframe {
-                frame: 1033.33
-                value: Qt.quaternion(0.986365, 0.160394, 0.0354331, -0.0101039)
-            }
-            Keyframe {
-                frame: 1066.67
-                value: Qt.quaternion(0.980724, 0.189666, 0.0469138, -0.00273651)
-            }
-            Keyframe {
-                frame: 1100
-                value: Qt.quaternion(0.979053, 0.195677, 0.0558309, -0.0069427)
-            }
-            Keyframe {
-                frame: 1133.33
-                value: Qt.quaternion(0.979756, 0.186135, 0.0737036, -0.000612071)
-            }
-            Keyframe {
-                frame: 1166.67
-                value: Qt.quaternion(0.981931, 0.165353, 0.0903493, 0.0174953)
-            }
-            Keyframe {
-                frame: 1200
-                value: Qt.quaternion(0.986073, 0.115777, 0.107834, 0.0512534)
-            }
-            Keyframe {
-                frame: 1233.33
-                value: Qt.quaternion(0.992534, 0.0418198, 0.089619, 0.0713819)
-            }
-            Keyframe {
-                frame: 1266.67
-                value: Qt.quaternion(0.996409, -0.0628952, 0.0251284, 0.0508117)
-            }
-            Keyframe {
-                frame: 1300
-                value: Qt.quaternion(0.984222, -0.175195, -0.02198, 0.0114202)
-            }
-            Keyframe {
-                frame: 1333.33
-                value: Qt.quaternion(0.963387, -0.264936, -0.0278176, -0.0303363)
-            }
-            Keyframe {
-                frame: 1366.67
-                value: Qt.quaternion(0.943884, -0.322632, -0.0149814, -0.0690405)
-            }
-            Keyframe {
-                frame: 1400
-                value: Qt.quaternion(0.930924, -0.3508, -0.0047766, -0.101474)
-            }
-            Keyframe {
-                frame: 1433.33
-                value: Qt.quaternion(0.924801, -0.35957, -0.00268402, -0.124278)
-            }
-            Keyframe {
-                frame: 1466.67
-                value: Qt.quaternion(0.920575, -0.365039, -0.0106344, -0.138476)
-            }
-            Keyframe {
-                frame: 1500
-                value: Qt.quaternion(0.914332, -0.375862, -0.0215443, -0.149202)
-            }
-            Keyframe {
-                frame: 1533.33
-                value: Qt.quaternion(0.909174, -0.384233, -0.0280872, -0.158049)
-            }
-            Keyframe {
-                frame: 1566.67
-                value: Qt.quaternion(0.907416, -0.386798, -0.0302496, -0.161461)
-            }
-        }
-        KeyframeGroup {
-            target: joint_29
-            property: "rotation"
-            Keyframe {
-                frame: 0
-                value: Qt.quaternion(0.929801, 0.0992911, -0.343686, 0.0865577)
-            }
-        }
-        KeyframeGroup {
-            target: rightHand
-            property: "rotation"
-            Keyframe {
-                frame: 0
-                value: Qt.quaternion(0.98166, 0.125194, -0.0347689, -0.139504)
-            }
-            Keyframe {
-                frame: 33.3333
-                value: Qt.quaternion(0.979686, 0.121858, -0.0312708, -0.156169)
-            }
-            Keyframe {
-                frame: 66.6667
-                value: Qt.quaternion(0.976735, 0.109821, -0.0229837, -0.182758)
-            }
-            Keyframe {
-                frame: 100
-                value: Qt.quaternion(0.97866, 0.0578666, -0.0625211, -0.186996)
-            }
-            Keyframe {
-                frame: 133.333
-                value: Qt.quaternion(0.983272, 0.012017, -0.0929999, -0.156151)
-            }
-            Keyframe {
-                frame: 166.667
-                value: Qt.quaternion(0.987662, -0.0223789, -0.10699, -0.112141)
-            }
-            Keyframe {
-                frame: 200
-                value: Qt.quaternion(0.988812, -0.0470454, -0.1149, -0.0826812)
-            }
-            Keyframe {
-                frame: 233.333
-                value: Qt.quaternion(0.98786, -0.0620062, -0.121613, -0.0741535)
-            }
-            Keyframe {
-                frame: 266.667
-                value: Qt.quaternion(0.986401, -0.0700953, -0.12618, -0.0786058)
-            }
-            Keyframe {
-                frame: 300
-                value: Qt.quaternion(0.984543, -0.0742733, -0.129661, -0.0913651)
-            }
-            Keyframe {
-                frame: 333.333
-                value: Qt.quaternion(0.982327, -0.0761692, -0.133998, -0.106192)
-            }
-            Keyframe {
-                frame: 366.667
-                value: Qt.quaternion(0.981172, -0.0765791, -0.134057, -0.11604)
-            }
-            Keyframe {
-                frame: 400
-                value: Qt.quaternion(0.983046, -0.0640075, -0.124532, -0.118384)
-            }
-            Keyframe {
-                frame: 433.333
-                value: Qt.quaternion(0.991234, -0.0195551, -0.0967229, -0.0878491)
-            }
-            Keyframe {
-                frame: 466.667
-                value: Qt.quaternion(0.997062, 0.0395507, -0.0466529, -0.0461242)
-            }
-            Keyframe {
-                frame: 500
-                value: Qt.quaternion(0.996958, 0.0718497, -0.0151589, -0.026141)
-            }
-            Keyframe {
-                frame: 533.333
-                value: Qt.quaternion(0.996835, 0.0711648, -0.01196, -0.0333662)
-            }
-            Keyframe {
-                frame: 566.667
-                value: Qt.quaternion(0.996942, 0.0490658, -0.0163015, -0.0585986)
-            }
-            Keyframe {
-                frame: 600
-                value: Qt.quaternion(0.996437, 0.0334226, -0.0148512, -0.0759984)
-            }
-            Keyframe {
-                frame: 633.333
-                value: Qt.quaternion(0.996595, 0.0276758, -0.00600465, -0.0774346)
-            }
-            Keyframe {
-                frame: 666.667
-                value: Qt.quaternion(0.997068, 0.0258624, 0.00126332, -0.0720009)
-            }
-            Keyframe {
-                frame: 700
-                value: Qt.quaternion(0.997297, 0.0359571, 0.00339193, -0.0639853)
-            }
-            Keyframe {
-                frame: 733.333
-                value: Qt.quaternion(0.996294, 0.0639242, 0.00284803, -0.0574705)
-            }
-            Keyframe {
-                frame: 766.667
-                value: Qt.quaternion(0.993888, 0.0905934, -0.00902479, -0.0624344)
-            }
-            Keyframe {
-                frame: 800
-                value: Qt.quaternion(0.991402, 0.102116, -0.0131053, -0.080769)
-            }
-            Keyframe {
-                frame: 833.333
-                value: Qt.quaternion(0.987839, 0.107703, -0.00750615, -0.111885)
-            }
-            Keyframe {
-                frame: 866.667
-                value: Qt.quaternion(0.984086, 0.0871271, -0.0244536, -0.152928)
-            }
-            Keyframe {
-                frame: 900
-                value: Qt.quaternion(0.982014, 0.0272937, -0.0570628, -0.177898)
-            }
-            Keyframe {
-                frame: 933.333
-                value: Qt.quaternion(0.979586, -0.0275736, -0.0737999, -0.184944)
-            }
-            Keyframe {
-                frame: 966.667
-                value: Qt.quaternion(0.979902, -0.054599, -0.0832996, -0.172837)
-            }
-            Keyframe {
-                frame: 1000
-                value: Qt.quaternion(0.982623, -0.0626482, -0.0895582, -0.150022)
-            }
-            Keyframe {
-                frame: 1033.33
-                value: Qt.quaternion(0.984934, -0.065009, -0.0945429, -0.129386)
-            }
-            Keyframe {
-                frame: 1066.67
-                value: Qt.quaternion(0.987279, -0.0595586, -0.0925658, -0.114739)
-            }
-            Keyframe {
-                frame: 1100
-                value: Qt.quaternion(0.989697, -0.042061, -0.0862223, -0.106283)
-            }
-            Keyframe {
-                frame: 1133.33
-                value: Qt.quaternion(0.991297, -0.017312, -0.0783367, -0.104371)
-            }
-            Keyframe {
-                frame: 1166.67
-                value: Qt.quaternion(0.99242, 0.00201014, -0.0703182, -0.100762)
-            }
-            Keyframe {
-                frame: 1200
-                value: Qt.quaternion(0.993051, 0.0233349, -0.0624085, -0.0970062)
-            }
-            Keyframe {
-                frame: 1233.33
-                value: Qt.quaternion(0.992932, 0.0444539, -0.0646299, -0.0890712)
-            }
-            Keyframe {
-                frame: 1266.67
-                value: Qt.quaternion(0.992173, 0.0903754, -0.0446588, -0.0736986)
-            }
-            Keyframe {
-                frame: 1300
-                value: Qt.quaternion(0.991183, 0.113616, -0.0191586, -0.0654213)
-            }
-            Keyframe {
-                frame: 1333.33
-                value: Qt.quaternion(0.991312, 0.115691, -0.00678285, -0.0622092)
-            }
-            Keyframe {
-                frame: 1366.67
-                value: Qt.quaternion(0.992524, 0.102877, -0.00841313, -0.0651301)
-            }
-            Keyframe {
-                frame: 1400
-                value: Qt.quaternion(0.992664, 0.0891917, -0.0124114, -0.0806825)
-            }
-            Keyframe {
-                frame: 1433.33
-                value: Qt.quaternion(0.990541, 0.0922723, -0.0151919, -0.100421)
-            }
-            Keyframe {
-                frame: 1466.67
-                value: Qt.quaternion(0.987449, 0.103162, -0.0211272, -0.117709)
-            }
-            Keyframe {
-                frame: 1500
-                value: Qt.quaternion(0.984492, 0.114174, -0.0285886, -0.130084)
-            }
-            Keyframe {
-                frame: 1533.33
-                value: Qt.quaternion(0.982416, 0.122172, -0.0333203, -0.137194)
-            }
-            Keyframe {
-                frame: 1566.67
-                value: Qt.quaternion(0.98166, 0.125194, -0.0347689, -0.139504)
-            }
-        }
-        KeyframeGroup {
-            target: rightForeArm
-            property: "rotation"
-            Keyframe {
-                frame: 0
-                value: Qt.quaternion(0.513597, -0.352739, 0.773311, -0.117406)
-            }
-            Keyframe {
-                frame: 33.3333
-                value: Qt.quaternion(0.61723, -0.324816, 0.705642, -0.124865)
-            }
-            Keyframe {
-                frame: 66.6667
-                value: Qt.quaternion(0.723367, -0.287334, 0.615505, -0.123827)
-            }
-            Keyframe {
-                frame: 100
-                value: Qt.quaternion(0.754518, -0.276581, 0.583376, -0.117807)
-            }
-            Keyframe {
-                frame: 133.333
-                value: Qt.quaternion(0.748776, -0.28171, 0.590567, -0.105849)
-            }
-            Keyframe {
-                frame: 166.667
-                value: Qt.quaternion(0.742544, -0.279684, 0.599837, -0.102961)
-            }
-            Keyframe {
-                frame: 200
-                value: Qt.quaternion(0.742329, -0.27496, 0.601686, -0.106391)
-            }
-            Keyframe {
-                frame: 233.333
-                value: Qt.quaternion(0.74671, -0.274036, 0.596518, -0.107216)
-            }
-            Keyframe {
-                frame: 266.667
-                value: Qt.quaternion(0.755761, -0.274834, 0.584964, -0.1054)
-            }
-            Keyframe {
-                frame: 300
-                value: Qt.quaternion(0.769084, -0.271396, 0.569887, -0.100407)
-            }
-            Keyframe {
-                frame: 333.333
-                value: Qt.quaternion(0.785734, -0.258838, 0.553006, -0.0990436)
-            }
-            Keyframe {
-                frame: 366.667
-                value: Qt.quaternion(0.807827, -0.242765, 0.527412, -0.101574)
-            }
-            Keyframe {
-                frame: 400
-                value: Qt.quaternion(0.830444, -0.232076, 0.498314, -0.0904826)
-            }
-            Keyframe {
-                frame: 433.333
-                value: Qt.quaternion(0.849593, -0.217096, 0.472887, -0.0862506)
-            }
-            Keyframe {
-                frame: 466.667
-                value: Qt.quaternion(0.85799, -0.205553, 0.462753, -0.0863715)
-            }
-            Keyframe {
-                frame: 500
-                value: Qt.quaternion(0.838551, -0.213631, 0.492762, -0.091536)
-            }
-            Keyframe {
-                frame: 533.333
-                value: Qt.quaternion(0.789374, -0.239906, 0.556465, -0.0983907)
-            }
-            Keyframe {
-                frame: 566.667
-                value: Qt.quaternion(0.721634, -0.271103, 0.628608, -0.102957)
-            }
-            Keyframe {
-                frame: 600
-                value: Qt.quaternion(0.652023, -0.302518, 0.686787, -0.108041)
-            }
-            Keyframe {
-                frame: 633.333
-                value: Qt.quaternion(0.591954, -0.330273, 0.726781, -0.110902)
-            }
-            Keyframe {
-                frame: 666.667
-                value: Qt.quaternion(0.544498, -0.347365, 0.755488, -0.109987)
-            }
-            Keyframe {
-                frame: 700
-                value: Qt.quaternion(0.516325, -0.354913, 0.772043, -0.106746)
-            }
-            Keyframe {
-                frame: 733.333
-                value: Qt.quaternion(0.510013, -0.353969, 0.777166, -0.102991)
-            }
-            Keyframe {
-                frame: 766.667
-                value: Qt.quaternion(0.51923, -0.34649, 0.774565, -0.101952)
-            }
-            Keyframe {
-                frame: 800
-                value: Qt.quaternion(0.545212, -0.337572, 0.759345, -0.110384)
-            }
-            Keyframe {
-                frame: 833.333
-                value: Qt.quaternion(0.608578, -0.317299, 0.717303, -0.120126)
-            }
-            Keyframe {
-                frame: 866.667
-                value: Qt.quaternion(0.679782, -0.291984, 0.661724, -0.121506)
-            }
-            Keyframe {
-                frame: 900
-                value: Qt.quaternion(0.694251, -0.286421, 0.650299, -0.114412)
-            }
-            Keyframe {
-                frame: 933.333
-                value: Qt.quaternion(0.67529, -0.295725, 0.66789, -0.102239)
-            }
-            Keyframe {
-                frame: 966.667
-                value: Qt.quaternion(0.653853, -0.306728, 0.684668, -0.098101)
-            }
-            Keyframe {
-                frame: 1000
-                value: Qt.quaternion(0.640819, -0.312866, 0.693183, -0.104708)
-            }
-            Keyframe {
-                frame: 1033.33
-                value: Qt.quaternion(0.633604, -0.314036, 0.698573, -0.109189)
-            }
-            Keyframe {
-                frame: 1066.67
-                value: Qt.quaternion(0.628408, -0.316827, 0.702521, -0.105775)
-            }
-            Keyframe {
-                frame: 1100
-                value: Qt.quaternion(0.625629, -0.320794, 0.703794, -0.101754)
-            }
-            Keyframe {
-                frame: 1133.33
-                value: Qt.quaternion(0.633188, -0.31848, 0.698224, -0.10063)
-            }
-            Keyframe {
-                frame: 1166.67
-                value: Qt.quaternion(0.660784, -0.307361, 0.676207, -0.107874)
-            }
-            Keyframe {
-                frame: 1200
-                value: Qt.quaternion(0.705385, -0.290299, 0.638179, -0.104336)
-            }
-            Keyframe {
-                frame: 1233.33
-                value: Qt.quaternion(0.755454, -0.271618, 0.585129, -0.114615)
-            }
-            Keyframe {
-                frame: 1266.67
-                value: Qt.quaternion(0.779863, -0.2551, 0.559847, -0.115364)
-            }
-            Keyframe {
-                frame: 1300
-                value: Qt.quaternion(0.740865, -0.270982, 0.604484, -0.110846)
-            }
-            Keyframe {
-                frame: 1333.33
-                value: Qt.quaternion(0.667241, -0.299524, 0.672853, -0.111105)
-            }
-            Keyframe {
-                frame: 1366.67
-                value: Qt.quaternion(0.595618, -0.323078, 0.726201, -0.116157)
-            }
-            Keyframe {
-                frame: 1400
-                value: Qt.quaternion(0.547043, -0.339692, 0.755773, -0.118999)
-            }
-            Keyframe {
-                frame: 1433.33
-                value: Qt.quaternion(0.522273, -0.349583, 0.768899, -0.117546)
-            }
-            Keyframe {
-                frame: 1466.67
-                value: Qt.quaternion(0.512438, -0.352881, 0.774087, -0.116928)
-            }
-            Keyframe {
-                frame: 1500
-                value: Qt.quaternion(0.510874, -0.353561, 0.774796, -0.117015)
-            }
-            Keyframe {
-                frame: 1533.33
-                value: Qt.quaternion(0.512484, -0.353067, 0.773918, -0.117282)
-            }
-            Keyframe {
-                frame: 1566.67
-                value: Qt.quaternion(0.513597, -0.352739, 0.773311, -0.117406)
-            }
-        }
-        KeyframeGroup {
-            target: rightArm
-            property: "rotation"
-            Keyframe {
-                frame: 0
-                value: Qt.quaternion(0.899053, 0.220838, 0.251992, 0.28184)
-            }
-            Keyframe {
-                frame: 33.3333
-                value: Qt.quaternion(0.886311, 0.249562, 0.220992, 0.321455)
-            }
-            Keyframe {
-                frame: 66.6667
-                value: Qt.quaternion(0.871473, 0.274303, 0.166281, 0.371004)
-            }
-            Keyframe {
-                frame: 100
-                value: Qt.quaternion(0.858976, 0.324178, 0.0960613, 0.384501)
-            }
-            Keyframe {
-                frame: 133.333
-                value: Qt.quaternion(0.844197, 0.392491, 0.0387876, 0.363011)
-            }
-            Keyframe {
-                frame: 166.667
-                value: Qt.quaternion(0.826107, 0.453685, 0.0031798, 0.334225)
-            }
-            Keyframe {
-                frame: 200
-                value: Qt.quaternion(0.812449, 0.492138, -0.017799, 0.312107)
-            }
-            Keyframe {
-                frame: 233.333
-                value: Qt.quaternion(0.811138, 0.502409, -0.0327795, 0.297599)
-            }
-            Keyframe {
-                frame: 266.667
-                value: Qt.quaternion(0.821263, 0.489905, -0.0393402, 0.289781)
-            }
-            Keyframe {
-                frame: 300
-                value: Qt.quaternion(0.839114, 0.459176, -0.032634, 0.289795)
-            }
-            Keyframe {
-                frame: 333.333
-                value: Qt.quaternion(0.860214, 0.416067, -0.00965965, 0.294663)
-            }
-            Keyframe {
-                frame: 366.667
-                value: Qt.quaternion(0.880574, 0.366179, 0.0389083, 0.298311)
-            }
-            Keyframe {
-                frame: 400
-                value: Qt.quaternion(0.89693, 0.314605, 0.114328, 0.288909)
-            }
-            Keyframe {
-                frame: 433.333
-                value: Qt.quaternion(0.900374, 0.269583, 0.220391, 0.260921)
-            }
-            Keyframe {
-                frame: 466.667
-                value: Qt.quaternion(0.893756, 0.22013, 0.313931, 0.23279)
-            }
-            Keyframe {
-                frame: 500
-                value: Qt.quaternion(0.892106, 0.169458, 0.363875, 0.207425)
-            }
-            Keyframe {
-                frame: 533.333
-                value: Qt.quaternion(0.897093, 0.124084, 0.381828, 0.184486)
-            }
-            Keyframe {
-                frame: 566.667
-                value: Qt.quaternion(0.90384, 0.0872869, 0.382727, 0.17022)
-            }
-            Keyframe {
-                frame: 600
-                value: Qt.quaternion(0.907741, 0.0659423, 0.381417, 0.161797)
-            }
-            Keyframe {
-                frame: 633.333
-                value: Qt.quaternion(0.909356, 0.0591128, 0.380259, 0.158054)
-            }
-            Keyframe {
-                frame: 666.667
-                value: Qt.quaternion(0.910065, 0.0663938, 0.37578, 0.161748)
-            }
-            Keyframe {
-                frame: 700
-                value: Qt.quaternion(0.908645, 0.091133, 0.368757, 0.173427)
-            }
-            Keyframe {
-                frame: 733.333
-                value: Qt.quaternion(0.905034, 0.124739, 0.35684, 0.194984)
-            }
-            Keyframe {
-                frame: 766.667
-                value: Qt.quaternion(0.902315, 0.157265, 0.330474, 0.227776)
-            }
-            Keyframe {
-                frame: 800
-                value: Qt.quaternion(0.896905, 0.188076, 0.293787, 0.271806)
-            }
-            Keyframe {
-                frame: 833.333
-                value: Qt.quaternion(0.882489, 0.223243, 0.252295, 0.328213)
-            }
-            Keyframe {
-                frame: 866.667
-                value: Qt.quaternion(0.862543, 0.264807, 0.209723, 0.376714)
-            }
-            Keyframe {
-                frame: 900
-                value: Qt.quaternion(0.849217, 0.315148, 0.151225, 0.395781)
-            }
-            Keyframe {
-                frame: 933.333
-                value: Qt.quaternion(0.841458, 0.365094, 0.0860321, 0.388912)
-            }
-            Keyframe {
-                frame: 966.667
-                value: Qt.quaternion(0.835384, 0.407882, 0.0288826, 0.367332)
-            }
-            Keyframe {
-                frame: 1000
-                value: Qt.quaternion(0.832368, 0.437295, -0.013065, 0.340244)
-            }
-            Keyframe {
-                frame: 1033.33
-                value: Qt.quaternion(0.836815, 0.446782, -0.049086, 0.312598)
-            }
-            Keyframe {
-                frame: 1066.67
-                value: Qt.quaternion(0.846884, 0.43817, -0.0839516, 0.289391)
-            }
-            Keyframe {
-                frame: 1100
-                value: Qt.quaternion(0.858575, 0.420888, -0.108791, 0.271785)
-            }
-            Keyframe {
-                frame: 1133.33
-                value: Qt.quaternion(0.872067, 0.398967, -0.115611, 0.258763)
-            }
-            Keyframe {
-                frame: 1166.67
-                value: Qt.quaternion(0.888138, 0.371063, -0.0967399, 0.253306)
-            }
-            Keyframe {
-                frame: 1200
-                value: Qt.quaternion(0.908866, 0.328076, -0.0460359, 0.253395)
-            }
-            Keyframe {
-                frame: 1233.33
-                value: Qt.quaternion(0.920678, 0.290436, 0.0610113, 0.253529)
-            }
-            Keyframe {
-                frame: 1266.67
-                value: Qt.quaternion(0.914354, 0.258458, 0.161394, 0.266662)
-            }
-            Keyframe {
-                frame: 1300
-                value: Qt.quaternion(0.904277, 0.24172, 0.223847, 0.271565)
-            }
-            Keyframe {
-                frame: 1333.33
-                value: Qt.quaternion(0.896145, 0.239916, 0.26826, 0.259616)
-            }
-            Keyframe {
-                frame: 1366.67
-                value: Qt.quaternion(0.891395, 0.239189, 0.296692, 0.245312)
-            }
-            Keyframe {
-                frame: 1400
-                value: Qt.quaternion(0.890801, 0.23246, 0.306009, 0.242474)
-            }
-            Keyframe {
-                frame: 1433.33
-                value: Qt.quaternion(0.892885, 0.224189, 0.298071, 0.25229)
-            }
-            Keyframe {
-                frame: 1466.67
-                value: Qt.quaternion(0.895442, 0.219473, 0.28231, 0.265174)
-            }
-            Keyframe {
-                frame: 1500
-                value: Qt.quaternion(0.897466, 0.218464, 0.267069, 0.274776)
-            }
-            Keyframe {
-                frame: 1533.33
-                value: Qt.quaternion(0.898691, 0.219657, 0.256043, 0.280262)
-            }
-            Keyframe {
-                frame: 1566.67
-                value: Qt.quaternion(0.899053, 0.220838, 0.251992, 0.28184)
-            }
-        }
-        KeyframeGroup {
-            target: joint_22
-            property: "rotation"
-            Keyframe {
-                frame: 0
-                value: Qt.quaternion(0.991726, 0.0542632, 0.107821, 0.0436921)
-            }
-        }
-        KeyframeGroup {
             target: joint_19
             property: "rotation"
             Keyframe {
@@ -11762,207 +10962,11 @@ Node {
             }
         }
         KeyframeGroup {
-            target: joint_11
+            target: joint_13
             property: "rotation"
             Keyframe {
                 frame: 0
-                value: Qt.quaternion(0.922468, 0.0485965, 0.283011, 0.25806)
-            }
-        }
-        KeyframeGroup {
-            target: rightUpLeg
-            property: "rotation"
-            Keyframe {
-                frame: 0
-                value: Qt.quaternion(0.989522, 0.059251, -0.101957, -0.0833136)
-            }
-            Keyframe {
-                frame: 33.3333
-                value: Qt.quaternion(0.98906, -0.0134435, -0.0970035, -0.110318)
-            }
-            Keyframe {
-                frame: 66.6667
-                value: Qt.quaternion(0.985268, -0.118834, -0.0664985, -0.103459)
-            }
-            Keyframe {
-                frame: 100
-                value: Qt.quaternion(0.966366, -0.247528, -0.0235216, -0.0656783)
-            }
-            Keyframe {
-                frame: 133.333
-                value: Qt.quaternion(0.927934, -0.372549, 0.0050822, -0.0109675)
-            }
-            Keyframe {
-                frame: 166.667
-                value: Qt.quaternion(0.8846, -0.464352, 0.0163255, 0.0399248)
-            }
-            Keyframe {
-                frame: 200
-                value: Qt.quaternion(0.854203, -0.514631, 0.0183411, 0.0717989)
-            }
-            Keyframe {
-                frame: 233.333
-                value: Qt.quaternion(0.853199, -0.515008, 0.00991681, 0.0819787)
-            }
-            Keyframe {
-                frame: 266.667
-                value: Qt.quaternion(0.8764, -0.474954, -0.0188571, 0.0773719)
-            }
-            Keyframe {
-                frame: 300
-                value: Qt.quaternion(0.905244, -0.418431, -0.0347619, 0.065116)
-            }
-            Keyframe {
-                frame: 333.333
-                value: Qt.quaternion(0.921388, -0.380852, -0.0383527, 0.0672743)
-            }
-            Keyframe {
-                frame: 366.667
-                value: Qt.quaternion(0.922271, -0.372769, -0.0502046, 0.0891037)
-            }
-            Keyframe {
-                frame: 400
-                value: Qt.quaternion(0.915187, -0.382664, -0.038958, 0.120349)
-            }
-            Keyframe {
-                frame: 433.333
-                value: Qt.quaternion(0.926883, -0.347789, -0.0250088, 0.138941)
-            }
-            Keyframe {
-                frame: 466.667
-                value: Qt.quaternion(0.952398, -0.274699, -0.021999, 0.130361)
-            }
-            Keyframe {
-                frame: 500
-                value: Qt.quaternion(0.976931, -0.181747, -0.0168963, 0.110852)
-            }
-            Keyframe {
-                frame: 533.333
-                value: Qt.quaternion(0.994111, -0.0760515, -0.0126715, 0.0761535)
-            }
-            Keyframe {
-                frame: 566.667
-                value: Qt.quaternion(0.999217, 0.0180345, -0.025541, 0.0242417)
-            }
-            Keyframe {
-                frame: 600
-                value: Qt.quaternion(0.994369, 0.0873421, -0.0536722, -0.026868)
-            }
-            Keyframe {
-                frame: 633.333
-                value: Qt.quaternion(0.987124, 0.137432, -0.0606664, -0.0549391)
-            }
-            Keyframe {
-                frame: 666.667
-                value: Qt.quaternion(0.982086, 0.179802, -0.0262501, -0.0498861)
-            }
-            Keyframe {
-                frame: 700
-                value: Qt.quaternion(0.979245, 0.200197, 0.0201238, -0.0243985)
-            }
-            Keyframe {
-                frame: 733.333
-                value: Qt.quaternion(0.981385, 0.189368, 0.0291305, -0.0132187)
-            }
-            Keyframe {
-                frame: 766.667
-                value: Qt.quaternion(0.987083, 0.155399, -0.00529767, -0.0385944)
-            }
-            Keyframe {
-                frame: 800
-                value: Qt.quaternion(0.986332, 0.0977287, -0.0739736, -0.110116)
-            }
-            Keyframe {
-                frame: 833.333
-                value: Qt.quaternion(0.984336, 0.0331513, -0.0824261, -0.152279)
-            }
-            Keyframe {
-                frame: 866.667
-                value: Qt.quaternion(0.98722, -0.0623186, -0.0442298, -0.139846)
-            }
-            Keyframe {
-                frame: 900
-                value: Qt.quaternion(0.977394, -0.185009, -0.0116066, -0.101678)
-            }
-            Keyframe {
-                frame: 933.333
-                value: Qt.quaternion(0.953861, -0.295909, 0.0018776, -0.0508248)
-            }
-            Keyframe {
-                frame: 966.667
-                value: Qt.quaternion(0.926683, -0.375737, 0.00756021, 0.00476733)
-            }
-            Keyframe {
-                frame: 1000
-                value: Qt.quaternion(0.906905, -0.418307, 0.0115909, 0.0490678)
-            }
-            Keyframe {
-                frame: 1033.33
-                value: Qt.quaternion(0.904364, -0.421208, 0.00532201, 0.0684214)
-            }
-            Keyframe {
-                frame: 1066.67
-                value: Qt.quaternion(0.914344, -0.399658, -0.0184848, 0.0625012)
-            }
-            Keyframe {
-                frame: 1100
-                value: Qt.quaternion(0.9279, -0.369102, -0.0295496, 0.0435053)
-            }
-            Keyframe {
-                frame: 1133.33
-                value: Qt.quaternion(0.935422, -0.349496, -0.039773, 0.0354436)
-            }
-            Keyframe {
-                frame: 1166.67
-                value: Qt.quaternion(0.937744, -0.34002, -0.0535212, 0.0464602)
-            }
-            Keyframe {
-                frame: 1200
-                value: Qt.quaternion(0.935803, -0.342419, -0.0327455, 0.0771357)
-            }
-            Keyframe {
-                frame: 1233.33
-                value: Qt.quaternion(0.942626, -0.312808, -0.00789918, 0.116383)
-            }
-            Keyframe {
-                frame: 1266.67
-                value: Qt.quaternion(0.965168, -0.234937, -0.0119393, 0.114513)
-            }
-            Keyframe {
-                frame: 1300
-                value: Qt.quaternion(0.985017, -0.147614, -0.0188013, 0.0871671)
-            }
-            Keyframe {
-                frame: 1333.33
-                value: Qt.quaternion(0.996532, -0.0625286, -0.027685, 0.0474173)
-            }
-            Keyframe {
-                frame: 1366.67
-                value: Qt.quaternion(0.998957, 0.00870669, -0.0446021, 0.00451672)
-            }
-            Keyframe {
-                frame: 1400
-                value: Qt.quaternion(0.996062, 0.0512614, -0.0647866, -0.0321833)
-            }
-            Keyframe {
-                frame: 1433.33
-                value: Qt.quaternion(0.992779, 0.0715079, -0.0788655, -0.0552804)
-            }
-            Keyframe {
-                frame: 1466.67
-                value: Qt.quaternion(0.991083, 0.0760254, -0.085939, -0.0677423)
-            }
-            Keyframe {
-                frame: 1500
-                value: Qt.quaternion(0.990321, 0.0696805, -0.092905, -0.0760116)
-            }
-            Keyframe {
-                frame: 1533.33
-                value: Qt.quaternion(0.989741, 0.062188, -0.0994131, -0.0816222)
-            }
-            Keyframe {
-                frame: 1566.67
-                value: Qt.quaternion(0.989522, 0.059251, -0.101957, -0.0833136)
+                value: Qt.quaternion(0.981372, 0.0931776, 0.165529, 0.0287524)
             }
         }
         KeyframeGroup {
@@ -12366,6 +11370,1010 @@ Node {
             }
         }
         KeyframeGroup {
+            target: joint_11
+            property: "rotation"
+            Keyframe {
+                frame: 0
+                value: Qt.quaternion(0.922468, 0.0485965, 0.283011, 0.25806)
+            }
+        }
+        KeyframeGroup {
+            target: rightUpLeg
+            property: "rotation"
+            Keyframe {
+                frame: 0
+                value: Qt.quaternion(0.989522, 0.059251, -0.101957, -0.0833136)
+            }
+            Keyframe {
+                frame: 33.3333
+                value: Qt.quaternion(0.98906, -0.0134435, -0.0970035, -0.110318)
+            }
+            Keyframe {
+                frame: 66.6667
+                value: Qt.quaternion(0.985268, -0.118834, -0.0664985, -0.103459)
+            }
+            Keyframe {
+                frame: 100
+                value: Qt.quaternion(0.966366, -0.247528, -0.0235216, -0.0656783)
+            }
+            Keyframe {
+                frame: 133.333
+                value: Qt.quaternion(0.927934, -0.372549, 0.0050822, -0.0109675)
+            }
+            Keyframe {
+                frame: 166.667
+                value: Qt.quaternion(0.8846, -0.464352, 0.0163255, 0.0399248)
+            }
+            Keyframe {
+                frame: 200
+                value: Qt.quaternion(0.854203, -0.514631, 0.0183411, 0.0717989)
+            }
+            Keyframe {
+                frame: 233.333
+                value: Qt.quaternion(0.853199, -0.515008, 0.00991681, 0.0819787)
+            }
+            Keyframe {
+                frame: 266.667
+                value: Qt.quaternion(0.8764, -0.474954, -0.0188571, 0.0773719)
+            }
+            Keyframe {
+                frame: 300
+                value: Qt.quaternion(0.905244, -0.418431, -0.0347619, 0.065116)
+            }
+            Keyframe {
+                frame: 333.333
+                value: Qt.quaternion(0.921388, -0.380852, -0.0383527, 0.0672743)
+            }
+            Keyframe {
+                frame: 366.667
+                value: Qt.quaternion(0.922271, -0.372769, -0.0502046, 0.0891037)
+            }
+            Keyframe {
+                frame: 400
+                value: Qt.quaternion(0.915187, -0.382664, -0.038958, 0.120349)
+            }
+            Keyframe {
+                frame: 433.333
+                value: Qt.quaternion(0.926883, -0.347789, -0.0250088, 0.138941)
+            }
+            Keyframe {
+                frame: 466.667
+                value: Qt.quaternion(0.952398, -0.274699, -0.021999, 0.130361)
+            }
+            Keyframe {
+                frame: 500
+                value: Qt.quaternion(0.976931, -0.181747, -0.0168963, 0.110852)
+            }
+            Keyframe {
+                frame: 533.333
+                value: Qt.quaternion(0.994111, -0.0760515, -0.0126715, 0.0761535)
+            }
+            Keyframe {
+                frame: 566.667
+                value: Qt.quaternion(0.999217, 0.0180345, -0.025541, 0.0242417)
+            }
+            Keyframe {
+                frame: 600
+                value: Qt.quaternion(0.994369, 0.0873421, -0.0536722, -0.026868)
+            }
+            Keyframe {
+                frame: 633.333
+                value: Qt.quaternion(0.987124, 0.137432, -0.0606664, -0.0549391)
+            }
+            Keyframe {
+                frame: 666.667
+                value: Qt.quaternion(0.982086, 0.179802, -0.0262501, -0.0498861)
+            }
+            Keyframe {
+                frame: 700
+                value: Qt.quaternion(0.979245, 0.200197, 0.0201238, -0.0243985)
+            }
+            Keyframe {
+                frame: 733.333
+                value: Qt.quaternion(0.981385, 0.189368, 0.0291305, -0.0132187)
+            }
+            Keyframe {
+                frame: 766.667
+                value: Qt.quaternion(0.987083, 0.155399, -0.00529767, -0.0385944)
+            }
+            Keyframe {
+                frame: 800
+                value: Qt.quaternion(0.986332, 0.0977287, -0.0739736, -0.110116)
+            }
+            Keyframe {
+                frame: 833.333
+                value: Qt.quaternion(0.984336, 0.0331513, -0.0824261, -0.152279)
+            }
+            Keyframe {
+                frame: 866.667
+                value: Qt.quaternion(0.98722, -0.0623186, -0.0442298, -0.139846)
+            }
+            Keyframe {
+                frame: 900
+                value: Qt.quaternion(0.977394, -0.185009, -0.0116066, -0.101678)
+            }
+            Keyframe {
+                frame: 933.333
+                value: Qt.quaternion(0.953861, -0.295909, 0.0018776, -0.0508248)
+            }
+            Keyframe {
+                frame: 966.667
+                value: Qt.quaternion(0.926683, -0.375737, 0.00756021, 0.00476733)
+            }
+            Keyframe {
+                frame: 1000
+                value: Qt.quaternion(0.906905, -0.418307, 0.0115909, 0.0490678)
+            }
+            Keyframe {
+                frame: 1033.33
+                value: Qt.quaternion(0.904364, -0.421208, 0.00532201, 0.0684214)
+            }
+            Keyframe {
+                frame: 1066.67
+                value: Qt.quaternion(0.914344, -0.399658, -0.0184848, 0.0625012)
+            }
+            Keyframe {
+                frame: 1100
+                value: Qt.quaternion(0.9279, -0.369102, -0.0295496, 0.0435053)
+            }
+            Keyframe {
+                frame: 1133.33
+                value: Qt.quaternion(0.935422, -0.349496, -0.039773, 0.0354436)
+            }
+            Keyframe {
+                frame: 1166.67
+                value: Qt.quaternion(0.937744, -0.34002, -0.0535212, 0.0464602)
+            }
+            Keyframe {
+                frame: 1200
+                value: Qt.quaternion(0.935803, -0.342419, -0.0327455, 0.0771357)
+            }
+            Keyframe {
+                frame: 1233.33
+                value: Qt.quaternion(0.942626, -0.312808, -0.00789918, 0.116383)
+            }
+            Keyframe {
+                frame: 1266.67
+                value: Qt.quaternion(0.965168, -0.234937, -0.0119393, 0.114513)
+            }
+            Keyframe {
+                frame: 1300
+                value: Qt.quaternion(0.985017, -0.147614, -0.0188013, 0.0871671)
+            }
+            Keyframe {
+                frame: 1333.33
+                value: Qt.quaternion(0.996532, -0.0625286, -0.027685, 0.0474173)
+            }
+            Keyframe {
+                frame: 1366.67
+                value: Qt.quaternion(0.998957, 0.00870669, -0.0446021, 0.00451672)
+            }
+            Keyframe {
+                frame: 1400
+                value: Qt.quaternion(0.996062, 0.0512614, -0.0647866, -0.0321833)
+            }
+            Keyframe {
+                frame: 1433.33
+                value: Qt.quaternion(0.992779, 0.0715079, -0.0788655, -0.0552804)
+            }
+            Keyframe {
+                frame: 1466.67
+                value: Qt.quaternion(0.991083, 0.0760254, -0.085939, -0.0677423)
+            }
+            Keyframe {
+                frame: 1500
+                value: Qt.quaternion(0.990321, 0.0696805, -0.092905, -0.0760116)
+            }
+            Keyframe {
+                frame: 1533.33
+                value: Qt.quaternion(0.989741, 0.062188, -0.0994131, -0.0816222)
+            }
+            Keyframe {
+                frame: 1566.67
+                value: Qt.quaternion(0.989522, 0.059251, -0.101957, -0.0833136)
+            }
+        }
+        KeyframeGroup {
+            target: joint_29
+            property: "rotation"
+            Keyframe {
+                frame: 0
+                value: Qt.quaternion(0.929801, 0.0992911, -0.343686, 0.0865577)
+            }
+        }
+        KeyframeGroup {
+            target: leftUpLeg
+            property: "rotation"
+            Keyframe {
+                frame: 0
+                value: Qt.quaternion(0.907416, -0.386798, -0.0302496, -0.161461)
+            }
+            Keyframe {
+                frame: 33.3333
+                value: Qt.quaternion(0.917419, -0.346434, -0.0218049, -0.194552)
+            }
+            Keyframe {
+                frame: 66.6667
+                value: Qt.quaternion(0.944721, -0.260847, -0.0125088, -0.198253)
+            }
+            Keyframe {
+                frame: 100
+                value: Qt.quaternion(0.970392, -0.176522, -0.0127802, -0.164364)
+            }
+            Keyframe {
+                frame: 133.333
+                value: Qt.quaternion(0.990251, -0.0784251, -0.0202164, -0.113328)
+            }
+            Keyframe {
+                frame: 166.667
+                value: Qt.quaternion(0.998121, 0.0149772, -0.015591, -0.0573386)
+            }
+            Keyframe {
+                frame: 200
+                value: Qt.quaternion(0.996301, 0.0847693, 0.00599685, -0.0127627)
+            }
+            Keyframe {
+                frame: 233.333
+                value: Qt.quaternion(0.991143, 0.130716, 0.022328, 0.00704895)
+            }
+            Keyframe {
+                frame: 266.667
+                value: Qt.quaternion(0.987809, 0.154222, 0.021024, 0.00276831)
+            }
+            Keyframe {
+                frame: 300
+                value: Qt.quaternion(0.988504, 0.147703, 0.0296296, -0.0129034)
+            }
+            Keyframe {
+                frame: 333.333
+                value: Qt.quaternion(0.99097, 0.119689, 0.0596119, -0.00998791)
+            }
+            Keyframe {
+                frame: 366.667
+                value: Qt.quaternion(0.991968, 0.080527, 0.0965931, 0.0135934)
+            }
+            Keyframe {
+                frame: 400
+                value: Qt.quaternion(0.989832, 0.0336392, 0.128371, 0.0512121)
+            }
+            Keyframe {
+                frame: 433.333
+                value: Qt.quaternion(0.989989, -0.0351949, 0.116665, 0.0712271)
+            }
+            Keyframe {
+                frame: 466.667
+                value: Qt.quaternion(0.985836, -0.140891, 0.0645085, 0.0641558)
+            }
+            Keyframe {
+                frame: 500
+                value: Qt.quaternion(0.963904, -0.261832, 0.0216042, 0.0432008)
+            }
+            Keyframe {
+                frame: 533.333
+                value: Qt.quaternion(0.930681, -0.365514, 0.0071568, 0.0134649)
+            }
+            Keyframe {
+                frame: 566.667
+                value: Qt.quaternion(0.895915, -0.443385, 0.0137862, -0.0235734)
+            }
+            Keyframe {
+                frame: 600
+                value: Qt.quaternion(0.87156, -0.486067, 0.0237936, -0.059631)
+            }
+            Keyframe {
+                frame: 633.333
+                value: Qt.quaternion(0.868704, -0.487483, 0.0298581, -0.0825929)
+            }
+            Keyframe {
+                frame: 666.667
+                value: Qt.quaternion(0.887244, -0.451706, 0.0372669, -0.0858607)
+            }
+            Keyframe {
+                frame: 700
+                value: Qt.quaternion(0.912499, -0.399709, 0.0408601, -0.0768661)
+            }
+            Keyframe {
+                frame: 733.333
+                value: Qt.quaternion(0.929672, -0.356771, 0.0443782, -0.0803421)
+            }
+            Keyframe {
+                frame: 766.667
+                value: Qt.quaternion(0.933992, -0.33758, 0.0480621, -0.10672)
+            }
+            Keyframe {
+                frame: 800
+                value: Qt.quaternion(0.918424, -0.358161, 0.0222551, -0.166502)
+            }
+            Keyframe {
+                frame: 833.333
+                value: Qt.quaternion(0.920234, -0.333331, -0.00553215, -0.20501)
+            }
+            Keyframe {
+                frame: 866.667
+                value: Qt.quaternion(0.942794, -0.267712, -0.0149184, -0.198111)
+            }
+            Keyframe {
+                frame: 900
+                value: Qt.quaternion(0.967789, -0.181983, -0.0217881, -0.172602)
+            }
+            Keyframe {
+                frame: 933.333
+                value: Qt.quaternion(0.986701, -0.077658, -0.0296045, -0.139693)
+            }
+            Keyframe {
+                frame: 966.667
+                value: Qt.quaternion(0.994744, 0.026834, -0.0261054, -0.0953095)
+            }
+            Keyframe {
+                frame: 1000
+                value: Qt.quaternion(0.99327, 0.106022, 0.000925832, -0.0466096)
+            }
+            Keyframe {
+                frame: 1033.33
+                value: Qt.quaternion(0.986365, 0.160394, 0.0354331, -0.0101039)
+            }
+            Keyframe {
+                frame: 1066.67
+                value: Qt.quaternion(0.980724, 0.189666, 0.0469138, -0.00273651)
+            }
+            Keyframe {
+                frame: 1100
+                value: Qt.quaternion(0.979053, 0.195677, 0.0558309, -0.0069427)
+            }
+            Keyframe {
+                frame: 1133.33
+                value: Qt.quaternion(0.979756, 0.186135, 0.0737036, -0.000612071)
+            }
+            Keyframe {
+                frame: 1166.67
+                value: Qt.quaternion(0.981931, 0.165353, 0.0903493, 0.0174953)
+            }
+            Keyframe {
+                frame: 1200
+                value: Qt.quaternion(0.986073, 0.115777, 0.107834, 0.0512534)
+            }
+            Keyframe {
+                frame: 1233.33
+                value: Qt.quaternion(0.992534, 0.0418198, 0.089619, 0.0713819)
+            }
+            Keyframe {
+                frame: 1266.67
+                value: Qt.quaternion(0.996409, -0.0628952, 0.0251284, 0.0508117)
+            }
+            Keyframe {
+                frame: 1300
+                value: Qt.quaternion(0.984222, -0.175195, -0.02198, 0.0114202)
+            }
+            Keyframe {
+                frame: 1333.33
+                value: Qt.quaternion(0.963387, -0.264936, -0.0278176, -0.0303363)
+            }
+            Keyframe {
+                frame: 1366.67
+                value: Qt.quaternion(0.943884, -0.322632, -0.0149814, -0.0690405)
+            }
+            Keyframe {
+                frame: 1400
+                value: Qt.quaternion(0.930924, -0.3508, -0.0047766, -0.101474)
+            }
+            Keyframe {
+                frame: 1433.33
+                value: Qt.quaternion(0.924801, -0.35957, -0.00268402, -0.124278)
+            }
+            Keyframe {
+                frame: 1466.67
+                value: Qt.quaternion(0.920575, -0.365039, -0.0106344, -0.138476)
+            }
+            Keyframe {
+                frame: 1500
+                value: Qt.quaternion(0.914332, -0.375862, -0.0215443, -0.149202)
+            }
+            Keyframe {
+                frame: 1533.33
+                value: Qt.quaternion(0.909174, -0.384233, -0.0280872, -0.158049)
+            }
+            Keyframe {
+                frame: 1566.67
+                value: Qt.quaternion(0.907416, -0.386798, -0.0302496, -0.161461)
+            }
+        }
+        KeyframeGroup {
+            target: rightHand
+            property: "rotation"
+            Keyframe {
+                frame: 0
+                value: Qt.quaternion(0.98166, 0.125194, -0.0347689, -0.139504)
+            }
+            Keyframe {
+                frame: 33.3333
+                value: Qt.quaternion(0.979686, 0.121858, -0.0312708, -0.156169)
+            }
+            Keyframe {
+                frame: 66.6667
+                value: Qt.quaternion(0.976735, 0.109821, -0.0229837, -0.182758)
+            }
+            Keyframe {
+                frame: 100
+                value: Qt.quaternion(0.97866, 0.0578666, -0.0625211, -0.186996)
+            }
+            Keyframe {
+                frame: 133.333
+                value: Qt.quaternion(0.983272, 0.012017, -0.0929999, -0.156151)
+            }
+            Keyframe {
+                frame: 166.667
+                value: Qt.quaternion(0.987662, -0.0223789, -0.10699, -0.112141)
+            }
+            Keyframe {
+                frame: 200
+                value: Qt.quaternion(0.988812, -0.0470454, -0.1149, -0.0826812)
+            }
+            Keyframe {
+                frame: 233.333
+                value: Qt.quaternion(0.98786, -0.0620062, -0.121613, -0.0741535)
+            }
+            Keyframe {
+                frame: 266.667
+                value: Qt.quaternion(0.986401, -0.0700953, -0.12618, -0.0786058)
+            }
+            Keyframe {
+                frame: 300
+                value: Qt.quaternion(0.984543, -0.0742733, -0.129661, -0.0913651)
+            }
+            Keyframe {
+                frame: 333.333
+                value: Qt.quaternion(0.982327, -0.0761692, -0.133998, -0.106192)
+            }
+            Keyframe {
+                frame: 366.667
+                value: Qt.quaternion(0.981172, -0.0765791, -0.134057, -0.11604)
+            }
+            Keyframe {
+                frame: 400
+                value: Qt.quaternion(0.983046, -0.0640075, -0.124532, -0.118384)
+            }
+            Keyframe {
+                frame: 433.333
+                value: Qt.quaternion(0.991234, -0.0195551, -0.0967229, -0.0878491)
+            }
+            Keyframe {
+                frame: 466.667
+                value: Qt.quaternion(0.997062, 0.0395507, -0.0466529, -0.0461242)
+            }
+            Keyframe {
+                frame: 500
+                value: Qt.quaternion(0.996958, 0.0718497, -0.0151589, -0.026141)
+            }
+            Keyframe {
+                frame: 533.333
+                value: Qt.quaternion(0.996835, 0.0711648, -0.01196, -0.0333662)
+            }
+            Keyframe {
+                frame: 566.667
+                value: Qt.quaternion(0.996942, 0.0490658, -0.0163015, -0.0585986)
+            }
+            Keyframe {
+                frame: 600
+                value: Qt.quaternion(0.996437, 0.0334226, -0.0148512, -0.0759984)
+            }
+            Keyframe {
+                frame: 633.333
+                value: Qt.quaternion(0.996595, 0.0276758, -0.00600465, -0.0774346)
+            }
+            Keyframe {
+                frame: 666.667
+                value: Qt.quaternion(0.997068, 0.0258624, 0.00126332, -0.0720009)
+            }
+            Keyframe {
+                frame: 700
+                value: Qt.quaternion(0.997297, 0.0359571, 0.00339193, -0.0639853)
+            }
+            Keyframe {
+                frame: 733.333
+                value: Qt.quaternion(0.996294, 0.0639242, 0.00284803, -0.0574705)
+            }
+            Keyframe {
+                frame: 766.667
+                value: Qt.quaternion(0.993888, 0.0905934, -0.00902479, -0.0624344)
+            }
+            Keyframe {
+                frame: 800
+                value: Qt.quaternion(0.991402, 0.102116, -0.0131053, -0.080769)
+            }
+            Keyframe {
+                frame: 833.333
+                value: Qt.quaternion(0.987839, 0.107703, -0.00750615, -0.111885)
+            }
+            Keyframe {
+                frame: 866.667
+                value: Qt.quaternion(0.984086, 0.0871271, -0.0244536, -0.152928)
+            }
+            Keyframe {
+                frame: 900
+                value: Qt.quaternion(0.982014, 0.0272937, -0.0570628, -0.177898)
+            }
+            Keyframe {
+                frame: 933.333
+                value: Qt.quaternion(0.979586, -0.0275736, -0.0737999, -0.184944)
+            }
+            Keyframe {
+                frame: 966.667
+                value: Qt.quaternion(0.979902, -0.054599, -0.0832996, -0.172837)
+            }
+            Keyframe {
+                frame: 1000
+                value: Qt.quaternion(0.982623, -0.0626482, -0.0895582, -0.150022)
+            }
+            Keyframe {
+                frame: 1033.33
+                value: Qt.quaternion(0.984934, -0.065009, -0.0945429, -0.129386)
+            }
+            Keyframe {
+                frame: 1066.67
+                value: Qt.quaternion(0.987279, -0.0595586, -0.0925658, -0.114739)
+            }
+            Keyframe {
+                frame: 1100
+                value: Qt.quaternion(0.989697, -0.042061, -0.0862223, -0.106283)
+            }
+            Keyframe {
+                frame: 1133.33
+                value: Qt.quaternion(0.991297, -0.017312, -0.0783367, -0.104371)
+            }
+            Keyframe {
+                frame: 1166.67
+                value: Qt.quaternion(0.99242, 0.00201014, -0.0703182, -0.100762)
+            }
+            Keyframe {
+                frame: 1200
+                value: Qt.quaternion(0.993051, 0.0233349, -0.0624085, -0.0970062)
+            }
+            Keyframe {
+                frame: 1233.33
+                value: Qt.quaternion(0.992932, 0.0444539, -0.0646299, -0.0890712)
+            }
+            Keyframe {
+                frame: 1266.67
+                value: Qt.quaternion(0.992173, 0.0903754, -0.0446588, -0.0736986)
+            }
+            Keyframe {
+                frame: 1300
+                value: Qt.quaternion(0.991183, 0.113616, -0.0191586, -0.0654213)
+            }
+            Keyframe {
+                frame: 1333.33
+                value: Qt.quaternion(0.991312, 0.115691, -0.00678285, -0.0622092)
+            }
+            Keyframe {
+                frame: 1366.67
+                value: Qt.quaternion(0.992524, 0.102877, -0.00841313, -0.0651301)
+            }
+            Keyframe {
+                frame: 1400
+                value: Qt.quaternion(0.992664, 0.0891917, -0.0124114, -0.0806825)
+            }
+            Keyframe {
+                frame: 1433.33
+                value: Qt.quaternion(0.990541, 0.0922723, -0.0151919, -0.100421)
+            }
+            Keyframe {
+                frame: 1466.67
+                value: Qt.quaternion(0.987449, 0.103162, -0.0211272, -0.117709)
+            }
+            Keyframe {
+                frame: 1500
+                value: Qt.quaternion(0.984492, 0.114174, -0.0285886, -0.130084)
+            }
+            Keyframe {
+                frame: 1533.33
+                value: Qt.quaternion(0.982416, 0.122172, -0.0333203, -0.137194)
+            }
+            Keyframe {
+                frame: 1566.67
+                value: Qt.quaternion(0.98166, 0.125194, -0.0347689, -0.139504)
+            }
+        }
+        KeyframeGroup {
+            target: rightForeArm
+            property: "rotation"
+            Keyframe {
+                frame: 0
+                value: Qt.quaternion(0.513597, -0.352739, 0.773311, -0.117406)
+            }
+            Keyframe {
+                frame: 33.3333
+                value: Qt.quaternion(0.61723, -0.324816, 0.705642, -0.124865)
+            }
+            Keyframe {
+                frame: 66.6667
+                value: Qt.quaternion(0.723367, -0.287334, 0.615505, -0.123827)
+            }
+            Keyframe {
+                frame: 100
+                value: Qt.quaternion(0.754518, -0.276581, 0.583376, -0.117807)
+            }
+            Keyframe {
+                frame: 133.333
+                value: Qt.quaternion(0.748776, -0.28171, 0.590567, -0.105849)
+            }
+            Keyframe {
+                frame: 166.667
+                value: Qt.quaternion(0.742544, -0.279684, 0.599837, -0.102961)
+            }
+            Keyframe {
+                frame: 200
+                value: Qt.quaternion(0.742329, -0.27496, 0.601686, -0.106391)
+            }
+            Keyframe {
+                frame: 233.333
+                value: Qt.quaternion(0.74671, -0.274036, 0.596518, -0.107216)
+            }
+            Keyframe {
+                frame: 266.667
+                value: Qt.quaternion(0.755761, -0.274834, 0.584964, -0.1054)
+            }
+            Keyframe {
+                frame: 300
+                value: Qt.quaternion(0.769084, -0.271396, 0.569887, -0.100407)
+            }
+            Keyframe {
+                frame: 333.333
+                value: Qt.quaternion(0.785734, -0.258838, 0.553006, -0.0990436)
+            }
+            Keyframe {
+                frame: 366.667
+                value: Qt.quaternion(0.807827, -0.242765, 0.527412, -0.101574)
+            }
+            Keyframe {
+                frame: 400
+                value: Qt.quaternion(0.830444, -0.232076, 0.498314, -0.0904826)
+            }
+            Keyframe {
+                frame: 433.333
+                value: Qt.quaternion(0.849593, -0.217096, 0.472887, -0.0862506)
+            }
+            Keyframe {
+                frame: 466.667
+                value: Qt.quaternion(0.85799, -0.205553, 0.462753, -0.0863715)
+            }
+            Keyframe {
+                frame: 500
+                value: Qt.quaternion(0.838551, -0.213631, 0.492762, -0.091536)
+            }
+            Keyframe {
+                frame: 533.333
+                value: Qt.quaternion(0.789374, -0.239906, 0.556465, -0.0983907)
+            }
+            Keyframe {
+                frame: 566.667
+                value: Qt.quaternion(0.721634, -0.271103, 0.628608, -0.102957)
+            }
+            Keyframe {
+                frame: 600
+                value: Qt.quaternion(0.652023, -0.302518, 0.686787, -0.108041)
+            }
+            Keyframe {
+                frame: 633.333
+                value: Qt.quaternion(0.591954, -0.330273, 0.726781, -0.110902)
+            }
+            Keyframe {
+                frame: 666.667
+                value: Qt.quaternion(0.544498, -0.347365, 0.755488, -0.109987)
+            }
+            Keyframe {
+                frame: 700
+                value: Qt.quaternion(0.516325, -0.354913, 0.772043, -0.106746)
+            }
+            Keyframe {
+                frame: 733.333
+                value: Qt.quaternion(0.510013, -0.353969, 0.777166, -0.102991)
+            }
+            Keyframe {
+                frame: 766.667
+                value: Qt.quaternion(0.51923, -0.34649, 0.774565, -0.101952)
+            }
+            Keyframe {
+                frame: 800
+                value: Qt.quaternion(0.545212, -0.337572, 0.759345, -0.110384)
+            }
+            Keyframe {
+                frame: 833.333
+                value: Qt.quaternion(0.608578, -0.317299, 0.717303, -0.120126)
+            }
+            Keyframe {
+                frame: 866.667
+                value: Qt.quaternion(0.679782, -0.291984, 0.661724, -0.121506)
+            }
+            Keyframe {
+                frame: 900
+                value: Qt.quaternion(0.694251, -0.286421, 0.650299, -0.114412)
+            }
+            Keyframe {
+                frame: 933.333
+                value: Qt.quaternion(0.67529, -0.295725, 0.66789, -0.102239)
+            }
+            Keyframe {
+                frame: 966.667
+                value: Qt.quaternion(0.653853, -0.306728, 0.684668, -0.098101)
+            }
+            Keyframe {
+                frame: 1000
+                value: Qt.quaternion(0.640819, -0.312866, 0.693183, -0.104708)
+            }
+            Keyframe {
+                frame: 1033.33
+                value: Qt.quaternion(0.633604, -0.314036, 0.698573, -0.109189)
+            }
+            Keyframe {
+                frame: 1066.67
+                value: Qt.quaternion(0.628408, -0.316827, 0.702521, -0.105775)
+            }
+            Keyframe {
+                frame: 1100
+                value: Qt.quaternion(0.625629, -0.320794, 0.703794, -0.101754)
+            }
+            Keyframe {
+                frame: 1133.33
+                value: Qt.quaternion(0.633188, -0.31848, 0.698224, -0.10063)
+            }
+            Keyframe {
+                frame: 1166.67
+                value: Qt.quaternion(0.660784, -0.307361, 0.676207, -0.107874)
+            }
+            Keyframe {
+                frame: 1200
+                value: Qt.quaternion(0.705385, -0.290299, 0.638179, -0.104336)
+            }
+            Keyframe {
+                frame: 1233.33
+                value: Qt.quaternion(0.755454, -0.271618, 0.585129, -0.114615)
+            }
+            Keyframe {
+                frame: 1266.67
+                value: Qt.quaternion(0.779863, -0.2551, 0.559847, -0.115364)
+            }
+            Keyframe {
+                frame: 1300
+                value: Qt.quaternion(0.740865, -0.270982, 0.604484, -0.110846)
+            }
+            Keyframe {
+                frame: 1333.33
+                value: Qt.quaternion(0.667241, -0.299524, 0.672853, -0.111105)
+            }
+            Keyframe {
+                frame: 1366.67
+                value: Qt.quaternion(0.595618, -0.323078, 0.726201, -0.116157)
+            }
+            Keyframe {
+                frame: 1400
+                value: Qt.quaternion(0.547043, -0.339692, 0.755773, -0.118999)
+            }
+            Keyframe {
+                frame: 1433.33
+                value: Qt.quaternion(0.522273, -0.349583, 0.768899, -0.117546)
+            }
+            Keyframe {
+                frame: 1466.67
+                value: Qt.quaternion(0.512438, -0.352881, 0.774087, -0.116928)
+            }
+            Keyframe {
+                frame: 1500
+                value: Qt.quaternion(0.510874, -0.353561, 0.774796, -0.117015)
+            }
+            Keyframe {
+                frame: 1533.33
+                value: Qt.quaternion(0.512484, -0.353067, 0.773918, -0.117282)
+            }
+            Keyframe {
+                frame: 1566.67
+                value: Qt.quaternion(0.513597, -0.352739, 0.773311, -0.117406)
+            }
+        }
+        KeyframeGroup {
+            target: joint_22
+            property: "rotation"
+            Keyframe {
+                frame: 0
+                value: Qt.quaternion(0.991726, 0.0542632, 0.107821, 0.0436921)
+            }
+        }
+        KeyframeGroup {
+            target: rightArm
+            property: "rotation"
+            Keyframe {
+                frame: 0
+                value: Qt.quaternion(0.924532, 0.244874, 0.224107, 0.187226)
+            }
+            Keyframe {
+                frame: 33.3333
+                value: Qt.quaternion(0.915879, 0.270051, 0.190326, 0.228065)
+            }
+            Keyframe {
+                frame: 66.6667
+                value: Qt.quaternion(0.906088, 0.288752, 0.133386, 0.278987)
+            }
+            Keyframe {
+                frame: 100
+                value: Qt.quaternion(0.894802, 0.330967, 0.0583892, 0.293906)
+            }
+            Keyframe {
+                frame: 133.333
+                value: Qt.quaternion(0.877641, 0.393006, -0.00565019, 0.274339)
+            }
+            Keyframe {
+                frame: 166.667
+                value: Qt.quaternion(0.856506, 0.450255, -0.0473861, 0.247834)
+            }
+            Keyframe {
+                frame: 200
+                value: Qt.quaternion(0.840532, 0.48639, -0.0722145, 0.22741)
+            }
+            Keyframe {
+                frame: 233.333
+                value: Qt.quaternion(0.837656, 0.495096, -0.0881808, 0.213159)
+            }
+            Keyframe {
+                frame: 266.667
+                value: Qt.quaternion(0.846884, 0.482004, -0.093438, 0.204278)
+            }
+            Keyframe {
+                frame: 300
+                value: Qt.quaternion(0.864664, 0.452144, -0.0836268, 0.20231)
+            }
+            Keyframe {
+                frame: 333.333
+                value: Qt.quaternion(0.886245, 0.411652, -0.0563559, 0.204782)
+            }
+            Keyframe {
+                frame: 366.667
+                value: Qt.quaternion(0.90706, 0.367097, -0.00292055, 0.206092)
+            }
+            Keyframe {
+                frame: 400
+                value: Qt.quaternion(0.922633, 0.32372, 0.077411, 0.194837)
+            }
+            Keyframe {
+                frame: 433.333
+                value: Qt.quaternion(0.923539, 0.290131, 0.187583, 0.16647)
+            }
+            Keyframe {
+                frame: 466.667
+                value: Qt.quaternion(0.914376, 0.250827, 0.285802, 0.138995)
+            }
+            Keyframe {
+                frame: 500
+                value: Qt.quaternion(0.910277, 0.205747, 0.340771, 0.113748)
+            }
+            Keyframe {
+                frame: 533.333
+                value: Qt.quaternion(0.912909, 0.162584, 0.363346, 0.0902401)
+            }
+            Keyframe {
+                frame: 566.667
+                value: Qt.quaternion(0.918132, 0.126137, 0.368058, 0.075207)
+            }
+            Keyframe {
+                frame: 600
+                value: Qt.quaternion(0.921127, 0.104805, 0.36897, 0.0663412)
+            }
+            Keyframe {
+                frame: 633.333
+                value: Qt.quaternion(0.922337, 0.0979063, 0.368526, 0.0624238)
+            }
+            Keyframe {
+                frame: 666.667
+                value: Qt.quaternion(0.923412, 0.104665, 0.363308, 0.0660519)
+            }
+            Keyframe {
+                frame: 700
+                value: Qt.quaternion(0.923193, 0.128491, 0.353745, 0.0779097)
+            }
+            Keyframe {
+                frame: 733.333
+                value: Qt.quaternion(0.921807, 0.160586, 0.338397, 0.0998543)
+            }
+            Keyframe {
+                frame: 766.667
+                value: Qt.quaternion(0.922428, 0.190054, 0.308787, 0.132875)
+            }
+            Keyframe {
+                frame: 800
+                value: Qt.quaternion(0.921507, 0.216695, 0.269104, 0.177346)
+            }
+            Keyframe {
+                frame: 833.333
+                value: Qt.quaternion(0.912903, 0.24712, 0.224221, 0.235085)
+            }
+            Keyframe {
+                frame: 866.667
+                value: Qt.quaternion(0.89797, 0.283824, 0.177616, 0.285562)
+            }
+            Keyframe {
+                frame: 900
+                value: Qt.quaternion(0.886486, 0.327706, 0.114231, 0.306109)
+            }
+            Keyframe {
+                frame: 933.333
+                value: Qt.quaternion(0.877803, 0.370595, 0.0442078, 0.30028)
+            }
+            Keyframe {
+                frame: 966.667
+                value: Qt.quaternion(0.869289, 0.407261, -0.0170749, 0.279615)
+            }
+            Keyframe {
+                frame: 1000
+                value: Qt.quaternion(0.8633, 0.432234, -0.0618537, 0.253103)
+            }
+            Keyframe {
+                frame: 1033.33
+                value: Qt.quaternion(0.864697, 0.438012, -0.0986853, 0.22518)
+            }
+            Keyframe {
+                frame: 1066.67
+                value: Qt.quaternion(0.872153, 0.425894, -0.132499, 0.201016)
+            }
+            Keyframe {
+                frame: 1100
+                value: Qt.quaternion(0.881846, 0.406179, -0.155442, 0.182219)
+            }
+            Keyframe {
+                frame: 1133.33
+                value: Qt.quaternion(0.893878, 0.383716, -0.159986, 0.167776)
+            }
+            Keyframe {
+                frame: 1166.67
+                value: Qt.quaternion(0.909363, 0.357957, -0.138365, 0.160563)
+            }
+            Keyframe {
+                frame: 1200
+                value: Qt.quaternion(0.930181, 0.320502, -0.0835275, 0.158322)
+            }
+            Keyframe {
+                frame: 1233.33
+                value: Qt.quaternion(0.942351, 0.29425, 0.02682, 0.157077)
+            }
+            Keyframe {
+                frame: 1266.67
+                value: Qt.quaternion(0.937817, 0.272882, 0.130018, 0.170677)
+            }
+            Keyframe {
+                frame: 1300
+                value: Qt.quaternion(0.928546, 0.26274, 0.193915, 0.176542)
+            }
+            Keyframe {
+                frame: 1333.33
+                value: Qt.quaternion(0.919381, 0.265631, 0.238304, 0.165501)
+            }
+            Keyframe {
+                frame: 1366.67
+                value: Qt.quaternion(0.91327, 0.267933, 0.266674, 0.151769)
+            }
+            Keyframe {
+                frame: 1400
+                value: Qt.quaternion(0.912419, 0.262225, 0.276646, 0.148983)
+            }
+            Keyframe {
+                frame: 1433.33
+                value: Qt.quaternion(0.915486, 0.253132, 0.269607, 0.158495)
+            }
+            Keyframe {
+                frame: 1466.67
+                value: Qt.quaternion(0.919315, 0.246747, 0.254416, 0.171024)
+            }
+            Keyframe {
+                frame: 1500
+                value: Qt.quaternion(0.922273, 0.244114, 0.239356, 0.180357)
+            }
+            Keyframe {
+                frame: 1533.33
+                value: Qt.quaternion(0.924022, 0.244129, 0.228261, 0.18569)
+            }
+            Keyframe {
+                frame: 1566.67
+                value: Qt.quaternion(0.924532, 0.244874, 0.224107, 0.187226)
+            }
+        }
+        KeyframeGroup {
             target: leftForeArm
             property: "rotation"
             Keyframe {
@@ -12762,203 +12770,195 @@ Node {
             property: "rotation"
             Keyframe {
                 frame: 0
-                value: Qt.quaternion(0.897022, 0.259666, -0.0388548, -0.35555)
+                value: Qt.quaternion(0.929397, 0.260944, -0.00808944, -0.260893)
             }
             Keyframe {
                 frame: 33.3333
-                value: Qt.quaternion(0.912495, 0.214568, -0.134174, -0.321421)
+                value: Qt.quaternion(0.941584, 0.226179, -0.107539, -0.225163)
             }
             Keyframe {
                 frame: 66.6667
-                value: Qt.quaternion(0.917037, 0.150491, -0.234716, -0.28514)
+                value: Qt.quaternion(0.942695, 0.173095, -0.214205, -0.18836)
             }
             Keyframe {
                 frame: 100
-                value: Qt.quaternion(0.914025, 0.0878635, -0.275118, -0.284866)
+                value: Qt.quaternion(0.939826, 0.115032, -0.26094, -0.188164)
             }
             Keyframe {
                 frame: 133.333
-                value: Qt.quaternion(0.913585, 0.0645001, -0.27913, -0.288599)
+                value: Qt.quaternion(0.939793, 0.0922013, -0.267372, -0.191833)
             }
             Keyframe {
                 frame: 166.667
-                value: Qt.quaternion(0.915799, 0.0849705, -0.283623, -0.271386)
+                value: Qt.quaternion(0.940215, 0.113095, -0.269693, -0.174561)
             }
             Keyframe {
                 frame: 200
-                value: Qt.quaternion(0.915618, 0.133586, -0.296378, -0.236555)
+                value: Qt.quaternion(0.936445, 0.162909, -0.277301, -0.140125)
             }
             Keyframe {
                 frame: 233.333
-                value: Qt.quaternion(0.910479, 0.18861, -0.302607, -0.209481)
+                value: Qt.quaternion(0.92853, 0.218386, -0.277768, -0.113947)
             }
             Keyframe {
                 frame: 266.667
-                value: Qt.quaternion(0.900293, 0.23977, -0.299349, -0.205848)
+                value: Qt.quaternion(0.918008, 0.268939, -0.269222, -0.111593)
             }
             Keyframe {
                 frame: 300
-                value: Qt.quaternion(0.887691, 0.284879, -0.286155, -0.221277)
+                value: Qt.quaternion(0.907036, 0.312364, -0.251437, -0.128427)
             }
             Keyframe {
                 frame: 333.333
-                value: Qt.quaternion(0.874849, 0.315384, -0.266058, -0.253741)
+                value: Qt.quaternion(0.897579, 0.340479, -0.228313, -0.162171)
             }
             Keyframe {
                 frame: 366.667
-                value: Qt.quaternion(0.861628, 0.331786, -0.241305, -0.29881)
+                value: Qt.quaternion(0.889043, 0.354033, -0.202032, -0.208436)
             }
             Keyframe {
                 frame: 400
-                value: Qt.quaternion(0.857896, 0.317984, -0.200847, -0.350087)
+                value: Qt.quaternion(0.890534, 0.335884, -0.163252, -0.25977)
             }
             Keyframe {
                 frame: 433.333
-                value: Qt.quaternion(0.858166, 0.289279, -0.143951, -0.398932)
+                value: Qt.quaternion(0.895687, 0.301207, -0.109665, -0.308209)
             }
             Keyframe {
                 frame: 466.667
-                value: Qt.quaternion(0.859058, 0.289758, -0.0956221, -0.410994)
+                value: Qt.quaternion(0.89765, 0.296588, -0.0615476, -0.320114)
             }
             Keyframe {
                 frame: 500
-                value: Qt.quaternion(0.859577, 0.324512, -0.0536812, -0.391073)
+                value: Qt.quaternion(0.895924, 0.326847, -0.0162041, -0.30038)
             }
             Keyframe {
                 frame: 533.333
-                value: Qt.quaternion(0.854205, 0.371524, -0.00995056, -0.3636)
+                value: Qt.quaternion(0.887545, 0.369138, 0.0321773, -0.273798)
             }
             Keyframe {
                 frame: 566.667
-                value: Qt.quaternion(0.844497, 0.408716, 0.0317543, -0.344628)
+                value: Qt.quaternion(0.875749, 0.401843, 0.0775017, -0.256087)
             }
             Keyframe {
                 frame: 600
-                value: Qt.quaternion(0.836455, 0.424822, 0.0674374, -0.339589)
+                value: Qt.quaternion(0.867089, 0.414153, 0.114641, -0.251978)
             }
             Keyframe {
                 frame: 633.333
-                value: Qt.quaternion(0.832547, 0.422514, 0.0962875, -0.345075)
+                value: Qt.quaternion(0.863664, 0.408822, 0.143077, -0.257832)
             }
             Keyframe {
                 frame: 666.667
-                value: Qt.quaternion(0.828926, 0.416327, 0.11578, -0.355174)
+                value: Qt.quaternion(0.861044, 0.400595, 0.161802, -0.268231)
             }
             Keyframe {
                 frame: 700
-                value: Qt.quaternion(0.829443, 0.405001, 0.125326, -0.363719)
+                value: Qt.quaternion(0.862414, 0.388301, 0.170116, -0.276632)
             }
             Keyframe {
                 frame: 733.333
-                value: Qt.quaternion(0.836422, 0.386549, 0.120443, -0.36942)
+                value: Qt.quaternion(0.869969, 0.370438, 0.163358, -0.281502)
             }
             Keyframe {
                 frame: 766.667
-                value: Qt.quaternion(0.851843, 0.363007, 0.0892635, -0.366908)
+                value: Qt.quaternion(0.885162, 0.350292, 0.129949, -0.277303)
             }
             Keyframe {
                 frame: 800
-                value: Qt.quaternion(0.87857, 0.326329, 0.0302358, -0.347433)
+                value: Qt.quaternion(0.909934, 0.320055, 0.0675156, -0.255003)
             }
             Keyframe {
                 frame: 833.333
-                value: Qt.quaternion(0.901099, 0.279299, -0.056778, -0.326787)
+                value: Qt.quaternion(0.930515, 0.282452, -0.0238481, -0.231936)
             }
             Keyframe {
                 frame: 866.667
-                value: Qt.quaternion(0.907312, 0.221848, -0.132076, -0.331849)
+                value: Qt.quaternion(0.937511, 0.233161, -0.104711, -0.236102)
             }
             Keyframe {
                 frame: 900
-                value: Qt.quaternion(0.906775, 0.179407, -0.176349, -0.33834)
+                value: Qt.quaternion(0.937824, 0.195552, -0.153177, -0.242451)
             }
             Keyframe {
                 frame: 933.333
-                value: Qt.quaternion(0.906366, 0.170102, -0.203185, -0.329063)
+                value: Qt.quaternion(0.936551, 0.189137, -0.180839, -0.233233)
             }
             Keyframe {
                 frame: 966.667
-                value: Qt.quaternion(0.906098, 0.185114, -0.221649, -0.309177)
+                value: Qt.quaternion(0.934278, 0.206071, -0.197635, -0.213541)
             }
             Keyframe {
                 frame: 1000
-                value: Qt.quaternion(0.904649, 0.208563, -0.235114, -0.287806)
+                value: Qt.quaternion(0.930656, 0.23088, -0.208583, -0.192528)
             }
             Keyframe {
                 frame: 1033.33
-                value: Qt.quaternion(0.900592, 0.234245, -0.244752, -0.272322)
+                value: Qt.quaternion(0.925041, 0.257488, -0.2155, -0.177651)
             }
             Keyframe {
                 frame: 1066.67
-                value: Qt.quaternion(0.894553, 0.260988, -0.252642, -0.260448)
+                value: Qt.quaternion(0.917823, 0.284954, -0.220577, -0.166575)
             }
             Keyframe {
                 frame: 1100
-                value: Qt.quaternion(0.890057, 0.285112, -0.251558, -0.251453)
+                value: Qt.quaternion(0.912409, 0.308867, -0.216996, -0.158191)
             }
             Keyframe {
                 frame: 1133.33
-                value: Qt.quaternion(0.884156, 0.310543, -0.243207, -0.250363)
+                value: Qt.quaternion(0.906394, 0.33329, -0.206057, -0.15782)
             }
             Keyframe {
                 frame: 1166.67
-                value: Qt.quaternion(0.874381, 0.339296, -0.226567, -0.262684)
+                value: Qt.quaternion(0.897897, 0.360101, -0.186542, -0.171205)
             }
             Keyframe {
                 frame: 1200
-                value: Qt.quaternion(0.870297, 0.343121, -0.190618, -0.297517)
+                value: Qt.quaternion(0.897336, 0.360016, -0.150406, -0.206289)
             }
             Keyframe {
                 frame: 1233.33
-                value: Qt.quaternion(0.869287, 0.313996, -0.135514, -0.356908)
+                value: Qt.quaternion(0.902325, 0.325068, -0.0986495, -0.265348)
             }
             Keyframe {
                 frame: 1266.67
-                value: Qt.quaternion(0.866038, 0.294775, -0.0877022, -0.394201)
+                value: Qt.quaternion(0.902807, 0.300814, -0.0531204, -0.302703)
             }
             Keyframe {
                 frame: 1300
-                value: Qt.quaternion(0.866251, 0.301349, -0.0574898, -0.394327)
+                value: Qt.quaternion(0.902916, 0.304197, -0.0223858, -0.302831)
             }
             Keyframe {
                 frame: 1333.33
-                value: Qt.quaternion(0.869099, 0.3148, -0.0318023, -0.380205)
+                value: Qt.quaternion(0.904176, 0.314945, 0.0045769, -0.28854)
             }
             Keyframe {
                 frame: 1366.67
-                value: Qt.quaternion(0.872965, 0.321085, -0.0148359, -0.366901)
+                value: Qt.quaternion(0.906565, 0.319474, 0.0221217, -0.27493)
             }
             Keyframe {
                 frame: 1400
-                value: Qt.quaternion(0.878522, 0.315165, -0.00738253, -0.35891)
+                value: Qt.quaternion(0.911228, 0.312838, 0.028937, -0.266379)
             }
             Keyframe {
                 frame: 1433.33
-                value: Qt.quaternion(0.884456, 0.301484, -0.00754339, -0.356074)
+                value: Qt.quaternion(0.916835, 0.299259, 0.0273706, -0.262886)
             }
             Keyframe {
                 frame: 1466.67
-                value: Qt.quaternion(0.889345, 0.286323, -0.0130086, -0.356252)
+                value: Qt.quaternion(0.921736, 0.284752, 0.0203704, -0.262495)
             }
             Keyframe {
                 frame: 1500
-                value: Qt.quaternion(0.893304, 0.272991, -0.0234773, -0.356277)
+                value: Qt.quaternion(0.925716, 0.272587, 0.00858146, -0.262055)
             }
             Keyframe {
                 frame: 1533.33
-                value: Qt.quaternion(0.896077, 0.263337, -0.0343264, -0.355699)
+                value: Qt.quaternion(0.928455, 0.264121, -0.00320603, -0.261154)
             }
             Keyframe {
                 frame: 1566.67
-                value: Qt.quaternion(0.897022, 0.259666, -0.0388548, -0.35555)
-            }
-        }
-        KeyframeGroup {
-            target: joint_13
-            property: "rotation"
-            Keyframe {
-                frame: 0
-                value: Qt.quaternion(0.981372, 0.0931776, 0.165529, 0.0287524)
+                value: Qt.quaternion(0.929397, 0.260944, -0.00808944, -0.260893)
             }
         }
         KeyframeGroup {
@@ -15914,998 +15914,6 @@ Node {
             }
         }
         KeyframeGroup {
-            target: leftUpLeg
-            property: "rotation"
-            Keyframe {
-                frame: 0
-                value: Qt.quaternion(0.991743, -0.0540402, 0.0516934, -0.104183)
-            }
-            Keyframe {
-                frame: 33.3333
-                value: Qt.quaternion(0.993286, -0.0305898, 0.0546173, -0.0972831)
-            }
-            Keyframe {
-                frame: 66.6667
-                value: Qt.quaternion(0.994208, -0.0161083, 0.0534022, -0.0918707)
-            }
-            Keyframe {
-                frame: 100
-                value: Qt.quaternion(0.99478, -0.0043871, 0.05001, -0.0888438)
-            }
-            Keyframe {
-                frame: 133.333
-                value: Qt.quaternion(0.995048, 0.00922535, 0.0456964, -0.0877824)
-            }
-            Keyframe {
-                frame: 166.667
-                value: Qt.quaternion(0.994822, 0.0271167, 0.040972, -0.0889641)
-            }
-            Keyframe {
-                frame: 200
-                value: Qt.quaternion(0.993792, 0.0492301, 0.0379449, -0.0922754)
-            }
-            Keyframe {
-                frame: 233.333
-                value: Qt.quaternion(0.992118, 0.0760225, 0.0360402, -0.0928668)
-            }
-            Keyframe {
-                frame: 266.667
-                value: Qt.quaternion(0.989225, 0.110406, 0.0337081, -0.0900454)
-            }
-            Keyframe {
-                frame: 300
-                value: Qt.quaternion(0.987035, 0.134001, 0.0282031, -0.0837269)
-            }
-            Keyframe {
-                frame: 333.333
-                value: Qt.quaternion(0.987122, 0.142197, 0.0223903, -0.06978)
-            }
-            Keyframe {
-                frame: 366.667
-                value: Qt.quaternion(0.988636, 0.14124, 0.0207267, -0.0471214)
-            }
-            Keyframe {
-                frame: 400
-                value: Qt.quaternion(0.990344, 0.135083, 0.0217646, -0.022295)
-            }
-            Keyframe {
-                frame: 433.333
-                value: Qt.quaternion(0.992221, 0.121763, 0.0259081, -0.000930952)
-            }
-            Keyframe {
-                frame: 466.667
-                value: Qt.quaternion(0.994815, 0.0941903, 0.0329521, 0.0196114)
-            }
-            Keyframe {
-                frame: 500
-                value: Qt.quaternion(0.997244, 0.0466282, 0.0413113, 0.0403014)
-            }
-            Keyframe {
-                frame: 533.333
-                value: Qt.quaternion(0.997245, -0.00916139, 0.0474809, 0.0562512)
-            }
-            Keyframe {
-                frame: 566.667
-                value: Qt.quaternion(0.994782, -0.0621422, 0.0508381, 0.0629448)
-            }
-            Keyframe {
-                frame: 600
-                value: Qt.quaternion(0.990964, -0.109465, 0.0528838, 0.0566591)
-            }
-            Keyframe {
-                frame: 633.333
-                value: Qt.quaternion(0.986142, -0.150188, 0.0561452, 0.0426007)
-            }
-            Keyframe {
-                frame: 666.667
-                value: Qt.quaternion(0.980638, -0.183808, 0.0622991, 0.0261262)
-            }
-            Keyframe {
-                frame: 700
-                value: Qt.quaternion(0.975045, -0.210209, 0.0705874, 0.0108442)
-            }
-            Keyframe {
-                frame: 733.333
-                value: Qt.quaternion(0.970311, -0.228757, 0.0785252, -0.000212555)
-            }
-            Keyframe {
-                frame: 766.667
-                value: Qt.quaternion(0.967621, -0.238378, 0.0827593, -0.00606643)
-            }
-            Keyframe {
-                frame: 800
-                value: Qt.quaternion(0.967569, -0.239023, 0.0814681, -0.00637853)
-            }
-            Keyframe {
-                frame: 833.333
-                value: Qt.quaternion(0.968942, -0.235394, 0.0757698, -0.000401303)
-            }
-            Keyframe {
-                frame: 866.667
-                value: Qt.quaternion(0.969522, -0.2353, 0.0675428, 0.00996395)
-            }
-            Keyframe {
-                frame: 900
-                value: Qt.quaternion(0.968156, -0.241937, 0.06108, 0.0202598)
-            }
-            Keyframe {
-                frame: 933.333
-                value: Qt.quaternion(0.965776, -0.250992, 0.0586697, 0.0289381)
-            }
-            Keyframe {
-                frame: 966.667
-                value: Qt.quaternion(0.96439, -0.255605, 0.0605949, 0.0307753)
-            }
-            Keyframe {
-                frame: 1000
-                value: Qt.quaternion(0.964389, -0.255563, 0.0629031, 0.0261751)
-            }
-            Keyframe {
-                frame: 1033.33
-                value: Qt.quaternion(0.964786, -0.255019, 0.0630195, 0.0135138)
-            }
-            Keyframe {
-                frame: 1066.67
-                value: Qt.quaternion(0.964184, -0.258456, 0.0588395, -0.00939267)
-            }
-            Keyframe {
-                frame: 1100
-                value: Qt.quaternion(0.962526, -0.263613, 0.0536195, -0.0343096)
-            }
-            Keyframe {
-                frame: 1133.33
-                value: Qt.quaternion(0.962072, -0.261728, 0.0514423, -0.0571847)
-            }
-            Keyframe {
-                frame: 1166.67
-                value: Qt.quaternion(0.963856, -0.249729, 0.05354, -0.0758352)
-            }
-            Keyframe {
-                frame: 1200
-                value: Qt.quaternion(0.966184, -0.234577, 0.0604505, -0.0883621)
-            }
-            Keyframe {
-                frame: 1233.33
-                value: Qt.quaternion(0.970474, -0.210059, 0.0653103, -0.0989411)
-            }
-            Keyframe {
-                frame: 1266.67
-                value: Qt.quaternion(0.975366, -0.180567, 0.0697402, -0.105801)
-            }
-            Keyframe {
-                frame: 1300
-                value: Qt.quaternion(0.980145, -0.148539, 0.0738233, -0.108635)
-            }
-            Keyframe {
-                frame: 1333.33
-                value: Qt.quaternion(0.984615, -0.114179, 0.0762043, -0.10812)
-            }
-            Keyframe {
-                frame: 1366.67
-                value: Qt.quaternion(0.988145, -0.0818798, 0.0766827, -0.104811)
-            }
-            Keyframe {
-                frame: 1400
-                value: Qt.quaternion(0.990492, -0.055066, 0.0758878, -0.100669)
-            }
-            Keyframe {
-                frame: 1433.33
-                value: Qt.quaternion(0.991827, -0.0350615, 0.0747186, -0.097297)
-            }
-            Keyframe {
-                frame: 1466.67
-                value: Qt.quaternion(0.992534, -0.0199954, 0.0739306, -0.0949288)
-            }
-            Keyframe {
-                frame: 1500
-                value: Qt.quaternion(0.992848, -0.00498917, 0.0733993, -0.0940199)
-            }
-            Keyframe {
-                frame: 1533.33
-                value: Qt.quaternion(0.992792, 0.011067, 0.0731972, -0.0942542)
-            }
-            Keyframe {
-                frame: 1566.67
-                value: Qt.quaternion(0.992415, 0.0261544, 0.0737909, -0.0947847)
-            }
-            Keyframe {
-                frame: 1600
-                value: Qt.quaternion(0.991974, 0.0376555, 0.0741841, -0.0952188)
-            }
-            Keyframe {
-                frame: 1633.33
-                value: Qt.quaternion(0.991874, 0.0453197, 0.0733281, -0.0935664)
-            }
-            Keyframe {
-                frame: 1666.67
-                value: Qt.quaternion(0.991893, 0.0528381, 0.0721285, -0.0902963)
-            }
-            Keyframe {
-                frame: 1700
-                value: Qt.quaternion(0.992624, 0.0492975, 0.0691748, -0.0865033)
-            }
-            Keyframe {
-                frame: 1733.33
-                value: Qt.quaternion(0.993939, 0.034892, 0.0655599, -0.0810478)
-            }
-            Keyframe {
-                frame: 1766.67
-                value: Qt.quaternion(0.995115, 0.0132809, 0.062353, -0.075383)
-            }
-            Keyframe {
-                frame: 1800
-                value: Qt.quaternion(0.995354, -0.00888783, 0.0598896, -0.0748694)
-            }
-            Keyframe {
-                frame: 1833.33
-                value: Qt.quaternion(0.994757, -0.028387, 0.0576511, -0.0795555)
-            }
-            Keyframe {
-                frame: 1866.67
-                value: Qt.quaternion(0.993708, -0.0431148, 0.0553747, -0.087285)
-            }
-            Keyframe {
-                frame: 1900
-                value: Qt.quaternion(0.992674, -0.0513218, 0.0535148, -0.0953936)
-            }
-            Keyframe {
-                frame: 1933.33
-                value: Qt.quaternion(0.991981, -0.0539342, 0.0521941, -0.101693)
-            }
-            Keyframe {
-                frame: 1966.67
-                value: Qt.quaternion(0.991743, -0.0540402, 0.0516934, -0.104183)
-            }
-        }
-        KeyframeGroup {
-            target: joint_29
-            property: "rotation"
-            Keyframe {
-                frame: 0
-                value: Qt.quaternion(0.929801, 0.099291, -0.343686, 0.0865575)
-            }
-        }
-        KeyframeGroup {
-            target: rightHand
-            property: "rotation"
-            Keyframe {
-                frame: 0
-                value: Qt.quaternion(0.975506, -0.184074, -0.107529, -0.0542447)
-            }
-            Keyframe {
-                frame: 33.3333
-                value: Qt.quaternion(0.97655, -0.180446, -0.101601, -0.0588779)
-            }
-            Keyframe {
-                frame: 66.6667
-                value: Qt.quaternion(0.976555, -0.180401, -0.0988213, -0.063482)
-            }
-            Keyframe {
-                frame: 100
-                value: Qt.quaternion(0.976307, -0.181304, -0.097029, -0.0673686)
-            }
-            Keyframe {
-                frame: 133.333
-                value: Qt.quaternion(0.975673, -0.183614, -0.0962203, -0.0713408)
-            }
-            Keyframe {
-                frame: 166.667
-                value: Qt.quaternion(0.975164, -0.185386, -0.0953939, -0.0747514)
-            }
-            Keyframe {
-                frame: 200
-                value: Qt.quaternion(0.975025, -0.185852, -0.0941816, -0.0769069)
-            }
-            Keyframe {
-                frame: 233.333
-                value: Qt.quaternion(0.975653, -0.183669, -0.0928534, -0.0757977)
-            }
-            Keyframe {
-                frame: 266.667
-                value: Qt.quaternion(0.977035, -0.178492, -0.090485, -0.0731884)
-            }
-            Keyframe {
-                frame: 300
-                value: Qt.quaternion(0.977999, -0.175689, -0.0898903, -0.0676062)
-            }
-            Keyframe {
-                frame: 333.333
-                value: Qt.quaternion(0.978604, -0.175627, -0.0892041, -0.0594292)
-            }
-            Keyframe {
-                frame: 366.667
-                value: Qt.quaternion(0.978593, -0.177722, -0.0905136, -0.0507828)
-            }
-            Keyframe {
-                frame: 400
-                value: Qt.quaternion(0.977979, -0.181194, -0.0936195, -0.0442958)
-            }
-            Keyframe {
-                frame: 433.333
-                value: Qt.quaternion(0.977157, -0.183731, -0.0982001, -0.0419981)
-            }
-            Keyframe {
-                frame: 466.667
-                value: Qt.quaternion(0.976327, -0.186351, -0.101435, -0.0420746)
-            }
-            Keyframe {
-                frame: 500
-                value: Qt.quaternion(0.976466, -0.18536, -0.102003, -0.041859)
-            }
-            Keyframe {
-                frame: 533.333
-                value: Qt.quaternion(0.975919, -0.188155, -0.10174, -0.0427629)
-            }
-            Keyframe {
-                frame: 566.667
-                value: Qt.quaternion(0.974234, -0.195195, -0.102061, -0.0484799)
-            }
-            Keyframe {
-                frame: 600
-                value: Qt.quaternion(0.973262, -0.197552, -0.102195, -0.0573676)
-            }
-            Keyframe {
-                frame: 633.333
-                value: Qt.quaternion(0.973232, -0.19447, -0.103226, -0.0659218)
-            }
-            Keyframe {
-                frame: 666.667
-                value: Qt.quaternion(0.973737, -0.189549, -0.103463, -0.0721368)
-            }
-            Keyframe {
-                frame: 700
-                value: Qt.quaternion(0.97468, -0.184705, -0.100854, -0.07557)
-            }
-            Keyframe {
-                frame: 733.333
-                value: Qt.quaternion(0.975818, -0.180726, -0.0956382, -0.0772694)
-            }
-            Keyframe {
-                frame: 766.667
-                value: Qt.quaternion(0.976958, -0.176974, -0.089428, -0.0789654)
-            }
-            Keyframe {
-                frame: 800
-                value: Qt.quaternion(0.978294, -0.17202, -0.0825874, -0.0808101)
-            }
-            Keyframe {
-                frame: 833.333
-                value: Qt.quaternion(0.979746, -0.165776, -0.0761285, -0.0825818)
-            }
-            Keyframe {
-                frame: 866.667
-                value: Qt.quaternion(0.98128, -0.1582, -0.0708557, -0.0839142)
-            }
-            Keyframe {
-                frame: 900
-                value: Qt.quaternion(0.982382, -0.151936, -0.0682265, -0.0847667)
-            }
-            Keyframe {
-                frame: 933.333
-                value: Qt.quaternion(0.983187, -0.147003, -0.067221, -0.0849372)
-            }
-            Keyframe {
-                frame: 966.667
-                value: Qt.quaternion(0.98397, -0.143506, -0.0672241, -0.0817979)
-            }
-            Keyframe {
-                frame: 1000
-                value: Qt.quaternion(0.984598, -0.141361, -0.0685012, -0.0767552)
-            }
-            Keyframe {
-                frame: 1033.33
-                value: Qt.quaternion(0.984979, -0.140585, -0.0704922, -0.0712966)
-            }
-            Keyframe {
-                frame: 1066.67
-                value: Qt.quaternion(0.985347, -0.139288, -0.0726142, -0.0664686)
-            }
-            Keyframe {
-                frame: 1100
-                value: Qt.quaternion(0.985989, -0.135907, -0.0746605, -0.0614965)
-            }
-            Keyframe {
-                frame: 1133.33
-                value: Qt.quaternion(0.986712, -0.13065, -0.0789198, -0.0556883)
-            }
-            Keyframe {
-                frame: 1166.67
-                value: Qt.quaternion(0.986804, -0.127902, -0.0865637, -0.0486336)
-            }
-            Keyframe {
-                frame: 1200
-                value: Qt.quaternion(0.986597, -0.127333, -0.0927185, -0.0426139)
-            }
-            Keyframe {
-                frame: 1233.33
-                value: Qt.quaternion(0.986423, -0.128642, -0.0951972, -0.0368453)
-            }
-            Keyframe {
-                frame: 1266.67
-                value: Qt.quaternion(0.987202, -0.125854, -0.0923943, -0.0324981)
-            }
-            Keyframe {
-                frame: 1300
-                value: Qt.quaternion(0.988256, -0.121963, -0.0869564, -0.0302342)
-            }
-            Keyframe {
-                frame: 1333.33
-                value: Qt.quaternion(0.988848, -0.120468, -0.0818389, -0.0311277)
-            }
-            Keyframe {
-                frame: 1366.67
-                value: Qt.quaternion(0.988136, -0.125814, -0.0802651, -0.0362708)
-            }
-            Keyframe {
-                frame: 1400
-                value: Qt.quaternion(0.986509, -0.134815, -0.081458, -0.044597)
-            }
-            Keyframe {
-                frame: 1433.33
-                value: Qt.quaternion(0.985018, -0.141687, -0.0831489, -0.0524456)
-            }
-            Keyframe {
-                frame: 1466.67
-                value: Qt.quaternion(0.984255, -0.144342, -0.0844427, -0.0572488)
-            }
-            Keyframe {
-                frame: 1500
-                value: Qt.quaternion(0.984159, -0.143873, -0.0850475, -0.059151)
-            }
-            Keyframe {
-                frame: 1533.33
-                value: Qt.quaternion(0.983989, -0.144028, -0.086055, -0.0601418)
-            }
-            Keyframe {
-                frame: 1566.67
-                value: Qt.quaternion(0.983377, -0.146576, -0.0878897, -0.0613261)
-            }
-            Keyframe {
-                frame: 1600
-                value: Qt.quaternion(0.982394, -0.1517, -0.0898066, -0.0618342)
-            }
-            Keyframe {
-                frame: 1633.33
-                value: Qt.quaternion(0.981419, -0.15747, -0.0914064, -0.0605434)
-            }
-            Keyframe {
-                frame: 1666.67
-                value: Qt.quaternion(0.980383, -0.163328, -0.0932556, -0.0589607)
-            }
-            Keyframe {
-                frame: 1700
-                value: Qt.quaternion(0.978826, -0.171603, -0.0963629, -0.0562784)
-            }
-            Keyframe {
-                frame: 1733.33
-                value: Qt.quaternion(0.977316, -0.17964, -0.0986332, -0.0534187)
-            }
-            Keyframe {
-                frame: 1766.67
-                value: Qt.quaternion(0.976107, -0.185499, -0.10073, -0.0515575)
-            }
-            Keyframe {
-                frame: 1800
-                value: Qt.quaternion(0.975644, -0.186783, -0.102921, -0.0513683)
-            }
-            Keyframe {
-                frame: 1833.33
-                value: Qt.quaternion(0.975607, -0.185695, -0.105122, -0.0515467)
-            }
-            Keyframe {
-                frame: 1866.67
-                value: Qt.quaternion(0.975621, -0.184651, -0.106469, -0.0522647)
-            }
-            Keyframe {
-                frame: 1900
-                value: Qt.quaternion(0.975565, -0.184346, -0.106957, -0.053384)
-            }
-            Keyframe {
-                frame: 1933.33
-                value: Qt.quaternion(0.975522, -0.184154, -0.107326, -0.0540871)
-            }
-            Keyframe {
-                frame: 1966.67
-                value: Qt.quaternion(0.975506, -0.184074, -0.107529, -0.0542447)
-            }
-        }
-        KeyframeGroup {
-            target: rightForeArm
-            property: "rotation"
-            Keyframe {
-                frame: 0
-                value: Qt.quaternion(0.964046, -0.0954023, 0.236848, -0.0736038)
-            }
-            Keyframe {
-                frame: 33.3333
-                value: Qt.quaternion(0.962616, -0.0980513, 0.241472, -0.0738118)
-            }
-            Keyframe {
-                frame: 66.6667
-                value: Qt.quaternion(0.961225, -0.100384, 0.245489, -0.0755275)
-            }
-            Keyframe {
-                frame: 100
-                value: Qt.quaternion(0.96051, -0.10186, 0.247314, -0.0766886)
-            }
-            Keyframe {
-                frame: 133.333
-                value: Qt.quaternion(0.96045, -0.102318, 0.247266, -0.0769893)
-            }
-            Keyframe {
-                frame: 166.667
-                value: Qt.quaternion(0.96079, -0.102177, 0.246184, -0.076393)
-            }
-            Keyframe {
-                frame: 200
-                value: Qt.quaternion(0.961282, -0.101841, 0.244816, -0.0750385)
-            }
-            Keyframe {
-                frame: 233.333
-                value: Qt.quaternion(0.962035, -0.100897, 0.242682, -0.0735732)
-            }
-            Keyframe {
-                frame: 266.667
-                value: Qt.quaternion(0.963523, -0.0989629, 0.238244, -0.0711977)
-            }
-            Keyframe {
-                frame: 300
-                value: Qt.quaternion(0.965498, -0.095039, 0.231802, -0.0710516)
-            }
-            Keyframe {
-                frame: 333.333
-                value: Qt.quaternion(0.967608, -0.0907935, 0.224601, -0.0710367)
-            }
-            Keyframe {
-                frame: 366.667
-                value: Qt.quaternion(0.96941, -0.0872962, 0.218219, -0.0707355)
-            }
-            Keyframe {
-                frame: 400
-                value: Qt.quaternion(0.971409, -0.0837372, 0.210724, -0.0703393)
-            }
-            Keyframe {
-                frame: 433.333
-                value: Qt.quaternion(0.973202, -0.0799273, 0.203546, -0.0711168)
-            }
-            Keyframe {
-                frame: 466.667
-                value: Qt.quaternion(0.974508, -0.0763448, 0.198291, -0.0720136)
-            }
-            Keyframe {
-                frame: 500
-                value: Qt.quaternion(0.974627, -0.0761676, 0.19796, -0.0715006)
-            }
-            Keyframe {
-                frame: 533.333
-                value: Qt.quaternion(0.973094, -0.0790914, 0.203864, -0.0726054)
-            }
-            Keyframe {
-                frame: 566.667
-                value: Qt.quaternion(0.970835, -0.0832633, 0.212054, -0.0747017)
-            }
-            Keyframe {
-                frame: 600
-                value: Qt.quaternion(0.969993, -0.0851206, 0.214908, -0.0753858)
-            }
-            Keyframe {
-                frame: 633.333
-                value: Qt.quaternion(0.970384, -0.0845867, 0.213365, -0.0753321)
-            }
-            Keyframe {
-                frame: 666.667
-                value: Qt.quaternion(0.9704, -0.0845875, 0.213326, -0.0752371)
-            }
-            Keyframe {
-                frame: 700
-                value: Qt.quaternion(0.968969, -0.087183, 0.218686, -0.0753291)
-            }
-            Keyframe {
-                frame: 733.333
-                value: Qt.quaternion(0.965934, -0.0924329, 0.22941, -0.076151)
-            }
-            Keyframe {
-                frame: 766.667
-                value: Qt.quaternion(0.962001, -0.098842, 0.242354, -0.0777812)
-            }
-            Keyframe {
-                frame: 800
-                value: Qt.quaternion(0.957695, -0.10562, 0.255503, -0.0798956)
-            }
-            Keyframe {
-                frame: 833.333
-                value: Qt.quaternion(0.953361, -0.112095, 0.267999, -0.081935)
-            }
-            Keyframe {
-                frame: 866.667
-                value: Qt.quaternion(0.949536, -0.117681, 0.278672, -0.0829166)
-            }
-            Keyframe {
-                frame: 900
-                value: Qt.quaternion(0.946411, -0.122131, 0.287241, -0.0829668)
-            }
-            Keyframe {
-                frame: 933.333
-                value: Qt.quaternion(0.94407, -0.125123, 0.293764, -0.0823289)
-            }
-            Keyframe {
-                frame: 966.667
-                value: Qt.quaternion(0.942878, -0.126433, 0.296806, -0.083078)
-            }
-            Keyframe {
-                frame: 1000
-                value: Qt.quaternion(0.942733, -0.126539, 0.296979, -0.0839443)
-            }
-            Keyframe {
-                frame: 1033.33
-                value: Qt.quaternion(0.944016, -0.124739, 0.293641, -0.0839614)
-            }
-            Keyframe {
-                frame: 1066.67
-                value: Qt.quaternion(0.947245, -0.120864, 0.285047, -0.0828633)
-            }
-            Keyframe {
-                frame: 1100
-                value: Qt.quaternion(0.953262, -0.112529, 0.268821, -0.0797806)
-            }
-            Keyframe {
-                frame: 1133.33
-                value: Qt.quaternion(0.960925, -0.101166, 0.246206, -0.0759726)
-            }
-            Keyframe {
-                frame: 1166.67
-                value: Qt.quaternion(0.967069, -0.0907963, 0.226136, -0.0734605)
-            }
-            Keyframe {
-                frame: 1200
-                value: Qt.quaternion(0.970236, -0.0847939, 0.214761, -0.0730037)
-            }
-            Keyframe {
-                frame: 1233.33
-                value: Qt.quaternion(0.970983, -0.083103, 0.212529, -0.0715357)
-            }
-            Keyframe {
-                frame: 1266.67
-                value: Qt.quaternion(0.969211, -0.0865481, 0.21952, -0.0703677)
-            }
-            Keyframe {
-                frame: 1300
-                value: Qt.quaternion(0.96603, -0.0921619, 0.230871, -0.0706497)
-            }
-            Keyframe {
-                frame: 1333.33
-                value: Qt.quaternion(0.961958, -0.0987998, 0.244288, -0.0720979)
-            }
-            Keyframe {
-                frame: 1366.67
-                value: Qt.quaternion(0.957759, -0.105313, 0.257123, -0.0741288)
-            }
-            Keyframe {
-                frame: 1400
-                value: Qt.quaternion(0.954434, -0.110249, 0.266533, -0.0765613)
-            }
-            Keyframe {
-                frame: 1433.33
-                value: Qt.quaternion(0.952622, -0.112873, 0.271225, -0.0787889)
-            }
-            Keyframe {
-                frame: 1466.67
-                value: Qt.quaternion(0.952722, -0.112742, 0.270471, -0.0803518)
-            }
-            Keyframe {
-                frame: 1500
-                value: Qt.quaternion(0.954572, -0.110131, 0.264822, -0.0808216)
-            }
-            Keyframe {
-                frame: 1533.33
-                value: Qt.quaternion(0.957363, -0.106309, 0.256508, -0.0797391)
-            }
-            Keyframe {
-                frame: 1566.67
-                value: Qt.quaternion(0.960033, -0.102686, 0.24854, -0.0775884)
-            }
-            Keyframe {
-                frame: 1600
-                value: Qt.quaternion(0.961971, -0.09997, 0.242707, -0.075571)
-            }
-            Keyframe {
-                frame: 1633.33
-                value: Qt.quaternion(0.963286, -0.0978768, 0.23853, -0.0748625)
-            }
-            Keyframe {
-                frame: 1666.67
-                value: Qt.quaternion(0.964325, -0.0963616, 0.235166, -0.07409)
-            }
-            Keyframe {
-                frame: 1700
-                value: Qt.quaternion(0.964902, -0.0947785, 0.233101, -0.0751344)
-            }
-            Keyframe {
-                frame: 1733.33
-                value: Qt.quaternion(0.965223, -0.0937849, 0.232042, -0.0755387)
-            }
-            Keyframe {
-                frame: 1766.67
-                value: Qt.quaternion(0.96541, -0.0933631, 0.231514, -0.0752807)
-            }
-            Keyframe {
-                frame: 1800
-                value: Qt.quaternion(0.965787, -0.0926233, 0.230477, -0.0745415)
-            }
-            Keyframe {
-                frame: 1833.33
-                value: Qt.quaternion(0.96605, -0.0920453, 0.22986, -0.0737538)
-            }
-            Keyframe {
-                frame: 1866.67
-                value: Qt.quaternion(0.965655, -0.0927349, 0.231398, -0.0732556)
-            }
-            Keyframe {
-                frame: 1900
-                value: Qt.quaternion(0.964869, -0.0940552, 0.234104, -0.0733275)
-            }
-            Keyframe {
-                frame: 1933.33
-                value: Qt.quaternion(0.964256, -0.0950657, 0.236152, -0.0735178)
-            }
-            Keyframe {
-                frame: 1966.67
-                value: Qt.quaternion(0.964046, -0.0954023, 0.236848, -0.0736038)
-            }
-        }
-        KeyframeGroup {
-            target: rightArm
-            property: "rotation"
-            Keyframe {
-                frame: 0
-                value: Qt.quaternion(0.853352, 0.228439, 0.221679, 0.412873)
-            }
-            Keyframe {
-                frame: 33.3333
-                value: Qt.quaternion(0.857938, 0.225296, 0.221921, 0.40489)
-            }
-            Keyframe {
-                frame: 66.6667
-                value: Qt.quaternion(0.860576, 0.22424, 0.226573, 0.397227)
-            }
-            Keyframe {
-                frame: 100
-                value: Qt.quaternion(0.862498, 0.221644, 0.231086, 0.391881)
-            }
-            Keyframe {
-                frame: 133.333
-                value: Qt.quaternion(0.86379, 0.21838, 0.234274, 0.388964)
-            }
-            Keyframe {
-                frame: 166.667
-                value: Qt.quaternion(0.863942, 0.216516, 0.235895, 0.388689)
-            }
-            Keyframe {
-                frame: 200
-                value: Qt.quaternion(0.862626, 0.217016, 0.236369, 0.391038)
-            }
-            Keyframe {
-                frame: 233.333
-                value: Qt.quaternion(0.859802, 0.219221, 0.237159, 0.395523)
-            }
-            Keyframe {
-                frame: 266.667
-                value: Qt.quaternion(0.855955, 0.221392, 0.238169, 0.401999)
-            }
-            Keyframe {
-                frame: 300
-                value: Qt.quaternion(0.849402, 0.227306, 0.244362, 0.408821)
-            }
-            Keyframe {
-                frame: 333.333
-                value: Qt.quaternion(0.842562, 0.23327, 0.250972, 0.415556)
-            }
-            Keyframe {
-                frame: 366.667
-                value: Qt.quaternion(0.836633, 0.238765, 0.257202, 0.420576)
-            }
-            Keyframe {
-                frame: 400
-                value: Qt.quaternion(0.831649, 0.243928, 0.263842, 0.423376)
-            }
-            Keyframe {
-                frame: 433.333
-                value: Qt.quaternion(0.826994, 0.249504, 0.269167, 0.425885)
-            }
-            Keyframe {
-                frame: 466.667
-                value: Qt.quaternion(0.823978, 0.254194, 0.271201, 0.427663)
-            }
-            Keyframe {
-                frame: 500
-                value: Qt.quaternion(0.82377, 0.256958, 0.271333, 0.426326)
-            }
-            Keyframe {
-                frame: 533.333
-                value: Qt.quaternion(0.825365, 0.260593, 0.272744, 0.420089)
-            }
-            Keyframe {
-                frame: 566.667
-                value: Qt.quaternion(0.829686, 0.261807, 0.275153, 0.409108)
-            }
-            Keyframe {
-                frame: 600
-                value: Qt.quaternion(0.836418, 0.255286, 0.277599, 0.39771)
-            }
-            Keyframe {
-                frame: 633.333
-                value: Qt.quaternion(0.843515, 0.243885, 0.280958, 0.387382)
-            }
-            Keyframe {
-                frame: 666.667
-                value: Qt.quaternion(0.849973, 0.231807, 0.285263, 0.377408)
-            }
-            Keyframe {
-                frame: 700
-                value: Qt.quaternion(0.8557, 0.221317, 0.290947, 0.36626)
-            }
-            Keyframe {
-                frame: 733.333
-                value: Qt.quaternion(0.860384, 0.213361, 0.298975, 0.353314)
-            }
-            Keyframe {
-                frame: 766.667
-                value: Qt.quaternion(0.863756, 0.207115, 0.309025, 0.339899)
-            }
-            Keyframe {
-                frame: 800
-                value: Qt.quaternion(0.866333, 0.200986, 0.318499, 0.328069)
-            }
-            Keyframe {
-                frame: 833.333
-                value: Qt.quaternion(0.868439, 0.194787, 0.325123, 0.319636)
-            }
-            Keyframe {
-                frame: 866.667
-                value: Qt.quaternion(0.869685, 0.188619, 0.329966, 0.31495)
-            }
-            Keyframe {
-                frame: 900
-                value: Qt.quaternion(0.869423, 0.183564, 0.334372, 0.314013)
-            }
-            Keyframe {
-                frame: 933.333
-                value: Qt.quaternion(0.867859, 0.180353, 0.336015, 0.318415)
-            }
-            Keyframe {
-                frame: 966.667
-                value: Qt.quaternion(0.86422, 0.182375, 0.336933, 0.326097)
-            }
-            Keyframe {
-                frame: 1000
-                value: Qt.quaternion(0.859457, 0.188599, 0.335634, 0.336325)
-            }
-            Keyframe {
-                frame: 1033.33
-                value: Qt.quaternion(0.854546, 0.195832, 0.330842, 0.349207)
-            }
-            Keyframe {
-                frame: 1066.67
-                value: Qt.quaternion(0.850171, 0.20099, 0.32259, 0.364345)
-            }
-            Keyframe {
-                frame: 1100
-                value: Qt.quaternion(0.845944, 0.203292, 0.310815, 0.382682)
-            }
-            Keyframe {
-                frame: 1133.33
-                value: Qt.quaternion(0.84132, 0.205578, 0.30015, 0.399786)
-            }
-            Keyframe {
-                frame: 1166.67
-                value: Qt.quaternion(0.83656, 0.21062, 0.2957, 0.410327)
-            }
-            Keyframe {
-                frame: 1200
-                value: Qt.quaternion(0.833198, 0.218376, 0.294881, 0.413689)
-            }
-            Keyframe {
-                frame: 1233.33
-                value: Qt.quaternion(0.83234, 0.225903, 0.298662, 0.408632)
-            }
-            Keyframe {
-                frame: 1266.67
-                value: Qt.quaternion(0.834911, 0.23056, 0.301265, 0.398754)
-            }
-            Keyframe {
-                frame: 1300
-                value: Qt.quaternion(0.839819, 0.23137, 0.300244, 0.38862)
-            }
-            Keyframe {
-                frame: 1333.33
-                value: Qt.quaternion(0.846876, 0.227284, 0.292696, 0.381409)
-            }
-            Keyframe {
-                frame: 1366.67
-                value: Qt.quaternion(0.854926, 0.219055, 0.279975, 0.377797)
-            }
-            Keyframe {
-                frame: 1400
-                value: Qt.quaternion(0.862125, 0.209235, 0.267018, 0.376381)
-            }
-            Keyframe {
-                frame: 1433.33
-                value: Qt.quaternion(0.86767, 0.200145, 0.257176, 0.375435)
-            }
-            Keyframe {
-                frame: 1466.67
-                value: Qt.quaternion(0.871193, 0.193599, 0.252158, 0.37411)
-            }
-            Keyframe {
-                frame: 1500
-                value: Qt.quaternion(0.872874, 0.190108, 0.249925, 0.37348)
-            }
-            Keyframe {
-                frame: 1533.33
-                value: Qt.quaternion(0.873114, 0.18921, 0.247142, 0.375222)
-            }
-            Keyframe {
-                frame: 1566.67
-                value: Qt.quaternion(0.872006, 0.190411, 0.242837, 0.379973)
-            }
-            Keyframe {
-                frame: 1600
-                value: Qt.quaternion(0.869683, 0.193614, 0.237514, 0.386977)
-            }
-            Keyframe {
-                frame: 1633.33
-                value: Qt.quaternion(0.86597, 0.1995, 0.234094, 0.394328)
-            }
-            Keyframe {
-                frame: 1666.67
-                value: Qt.quaternion(0.861905, 0.206264, 0.231422, 0.401272)
-            }
-            Keyframe {
-                frame: 1700
-                value: Qt.quaternion(0.856982, 0.215285, 0.230864, 0.407353)
-            }
-            Keyframe {
-                frame: 1733.33
-                value: Qt.quaternion(0.853256, 0.222591, 0.228968, 0.412287)
-            }
-            Keyframe {
-                frame: 1766.67
-                value: Qt.quaternion(0.851022, 0.228039, 0.227835, 0.41455)
-            }
-            Keyframe {
-                frame: 1800
-                value: Qt.quaternion(0.84986, 0.231729, 0.228273, 0.414646)
-            }
-            Keyframe {
-                frame: 1833.33
-                value: Qt.quaternion(0.849711, 0.23302, 0.228561, 0.414068)
-            }
-            Keyframe {
-                frame: 1866.67
-                value: Qt.quaternion(0.850675, 0.232043, 0.226935, 0.413532)
-            }
-            Keyframe {
-                frame: 1900
-                value: Qt.quaternion(0.852028, 0.230325, 0.224415, 0.413082)
-            }
-            Keyframe {
-                frame: 1933.33
-                value: Qt.quaternion(0.853026, 0.228966, 0.222453, 0.412838)
-            }
-            Keyframe {
-                frame: 1966.67
-                value: Qt.quaternion(0.853352, 0.228439, 0.221679, 0.412873)
-            }
-        }
-        KeyframeGroup {
-            target: joint_22
-            property: "rotation"
-            Keyframe {
-                frame: 0
-                value: Qt.quaternion(0.991726, 0.0542631, 0.107821, 0.043692)
-            }
-        }
-        KeyframeGroup {
             target: joint_19
             property: "rotation"
             Keyframe {
@@ -16950,255 +15958,11 @@ Node {
             }
         }
         KeyframeGroup {
-            target: joint_11
+            target: joint_13
             property: "rotation"
             Keyframe {
                 frame: 0
-                value: Qt.quaternion(0.922468, 0.0485966, 0.283011, 0.25806)
-            }
-        }
-        KeyframeGroup {
-            target: rightUpLeg
-            property: "rotation"
-            Keyframe {
-                frame: 0
-                value: Qt.quaternion(0.985993, -0.164614, 0.00272141, -0.0266849)
-            }
-            Keyframe {
-                frame: 33.3333
-                value: Qt.quaternion(0.981226, -0.192453, 0.0069578, -0.0104769)
-            }
-            Keyframe {
-                frame: 66.6667
-                value: Qt.quaternion(0.976757, -0.214279, 0.00546631, 0.00112214)
-            }
-            Keyframe {
-                frame: 100
-                value: Qt.quaternion(0.973459, -0.228722, -0.00176064, 0.00775237)
-            }
-            Keyframe {
-                frame: 133.333
-                value: Qt.quaternion(0.971601, -0.236071, -0.0122564, 0.0105835)
-            }
-            Keyframe {
-                frame: 166.667
-                value: Qt.quaternion(0.971269, -0.236747, -0.0225542, 0.00885275)
-            }
-            Keyframe {
-                frame: 200
-                value: Qt.quaternion(0.971354, -0.235674, -0.0302796, 0.00365775)
-            }
-            Keyframe {
-                frame: 233.333
-                value: Qt.quaternion(0.970707, -0.238163, -0.0316218, -0.00261662)
-            }
-            Keyframe {
-                frame: 266.667
-                value: Qt.quaternion(0.969455, -0.24318, -0.0309115, -0.00799817)
-            }
-            Keyframe {
-                frame: 300
-                value: Qt.quaternion(0.968032, -0.248904, -0.0284665, -0.0123123)
-            }
-            Keyframe {
-                frame: 333.333
-                value: Qt.quaternion(0.967439, -0.251607, -0.0257718, -0.00952525)
-            }
-            Keyframe {
-                frame: 366.667
-                value: Qt.quaternion(0.966402, -0.256223, -0.0201666, 0.00319788)
-            }
-            Keyframe {
-                frame: 400
-                value: Qt.quaternion(0.96543, -0.259378, -0.014072, 0.0216992)
-            }
-            Keyframe {
-                frame: 433.333
-                value: Qt.quaternion(0.967017, -0.251258, -0.0116647, 0.0401344)
-            }
-            Keyframe {
-                frame: 466.667
-                value: Qt.quaternion(0.971282, -0.229762, -0.0119541, 0.0606382)
-            }
-            Keyframe {
-                frame: 500
-                value: Qt.quaternion(0.975775, -0.202312, -0.0138069, 0.0821173)
-            }
-            Keyframe {
-                frame: 533.333
-                value: Qt.quaternion(0.978249, -0.18117, -0.016014, 0.0997492)
-            }
-            Keyframe {
-                frame: 566.667
-                value: Qt.quaternion(0.980869, -0.15772, -0.0147481, 0.113149)
-            }
-            Keyframe {
-                frame: 600
-                value: Qt.quaternion(0.984483, -0.128356, -0.0104875, 0.1192)
-            }
-            Keyframe {
-                frame: 633.333
-                value: Qt.quaternion(0.988263, -0.0945787, -0.00514777, 0.119851)
-            }
-            Keyframe {
-                frame: 666.667
-                value: Qt.quaternion(0.991159, -0.0616221, 0.0011243, 0.117495)
-            }
-            Keyframe {
-                frame: 700
-                value: Qt.quaternion(0.992873, -0.0326501, 0.00764883, 0.114363)
-            }
-            Keyframe {
-                frame: 733.333
-                value: Qt.quaternion(0.993641, -0.00796621, 0.0141225, 0.111422)
-            }
-            Keyframe {
-                frame: 766.667
-                value: Qt.quaternion(0.993586, 0.0149127, 0.0205691, 0.110184)
-            }
-            Keyframe {
-                frame: 800
-                value: Qt.quaternion(0.992766, 0.036602, 0.0271418, 0.111083)
-            }
-            Keyframe {
-                frame: 833.333
-                value: Qt.quaternion(0.991074, 0.060083, 0.0328776, 0.114371)
-            }
-            Keyframe {
-                frame: 866.667
-                value: Qt.quaternion(0.989035, 0.0798441, 0.0364975, 0.118758)
-            }
-            Keyframe {
-                frame: 900
-                value: Qt.quaternion(0.986795, 0.0994894, 0.0393372, 0.121611)
-            }
-            Keyframe {
-                frame: 933.333
-                value: Qt.quaternion(0.98444, 0.118588, 0.0404439, 0.123207)
-            }
-            Keyframe {
-                frame: 966.667
-                value: Qt.quaternion(0.982612, 0.135777, 0.0417385, 0.119567)
-            }
-            Keyframe {
-                frame: 1000
-                value: Qt.quaternion(0.982191, 0.14742, 0.038669, 0.109875)
-            }
-            Keyframe {
-                frame: 1033.33
-                value: Qt.quaternion(0.983906, 0.150389, 0.0292422, 0.0919661)
-            }
-            Keyframe {
-                frame: 1066.67
-                value: Qt.quaternion(0.987821, 0.141384, 0.0110693, 0.0640097)
-            }
-            Keyframe {
-                frame: 1100
-                value: Qt.quaternion(0.991515, 0.125099, -0.0101455, 0.0338489)
-            }
-            Keyframe {
-                frame: 1133.33
-                value: Qt.quaternion(0.994506, 0.100222, -0.0297601, 0.0053486)
-            }
-            Keyframe {
-                frame: 1166.67
-                value: Qt.quaternion(0.996787, 0.0645837, -0.0422186, -0.0214872)
-            }
-            Keyframe {
-                frame: 1200
-                value: Qt.quaternion(0.998133, 0.0211655, -0.042646, -0.0382591)
-            }
-            Keyframe {
-                frame: 1233.33
-                value: Qt.quaternion(0.997864, -0.025165, -0.0354875, -0.048741)
-            }
-            Keyframe {
-                frame: 1266.67
-                value: Qt.quaternion(0.99576, -0.0706153, -0.025562, -0.0531154)
-            }
-            Keyframe {
-                frame: 1300
-                value: Qt.quaternion(0.992022, -0.113525, -0.0192679, -0.0513106)
-            }
-            Keyframe {
-                frame: 1333.33
-                value: Qt.quaternion(0.987244, -0.151628, -0.0184873, -0.0449003)
-            }
-            Keyframe {
-                frame: 1366.67
-                value: Qt.quaternion(0.982162, -0.18307, -0.0230744, -0.03622)
-            }
-            Keyframe {
-                frame: 1400
-                value: Qt.quaternion(0.977106, -0.20869, -0.0306384, -0.0278094)
-            }
-            Keyframe {
-                frame: 1433.33
-                value: Qt.quaternion(0.972447, -0.228901, -0.0387498, -0.0211842)
-            }
-            Keyframe {
-                frame: 1466.67
-                value: Qt.quaternion(0.96878, -0.242679, -0.0478071, -0.0169498)
-            }
-            Keyframe {
-                frame: 1500
-                value: Qt.quaternion(0.966575, -0.24902, -0.0593148, -0.0142565)
-            }
-            Keyframe {
-                frame: 1533.33
-                value: Qt.quaternion(0.966091, -0.247824, -0.0714705, -0.0119361)
-            }
-            Keyframe {
-                frame: 1566.67
-                value: Qt.quaternion(0.967319, -0.241, -0.0781443, -0.0102993)
-            }
-            Keyframe {
-                frame: 1600
-                value: Qt.quaternion(0.968848, -0.235914, -0.074595, -0.010668)
-            }
-            Keyframe {
-                frame: 1633.33
-                value: Qt.quaternion(0.969891, -0.234279, -0.0654997, -0.0116237)
-            }
-            Keyframe {
-                frame: 1666.67
-                value: Qt.quaternion(0.971092, -0.231633, -0.0565418, -0.011411)
-            }
-            Keyframe {
-                frame: 1700
-                value: Qt.quaternion(0.974023, -0.221657, -0.0447474, -0.0120493)
-            }
-            Keyframe {
-                frame: 1733.33
-                value: Qt.quaternion(0.977476, -0.208426, -0.0313594, -0.0107403)
-            }
-            Keyframe {
-                frame: 1766.67
-                value: Qt.quaternion(0.980153, -0.197334, -0.0175114, -0.00721056)
-            }
-            Keyframe {
-                frame: 1800
-                value: Qt.quaternion(0.982229, -0.187446, -0.00747596, -0.00589193)
-            }
-            Keyframe {
-                frame: 1833.33
-                value: Qt.quaternion(0.984119, -0.177318, -0.0018702, -0.00802446)
-            }
-            Keyframe {
-                frame: 1866.67
-                value: Qt.quaternion(0.985478, -0.169283, 0.00037652, -0.0132801)
-            }
-            Keyframe {
-                frame: 1900
-                value: Qt.quaternion(0.985983, -0.165681, 0.00160599, -0.0196342)
-            }
-            Keyframe {
-                frame: 1933.33
-                value: Qt.quaternion(0.986042, -0.164644, 0.00246121, -0.0246651)
-            }
-            Keyframe {
-                frame: 1966.67
-                value: Qt.quaternion(0.985993, -0.164614, 0.00272141, -0.0266849)
+                value: Qt.quaternion(0.981372, 0.0931776, 0.165529, 0.0287524)
             }
         }
         KeyframeGroup {
@@ -17698,6 +16462,1250 @@ Node {
             }
         }
         KeyframeGroup {
+            target: joint_11
+            property: "rotation"
+            Keyframe {
+                frame: 0
+                value: Qt.quaternion(0.922468, 0.0485966, 0.283011, 0.25806)
+            }
+        }
+        KeyframeGroup {
+            target: rightUpLeg
+            property: "rotation"
+            Keyframe {
+                frame: 0
+                value: Qt.quaternion(0.985993, -0.164614, 0.00272141, -0.0266849)
+            }
+            Keyframe {
+                frame: 33.3333
+                value: Qt.quaternion(0.981226, -0.192453, 0.0069578, -0.0104769)
+            }
+            Keyframe {
+                frame: 66.6667
+                value: Qt.quaternion(0.976757, -0.214279, 0.00546631, 0.00112214)
+            }
+            Keyframe {
+                frame: 100
+                value: Qt.quaternion(0.973459, -0.228722, -0.00176064, 0.00775237)
+            }
+            Keyframe {
+                frame: 133.333
+                value: Qt.quaternion(0.971601, -0.236071, -0.0122564, 0.0105835)
+            }
+            Keyframe {
+                frame: 166.667
+                value: Qt.quaternion(0.971269, -0.236747, -0.0225542, 0.00885275)
+            }
+            Keyframe {
+                frame: 200
+                value: Qt.quaternion(0.971354, -0.235674, -0.0302796, 0.00365775)
+            }
+            Keyframe {
+                frame: 233.333
+                value: Qt.quaternion(0.970707, -0.238163, -0.0316218, -0.00261662)
+            }
+            Keyframe {
+                frame: 266.667
+                value: Qt.quaternion(0.969455, -0.24318, -0.0309115, -0.00799817)
+            }
+            Keyframe {
+                frame: 300
+                value: Qt.quaternion(0.968032, -0.248904, -0.0284665, -0.0123123)
+            }
+            Keyframe {
+                frame: 333.333
+                value: Qt.quaternion(0.967439, -0.251607, -0.0257718, -0.00952525)
+            }
+            Keyframe {
+                frame: 366.667
+                value: Qt.quaternion(0.966402, -0.256223, -0.0201666, 0.00319788)
+            }
+            Keyframe {
+                frame: 400
+                value: Qt.quaternion(0.96543, -0.259378, -0.014072, 0.0216992)
+            }
+            Keyframe {
+                frame: 433.333
+                value: Qt.quaternion(0.967017, -0.251258, -0.0116647, 0.0401344)
+            }
+            Keyframe {
+                frame: 466.667
+                value: Qt.quaternion(0.971282, -0.229762, -0.0119541, 0.0606382)
+            }
+            Keyframe {
+                frame: 500
+                value: Qt.quaternion(0.975775, -0.202312, -0.0138069, 0.0821173)
+            }
+            Keyframe {
+                frame: 533.333
+                value: Qt.quaternion(0.978249, -0.18117, -0.016014, 0.0997492)
+            }
+            Keyframe {
+                frame: 566.667
+                value: Qt.quaternion(0.980869, -0.15772, -0.0147481, 0.113149)
+            }
+            Keyframe {
+                frame: 600
+                value: Qt.quaternion(0.984483, -0.128356, -0.0104875, 0.1192)
+            }
+            Keyframe {
+                frame: 633.333
+                value: Qt.quaternion(0.988263, -0.0945787, -0.00514777, 0.119851)
+            }
+            Keyframe {
+                frame: 666.667
+                value: Qt.quaternion(0.991159, -0.0616221, 0.0011243, 0.117495)
+            }
+            Keyframe {
+                frame: 700
+                value: Qt.quaternion(0.992873, -0.0326501, 0.00764883, 0.114363)
+            }
+            Keyframe {
+                frame: 733.333
+                value: Qt.quaternion(0.993641, -0.00796621, 0.0141225, 0.111422)
+            }
+            Keyframe {
+                frame: 766.667
+                value: Qt.quaternion(0.993586, 0.0149127, 0.0205691, 0.110184)
+            }
+            Keyframe {
+                frame: 800
+                value: Qt.quaternion(0.992766, 0.036602, 0.0271418, 0.111083)
+            }
+            Keyframe {
+                frame: 833.333
+                value: Qt.quaternion(0.991074, 0.060083, 0.0328776, 0.114371)
+            }
+            Keyframe {
+                frame: 866.667
+                value: Qt.quaternion(0.989035, 0.0798441, 0.0364975, 0.118758)
+            }
+            Keyframe {
+                frame: 900
+                value: Qt.quaternion(0.986795, 0.0994894, 0.0393372, 0.121611)
+            }
+            Keyframe {
+                frame: 933.333
+                value: Qt.quaternion(0.98444, 0.118588, 0.0404439, 0.123207)
+            }
+            Keyframe {
+                frame: 966.667
+                value: Qt.quaternion(0.982612, 0.135777, 0.0417385, 0.119567)
+            }
+            Keyframe {
+                frame: 1000
+                value: Qt.quaternion(0.982191, 0.14742, 0.038669, 0.109875)
+            }
+            Keyframe {
+                frame: 1033.33
+                value: Qt.quaternion(0.983906, 0.150389, 0.0292422, 0.0919661)
+            }
+            Keyframe {
+                frame: 1066.67
+                value: Qt.quaternion(0.987821, 0.141384, 0.0110693, 0.0640097)
+            }
+            Keyframe {
+                frame: 1100
+                value: Qt.quaternion(0.991515, 0.125099, -0.0101455, 0.0338489)
+            }
+            Keyframe {
+                frame: 1133.33
+                value: Qt.quaternion(0.994506, 0.100222, -0.0297601, 0.0053486)
+            }
+            Keyframe {
+                frame: 1166.67
+                value: Qt.quaternion(0.996787, 0.0645837, -0.0422186, -0.0214872)
+            }
+            Keyframe {
+                frame: 1200
+                value: Qt.quaternion(0.998133, 0.0211655, -0.042646, -0.0382591)
+            }
+            Keyframe {
+                frame: 1233.33
+                value: Qt.quaternion(0.997864, -0.025165, -0.0354875, -0.048741)
+            }
+            Keyframe {
+                frame: 1266.67
+                value: Qt.quaternion(0.99576, -0.0706153, -0.025562, -0.0531154)
+            }
+            Keyframe {
+                frame: 1300
+                value: Qt.quaternion(0.992022, -0.113525, -0.0192679, -0.0513106)
+            }
+            Keyframe {
+                frame: 1333.33
+                value: Qt.quaternion(0.987244, -0.151628, -0.0184873, -0.0449003)
+            }
+            Keyframe {
+                frame: 1366.67
+                value: Qt.quaternion(0.982162, -0.18307, -0.0230744, -0.03622)
+            }
+            Keyframe {
+                frame: 1400
+                value: Qt.quaternion(0.977106, -0.20869, -0.0306384, -0.0278094)
+            }
+            Keyframe {
+                frame: 1433.33
+                value: Qt.quaternion(0.972447, -0.228901, -0.0387498, -0.0211842)
+            }
+            Keyframe {
+                frame: 1466.67
+                value: Qt.quaternion(0.96878, -0.242679, -0.0478071, -0.0169498)
+            }
+            Keyframe {
+                frame: 1500
+                value: Qt.quaternion(0.966575, -0.24902, -0.0593148, -0.0142565)
+            }
+            Keyframe {
+                frame: 1533.33
+                value: Qt.quaternion(0.966091, -0.247824, -0.0714705, -0.0119361)
+            }
+            Keyframe {
+                frame: 1566.67
+                value: Qt.quaternion(0.967319, -0.241, -0.0781443, -0.0102993)
+            }
+            Keyframe {
+                frame: 1600
+                value: Qt.quaternion(0.968848, -0.235914, -0.074595, -0.010668)
+            }
+            Keyframe {
+                frame: 1633.33
+                value: Qt.quaternion(0.969891, -0.234279, -0.0654997, -0.0116237)
+            }
+            Keyframe {
+                frame: 1666.67
+                value: Qt.quaternion(0.971092, -0.231633, -0.0565418, -0.011411)
+            }
+            Keyframe {
+                frame: 1700
+                value: Qt.quaternion(0.974023, -0.221657, -0.0447474, -0.0120493)
+            }
+            Keyframe {
+                frame: 1733.33
+                value: Qt.quaternion(0.977476, -0.208426, -0.0313594, -0.0107403)
+            }
+            Keyframe {
+                frame: 1766.67
+                value: Qt.quaternion(0.980153, -0.197334, -0.0175114, -0.00721056)
+            }
+            Keyframe {
+                frame: 1800
+                value: Qt.quaternion(0.982229, -0.187446, -0.00747596, -0.00589193)
+            }
+            Keyframe {
+                frame: 1833.33
+                value: Qt.quaternion(0.984119, -0.177318, -0.0018702, -0.00802446)
+            }
+            Keyframe {
+                frame: 1866.67
+                value: Qt.quaternion(0.985478, -0.169283, 0.00037652, -0.0132801)
+            }
+            Keyframe {
+                frame: 1900
+                value: Qt.quaternion(0.985983, -0.165681, 0.00160599, -0.0196342)
+            }
+            Keyframe {
+                frame: 1933.33
+                value: Qt.quaternion(0.986042, -0.164644, 0.00246121, -0.0246651)
+            }
+            Keyframe {
+                frame: 1966.67
+                value: Qt.quaternion(0.985993, -0.164614, 0.00272141, -0.0266849)
+            }
+        }
+        KeyframeGroup {
+            target: joint_29
+            property: "rotation"
+            Keyframe {
+                frame: 0
+                value: Qt.quaternion(0.929801, 0.099291, -0.343686, 0.0865575)
+            }
+        }
+        KeyframeGroup {
+            target: leftUpLeg
+            property: "rotation"
+            Keyframe {
+                frame: 0
+                value: Qt.quaternion(0.991743, -0.0540402, 0.0516934, -0.104183)
+            }
+            Keyframe {
+                frame: 33.3333
+                value: Qt.quaternion(0.993286, -0.0305898, 0.0546173, -0.0972831)
+            }
+            Keyframe {
+                frame: 66.6667
+                value: Qt.quaternion(0.994208, -0.0161083, 0.0534022, -0.0918707)
+            }
+            Keyframe {
+                frame: 100
+                value: Qt.quaternion(0.99478, -0.0043871, 0.05001, -0.0888438)
+            }
+            Keyframe {
+                frame: 133.333
+                value: Qt.quaternion(0.995048, 0.00922535, 0.0456964, -0.0877824)
+            }
+            Keyframe {
+                frame: 166.667
+                value: Qt.quaternion(0.994822, 0.0271167, 0.040972, -0.0889641)
+            }
+            Keyframe {
+                frame: 200
+                value: Qt.quaternion(0.993792, 0.0492301, 0.0379449, -0.0922754)
+            }
+            Keyframe {
+                frame: 233.333
+                value: Qt.quaternion(0.992118, 0.0760225, 0.0360402, -0.0928668)
+            }
+            Keyframe {
+                frame: 266.667
+                value: Qt.quaternion(0.989225, 0.110406, 0.0337081, -0.0900454)
+            }
+            Keyframe {
+                frame: 300
+                value: Qt.quaternion(0.987035, 0.134001, 0.0282031, -0.0837269)
+            }
+            Keyframe {
+                frame: 333.333
+                value: Qt.quaternion(0.987122, 0.142197, 0.0223903, -0.06978)
+            }
+            Keyframe {
+                frame: 366.667
+                value: Qt.quaternion(0.988636, 0.14124, 0.0207267, -0.0471214)
+            }
+            Keyframe {
+                frame: 400
+                value: Qt.quaternion(0.990344, 0.135083, 0.0217646, -0.022295)
+            }
+            Keyframe {
+                frame: 433.333
+                value: Qt.quaternion(0.992221, 0.121763, 0.0259081, -0.000930952)
+            }
+            Keyframe {
+                frame: 466.667
+                value: Qt.quaternion(0.994815, 0.0941903, 0.0329521, 0.0196114)
+            }
+            Keyframe {
+                frame: 500
+                value: Qt.quaternion(0.997244, 0.0466282, 0.0413113, 0.0403014)
+            }
+            Keyframe {
+                frame: 533.333
+                value: Qt.quaternion(0.997245, -0.00916139, 0.0474809, 0.0562512)
+            }
+            Keyframe {
+                frame: 566.667
+                value: Qt.quaternion(0.994782, -0.0621422, 0.0508381, 0.0629448)
+            }
+            Keyframe {
+                frame: 600
+                value: Qt.quaternion(0.990964, -0.109465, 0.0528838, 0.0566591)
+            }
+            Keyframe {
+                frame: 633.333
+                value: Qt.quaternion(0.986142, -0.150188, 0.0561452, 0.0426007)
+            }
+            Keyframe {
+                frame: 666.667
+                value: Qt.quaternion(0.980638, -0.183808, 0.0622991, 0.0261262)
+            }
+            Keyframe {
+                frame: 700
+                value: Qt.quaternion(0.975045, -0.210209, 0.0705874, 0.0108442)
+            }
+            Keyframe {
+                frame: 733.333
+                value: Qt.quaternion(0.970311, -0.228757, 0.0785252, -0.000212555)
+            }
+            Keyframe {
+                frame: 766.667
+                value: Qt.quaternion(0.967621, -0.238378, 0.0827593, -0.00606643)
+            }
+            Keyframe {
+                frame: 800
+                value: Qt.quaternion(0.967569, -0.239023, 0.0814681, -0.00637853)
+            }
+            Keyframe {
+                frame: 833.333
+                value: Qt.quaternion(0.968942, -0.235394, 0.0757698, -0.000401303)
+            }
+            Keyframe {
+                frame: 866.667
+                value: Qt.quaternion(0.969522, -0.2353, 0.0675428, 0.00996395)
+            }
+            Keyframe {
+                frame: 900
+                value: Qt.quaternion(0.968156, -0.241937, 0.06108, 0.0202598)
+            }
+            Keyframe {
+                frame: 933.333
+                value: Qt.quaternion(0.965776, -0.250992, 0.0586697, 0.0289381)
+            }
+            Keyframe {
+                frame: 966.667
+                value: Qt.quaternion(0.96439, -0.255605, 0.0605949, 0.0307753)
+            }
+            Keyframe {
+                frame: 1000
+                value: Qt.quaternion(0.964389, -0.255563, 0.0629031, 0.0261751)
+            }
+            Keyframe {
+                frame: 1033.33
+                value: Qt.quaternion(0.964786, -0.255019, 0.0630195, 0.0135138)
+            }
+            Keyframe {
+                frame: 1066.67
+                value: Qt.quaternion(0.964184, -0.258456, 0.0588395, -0.00939267)
+            }
+            Keyframe {
+                frame: 1100
+                value: Qt.quaternion(0.962526, -0.263613, 0.0536195, -0.0343096)
+            }
+            Keyframe {
+                frame: 1133.33
+                value: Qt.quaternion(0.962072, -0.261728, 0.0514423, -0.0571847)
+            }
+            Keyframe {
+                frame: 1166.67
+                value: Qt.quaternion(0.963856, -0.249729, 0.05354, -0.0758352)
+            }
+            Keyframe {
+                frame: 1200
+                value: Qt.quaternion(0.966184, -0.234577, 0.0604505, -0.0883621)
+            }
+            Keyframe {
+                frame: 1233.33
+                value: Qt.quaternion(0.970474, -0.210059, 0.0653103, -0.0989411)
+            }
+            Keyframe {
+                frame: 1266.67
+                value: Qt.quaternion(0.975366, -0.180567, 0.0697402, -0.105801)
+            }
+            Keyframe {
+                frame: 1300
+                value: Qt.quaternion(0.980145, -0.148539, 0.0738233, -0.108635)
+            }
+            Keyframe {
+                frame: 1333.33
+                value: Qt.quaternion(0.984615, -0.114179, 0.0762043, -0.10812)
+            }
+            Keyframe {
+                frame: 1366.67
+                value: Qt.quaternion(0.988145, -0.0818798, 0.0766827, -0.104811)
+            }
+            Keyframe {
+                frame: 1400
+                value: Qt.quaternion(0.990492, -0.055066, 0.0758878, -0.100669)
+            }
+            Keyframe {
+                frame: 1433.33
+                value: Qt.quaternion(0.991827, -0.0350615, 0.0747186, -0.097297)
+            }
+            Keyframe {
+                frame: 1466.67
+                value: Qt.quaternion(0.992534, -0.0199954, 0.0739306, -0.0949288)
+            }
+            Keyframe {
+                frame: 1500
+                value: Qt.quaternion(0.992848, -0.00498917, 0.0733993, -0.0940199)
+            }
+            Keyframe {
+                frame: 1533.33
+                value: Qt.quaternion(0.992792, 0.011067, 0.0731972, -0.0942542)
+            }
+            Keyframe {
+                frame: 1566.67
+                value: Qt.quaternion(0.992415, 0.0261544, 0.0737909, -0.0947847)
+            }
+            Keyframe {
+                frame: 1600
+                value: Qt.quaternion(0.991974, 0.0376555, 0.0741841, -0.0952188)
+            }
+            Keyframe {
+                frame: 1633.33
+                value: Qt.quaternion(0.991874, 0.0453197, 0.0733281, -0.0935664)
+            }
+            Keyframe {
+                frame: 1666.67
+                value: Qt.quaternion(0.991893, 0.0528381, 0.0721285, -0.0902963)
+            }
+            Keyframe {
+                frame: 1700
+                value: Qt.quaternion(0.992624, 0.0492975, 0.0691748, -0.0865033)
+            }
+            Keyframe {
+                frame: 1733.33
+                value: Qt.quaternion(0.993939, 0.034892, 0.0655599, -0.0810478)
+            }
+            Keyframe {
+                frame: 1766.67
+                value: Qt.quaternion(0.995115, 0.0132809, 0.062353, -0.075383)
+            }
+            Keyframe {
+                frame: 1800
+                value: Qt.quaternion(0.995354, -0.00888783, 0.0598896, -0.0748694)
+            }
+            Keyframe {
+                frame: 1833.33
+                value: Qt.quaternion(0.994757, -0.028387, 0.0576511, -0.0795555)
+            }
+            Keyframe {
+                frame: 1866.67
+                value: Qt.quaternion(0.993708, -0.0431148, 0.0553747, -0.087285)
+            }
+            Keyframe {
+                frame: 1900
+                value: Qt.quaternion(0.992674, -0.0513218, 0.0535148, -0.0953936)
+            }
+            Keyframe {
+                frame: 1933.33
+                value: Qt.quaternion(0.991981, -0.0539342, 0.0521941, -0.101693)
+            }
+            Keyframe {
+                frame: 1966.67
+                value: Qt.quaternion(0.991743, -0.0540402, 0.0516934, -0.104183)
+            }
+        }
+        KeyframeGroup {
+            target: rightHand
+            property: "rotation"
+            Keyframe {
+                frame: 0
+                value: Qt.quaternion(0.975506, -0.184074, -0.107529, -0.0542447)
+            }
+            Keyframe {
+                frame: 33.3333
+                value: Qt.quaternion(0.97655, -0.180446, -0.101601, -0.0588779)
+            }
+            Keyframe {
+                frame: 66.6667
+                value: Qt.quaternion(0.976555, -0.180401, -0.0988213, -0.063482)
+            }
+            Keyframe {
+                frame: 100
+                value: Qt.quaternion(0.976307, -0.181304, -0.097029, -0.0673686)
+            }
+            Keyframe {
+                frame: 133.333
+                value: Qt.quaternion(0.975673, -0.183614, -0.0962203, -0.0713408)
+            }
+            Keyframe {
+                frame: 166.667
+                value: Qt.quaternion(0.975164, -0.185386, -0.0953939, -0.0747514)
+            }
+            Keyframe {
+                frame: 200
+                value: Qt.quaternion(0.975025, -0.185852, -0.0941816, -0.0769069)
+            }
+            Keyframe {
+                frame: 233.333
+                value: Qt.quaternion(0.975653, -0.183669, -0.0928534, -0.0757977)
+            }
+            Keyframe {
+                frame: 266.667
+                value: Qt.quaternion(0.977035, -0.178492, -0.090485, -0.0731884)
+            }
+            Keyframe {
+                frame: 300
+                value: Qt.quaternion(0.977999, -0.175689, -0.0898903, -0.0676062)
+            }
+            Keyframe {
+                frame: 333.333
+                value: Qt.quaternion(0.978604, -0.175627, -0.0892041, -0.0594292)
+            }
+            Keyframe {
+                frame: 366.667
+                value: Qt.quaternion(0.978593, -0.177722, -0.0905136, -0.0507828)
+            }
+            Keyframe {
+                frame: 400
+                value: Qt.quaternion(0.977979, -0.181194, -0.0936195, -0.0442958)
+            }
+            Keyframe {
+                frame: 433.333
+                value: Qt.quaternion(0.977157, -0.183731, -0.0982001, -0.0419981)
+            }
+            Keyframe {
+                frame: 466.667
+                value: Qt.quaternion(0.976327, -0.186351, -0.101435, -0.0420746)
+            }
+            Keyframe {
+                frame: 500
+                value: Qt.quaternion(0.976466, -0.18536, -0.102003, -0.041859)
+            }
+            Keyframe {
+                frame: 533.333
+                value: Qt.quaternion(0.975919, -0.188155, -0.10174, -0.0427629)
+            }
+            Keyframe {
+                frame: 566.667
+                value: Qt.quaternion(0.974234, -0.195195, -0.102061, -0.0484799)
+            }
+            Keyframe {
+                frame: 600
+                value: Qt.quaternion(0.973262, -0.197552, -0.102195, -0.0573676)
+            }
+            Keyframe {
+                frame: 633.333
+                value: Qt.quaternion(0.973232, -0.19447, -0.103226, -0.0659218)
+            }
+            Keyframe {
+                frame: 666.667
+                value: Qt.quaternion(0.973737, -0.189549, -0.103463, -0.0721368)
+            }
+            Keyframe {
+                frame: 700
+                value: Qt.quaternion(0.97468, -0.184705, -0.100854, -0.07557)
+            }
+            Keyframe {
+                frame: 733.333
+                value: Qt.quaternion(0.975818, -0.180726, -0.0956382, -0.0772694)
+            }
+            Keyframe {
+                frame: 766.667
+                value: Qt.quaternion(0.976958, -0.176974, -0.089428, -0.0789654)
+            }
+            Keyframe {
+                frame: 800
+                value: Qt.quaternion(0.978294, -0.17202, -0.0825874, -0.0808101)
+            }
+            Keyframe {
+                frame: 833.333
+                value: Qt.quaternion(0.979746, -0.165776, -0.0761285, -0.0825818)
+            }
+            Keyframe {
+                frame: 866.667
+                value: Qt.quaternion(0.98128, -0.1582, -0.0708557, -0.0839142)
+            }
+            Keyframe {
+                frame: 900
+                value: Qt.quaternion(0.982382, -0.151936, -0.0682265, -0.0847667)
+            }
+            Keyframe {
+                frame: 933.333
+                value: Qt.quaternion(0.983187, -0.147003, -0.067221, -0.0849372)
+            }
+            Keyframe {
+                frame: 966.667
+                value: Qt.quaternion(0.98397, -0.143506, -0.0672241, -0.0817979)
+            }
+            Keyframe {
+                frame: 1000
+                value: Qt.quaternion(0.984598, -0.141361, -0.0685012, -0.0767552)
+            }
+            Keyframe {
+                frame: 1033.33
+                value: Qt.quaternion(0.984979, -0.140585, -0.0704922, -0.0712966)
+            }
+            Keyframe {
+                frame: 1066.67
+                value: Qt.quaternion(0.985347, -0.139288, -0.0726142, -0.0664686)
+            }
+            Keyframe {
+                frame: 1100
+                value: Qt.quaternion(0.985989, -0.135907, -0.0746605, -0.0614965)
+            }
+            Keyframe {
+                frame: 1133.33
+                value: Qt.quaternion(0.986712, -0.13065, -0.0789198, -0.0556883)
+            }
+            Keyframe {
+                frame: 1166.67
+                value: Qt.quaternion(0.986804, -0.127902, -0.0865637, -0.0486336)
+            }
+            Keyframe {
+                frame: 1200
+                value: Qt.quaternion(0.986597, -0.127333, -0.0927185, -0.0426139)
+            }
+            Keyframe {
+                frame: 1233.33
+                value: Qt.quaternion(0.986423, -0.128642, -0.0951972, -0.0368453)
+            }
+            Keyframe {
+                frame: 1266.67
+                value: Qt.quaternion(0.987202, -0.125854, -0.0923943, -0.0324981)
+            }
+            Keyframe {
+                frame: 1300
+                value: Qt.quaternion(0.988256, -0.121963, -0.0869564, -0.0302342)
+            }
+            Keyframe {
+                frame: 1333.33
+                value: Qt.quaternion(0.988848, -0.120468, -0.0818389, -0.0311277)
+            }
+            Keyframe {
+                frame: 1366.67
+                value: Qt.quaternion(0.988136, -0.125814, -0.0802651, -0.0362708)
+            }
+            Keyframe {
+                frame: 1400
+                value: Qt.quaternion(0.986509, -0.134815, -0.081458, -0.044597)
+            }
+            Keyframe {
+                frame: 1433.33
+                value: Qt.quaternion(0.985018, -0.141687, -0.0831489, -0.0524456)
+            }
+            Keyframe {
+                frame: 1466.67
+                value: Qt.quaternion(0.984255, -0.144342, -0.0844427, -0.0572488)
+            }
+            Keyframe {
+                frame: 1500
+                value: Qt.quaternion(0.984159, -0.143873, -0.0850475, -0.059151)
+            }
+            Keyframe {
+                frame: 1533.33
+                value: Qt.quaternion(0.983989, -0.144028, -0.086055, -0.0601418)
+            }
+            Keyframe {
+                frame: 1566.67
+                value: Qt.quaternion(0.983377, -0.146576, -0.0878897, -0.0613261)
+            }
+            Keyframe {
+                frame: 1600
+                value: Qt.quaternion(0.982394, -0.1517, -0.0898066, -0.0618342)
+            }
+            Keyframe {
+                frame: 1633.33
+                value: Qt.quaternion(0.981419, -0.15747, -0.0914064, -0.0605434)
+            }
+            Keyframe {
+                frame: 1666.67
+                value: Qt.quaternion(0.980383, -0.163328, -0.0932556, -0.0589607)
+            }
+            Keyframe {
+                frame: 1700
+                value: Qt.quaternion(0.978826, -0.171603, -0.0963629, -0.0562784)
+            }
+            Keyframe {
+                frame: 1733.33
+                value: Qt.quaternion(0.977316, -0.17964, -0.0986332, -0.0534187)
+            }
+            Keyframe {
+                frame: 1766.67
+                value: Qt.quaternion(0.976107, -0.185499, -0.10073, -0.0515575)
+            }
+            Keyframe {
+                frame: 1800
+                value: Qt.quaternion(0.975644, -0.186783, -0.102921, -0.0513683)
+            }
+            Keyframe {
+                frame: 1833.33
+                value: Qt.quaternion(0.975607, -0.185695, -0.105122, -0.0515467)
+            }
+            Keyframe {
+                frame: 1866.67
+                value: Qt.quaternion(0.975621, -0.184651, -0.106469, -0.0522647)
+            }
+            Keyframe {
+                frame: 1900
+                value: Qt.quaternion(0.975565, -0.184346, -0.106957, -0.053384)
+            }
+            Keyframe {
+                frame: 1933.33
+                value: Qt.quaternion(0.975522, -0.184154, -0.107326, -0.0540871)
+            }
+            Keyframe {
+                frame: 1966.67
+                value: Qt.quaternion(0.975506, -0.184074, -0.107529, -0.0542447)
+            }
+        }
+        KeyframeGroup {
+            target: rightForeArm
+            property: "rotation"
+            Keyframe {
+                frame: 0
+                value: Qt.quaternion(0.964046, -0.0954023, 0.236848, -0.0736038)
+            }
+            Keyframe {
+                frame: 33.3333
+                value: Qt.quaternion(0.962616, -0.0980513, 0.241472, -0.0738118)
+            }
+            Keyframe {
+                frame: 66.6667
+                value: Qt.quaternion(0.961225, -0.100384, 0.245489, -0.0755275)
+            }
+            Keyframe {
+                frame: 100
+                value: Qt.quaternion(0.96051, -0.10186, 0.247314, -0.0766886)
+            }
+            Keyframe {
+                frame: 133.333
+                value: Qt.quaternion(0.96045, -0.102318, 0.247266, -0.0769893)
+            }
+            Keyframe {
+                frame: 166.667
+                value: Qt.quaternion(0.96079, -0.102177, 0.246184, -0.076393)
+            }
+            Keyframe {
+                frame: 200
+                value: Qt.quaternion(0.961282, -0.101841, 0.244816, -0.0750385)
+            }
+            Keyframe {
+                frame: 233.333
+                value: Qt.quaternion(0.962035, -0.100897, 0.242682, -0.0735732)
+            }
+            Keyframe {
+                frame: 266.667
+                value: Qt.quaternion(0.963523, -0.0989629, 0.238244, -0.0711977)
+            }
+            Keyframe {
+                frame: 300
+                value: Qt.quaternion(0.965498, -0.095039, 0.231802, -0.0710516)
+            }
+            Keyframe {
+                frame: 333.333
+                value: Qt.quaternion(0.967608, -0.0907935, 0.224601, -0.0710367)
+            }
+            Keyframe {
+                frame: 366.667
+                value: Qt.quaternion(0.96941, -0.0872962, 0.218219, -0.0707355)
+            }
+            Keyframe {
+                frame: 400
+                value: Qt.quaternion(0.971409, -0.0837372, 0.210724, -0.0703393)
+            }
+            Keyframe {
+                frame: 433.333
+                value: Qt.quaternion(0.973202, -0.0799273, 0.203546, -0.0711168)
+            }
+            Keyframe {
+                frame: 466.667
+                value: Qt.quaternion(0.974508, -0.0763448, 0.198291, -0.0720136)
+            }
+            Keyframe {
+                frame: 500
+                value: Qt.quaternion(0.974627, -0.0761676, 0.19796, -0.0715006)
+            }
+            Keyframe {
+                frame: 533.333
+                value: Qt.quaternion(0.973094, -0.0790914, 0.203864, -0.0726054)
+            }
+            Keyframe {
+                frame: 566.667
+                value: Qt.quaternion(0.970835, -0.0832633, 0.212054, -0.0747017)
+            }
+            Keyframe {
+                frame: 600
+                value: Qt.quaternion(0.969993, -0.0851206, 0.214908, -0.0753858)
+            }
+            Keyframe {
+                frame: 633.333
+                value: Qt.quaternion(0.970384, -0.0845867, 0.213365, -0.0753321)
+            }
+            Keyframe {
+                frame: 666.667
+                value: Qt.quaternion(0.9704, -0.0845875, 0.213326, -0.0752371)
+            }
+            Keyframe {
+                frame: 700
+                value: Qt.quaternion(0.968969, -0.087183, 0.218686, -0.0753291)
+            }
+            Keyframe {
+                frame: 733.333
+                value: Qt.quaternion(0.965934, -0.0924329, 0.22941, -0.076151)
+            }
+            Keyframe {
+                frame: 766.667
+                value: Qt.quaternion(0.962001, -0.098842, 0.242354, -0.0777812)
+            }
+            Keyframe {
+                frame: 800
+                value: Qt.quaternion(0.957695, -0.10562, 0.255503, -0.0798956)
+            }
+            Keyframe {
+                frame: 833.333
+                value: Qt.quaternion(0.953361, -0.112095, 0.267999, -0.081935)
+            }
+            Keyframe {
+                frame: 866.667
+                value: Qt.quaternion(0.949536, -0.117681, 0.278672, -0.0829166)
+            }
+            Keyframe {
+                frame: 900
+                value: Qt.quaternion(0.946411, -0.122131, 0.287241, -0.0829668)
+            }
+            Keyframe {
+                frame: 933.333
+                value: Qt.quaternion(0.94407, -0.125123, 0.293764, -0.0823289)
+            }
+            Keyframe {
+                frame: 966.667
+                value: Qt.quaternion(0.942878, -0.126433, 0.296806, -0.083078)
+            }
+            Keyframe {
+                frame: 1000
+                value: Qt.quaternion(0.942733, -0.126539, 0.296979, -0.0839443)
+            }
+            Keyframe {
+                frame: 1033.33
+                value: Qt.quaternion(0.944016, -0.124739, 0.293641, -0.0839614)
+            }
+            Keyframe {
+                frame: 1066.67
+                value: Qt.quaternion(0.947245, -0.120864, 0.285047, -0.0828633)
+            }
+            Keyframe {
+                frame: 1100
+                value: Qt.quaternion(0.953262, -0.112529, 0.268821, -0.0797806)
+            }
+            Keyframe {
+                frame: 1133.33
+                value: Qt.quaternion(0.960925, -0.101166, 0.246206, -0.0759726)
+            }
+            Keyframe {
+                frame: 1166.67
+                value: Qt.quaternion(0.967069, -0.0907963, 0.226136, -0.0734605)
+            }
+            Keyframe {
+                frame: 1200
+                value: Qt.quaternion(0.970236, -0.0847939, 0.214761, -0.0730037)
+            }
+            Keyframe {
+                frame: 1233.33
+                value: Qt.quaternion(0.970983, -0.083103, 0.212529, -0.0715357)
+            }
+            Keyframe {
+                frame: 1266.67
+                value: Qt.quaternion(0.969211, -0.0865481, 0.21952, -0.0703677)
+            }
+            Keyframe {
+                frame: 1300
+                value: Qt.quaternion(0.96603, -0.0921619, 0.230871, -0.0706497)
+            }
+            Keyframe {
+                frame: 1333.33
+                value: Qt.quaternion(0.961958, -0.0987998, 0.244288, -0.0720979)
+            }
+            Keyframe {
+                frame: 1366.67
+                value: Qt.quaternion(0.957759, -0.105313, 0.257123, -0.0741288)
+            }
+            Keyframe {
+                frame: 1400
+                value: Qt.quaternion(0.954434, -0.110249, 0.266533, -0.0765613)
+            }
+            Keyframe {
+                frame: 1433.33
+                value: Qt.quaternion(0.952622, -0.112873, 0.271225, -0.0787889)
+            }
+            Keyframe {
+                frame: 1466.67
+                value: Qt.quaternion(0.952722, -0.112742, 0.270471, -0.0803518)
+            }
+            Keyframe {
+                frame: 1500
+                value: Qt.quaternion(0.954572, -0.110131, 0.264822, -0.0808216)
+            }
+            Keyframe {
+                frame: 1533.33
+                value: Qt.quaternion(0.957363, -0.106309, 0.256508, -0.0797391)
+            }
+            Keyframe {
+                frame: 1566.67
+                value: Qt.quaternion(0.960033, -0.102686, 0.24854, -0.0775884)
+            }
+            Keyframe {
+                frame: 1600
+                value: Qt.quaternion(0.961971, -0.09997, 0.242707, -0.075571)
+            }
+            Keyframe {
+                frame: 1633.33
+                value: Qt.quaternion(0.963286, -0.0978768, 0.23853, -0.0748625)
+            }
+            Keyframe {
+                frame: 1666.67
+                value: Qt.quaternion(0.964325, -0.0963616, 0.235166, -0.07409)
+            }
+            Keyframe {
+                frame: 1700
+                value: Qt.quaternion(0.964902, -0.0947785, 0.233101, -0.0751344)
+            }
+            Keyframe {
+                frame: 1733.33
+                value: Qt.quaternion(0.965223, -0.0937849, 0.232042, -0.0755387)
+            }
+            Keyframe {
+                frame: 1766.67
+                value: Qt.quaternion(0.96541, -0.0933631, 0.231514, -0.0752807)
+            }
+            Keyframe {
+                frame: 1800
+                value: Qt.quaternion(0.965787, -0.0926233, 0.230477, -0.0745415)
+            }
+            Keyframe {
+                frame: 1833.33
+                value: Qt.quaternion(0.96605, -0.0920453, 0.22986, -0.0737538)
+            }
+            Keyframe {
+                frame: 1866.67
+                value: Qt.quaternion(0.965655, -0.0927349, 0.231398, -0.0732556)
+            }
+            Keyframe {
+                frame: 1900
+                value: Qt.quaternion(0.964869, -0.0940552, 0.234104, -0.0733275)
+            }
+            Keyframe {
+                frame: 1933.33
+                value: Qt.quaternion(0.964256, -0.0950657, 0.236152, -0.0735178)
+            }
+            Keyframe {
+                frame: 1966.67
+                value: Qt.quaternion(0.964046, -0.0954023, 0.236848, -0.0736038)
+            }
+        }
+        KeyframeGroup {
+            target: joint_22
+            property: "rotation"
+            Keyframe {
+                frame: 0
+                value: Qt.quaternion(0.991726, 0.0542631, 0.107821, 0.043692)
+            }
+        }
+        KeyframeGroup {
+            target: rightArm
+            property: "rotation"
+            Keyframe {
+                frame: 0
+                value: Qt.quaternion(0.892653, 0.248766, 0.193341, 0.322345)
+            }
+            Keyframe {
+                frame: 33.3333
+                value: Qt.quaternion(0.89638, 0.245696, 0.193892, 0.313914)
+            }
+            Keyframe {
+                frame: 66.6667
+                value: Qt.quaternion(0.898222, 0.245161, 0.19862, 0.306013)
+            }
+            Keyframe {
+                frame: 100
+                value: Qt.quaternion(0.899592, 0.243071, 0.203372, 0.300486)
+            }
+            Keyframe {
+                frame: 133.333
+                value: Qt.quaternion(0.900584, 0.240169, 0.206878, 0.297438)
+            }
+            Keyframe {
+                frame: 166.667
+                value: Qt.quaternion(0.900712, 0.238486, 0.208685, 0.297141)
+            }
+            Keyframe {
+                frame: 200
+                value: Qt.quaternion(0.899651, 0.239023, 0.209108, 0.299617)
+            }
+            Keyframe {
+                frame: 233.333
+                value: Qt.quaternion(0.897314, 0.241282, 0.209674, 0.30438)
+            }
+            Keyframe {
+                frame: 266.667
+                value: Qt.quaternion(0.894168, 0.243521, 0.210467, 0.311231)
+            }
+            Keyframe {
+                frame: 300
+                value: Qt.quaternion(0.888388, 0.250024, 0.216034, 0.318723)
+            }
+            Keyframe {
+                frame: 333.333
+                value: Qt.quaternion(0.882314, 0.25662, 0.22201, 0.326158)
+            }
+            Keyframe {
+                frame: 366.667
+                value: Qt.quaternion(0.876965, 0.262717, 0.227655, 0.331791)
+            }
+            Keyframe {
+                frame: 400
+                value: Qt.quaternion(0.872326, 0.268534, 0.233738, 0.335116)
+            }
+            Keyframe {
+                frame: 433.333
+                value: Qt.quaternion(0.86798, 0.274626, 0.238469, 0.338119)
+            }
+            Keyframe {
+                frame: 466.667
+                value: Qt.quaternion(0.865174, 0.279496, 0.240014, 0.34022)
+            }
+            Keyframe {
+                frame: 500
+                value: Qt.quaternion(0.864828, 0.282264, 0.239857, 0.338923)
+            }
+            Keyframe {
+                frame: 533.333
+                value: Qt.quaternion(0.865768, 0.286051, 0.240874, 0.332567)
+            }
+            Keyframe {
+                frame: 566.667
+                value: Qt.quaternion(0.868927, 0.287551, 0.243127, 0.3212)
+            }
+            Keyframe {
+                frame: 600
+                value: Qt.quaternion(0.874441, 0.281366, 0.246215, 0.309136)
+            }
+            Keyframe {
+                frame: 633.333
+                value: Qt.quaternion(0.880433, 0.270417, 0.25072, 0.29808)
+            }
+            Keyframe {
+                frame: 666.667
+                value: Qt.quaternion(0.88583, 0.258893, 0.256238, 0.287439)
+            }
+            Keyframe {
+                frame: 700
+                value: Qt.quaternion(0.890383, 0.249097, 0.262965, 0.275714)
+            }
+            Keyframe {
+                frame: 733.333
+                value: Qt.quaternion(0.89372, 0.242073, 0.271762, 0.262319)
+            }
+            Keyframe {
+                frame: 766.667
+                value: Qt.quaternion(0.895711, 0.236962, 0.282396, 0.248602)
+            }
+            Keyframe {
+                frame: 800
+                value: Qt.quaternion(0.897074, 0.231901, 0.292449, 0.236544)
+            }
+            Keyframe {
+                frame: 833.333
+                value: Qt.quaternion(0.898313, 0.22646, 0.299676, 0.227913)
+            }
+            Keyframe {
+                frame: 866.667
+                value: Qt.quaternion(0.899081, 0.22085, 0.305131, 0.2231)
+            }
+            Keyframe {
+                frame: 900
+                value: Qt.quaternion(0.898739, 0.216287, 0.310043, 0.222175)
+            }
+            Keyframe {
+                frame: 933.333
+                value: Qt.quaternion(0.89765, 0.213248, 0.312018, 0.226704)
+            }
+            Keyframe {
+                frame: 966.667
+                value: Qt.quaternion(0.894837, 0.215325, 0.312734, 0.234732)
+            }
+            Keyframe {
+                frame: 1000
+                value: Qt.quaternion(0.891163, 0.221341, 0.31081, 0.245425)
+            }
+            Keyframe {
+                frame: 1033.33
+                value: Qt.quaternion(0.887606, 0.227984, 0.305307, 0.258778)
+            }
+            Keyframe {
+                frame: 1066.67
+                value: Qt.quaternion(0.884806, 0.232194, 0.296579, 0.274309)
+            }
+            Keyframe {
+                frame: 1100
+                value: Qt.quaternion(0.882472, 0.233183, 0.284644, 0.292997)
+            }
+            Keyframe {
+                frame: 1133.33
+                value: Qt.quaternion(0.879619, 0.234277, 0.273816, 0.310498)
+            }
+            Keyframe {
+                frame: 1166.67
+                value: Qt.quaternion(0.87597, 0.238787, 0.268882, 0.321498)
+            }
+            Keyframe {
+                frame: 1200
+                value: Qt.quaternion(0.872974, 0.246401, 0.26727, 0.325223)
+            }
+            Keyframe {
+                frame: 1233.33
+                value: Qt.quaternion(0.871606, 0.254301, 0.270247, 0.320312)
+            }
+            Keyframe {
+                frame: 1266.67
+                value: Qt.quaternion(0.873142, 0.259243, 0.27234, 0.310237)
+            }
+            Keyframe {
+                frame: 1300
+                value: Qt.quaternion(0.87696, 0.259981, 0.271221, 0.299649)
+            }
+            Keyframe {
+                frame: 1333.33
+                value: Qt.quaternion(0.883197, 0.255155, 0.264114, 0.291725)
+            }
+            Keyframe {
+                frame: 1366.67
+                value: Qt.quaternion(0.890776, 0.245657, 0.252292, 0.287261)
+            }
+            Keyframe {
+                frame: 1400
+                value: Qt.quaternion(0.897739, 0.234542, 0.240405, 0.285063)
+            }
+            Keyframe {
+                frame: 1433.33
+                value: Qt.quaternion(0.903117, 0.224478, 0.231544, 0.283507)
+            }
+            Keyframe {
+                frame: 1466.67
+                value: Qt.quaternion(0.906463, 0.217449, 0.227224, 0.281797)
+            }
+            Keyframe {
+                frame: 1500
+                value: Qt.quaternion(0.908061, 0.213746, 0.225361, 0.280982)
+            }
+            Keyframe {
+                frame: 1533.33
+                value: Qt.quaternion(0.908471, 0.212556, 0.222687, 0.282685)
+            }
+            Keyframe {
+                frame: 1566.67
+                value: Qt.quaternion(0.907849, 0.213282, 0.218284, 0.287531)
+            }
+            Keyframe {
+                frame: 1600
+                value: Qt.quaternion(0.90625, 0.215885, 0.212665, 0.294751)
+            }
+            Keyframe {
+                frame: 1633.33
+                value: Qt.quaternion(0.903312, 0.221354, 0.208663, 0.302473)
+            }
+            Keyframe {
+                frame: 1666.67
+                value: Qt.quaternion(0.899984, 0.227775, 0.205315, 0.309829)
+            }
+            Keyframe {
+                frame: 1700
+                value: Qt.quaternion(0.895721, 0.236665, 0.203836, 0.316425)
+            }
+            Keyframe {
+                frame: 1733.33
+                value: Qt.quaternion(0.892524, 0.243714, 0.201202, 0.321749)
+            }
+            Keyframe {
+                frame: 1766.67
+                value: Qt.quaternion(0.890534, 0.249005, 0.199514, 0.324254)
+            }
+            Keyframe {
+                frame: 1800
+                value: Qt.quaternion(0.88939, 0.25272, 0.199569, 0.324485)
+            }
+            Keyframe {
+                frame: 1833.33
+                value: Qt.quaternion(0.889183, 0.254036, 0.19972, 0.323931)
+            }
+            Keyframe {
+                frame: 1866.67
+                value: Qt.quaternion(0.890079, 0.252897, 0.198201, 0.323293)
+            }
+            Keyframe {
+                frame: 1900
+                value: Qt.quaternion(0.891368, 0.250927, 0.19587, 0.322698)
+            }
+            Keyframe {
+                frame: 1933.33
+                value: Qt.quaternion(0.892328, 0.249371, 0.194057, 0.322346)
+            }
+            Keyframe {
+                frame: 1966.67
+                value: Qt.quaternion(0.892653, 0.248766, 0.193341, 0.322345)
+            }
+        }
+        KeyframeGroup {
             target: leftForeArm
             property: "rotation"
             Keyframe {
@@ -18190,251 +18198,243 @@ Node {
             property: "rotation"
             Keyframe {
                 frame: 0
-                value: Qt.quaternion(0.866783, 0.143503, -0.327843, -0.347293)
+                value: Qt.quaternion(0.899566, 0.175635, -0.307744, -0.255396)
             }
             Keyframe {
                 frame: 33.3333
-                value: Qt.quaternion(0.870138, 0.136063, -0.335276, -0.334571)
+                value: Qt.quaternion(0.901601, 0.169061, -0.315901, -0.242364)
             }
             Keyframe {
                 frame: 66.6667
-                value: Qt.quaternion(0.87253, 0.129679, -0.343892, -0.321889)
+                value: Qt.quaternion(0.902689, 0.16366, -0.325127, -0.229478)
             }
             Keyframe {
                 frame: 100
-                value: Qt.quaternion(0.874002, 0.125104, -0.352838, -0.309799)
+                value: Qt.quaternion(0.902924, 0.160092, -0.334496, -0.217283)
             }
             Keyframe {
                 frame: 133.333
-                value: Qt.quaternion(0.874392, 0.120979, -0.360892, -0.30093)
+                value: Qt.quaternion(0.902416, 0.156864, -0.342936, -0.208406)
             }
             Keyframe {
                 frame: 166.667
-                value: Qt.quaternion(0.873544, 0.118956, -0.367895, -0.295675)
+                value: Qt.quaternion(0.90105, 0.155604, -0.350115, -0.203261)
             }
             Keyframe {
                 frame: 200
-                value: Qt.quaternion(0.871673, 0.120297, -0.373743, -0.293311)
+                value: Qt.quaternion(0.898965, 0.157558, -0.355798, -0.20111)
             }
             Keyframe {
                 frame: 233.333
-                value: Qt.quaternion(0.869565, 0.122965, -0.376883, -0.29444)
+                value: Qt.quaternion(0.896999, 0.160535, -0.35865, -0.202464)
             }
             Keyframe {
                 frame: 266.667
-                value: Qt.quaternion(0.867575, 0.126525, -0.376819, -0.298852)
+                value: Qt.quaternion(0.89548, 0.164052, -0.358222, -0.207073)
             }
             Keyframe {
                 frame: 300
-                value: Qt.quaternion(0.865068, 0.131186, -0.374477, -0.306944)
+                value: Qt.quaternion(0.893823, 0.168412, -0.355416, -0.2154)
             }
             Keyframe {
                 frame: 333.333
-                value: Qt.quaternion(0.861636, 0.139082, -0.371473, -0.316619)
+                value: Qt.quaternion(0.891409, 0.175914, -0.351617, -0.225411)
             }
             Keyframe {
                 frame: 366.667
-                value: Qt.quaternion(0.858149, 0.148105, -0.365568, -0.328642)
+                value: Qt.quaternion(0.889174, 0.184224, -0.344815, -0.237767)
             }
             Keyframe {
                 frame: 400
-                value: Qt.quaternion(0.854948, 0.158403, -0.354326, -0.344131)
+                value: Qt.quaternion(0.887566, 0.193232, -0.332571, -0.253545)
             }
             Keyframe {
                 frame: 433.333
-                value: Qt.quaternion(0.849399, 0.175415, -0.342948, -0.360747)
+                value: Qt.quaternion(0.883739, 0.208899, -0.3195, -0.270714)
             }
             Keyframe {
                 frame: 466.667
-                value: Qt.quaternion(0.843254, 0.193876, -0.331297, -0.376268)
+                value: Qt.quaternion(0.879205, 0.225983, -0.306007, -0.286863)
             }
             Keyframe {
                 frame: 500
-                value: Qt.quaternion(0.838888, 0.208248, -0.32055, -0.387489)
+                value: Qt.quaternion(0.875994, 0.239111, -0.293834, -0.298533)
             }
             Keyframe {
                 frame: 533.333
-                value: Qt.quaternion(0.836839, 0.219058, -0.312424, -0.392563)
+                value: Qt.quaternion(0.874455, 0.248993, -0.284632, -0.303835)
             }
             Keyframe {
                 frame: 566.667
-                value: Qt.quaternion(0.837936, 0.223574, -0.301685, -0.39606)
+                value: Qt.quaternion(0.875871, 0.252349, -0.273475, -0.307215)
             }
             Keyframe {
                 frame: 600
-                value: Qt.quaternion(0.842013, 0.22083, -0.285559, -0.400879)
+                value: Qt.quaternion(0.880367, 0.247918, -0.257709, -0.311572)
             }
             Keyframe {
                 frame: 633.333
-                value: Qt.quaternion(0.847149, 0.214284, -0.266123, -0.406939)
+                value: Qt.quaternion(0.886034, 0.239354, -0.239044, -0.317036)
             }
             Keyframe {
                 frame: 666.667
-                value: Qt.quaternion(0.851598, 0.207956, -0.247812, -0.412462)
+                value: Qt.quaternion(0.890965, 0.231127, -0.221477, -0.32204)
             }
             Keyframe {
                 frame: 700
-                value: Qt.quaternion(0.854733, 0.204585, -0.234147, -0.415634)
+                value: Qt.quaternion(0.894362, 0.226335, -0.208228, -0.324855)
             }
             Keyframe {
                 frame: 733.333
-                value: Qt.quaternion(0.856658, 0.20389, -0.225655, -0.416708)
+                value: Qt.quaternion(0.896357, 0.224752, -0.199847, -0.325719)
             }
             Keyframe {
                 frame: 766.667
-                value: Qt.quaternion(0.857418, 0.204206, -0.22158, -0.417178)
+                value: Qt.quaternion(0.897145, 0.224639, -0.195758, -0.326108)
             }
             Keyframe {
                 frame: 800
-                value: Qt.quaternion(0.85706, 0.204536, -0.220184, -0.418488)
+                value: Qt.quaternion(0.896921, 0.224816, -0.194337, -0.32745)
             }
             Keyframe {
                 frame: 833.333
-                value: Qt.quaternion(0.855644, 0.20553, -0.220652, -0.420646)
+                value: Qt.quaternion(0.89574, 0.225845, -0.194703, -0.329748)
             }
             Keyframe {
                 frame: 866.667
-                value: Qt.quaternion(0.853955, 0.206476, -0.221918, -0.422943)
+                value: Qt.quaternion(0.894305, 0.22691, -0.195871, -0.332212)
             }
             Keyframe {
                 frame: 900
-                value: Qt.quaternion(0.852573, 0.206743, -0.222798, -0.425133)
+                value: Qt.quaternion(0.893162, 0.227259, -0.196723, -0.334536)
             }
             Keyframe {
                 frame: 933.333
-                value: Qt.quaternion(0.851735, 0.206166, -0.222408, -0.427292)
+                value: Qt.quaternion(0.892553, 0.226636, -0.196399, -0.336768)
             }
             Keyframe {
                 frame: 966.667
-                value: Qt.quaternion(0.850844, 0.206543, -0.221179, -0.429517)
+                value: Qt.quaternion(0.891895, 0.226874, -0.19514, -0.339075)
             }
             Keyframe {
                 frame: 1000
-                value: Qt.quaternion(0.850012, 0.206896, -0.218968, -0.432118)
+                value: Qt.quaternion(0.891331, 0.226984, -0.192908, -0.341751)
             }
             Keyframe {
                 frame: 1033.33
-                value: Qt.quaternion(0.849402, 0.20705, -0.216736, -0.434364)
+                value: Qt.quaternion(0.89095, 0.226896, -0.190675, -0.344049)
             }
             Keyframe {
                 frame: 1066.67
-                value: Qt.quaternion(0.848909, 0.208146, -0.217907, -0.434218)
+                value: Qt.quaternion(0.890449, 0.228108, -0.191726, -0.343959)
             }
             Keyframe {
                 frame: 1100
-                value: Qt.quaternion(0.847997, 0.210514, -0.223618, -0.431949)
+                value: Qt.quaternion(0.889327, 0.231068, -0.197163, -0.341807)
             }
             Keyframe {
                 frame: 1133.33
-                value: Qt.quaternion(0.846807, 0.211388, -0.231379, -0.429763)
+                value: Qt.quaternion(0.887945, 0.232757, -0.204794, -0.339761)
             }
             Keyframe {
                 frame: 1166.67
-                value: Qt.quaternion(0.845694, 0.211335, -0.239701, -0.427413)
+                value: Qt.quaternion(0.886624, 0.233583, -0.21308, -0.33754)
             }
             Keyframe {
                 frame: 1200
-                value: Qt.quaternion(0.844531, 0.213081, -0.250324, -0.422732)
+                value: Qt.quaternion(0.885019, 0.236447, -0.223467, -0.333012)
             }
             Keyframe {
                 frame: 1233.33
-                value: Qt.quaternion(0.844374, 0.213403, -0.262229, -0.415604)
+                value: Qt.quaternion(0.884164, 0.238038, -0.235274, -0.325941)
             }
             Keyframe {
                 frame: 1266.67
-                value: Qt.quaternion(0.846678, 0.206229, -0.271609, -0.408455)
+                value: Qt.quaternion(0.885744, 0.23191, -0.245343, -0.318562)
             }
             Keyframe {
                 frame: 1300
-                value: Qt.quaternion(0.85008, 0.194432, -0.279005, -0.402139)
+                value: Qt.quaternion(0.888497, 0.220975, -0.253918, -0.311881)
             }
             Keyframe {
                 frame: 1333.33
-                value: Qt.quaternion(0.85412, 0.182505, -0.285077, -0.394845)
+                value: Qt.quaternion(0.891775, 0.209775, -0.261187, -0.30416)
             }
             Keyframe {
                 frame: 1366.67
-                value: Qt.quaternion(0.858295, 0.174296, -0.292473, -0.38394)
+                value: Qt.quaternion(0.894817, 0.202426, -0.269384, -0.292847)
             }
             Keyframe {
                 frame: 1400
-                value: Qt.quaternion(0.862499, 0.169398, -0.301522, -0.369437)
+                value: Qt.quaternion(0.897518, 0.198555, -0.278879, -0.277965)
             }
             Keyframe {
                 frame: 1433.33
-                value: Qt.quaternion(0.866785, 0.164934, -0.310773, -0.353413)
+                value: Qt.quaternion(0.900141, 0.195143, -0.28853, -0.261564)
             }
             Keyframe {
                 frame: 1466.67
-                value: Qt.quaternion(0.871059, 0.1578, -0.318082, -0.339382)
+                value: Qt.quaternion(0.902954, 0.188865, -0.296527, -0.247136)
             }
             Keyframe {
                 frame: 1500
-                value: Qt.quaternion(0.874532, 0.148052, -0.322897, -0.33017)
+                value: Qt.quaternion(0.905464, 0.179708, -0.302321, -0.237575)
             }
             Keyframe {
                 frame: 1533.33
-                value: Qt.quaternion(0.876254, 0.139159, -0.326806, -0.325595)
+                value: Qt.quaternion(0.906714, 0.17129, -0.30713, -0.232811)
             }
             Keyframe {
                 frame: 1566.67
-                value: Qt.quaternion(0.875794, 0.135046, -0.332012, -0.323288)
+                value: Qt.quaternion(0.906036, 0.167752, -0.31274, -0.230549)
             }
             Keyframe {
                 frame: 1600
-                value: Qt.quaternion(0.874001, 0.134961, -0.337602, -0.322384)
+                value: Qt.quaternion(0.90418, 0.168255, -0.318315, -0.229837)
             }
             Keyframe {
                 frame: 1633.33
-                value: Qt.quaternion(0.872057, 0.135508, -0.34057, -0.324293)
+                value: Qt.quaternion(0.902457, 0.169102, -0.321217, -0.23194)
             }
             Keyframe {
                 frame: 1666.67
-                value: Qt.quaternion(0.870069, 0.136622, -0.340927, -0.32876)
+                value: Qt.quaternion(0.900947, 0.17023, -0.321463, -0.236595)
             }
             Keyframe {
                 frame: 1700
-                value: Qt.quaternion(0.867736, 0.139516, -0.340107, -0.334511)
+                value: Qt.quaternion(0.899225, 0.173, -0.320354, -0.242569)
             }
             Keyframe {
                 frame: 1733.33
-                value: Qt.quaternion(0.865738, 0.142856, -0.338198, -0.340165)
+                value: Qt.quaternion(0.897821, 0.176102, -0.318114, -0.248414)
             }
             Keyframe {
                 frame: 1766.67
-                value: Qt.quaternion(0.86501, 0.144542, -0.334028, -0.345384)
+                value: Qt.quaternion(0.897627, 0.177322, -0.313794, -0.253686)
             }
             Keyframe {
                 frame: 1800
-                value: Qt.quaternion(0.86474, 0.145361, -0.328932, -0.350569)
+                value: Qt.quaternion(0.89788, 0.177585, -0.308641, -0.258875)
             }
             Keyframe {
                 frame: 1833.33
-                value: Qt.quaternion(0.864677, 0.145953, -0.325409, -0.353752)
+                value: Qt.quaternion(0.898136, 0.177793, -0.305076, -0.262049)
             }
             Keyframe {
                 frame: 1866.67
-                value: Qt.quaternion(0.865225, 0.145742, -0.324525, -0.35331)
+                value: Qt.quaternion(0.898632, 0.177493, -0.304216, -0.261551)
             }
             Keyframe {
                 frame: 1900
-                value: Qt.quaternion(0.865913, 0.145092, -0.325941, -0.35058)
+                value: Qt.quaternion(0.899036, 0.177005, -0.30569, -0.258762)
             }
             Keyframe {
                 frame: 1933.33
-                value: Qt.quaternion(0.866518, 0.144047, -0.327329, -0.348213)
+                value: Qt.quaternion(0.899396, 0.176119, -0.307177, -0.25634)
             }
             Keyframe {
                 frame: 1966.67
-                value: Qt.quaternion(0.866783, 0.143503, -0.327843, -0.347293)
-            }
-        }
-        KeyframeGroup {
-            target: joint_13
-            property: "rotation"
-            Keyframe {
-                frame: 0
-                value: Qt.quaternion(0.981372, 0.0931776, 0.165529, 0.0287524)
+                value: Qt.quaternion(0.899566, 0.175635, -0.307744, -0.255396)
             }
         }
         KeyframeGroup {
